@@ -1,0 +1,6 @@
+_next
+node_modules
+public
+package-lock.json
+.next
+yarn.lock

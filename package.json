@@ -1,11 +1,20 @@
 {
   "name": "lakiernia",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "next": "9.1.4",
+    "react": "16.12.0",
+    "react-dom": "16.12.0"
+  },
+  "devDependencies": {
+    "postcss-preset-env": "^6.7.0",
+    "tailwindcss": "^1.1.3"
+  }
 }
