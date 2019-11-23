@@ -6,7 +6,7 @@ import Header from "../components/header";
 function Home() {
   return (
     <Layout>
-      <div>
+      <div className="h-screen">
         <div
           className="bg-cover"
           style={{ backgroundImage: "url(/mobile1.jpeg)" }}
@@ -30,6 +30,10 @@ function Home() {
             </div>
           </div>
         </div>
+        <img
+          className="min-h-screen-1/4 object-contain px-8"
+          src={"/loga.png"}
+        />
         <Header />
       </div>
     </Layout>

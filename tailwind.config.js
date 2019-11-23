@@ -8,6 +8,7 @@ module.exports = {
         gray: "#515052"
       },
       minHeight: {
+        "screen-1/4": "25vh",
         "screen-3/4": "75vh"
       },
       maxWidth: {
