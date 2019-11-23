@@ -1,6 +1,0 @@
-#1B1B1E black
-#fbfbfb white
-#FFAE03 ORAGNE (ucla gold)
-#515052 Gray 
-
-font????
