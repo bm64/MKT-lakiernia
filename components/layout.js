@@ -1,12 +1,8 @@
-import React from 'react';
-import '../styles/index.css';
+import React from "react";
+import "../styles/index.css";
 
-function Layout({children}) {
-  return (
-    <>
-      <main>{children}</main>
-    </>
-  );
+function Layout({ children }) {
+  return <>{children}</>;
 }
 
 export default Layout;
