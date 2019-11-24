@@ -12,7 +12,7 @@ function Home() {
           style={{backgroundImage: 'url(/mobile1.jpeg)'}}>
           <div className="min-h-screen-3/4 flex flex-col justify-around items-center py-16">
             <div className="flex flex-col items-center">
-              <h1 className="text-white text-center font-bold px-6">
+              <h1 className="text-white text-center font-bold px-3">
                 Autoryzowane centrum blacharsko-lakiernicze
               </h1>
               <div className="w-2/4 bg-white h-1 mb-20" />
