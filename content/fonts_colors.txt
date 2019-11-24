@@ -3,4 +3,17 @@
 #FFAE03 ORAGNE (ucla gold)
 #515052 Gray 
 
-font????
+fonts:
+https://fonts.google.com/specimen/Montserrat
+https://fonts.adobe.com/fonts/termina#fonts-section
+
+
+https://deathtothestockphoto.com/
+https://source.unsplash.com/
+https://unsplash.com/t/business-work
+pixabay
+https://www.pexels.com/ https://pixabay.com/ http://www.freeforcommercialuse.net/
+
+Video:
+https://www.istockphoto.com/pl/wideo/car-detailing?phrase=car%20detailing&sort=best
+https://www.istockphoto.com/pl/filmy/sport-samoch%C3%B3d-szczeg%C3%B3%C5%82y-zbli%C5%BCenie-hd-gm481261244-69527407
