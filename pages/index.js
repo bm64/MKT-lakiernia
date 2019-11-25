@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
+import React, { useRef } from 'react'
 
-import Layout from "../components/layout";
-import Header from "../components/header";
+import Layout from '../components/layout'
+import Header from '../components/header'
 
 function Home() {
   return (
@@ -21,7 +21,7 @@ function Home() {
             <h1 className="text-white text-center font-bold px-3">
               Autoryzowane centrum blacharsko-lakiernicze
             </h1>
-            <div className="w-2/4 bg-white h-1 mb-20" />
+            <div className="line bg-white" />
           </div>
           <div className="flex flex-col items-center">
             <h2 className="text-white text-center font-bold z-10">
@@ -35,13 +35,76 @@ function Home() {
 
         <img
           className="min-h-screen-1/4 object-contain px-8"
-          src={"/loga.png"}
+          src={'/logos.png'}
         />
 
         <Header />
       </div>
+      <h1 className="section-title">Profesjonalne prace blacharskie</h1>
+      <div className="line bg-orange" />
+      <p className="section-text">
+        Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych urz dze
+        i technik naprawczych; rama do napraw blacharskich CAR-O-LINER MARK 6
+        oraz innowacyjny komputerowy system pomiaru nadwozia SPANESI TOUCH
+        WHEELS.
+      </p>
+      <img src="/car_frame.jpg" className="section-img" />
+
+      <h1 className="section-title">Perfekcyjnie położony lakeir</h1>
+      <div className="line bg-orange" />
+      <p className="section-text">
+        Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych urz dze
+        i technik naprawczych; rama do napraw blacharskich CAR-O-LINER MARK 6
+        oraz innowacyjny komputerowy system pomiaru nadwozia SPANESI TOUCH
+        WHEELS.
+      </p>
+      <img src="/car_lacquer.jpeg" className="section-img" />
+
+      <h1 className="section-title">
+        Naprawy PDR <br />
+        oraz
+        <br /> Auto Detailing
+      </h1>
+      <div className="line bg-orange" />
+      <p className="section-text">
+        Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych urz dze
+        i technik naprawczych; rama do napraw blacharskich CAR-O-LINER MARK 6
+        oraz innowacyjny komputerowy system pomiaru nadwozia SPANESI TOUCH
+        WHEELS.
+      </p>
+      <img src="/car_detailing.jpeg" className="section-img" />
+
+      <h1 className="section-title">Wypożyczalnia samochodów</h1>
+      <div className="line bg-orange" />
+      <p className="section-text">
+        Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych urz dze
+        i technik naprawczych; rama do napraw blacharskich CAR-O-LINER MARK 6
+        oraz innowacyjny komputerowy system pomiaru nadwozia SPANESI TOUCH
+        WHEELS.
+      </p>
+      <img src="/car_rental.jpg" className="section-img" />
+
+      <h1 className="section-title">Powypadkowe badania techniczne</h1>
+      <div className="line bg-orange" />
+      <p className="section-text">
+        Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych urz dze
+        i technik naprawczych; rama do napraw blacharskich CAR-O-LINER MARK 6
+        oraz innowacyjny komputerowy system pomiaru nadwozia SPANESI TOUCH
+        WHEELS.
+      </p>
+      <img src="/car_control.jpeg" className="section-img" />
+
+      <h1 className="section-title">O nas</h1>
+      <div className="line bg-orange" />
+      <p className="section-text">
+        Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych urz dze
+        i technik naprawczych; rama do napraw blacharskich CAR-O-LINER MARK 6
+        oraz innowacyjny komputerowy system pomiaru nadwozia SPANESI TOUCH
+        WHEELS.
+      </p>
+      <img src="/about_us.jpg" className="section-img" />
     </Layout>
-  );
+  )
 }
 
-export default Home;
+export default Home
