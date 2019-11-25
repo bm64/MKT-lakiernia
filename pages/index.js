@@ -103,6 +103,23 @@ function Home() {
         WHEELS.
       </p>
       <img src="/about_us.jpg" className="section-img" />
+      <img src="/funding.png" className="section-img" />
+
+      <div
+        className="p-5 w-full flex-col bg-cover"
+        style={{
+          backgroundImage: 'url(/footer_img.jpeg)',
+        }}
+      >
+        <div className="footer-item">START</div>
+        <div className="footer-item">KONTAKT</div>
+        <div className="footer-item ">USŁUGI</div>
+        <div className="footer-item">POLITYKA PRYWATNOŚCI</div>
+        <div className="footer-item">USŁUGI</div>
+        <p className="text-sm text-center pt-4 text-white">
+          Copyright @ 2019 MKT Serwis
+        </p>
+      </div>
     </Layout>
   )
 }

@@ -38,4 +38,8 @@ html {
   @apply mx-auto w-full p-5;
 }
 
+.footer-item {
+  @apply text-white border-b py-1;
+}
+
 @tailwind utilities;
