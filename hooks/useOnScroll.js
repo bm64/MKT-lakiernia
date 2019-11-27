@@ -4,21 +4,18 @@ export default function useOnScroll(ref) {
   const [shouldShow, setShouldShow] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (ref.current) {
-        const offset = ref.current.getBoundingClientRect().top
-        const h = Math.max(
-          document.documentElement.clientHeight,
-          window.innerHeight || 0
-        )
-        if (offset - h < 0 && !shouldShow) setShouldShow(true)
-      }
+    if (!ref.current) return
+
+    let enterOptions = {
+      threshold: [0, 1],
     }
 
-    var listener = window.addEventListener('scroll', handleScroll)
-    setTimeout(() => handleScroll(), 100) // Dirty hack
-    return () => window.removeEventListener('scroll', listener)
-  }, [])
+    let onEnter = new IntersectionObserver(entries => {
+      setShouldShow(entries[0].intersectionRatio !== 0)
+    }, enterOptions)
+
+    onEnter.observe(ref.current)
+  }, [ref])
 
   return shouldShow
 }
