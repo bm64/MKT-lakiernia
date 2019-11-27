@@ -1,13 +1,8 @@
 import React, { useRef } from 'react'
-import Flickity from 'react-flickity-component'
 import Layout from '../components/layout'
 import Header from '../components/header'
 
 import withFadeIn from '../animations/withFadeIn'
-
-const flickityOptions = {
-  initialIndex: 2,
-}
 
 function Home() {
   return (
@@ -56,7 +51,7 @@ function Home() {
             MARK 6 oraz innowacyjny komputerowy system pomiaru nadwozia SPANESI
             TOUCH WHEELS.
           </p>
-          <img src="/car_frame.jpeg" className="section-img" />
+          <FadeImage src="/car_frame.jpg" className="section-img" />
         </section>
 
         <section>
@@ -68,7 +63,7 @@ function Home() {
             MARK 6 oraz innowacyjny komputerowy system pomiaru nadwozia SPANESI
             TOUCH WHEELS.
           </p>
-          <img src="/car_lacquer.jpeg" className="section-img" />
+          <FadeImage src="/car_lacquer.jpeg" className="section-img" />
         </section>
 
         <section>
@@ -84,7 +79,7 @@ function Home() {
             MARK 6 oraz innowacyjny komputerowy system pomiaru nadwozia SPANESI
             TOUCH WHEELS.
           </p>
-          <img src="/car_detailing.jpeg" className="section-img" />
+          <FadeImage src="/car_detailing.jpeg" className="section-img" />
         </section>
 
         <section>
@@ -96,7 +91,7 @@ function Home() {
             MARK 6 oraz innowacyjny komputerowy system pomiaru nadwozia SPANESI
             TOUCH WHEELS.
           </p>
-          <img src="/car_rental.jpg" className="section-img" />
+          <FadeImage src="/car_rental.jpg" className="section-img" />
         </section>
 
         <section>
@@ -108,7 +103,7 @@ function Home() {
             MARK 6 oraz innowacyjny komputerowy system pomiaru nadwozia SPANESI
             TOUCH WHEELS.
           </p>
-          <img src="/car_control.jpeg" className="section-img" />
+          <FadeImage src="/car_control.jpeg" className="section-img" />
         </section>
 
         <section>
@@ -120,7 +115,7 @@ function Home() {
             MARK 6 oraz innowacyjny komputerowy system pomiaru nadwozia SPANESI
             TOUCH WHEELS.
           </p>
-          <img src="/about_us.jpg" className="section-img" />
+          <FadeImage src="/about_us.jpg" className="section-img" />
         </section>
 
         <section>
