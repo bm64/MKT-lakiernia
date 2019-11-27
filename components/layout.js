@@ -1,8 +1,8 @@
-import React from 'react';
-import Head from 'next/head';
-import '../styles/index.css';
+import React from 'react'
+import Head from 'next/head'
+import '../styles/index.css'
 
-function Layout({children}) {
+function Layout({ children }) {
   return (
     <>
       <Head>
@@ -13,7 +13,7 @@ function Layout({children}) {
       </Head>
       {children}
     </>
-  );
+  )
 }
 
-export default Layout;
+export default Layout

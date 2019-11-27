@@ -8,9 +8,9 @@ function Header({}) {
   const toggleMenu = useCallback(() => setShowMenu(!showMenu), [showMenu])
 
   return (
-    <div className="absolute top-0 w-full bg-transparent z-20">
+    <div className="fixed top-0 w-full bg-transparent z-20">
       <div className="max-w-screen-xl flex justify-between items-center bg-transparent z-20 h-16 mx-auto px-3">
-        <h1 className="font-bold text-white">MKT SERWIS</h1>
+        <h1 className="font-bold text-white ">MKT SERWIS</h1>
         <div className="cursor-pointer" onClick={toggleMenu}>
           {!showMenu ? (
             <FaBars className="text-4xl text-white" />

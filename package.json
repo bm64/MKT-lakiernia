@@ -9,9 +9,13 @@
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
+    "bootstrap": "^4.4.0",
+    "flickity": "^2.2.1",
     "next": "9.1.4",
     "react": "16.12.0",
+    "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "16.12.0",
+    "react-flickity-component": "^3.4.0",
     "react-icons": "^3.8.0"
   },
   "devDependencies": {
