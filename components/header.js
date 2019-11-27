@@ -8,7 +8,7 @@ function Header({}) {
   const toggleMenu = useCallback(() => setShowMenu(!showMenu), [showMenu])
 
   return (
-    <div className="fixed top-0 w-full bg-transparent z-20">
+    <div className="absolute top-0 w-full bg-transparent z-20">
       <div className="max-w-screen-xl flex justify-between items-center bg-transparent z-20 h-16 mx-auto px-3">
         <h1 className="font-bold text-white ">MKT SERWIS</h1>
         <div className="cursor-pointer" onClick={toggleMenu}>

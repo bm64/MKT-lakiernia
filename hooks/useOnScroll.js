@@ -10,9 +10,10 @@ export default function useOnScroll(ref) {
       threshold: [0, 1],
     }
 
-    let onEnter = new IntersectionObserver(entries => {
-      setShouldShow(entries[0].intersectionRatio !== 0)
-    }, enterOptions)
+    let onEnter = new IntersectionObserver(
+      entries => setShouldShow(entries[0].intersectionRatio !== 0),
+      enterOptions
+    )
 
     onEnter.observe(ref.current)
   }, [ref])
