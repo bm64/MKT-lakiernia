@@ -4,8 +4,9 @@ module.exports = {
       colors: {
         black: '#1B1B1E',
         white: '#fbfbfb',
-        'white-t': '#fbfbfb88',
+        'white-t': '#fbfbfbAA',
         orange: '#FFAE03',
+        'orange-t': '#FFAE03AA',
         gray: '#515052',
       },
       minHeight: {
