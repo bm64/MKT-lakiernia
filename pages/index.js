@@ -1,6 +1,12 @@
 import React, { useState, useRef } from 'react'
 import Layout from '../components/layout'
 import Header from '../components/header'
+import {
+  MdPhoneIphone,
+  MdLocationOn,
+  MdAccessTime,
+  MdMailOutline,
+} from 'react-icons/md'
 
 import { CarouselProvider, Slider, Slide, WithStore } from 'pure-react-carousel'
 import 'pure-react-carousel/dist/react-carousel.es.css'
@@ -14,7 +20,7 @@ function Home() {
 
   return (
     <Layout>
-      <div style={{ height: 'calc(100vh - 4rem' }}>
+      <div className="h-screen">
         <video
           autoPlay={true}
           loop={true}
@@ -23,38 +29,47 @@ function Home() {
         >
           <source src="/video1.mp4" type="video/mp4" />
         </video>
-
-        <div className="hero-content">
-          <div className="flex flex-col items-center py-8 z-10">
-            <h1 className="text-white text-center font-bold px-1 pt-10">
-              Centrum <br />
-              blacharsko-lakiernicze
-            </h1>
-            <div className="line bg-white" />
-          </div>
-          <div className="flex flex-col items-center z-10">
-            <h2 className="text-white text-center font-bold py-5 text-black">
-              Miałeś szkodę?
-            </h2>
-            <div className="border-2 border-orange hover:bg-white-t px-12 py-3 z-10 cursor-pointer">
-              <span className="text-orange text-2xl font-bold">Zadzwoń</span>
+        <div className="flex flex-col justify-between">
+          <div className="hero-content">
+            <div className="flex flex-col items-center py-8 z-10">
+              <h1 className="text-white text-center font-bold px-1 pt-10">
+                Centrum <br />
+                blacharsko-lakiernicze
+              </h1>
+              <div className="line bg-white" />
+            </div>
+            <div className="flex flex-col items-center z-10">
+              <h2 className="text-white text-center font-bold py-5 text-black">
+                Miałeś szkodę?
+              </h2>
+              <div className="border-2 border-orange hover:bg-white-t px-12 py-3 z-10 cursor-pointer">
+                <span className="text-orange text-2xl font-bold">Zadzwoń</span>
+              </div>
             </div>
           </div>
-          <div className="h-40 bg-white-t z-10">
-            <h2 className="text-center text-black font-bold">
-              Autoryzowany serwis
-            </h2>
-            <img
-              className="h-full object-contain object-top px-8 py-6"
-              src={'/logos.png'}
-            />
+          <div class="arrow-container mx-auto">
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+            <div class="chevron"></div>
           </div>
         </div>
       </div>
       <Header />
-      <div className="bg-orange py-6">
-        <h1 className="text-center font-medium">Usługi blacharskie</h1>
+
+      <div className="bg-white border-t-4 border-b-4  border-orange  h-48">
+        <h1 className="text-center text-black font-bold mt-2">
+          Autoryzowany serwis
+        </h1>
+        <img
+          className="h-full object-contain object-top px-8 py-6"
+          src={'/logos.png'}
+        />
       </div>
+
+      {/*<div className="bg-orange py-6">
+        <h1 className="text-center font-medium">Usługi blacharskie</h1>
+  </div>*/}
+
       <CarouselProvider
         naturalSlideWidth={width || 400}
         naturalSlideHeight={height ? height / 1.15 : 600}
@@ -126,7 +141,7 @@ function Home() {
         <FadeImage src="/car_control.jpeg" className="section-img" />
       </section>
       <section>
-        <h1 className="section-title">O nas</h1>
+        <h1 className="section-title text-center">O nas</h1>
         <div className="line bg-orange" />
         <p className="section-text">
           Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych urz
@@ -160,12 +175,53 @@ function Home() {
           </div>
         </div>
       </section>
+      <div className="flex flex-col justify-center p-5">
+        <div className="contact-item">
+          <MdLocationOn className="contact-icon" />
+          <div>
+            <h2>Adres:</h2>
+            <p>
+              Wola Mielecka 632
+              <br />
+              39-300 Mielec
+            </p>
+          </div>
+        </div>
+        <div className="contact-item">
+          <MdPhoneIphone className="contact-icon" />
+          <div>
+            <h2>Telefon:</h2>
 
+            <p>
+              tel 17 583 05 96
+              <br />
+              kom 602 583 583
+            </p>
+          </div>
+        </div>
+        <div className="contact-item">
+          <MdAccessTime className="contact-icon" />
+          <div>
+            <h2>Godziny otwarcia</h2>
+            <p>
+              pn.-pt. 7:00 - 15:00
+              <br />
+              sob. 7:00 - 14:00
+            </p>
+          </div>
+        </div>
+        <div className="contact-item">
+          <MdMailOutline className="contact-icon" />
+          <div>
+            <h2>E-mail</h2>
+            <p>lakiernia@mktserwis.pl</p>
+          </div>
+        </div>
+      </div>
       <iframe
         className="w-full mx-auto px-5  h-64"
         src="https://maps.google.com/maps?q=Wola%20mielecka%20lakiernia&t=&z=13&ie=UTF8&iwloc=&output=embed"
       ></iframe>
-
       <img src="/funding.png" className="section-img" />
       <div
         className="p-5 w-full mx-auto bg-cover"
