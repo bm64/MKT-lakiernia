@@ -23,9 +23,10 @@ section {
 html,
 body {
   font-family: 'Montserrat', sans-serif;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   background-color: #070707;
   @apply text-white;
+  position: relative;
 }
 
 @tailwind components;

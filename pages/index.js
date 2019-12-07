@@ -51,13 +51,10 @@ function Home() {
           </div>
         </div>
       </div>
-
       <Header />
-
       <div className="bg-orange py-6">
         <h1 className="text-center font-medium">Usługi blacharskie</h1>
       </div>
-
       <CarouselProvider
         naturalSlideWidth={width || 400}
         naturalSlideHeight={height ? height / 1.15 : 600}
@@ -106,7 +103,6 @@ function Home() {
         </Slider>
         <CarouselSteps />
       </CarouselProvider>
-
       <section>
         <h1 className="section-title">Wypożyczalnia samochodów</h1>
         <div className="line bg-orange" />
@@ -118,7 +114,6 @@ function Home() {
         </p>
         <FadeImage src="/car_rental.jpg" className="section-img" />
       </section>
-
       <section>
         <h1 className="section-title">Powypadkowe badania techniczne</h1>
         <div className="line bg-orange" />
@@ -130,7 +125,6 @@ function Home() {
         </p>
         <FadeImage src="/car_control.jpeg" className="section-img" />
       </section>
-
       <section>
         <h1 className="section-title">O nas</h1>
         <div className="line bg-orange" />
@@ -142,7 +136,6 @@ function Home() {
         </p>
         <FadeImage src="/about_us.jpg" className="section-img" />
       </section>
-
       <section>
         <div className="mx-auto w-11/12 flex flex-col items-center justify-center border-2 border-orange px-2 py-8">
           <h2 className="font-bold text-center">
@@ -151,7 +144,7 @@ function Home() {
           <div className="line bg-orange" />
           <h3 className="font-medium py-1">Adres e-mail</h3>
           <input
-            className="px-1 py-2 text-black"
+            className="w-5/6 px-1 py-2 text-black"
             placeholder={'jan.kowalski@domena.pl'}
             type="text"
           />
@@ -160,7 +153,7 @@ function Home() {
             className="w-5/6 text-black p-2"
             style={{ minHeight: '8rem' }}
           />
-          <div className="bg-orange hover:bg-orange-t border border-orange-t cursor-pointer py-4 px-16 my-4">
+          <div className="bg-orange hover:bg-orange-t border border-orange-t cursor-pointer py-4 my-4 px-5 w-3/4 text-center">
             <span className="text-xl text-black font-medium">
               Wyślij wiadomość
             </span>
@@ -168,8 +161,12 @@ function Home() {
         </div>
       </section>
 
-      <img src="/funding.png" className="section-img" />
+      <iframe
+        className="w-full mx-auto px-5  h-64"
+        src="https://maps.google.com/maps?q=Wola%20mielecka%20lakiernia&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      ></iframe>
 
+      <img src="/funding.png" className="section-img" />
       <div
         className="p-5 w-full mx-auto bg-cover"
         style={{
