@@ -225,7 +225,7 @@ function Home() {
           className="w-full mx-auto px-5  min-h-screen-1/4"
           src="https://maps.google.com/maps?q=Wola%20mielecka%20lakiernia&t=&z=13&ie=UTF8&iwloc=&output=embed"
         ></iframe>
-        <div className="flex flex-row flex-wrap px-5">
+        <div className="flex flex-col md:flex-row   md:justify-between p-5">
           <img src="/narodowa_strategia.png" className="funding-img" />
           <img src="/podkarpackie_logo.png" className="funding-img" />
           <img src="/ue_fundusz.png" className="funding-img" />

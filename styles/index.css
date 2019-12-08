@@ -24,7 +24,7 @@ html,
 body {
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden !important;
-  background-color: #070707;
+  background-color: #050505;
   @apply text-white;
   position: relative;
 }
@@ -50,6 +50,10 @@ body {
 
 .section-img {
   @apply mx-auto w-full p-5 rounded;
+}
+
+.funding-img {
+  @apply p-5 w-full object-contain;
 }
 
 .footer-item {
@@ -143,6 +147,10 @@ body {
   }
   .contact-item {
     @apply w-1/2;
+  }
+
+  .funding-img {
+    @apply py-5 w-4/12;
   }
 }
 
