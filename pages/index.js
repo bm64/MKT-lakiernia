@@ -31,37 +31,39 @@ function Home() {
         </video>
         <div className="flex flex-col justify-between">
           <div className="hero-content">
-            <div className="flex flex-col items-center py-8 z-10">
-              <h1 className="text-white text-center font-bold px-1 pt-10">
+            <div className="flex flex-col items-center py-8 z-10 md:py-20">
+              <h1 className="text-white text-center font-bold px-1 pt-10 md:text-4xl">
                 Centrum <br />
                 blacharsko-lakiernicze
               </h1>
               <div className="line bg-white" />
             </div>
             <div className="flex flex-col items-center z-10">
-              <h2 className="text-white text-center font-bold py-5 text-black">
+              <h2 className="text-white text-center font-bold py-5 text-black md:text-4xl">
                 Miałeś szkodę?
               </h2>
               <div className="border-2 border-orange hover:bg-white-t px-12 py-3 z-10 cursor-pointer">
-                <span className="text-orange text-2xl font-bold">Zadzwoń</span>
+                <span className="text-orange text-2xl font-bold md:text-4xl">
+                  Zadzwoń
+                </span>
               </div>
             </div>
           </div>
-          <div class="arrow-container mx-auto">
-            <div class="chevron"></div>
-            <div class="chevron"></div>
-            <div class="chevron"></div>
+          <div class="arrow-container mx-auto ">
+            <div class="chevron md:w-20 md:h-4"></div>
+            <div class="chevron md:w-20 md:h-4"></div>
+            <div class="chevron md:w-20 md:h-4"></div>
           </div>
         </div>
       </div>
       <Header />
 
-      <div className="bg-white border-t-4 border-b-4  border-orange  h-48">
-        <h1 className="text-center text-black font-bold mt-2">
+      <div className="bg-white border-t-4 border-b-4  border-orange  h-auto">
+        <h1 className="text-center text-black font-bold mt-2 md:text-4xl">
           Autoryzowany serwis
         </h1>
         <img
-          className="h-full object-contain object-top px-8 py-6"
+          className=" m-auto object-contain object-top px-8 py-6 md:p-8"
           src={'/logos.png'}
         />
       </div>
@@ -153,76 +155,82 @@ function Home() {
       </section>
       <section>
         <div className="mx-auto w-11/12 flex flex-col items-center justify-center border-2 border-orange px-2 py-8">
-          <h2 className="font-bold text-center">
+          <h2 className="font-bold text-center md:text-5xl">
             <span className="text-orange">Skontaktuj</span> się
           </h2>
           <div className="line bg-orange" />
-          <h3 className="font-medium py-1">Adres e-mail</h3>
+          <h3 className="font-medium  md:text-3xl md:mb-5">Adres e-mail</h3>
           <input
-            className="w-5/6 px-1 py-2 text-black"
+            className="w-5/6 px-1 py-2 text-black "
             placeholder={'jan.kowalski@domena.pl'}
             type="text"
           />
-          <h3 className="font-medium py-2">Treść wiadomości</h3>
+          <h3 className="font-medium  md:text-3xl md:m-5">Treść wiadomości</h3>
           <textarea
             className="w-5/6 text-black p-2"
             style={{ minHeight: '8rem' }}
           />
-          <div className="bg-orange hover:bg-orange-t border border-orange-t cursor-pointer py-4 my-4 px-5 w-3/4 text-center">
-            <span className="text-xl text-black font-medium">
+          <div className="bg-orange hover:bg-orange-t border border-orange-t cursor-pointer py-4  w-3/4 text-center my-5">
+            <span className="text-xl text-black font-medium ">
               Wyślij wiadomość
             </span>
           </div>
         </div>
-      </section>
-      <div className="flex flex-col justify-center p-5">
-        <div className="contact-item">
-          <MdLocationOn className="contact-icon" />
-          <div>
-            <h2>Adres:</h2>
-            <p>
-              Wola Mielecka 632
-              <br />
-              39-300 Mielec
-            </p>
-          </div>
-        </div>
-        <div className="contact-item">
-          <MdPhoneIphone className="contact-icon" />
-          <div>
-            <h2>Telefon:</h2>
 
-            <p>
-              tel 17 583 05 96
-              <br />
-              kom 602 583 583
-            </p>
+        <div className="flex flex-row justify-left   p-5 flex-wrap md:justify-left">
+          <div className="contact-item">
+            <MdLocationOn className="contact-icon" />
+            <div>
+              <h2>Adres:</h2>
+              <p>
+                Wola Mielecka 632
+                <br />
+                39-300 Mielec
+              </p>
+            </div>
+          </div>
+          <div className="contact-item">
+            <MdPhoneIphone className="contact-icon" />
+            <div>
+              <h2>Telefon:</h2>
+
+              <p>
+                tel 17 583 05 96
+                <br />
+                kom 602 583 583
+              </p>
+            </div>
+          </div>
+          <div className="contact-item">
+            <MdAccessTime className="contact-icon" />
+            <div>
+              <h2>Godziny otwarcia</h2>
+              <p>
+                pn.-pt. 7:00 - 15:00
+                <br />
+                sob. 7:00 - 14:00
+              </p>
+            </div>
+          </div>
+          <div className="contact-item">
+            <MdMailOutline className="contact-icon" />
+            <div>
+              <h2>E-mail</h2>
+              <p>lakiernia@mktserwis.pl</p>
+            </div>
           </div>
         </div>
-        <div className="contact-item">
-          <MdAccessTime className="contact-icon" />
-          <div>
-            <h2>Godziny otwarcia</h2>
-            <p>
-              pn.-pt. 7:00 - 15:00
-              <br />
-              sob. 7:00 - 14:00
-            </p>
-          </div>
+
+        <iframe
+          className="w-full mx-auto px-5  min-h-screen-1/4"
+          src="https://maps.google.com/maps?q=Wola%20mielecka%20lakiernia&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        ></iframe>
+        <div className="flex flex-row flex-wrap px-5">
+          <img src="/narodowa_strategia.png" className="funding-img" />
+          <img src="/podkarpackie_logo.png" className="funding-img" />
+          <img src="/ue_fundusz.png" className="funding-img" />
         </div>
-        <div className="contact-item">
-          <MdMailOutline className="contact-icon" />
-          <div>
-            <h2>E-mail</h2>
-            <p>lakiernia@mktserwis.pl</p>
-          </div>
-        </div>
-      </div>
-      <iframe
-        className="w-full mx-auto px-5  h-64"
-        src="https://maps.google.com/maps?q=Wola%20mielecka%20lakiernia&t=&z=13&ie=UTF8&iwloc=&output=embed"
-      ></iframe>
-      <img src="/funding.png" className="section-img" />
+      </section>
       <div
         className="p-5 w-full mx-auto bg-cover"
         style={{
