@@ -146,11 +146,17 @@ body {
     @apply text-lg;
   }
   .contact-item {
-    @apply w-1/2;
+    @apply w-1/2 py-8;
   }
 
   .funding-img {
     @apply py-5 w-4/12;
+  }
+  .footer-item {
+    @apply border-b-2 text-xl;
+  }
+  section {
+    @apply py-8;
   }
 }
 

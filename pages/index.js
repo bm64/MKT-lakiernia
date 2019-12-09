@@ -177,7 +177,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="flex flex-row justify-left   p-5 flex-wrap md:justify-left">
+        <div className="flex flex-row justify-left   p-5 flex-wrap md:justify-left md:py-8">
           <div className="contact-item">
             <MdLocationOn className="contact-icon" />
             <div>
@@ -222,7 +222,7 @@ function Home() {
         </div>
 
         <iframe
-          className="w-full mx-auto px-5  min-h-screen-1/4"
+          className="w-full mx-auto p-5  min-h-screen-1/4 md:min-h-screen-1/2"
           src="https://maps.google.com/maps?q=Wola%20mielecka%20lakiernia&t=&z=13&ie=UTF8&iwloc=&output=embed"
         ></iframe>
         <div className="flex flex-col md:flex-row   md:justify-between p-5">
@@ -232,7 +232,7 @@ function Home() {
         </div>
       </section>
       <div
-        className="p-5 w-full mx-auto bg-cover"
+        className="p-5 md:p-8 w-full mx-auto bg-cover bg-right md:bg-cover md:bg-center"
         style={{
           backgroundImage: 'url(/footer_img1.jpeg)',
         }}
@@ -242,7 +242,7 @@ function Home() {
         <div className="footer-item ">USŁUGI</div>
         <div className="footer-item">POLITYKA PRYWATNOŚCI</div>
         <div className="footer-item">USŁUGI</div>
-        <p className="text-sm text-center pt-4 text-white">
+        <p className="text-sm text-center pt-4 text-white md:text-lg">
           Copyright @ 2019 MKT Serwis
         </p>
       </div>
