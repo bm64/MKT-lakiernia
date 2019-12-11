@@ -12,11 +12,25 @@ import { CarouselProvider, Slider, Slide, WithStore } from 'pure-react-carousel'
 import 'pure-react-carousel/dist/react-carousel.es.css'
 
 import useWindowSize from '../hooks/useWindowSize'
+import useMedia from '../hooks/useMedia'
 
 import withFadeIn from '../animations/withFadeIn'
 
 function Home() {
   const { width, height } = useWindowSize()
+
+  const carouselHeight = useMedia(
+    [
+      '(min-width: 1280px)',
+      '(min-width: 1024px)',
+      '(min-width: 768px)',
+      '(min-width: 640px)',
+    ],
+    [650, 1100, 1000, 750],
+    650
+  )
+
+  console.log(carouselHeight)
 
   return (
     <Layout>
@@ -71,8 +85,8 @@ function Home() {
       </div>
 
       <CarouselProvider
-        naturalSlideWidth={width || 400}
-        naturalSlideHeight={900}
+        naturalSlideWidth={Math.min(width, 1280) || 400}
+        naturalSlideHeight={carouselHeight}
         totalSlides={3}
         dragEnabled={true}
         infinite={true}
