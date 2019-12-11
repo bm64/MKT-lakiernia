@@ -49,7 +49,7 @@ body {
 }
 
 .section-img {
-  @apply mx-auto w-full p-5 rounded;
+  @apply mx-auto w-full object-contain p-5 rounded my-auto;
 }
 
 .funding-img {
@@ -57,16 +57,17 @@ body {
 }
 
 .footer-item {
-  @apply text-white border-b border-white  py-1;
-}
-
-.contact-icon {
-  @apply text-6xl text-orange mx-5;
+  @apply text-white border-b border-white py-1;
 }
 
 .contact-item {
-  @apply flex flex-row justify-start items-center;
+  @apply flex flex-row justify-center items-center;
 }
+
+.contact-icon {
+  @apply text-6xl text-orange mx-4;
+}
+
 .arrow-container {
   position: relative;
   width: 3rem;
@@ -137,7 +138,7 @@ body {
     @apply text-5xl;
   }
   .section-text {
-    @apply text-xl;
+    @apply text-2xl;
   }
   .section-img {
     @apply;

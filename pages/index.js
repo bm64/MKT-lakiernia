@@ -58,102 +58,120 @@ function Home() {
       </div>
       <Header />
 
-      <div className="bg-white border-t-4 border-b-4  border-orange  h-auto">
-        <h1 className="text-center text-black font-bold mt-2 md:text-4xl">
-          Autoryzowany serwis
-        </h1>
-        <img
-          className=" m-auto object-contain object-top px-8 py-6 md:p-8"
-          src={'/logos.png'}
-        />
+      <div className="bg-white border-t-4 border-b-4 border-orange">
+        <div className="container mx-auto">
+          <p className="text-center text-3xl sm:text-5xl text-black font-bold mt-2">
+            Autoryzowany serwis
+          </p>
+          <img
+            className=" m-auto object-contain object-top px-8 py-6 md:p-8 h-32 md:h-64"
+            src={'/logos.png'}
+          />
+        </div>
       </div>
-
-      {/*<div className="bg-orange py-6">
-        <h1 className="text-center font-medium">Usługi blacharskie</h1>
-  </div>*/}
 
       <CarouselProvider
         naturalSlideWidth={width || 400}
-        naturalSlideHeight={height ? height / 1.15 : 600}
+        naturalSlideHeight={900}
         totalSlides={3}
         dragEnabled={true}
         infinite={true}
+        className="container mx-auto py-4"
       >
-        <Slider className="w-full">
-          <Slide innerClassName="flex flex-col justify-center" index={0}>
-            <h1 className="section-title">Profesjonalne prace blacharskie</h1>
-            <div className="line bg-orange" />
-            <p className="section-text">
-              Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych
-              urz dze i technik naprawczych; rama do napraw blacharskich
-              CAR-O-LINER MARK 6 oraz innowacyjny komputerowy system pomiaru
-              nadwozia SPANESI TOUCH WHEELS.
-            </p>
+        <Slider className="w-full py-4">
+          <Slide
+            innerClassName="flex flex-col xl:flex-row justify-center"
+            index={0}
+          >
+            <div className="my-auto mx-auto max-w-3xl">
+              <h1 className="section-title">Profesjonalne prace blacharskie</h1>
+              <div className="line bg-orange" />
+              <p className="section-text">
+                Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych
+                urz dze i technik naprawczych; rama do napraw blacharskich
+                CAR-O-LINER MARK 6 oraz innowacyjny komputerowy system pomiaru
+                nadwozia SPANESI TOUCH WHEELS.
+              </p>
+            </div>
             <img src="/car_frame.jpg" className="section-img" />
           </Slide>
-          <Slide innerClassName="flex flex-col justify-center" index={1}>
-            <h1 className="section-title">Perfekcyjnie położony lakier</h1>
-            <div className="line bg-orange" />
-            <p className="section-text">
-              Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych
-              urz dze i technik naprawczych; rama do napraw blacharskich
-              CAR-O-LINER MARK 6 oraz innowacyjny komputerowy system pomiaru
-              nadwozia SPANESI TOUCH WHEELS.
-            </p>
-            <img src="/car_lacquer.jpeg" className="section-img" />
+          <Slide
+            innerClassName="flex flex-col xl:flex-row justify-center"
+            index={1}
+          >
+            <div className="my-auto mx-auto max-w-2xl">
+              <h1 className="section-title">Perfekcyjnie położony lakier</h1>
+              <div className="line bg-orange" />
+              <p className="section-text">
+                Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych
+                urz dze i technik naprawczych; rama do napraw blacharskich
+                CAR-O-LINER MARK 6 oraz innowacyjny komputerowy system pomiaru
+                nadwozia SPANESI TOUCH WHEELS.
+              </p>
+            </div>
+            <img src="/car_lacquer.jpeg" className="section-img max-w-3xl" />
           </Slide>
-          <Slide innerClassName="flex flex-col justify-center" index={2}>
-            <h1 className="section-title">
-              Naprawy PDR <br />
-              oraz
-              <br /> Auto Detailing
-            </h1>
-            <div className="line bg-orange" />
-            <p className="section-text">
-              Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych
-              urz dze i technik naprawczych; rama do napraw blacharskich
-              CAR-O-LINER MARK 6 oraz innowacyjny komputerowy system pomiaru
-              nadwozia SPANESI TOUCH WHEELS.
-            </p>
-            <img src="/car_detailing.jpeg" className="section-img" />
+          <Slide
+            innerClassName="flex flex-col xl:flex-row justify-center"
+            index={2}
+          >
+            <div className="my-auto mx-auto max-w-3xl">
+              <h1 className="section-title">Naprawy PDR oraz Auto Detailing</h1>
+              <div className="line bg-orange" />
+              <p className="section-text">
+                Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych
+                urz dze i technik naprawczych; rama do napraw blacharskich
+                CAR-O-LINER MARK 6 oraz innowacyjny komputerowy system pomiaru
+                nadwozia SPANESI TOUCH WHEELS.
+              </p>
+            </div>
+            <img src="/car_detailing.jpeg" className="section-img max-w-3xl" />
           </Slide>
         </Slider>
         <CarouselSteps />
       </CarouselProvider>
-      <section>
-        <h1 className="section-title">Wypożyczalnia samochodów</h1>
-        <div className="line bg-orange" />
-        <p className="section-text">
-          Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych urz
-          dze i technik naprawczych; rama do napraw blacharskich CAR-O-LINER
-          MARK 6 oraz innowacyjny komputerowy system pomiaru nadwozia SPANESI
-          TOUCH WHEELS.
-        </p>
-        <FadeImage src="/car_rental.jpg" className="section-img" />
+
+      <section className="container mx-auto flex flex-col xl:flex-row">
+        <div className="mx-auto max-w-2xl">
+          <h1 className="section-title">Wypożyczalnia samochodów</h1>
+          <div className="line bg-orange" />
+          <p className="section-text">
+            Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych urz
+            dze i technik naprawczych; rama do napraw blacharskich CAR-O-LINER
+            MARK 6 oraz innowacyjny komputerowy system pomiaru nadwozia SPANESI
+            TOUCH WHEELS.
+          </p>
+        </div>
+        <FadeImage src="/car_rental.jpg" containerClass="my-auto xl:w-1/2" />
       </section>
-      <section>
-        <h1 className="section-title">Powypadkowe badania techniczne</h1>
-        <div className="line bg-orange" />
-        <p className="section-text">
-          Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych urz
-          dze i technik naprawczych; rama do napraw blacharskich CAR-O-LINER
-          MARK 6 oraz innowacyjny komputerowy system pomiaru nadwozia SPANESI
-          TOUCH WHEELS.
-        </p>
-        <FadeImage src="/car_control.jpeg" className="section-img" />
+      <section className="container mx-auto flex flex-col xl:flex-row">
+        <div className="mx-auto max-w-2xl">
+          <h1 className="section-title">Powypadkowe badania techniczne</h1>
+          <div className="line bg-orange" />
+          <p className="section-text">
+            Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych urz
+            dze i technik naprawczych; rama do napraw blacharskich CAR-O-LINER
+            MARK 6 oraz innowacyjny komputerowy system pomiaru nadwozia SPANESI
+            TOUCH WHEELS.
+          </p>
+        </div>
+        <FadeImage src="/car_control.jpeg" containerClass="my-auto xl:w-1/2" />
       </section>
-      <section>
-        <h1 className="section-title text-center">O nas</h1>
-        <div className="line bg-orange" />
-        <p className="section-text">
-          Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych urz
-          dze i technik naprawczych; rama do napraw blacharskich CAR-O-LINER
-          MARK 6 oraz innowacyjny komputerowy system pomiaru nadwozia SPANESI
-          TOUCH WHEELS.
-        </p>
-        <FadeImage src="/about_us.jpg" className="section-img" />
+      <section className="container mx-auto flex flex-col xl:flex-row">
+        <div className="mx-auto max-w-2xl">
+          <h1 className="section-title text-center">O nas</h1>
+          <div className="line bg-orange" />
+          <p className="section-text">
+            Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych urz
+            dze i technik naprawczych; rama do napraw blacharskich CAR-O-LINER
+            MARK 6 oraz innowacyjny komputerowy system pomiaru nadwozia SPANESI
+            TOUCH WHEELS.
+          </p>
+        </div>
+        <FadeImage src="/about_us.jpg" containerClass="my-auto xl:w-1/2" />
       </section>
-      <section>
+
+      <section className="container mx-auto">
         <div className="mx-auto w-11/12 flex flex-col items-center justify-center border-2 border-orange px-2 py-8">
           <h2 className="font-bold text-center md:text-5xl">
             <span className="text-orange">Skontaktuj</span> się
@@ -177,7 +195,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="flex flex-row justify-left   p-5 flex-wrap md:justify-left md:py-8">
+        <div className="flex flex-row justify-left p-5 flex-wrap md:justify-left md:py-8">
           <div className="contact-item">
             <MdLocationOn className="contact-icon" />
             <div>
@@ -225,7 +243,7 @@ function Home() {
           className="w-full mx-auto p-5  min-h-screen-1/4 md:min-h-screen-1/2"
           src="https://maps.google.com/maps?q=Wola%20mielecka%20lakiernia&t=&z=13&ie=UTF8&iwloc=&output=embed"
         ></iframe>
-        <div className="flex flex-col md:flex-row   md:justify-between p-5">
+        <div className="flex flex-col md:flex-row md:justify-between p-5">
           <img src="/narodowa_strategia.png" className="funding-img" />
           <img src="/podkarpackie_logo.png" className="funding-img" />
           <img src="/ue_fundusz.png" className="funding-img" />
@@ -237,14 +255,16 @@ function Home() {
           backgroundImage: 'url(/footer_img1.jpeg)',
         }}
       >
-        <div className="footer-item">START</div>
-        <div className="footer-item">KONTAKT</div>
-        <div className="footer-item ">USŁUGI</div>
-        <div className="footer-item">POLITYKA PRYWATNOŚCI</div>
-        <div className="footer-item">USŁUGI</div>
-        <p className="text-sm text-center pt-4 text-white md:text-lg">
-          Copyright @ 2019 MKT Serwis
-        </p>
+        <div className="container mx-auto">
+          <div className="footer-item">START</div>
+          <div className="footer-item">KONTAKT</div>
+          <div className="footer-item ">USŁUGI</div>
+          <div className="footer-item">POLITYKA PRYWATNOŚCI</div>
+          <div className="footer-item">USŁUGI</div>
+          <p className="text-sm text-center pt-4 text-white md:text-lg">
+            Copyright @ 2019 MKT Serwis
+          </p>
+        </div>
       </div>
     </Layout>
   )

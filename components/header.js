@@ -9,7 +9,7 @@ function Header({}) {
 
   return (
     <div className="absolute top-0 w-full bg-transparent z-10">
-      <div className="max-w-screen-xl flex justify-between items-center bg-transparent z-20 h-16 mx-auto px-3 md:p-10 ">
+      <div className="container flex justify-between items-center bg-transparent z-20 h-16 mx-auto px-3 md:p-10 ">
         <h1 className="font-bold text-white md:text-5xl ">MKT SERWIS</h1>
         <div className="cursor-pointer" onClick={toggleMenu}>
           {!showMenu ? (
