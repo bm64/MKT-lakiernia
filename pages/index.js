@@ -39,7 +39,7 @@ function Home() {
           autoPlay={true}
           loop={true}
           playsInline={true}
-          className="absolute top-0 min-h-screen object-left-top object-cover z-0"
+          className="absolute top-0 min-h-screen object-left-top object-cover z-0 xl:object-fill"
         >
           <source src="/video1.mp4" type="video/mp4" />
         </video>

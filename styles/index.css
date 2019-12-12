@@ -74,6 +74,10 @@ body {
   height: 5rem;
 }
 
+.header-item {
+  @apply px-5 font-semibold;
+}
+
 .chevron {
   position: absolute;
   width: 3rem;
