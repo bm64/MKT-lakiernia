@@ -322,10 +322,9 @@ function Home() {
                 </span>
               </div>
             </div>
-            <div className="px-8 flex flex-row xl:flex-col justify-between xl:justify-center items-center">
+            <div className="px-8 flex flex-row xl:flex-col justify-between xl:justify-center items-stretch">
               <div className="py-4 flex flex-row items-center text-center">
-                <MdPhoneIphone className="contact-icon" />
-                <div>
+                <div className="flex-1 text-left">
                   <h2>Telefon</h2>
                   <p>
                     tel <a href="tel:175830596">17 583 05 96</a>
@@ -333,15 +332,16 @@ function Home() {
                     kom <a href="tel:602583583">602 583 583</a>
                   </p>
                 </div>
+                <MdPhoneIphone className="contact-icon" />
               </div>
               <div className="py-4 flex flex-row items-center text-center">
-                <MdMailOutline className="contact-icon" />
-                <div>
+                <div className="flex-1 text-left">
                   <h2>E-mail</h2>
                   <a href="mailto:lakiernia@mktoserwis.pl">
                     lakiernia@mktserwis.pl
                   </a>
                 </div>
+                <MdMailOutline className="contact-icon" />
               </div>
             </div>
           </div>
