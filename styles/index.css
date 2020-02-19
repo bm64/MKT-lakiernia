@@ -32,7 +32,7 @@ body {
 @tailwind components;
 
 #navbar {
-  max-width: 12rem;
+  max-width: 10rem;
 }
 
 .navbar-item {
@@ -61,7 +61,7 @@ body {
 }
 
 .funding-img {
-  @apply p-5 w-full object-contain;
+  @apply p-5 w-full object-cover;
 }
 
 .footer-item {
@@ -139,6 +139,10 @@ body {
 }
 
 @screen md {
+  #content {
+    margin-left: 10rem;
+  }
+
   section {
     @apply px-12;
   }
@@ -160,11 +164,21 @@ body {
   section {
     @apply py-8;
   }
+}
 
-  @screen xl {
-    #navbar {
-      max-width: 15rem;
-    }
+@screen xl {
+  #content {
+    margin-left: 12rem;
+  }
+
+  #navbar {
+    max-width: 12rem;
+  }
+}
+
+@media (min-width: calc(1400px + 18rem)) {
+  #content {
+    margin-left: 0;
   }
 }
 

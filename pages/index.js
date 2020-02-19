@@ -89,280 +89,299 @@ function Home() {
         <div className="py-4 flex flex-col items-center">
           <h3 className="flex-1 font-medium">Kontakt</h3>
           <div className="py-2 flex flex-row items-center">
-            <FaPhone className="text-3xl" />
-            <h4 className="px-4 text-orange">17 583 05 96</h4>
+            <FaPhone className="text-2xl" />
+            <h5 className="px-4 text-orange">17 583 05 96</h5>
           </div>
           <div className="py-2 flex flex-row items-center">
-            <MdPhoneIphone className="text-3xl" />
-            <h4 className="px-4 text-orange">602 583 583</h4>
+            <MdPhoneIphone className="text-2xl" />
+            <h5 className="px-4 text-orange">602 583 583</h5>
           </div>
         </div>
       </div>
 
-      <div className="min-h-screen">
-        <Header />
+      <div id="content">
+        <div className="min-h-screen">
+          <Header />
 
-        <video
-          autoPlay={true}
-          loop={true}
-          playsInline={true}
-          className="absolute top-0 min-h-screen object-left-top object-cover z-0 xl:w-full xl:h-screen"
-        >
-          <source src="/video1.mp4" type="video/mp4" />
-        </video>
-        <div className="flex flex-col justify-between relative">
-          <div className="hero-content flex flex-col justify-between h-screen py-16">
-            <div className="flex flex-col items-center py-8 z-10 md:py-20">
-              <h1 className="text-white text-center font-bold px-1 pt-10 md:text-4xl lg:hidden">
-                Centrum <br />
-                blacharsko-lakiernicze
-              </h1>
-              <div className="line bg-white" />
+          <video
+            autoPlay={true}
+            loop={true}
+            playsInline={true}
+            className="absolute top-0 min-h-screen object-left-top object-cover z-0 xl:w-full xl:h-screen"
+          >
+            <source src="/video1.mp4" type="video/mp4" />
+          </video>
+          <div className="flex flex-col justify-between relative">
+            <div className="hero-content flex flex-col justify-between h-screen py-16">
+              <div className="flex flex-col items-center py-8 z-10 md:py-20">
+                <h1 className="text-white text-center font-bold px-1 pt-10 md:text-4xl lg:hidden">
+                  Centrum <br />
+                  blacharsko-lakiernicze
+                </h1>
+                <div className="line bg-white" />
+              </div>
+              <div className="flex flex-col items-center z-10 lg:hidden">
+                <h2 className="text-white text-center font-bold py-5 text-black md:text-4xl">
+                  Miałeś szkodę?
+                </h2>
+                <div className="border-2 border-orange hover:bg-white-t px-12 py-3 z-10 cursor-pointer">
+                  <span className="text-orange text-2xl font-bold md:text-4xl">
+                    Zadzwoń
+                  </span>
+                </div>
+              </div>
+              <div class="arrow-container mx-auto lg:hidden">
+                <div class="chevron md:w-20 md:h-4"></div>
+                <div class="chevron md:w-20 md:h-4"></div>
+                <div class="chevron md:w-20 md:h-4"></div>
+              </div>
             </div>
-            <div className="flex flex-col items-center z-10 lg:hidden">
-              <h2 className="text-white text-center font-bold py-5 text-black md:text-4xl">
-                Miałeś szkodę?
-              </h2>
-              <div className="border-2 border-orange hover:bg-white-t px-12 py-3 z-10 cursor-pointer">
-                <span className="text-orange text-2xl font-bold md:text-4xl">
-                  Zadzwoń
+          </div>
+        </div>
+        <div ref={oneRef}>
+          <CarouselProvider
+            naturalSlideWidth={Math.min(width, 1280) || 400}
+            naturalSlideHeight={carouselHeight}
+            totalSlides={3}
+            dragEnabled={true}
+            infinite={true}
+            className="container mx-auto py-4"
+          >
+            <Slider className="w-full py-4">
+              <Slide
+                innerClassName="flex flex-col xl:flex-row justify-center"
+                index={0}
+              >
+                <div className="my-auto mx-auto max-w-3xl">
+                  <h1 className="section-title">
+                    Profesjonalne prace blacharskie
+                  </h1>
+                  <div className="line bg-orange" />
+                  <p className="section-text">
+                    Wykonujemy prace blacharskie z wykorzystaniem
+                    specjalistycznych urz dze i technik naprawczych; rama do
+                    napraw blacharskich CAR-O-LINER MARK 6 oraz innowacyjny
+                    komputerowy system pomiaru nadwozia SPANESI TOUCH WHEELS.
+                  </p>
+                </div>
+                <img
+                  src="/car_frame.jpg"
+                  className="section-img w-3/4 xl:max-w-3xl"
+                />
+              </Slide>
+              <Slide
+                innerClassName="flex flex-col xl:flex-row justify-center"
+                index={1}
+              >
+                <div className="my-auto mx-auto max-w-2xl">
+                  <h1 className="section-title">
+                    Perfekcyjnie położony lakier
+                  </h1>
+                  <div className="line bg-orange" />
+                  <p className="section-text">
+                    Wykonujemy prace blacharskie z wykorzystaniem
+                    specjalistycznych urz dze i technik naprawczych; rama do
+                    napraw blacharskich CAR-O-LINER MARK 6 oraz innowacyjny
+                    komputerowy system pomiaru nadwozia SPANESI TOUCH WHEELS.
+                  </p>
+                </div>
+                <img
+                  src="/car_lacquer.jpeg"
+                  className="section-img w-3/4 max-w-3xl"
+                />
+              </Slide>
+              <Slide
+                innerClassName="flex flex-col xl:flex-row justify-center"
+                index={2}
+              >
+                <div className="my-auto mx-auto max-w-3xl">
+                  <h1 className="section-title">
+                    Naprawy PDR oraz Auto Detailing
+                  </h1>
+                  <div className="line bg-orange" />
+                  <p className="section-text">
+                    Wykonujemy prace blacharskie z wykorzystaniem
+                    specjalistycznych urz dze i technik naprawczych; rama do
+                    napraw blacharskich CAR-O-LINER MARK 6 oraz innowacyjny
+                    komputerowy system pomiaru nadwozia SPANESI TOUCH WHEELS.
+                  </p>
+                </div>
+                <img
+                  src="/car_detailing.jpeg"
+                  className="section-img w-3/4 max-w-3xl"
+                />
+              </Slide>
+            </Slider>
+            <CarouselSteps />
+          </CarouselProvider>
+        </div>
+        <section className="container mx-auto flex flex-col xl:flex-row">
+          <div className="mx-auto max-w-2xl">
+            <h1 className="section-title">Wypożyczalnia samochodów</h1>
+            <div className="line bg-orange" />
+            <p className="section-text">
+              Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych
+              urz dze i technik naprawczych; rama do napraw blacharskich
+              CAR-O-LINER MARK 6 oraz innowacyjny komputerowy system pomiaru
+              nadwozia SPANESI TOUCH WHEELS.
+            </p>
+          </div>
+          <FadeImage
+            src="/car_rental.jpg"
+            containerClass="m-auto w-3/4 xl:w-1/2"
+          />
+        </section>
+        <section className="container mx-auto flex flex-col xl:flex-row">
+          <div className="mx-auto max-w-2xl">
+            <h1 className="section-title">Powypadkowe badania techniczne</h1>
+            <div className="line bg-orange" />
+            <p className="section-text">
+              Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych
+              urz dze i technik naprawczych; rama do napraw blacharskich
+              CAR-O-LINER MARK 6 oraz innowacyjny komputerowy system pomiaru
+              nadwozia SPANESI TOUCH WHEELS.
+            </p>
+          </div>
+          <FadeImage
+            src="/car_control.jpeg"
+            containerClass="m-auto w-3/4 xl:w-1/2"
+          />
+        </section>
+        <section className="container mx-auto flex flex-col xl:flex-row">
+          <div className="mx-auto max-w-2xl">
+            <h1 className="section-title text-center">O nas</h1>
+            <div className="line bg-orange" />
+            <p className="section-text">
+              Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych
+              urz dze i technik naprawczych; rama do napraw blacharskich
+              CAR-O-LINER MARK 6 oraz innowacyjny komputerowy system pomiaru
+              nadwozia SPANESI TOUCH WHEELS.
+            </p>
+          </div>
+          <FadeImage
+            src="/about_us.jpg"
+            containerClass="m-auto w-3/4 xl:w-1/2"
+          />
+        </section>
+        <section ref={threeRef} className="container mx-auto flex flex-col">
+          <h1 className="section-title py-4 text-center">
+            Poznaj naszych wariatów
+          </h1>
+          <div className="flex flex-row items-center border-orange">
+            <div className="flex-1">
+              <h1>Bartłomiej Kula</h1>
+              <h4>Kierownik Centrum Blacharsko-Lakierniczego</h4>
+            </div>
+            <FadeImage
+              src="/bartek.jpg"
+              containerClass="border-orange bg-orange shadow-xl"
+            />
+          </div>
+          <div className="flex flex-row items-center border-b border-t border-orange">
+            <FadeImage
+              src="/ewa.jpg"
+              containerClass="border-orange bg-orange shadow-xl"
+            />
+            <div className="flex-1 text-right">
+              <h1>Ewa Janusz</h1>
+              <h4>Asystent Centrum Blacharsko-Lakierniczego</h4>
+            </div>
+          </div>
+          <div className="flex flex-row items-center">
+            <div className="flex-1">
+              <h1>Maciej M</h1>
+              <h4>Specjalista Centrum Blacharsko-Lakierniczego</h4>
+            </div>
+            <FadeImage
+              src="/maciej.jpg"
+              containerClass="border-orange bg-orange shadow-xl"
+            />
+          </div>
+        </section>
+        <section ref={fourRef} className="container mx-auto">
+          <h2 className="font-bold text-center md:text-5xl">Skontaktuj się</h2>
+          <div className="line bg-orange" />
+          <div className="flex flex-col xl:flex-row justify-around">
+            <div
+              className="px-8 py-8 flex flex-col items-stretch justify-center"
+              style={{ flexBasis: 450 }}
+            >
+              <input
+                className="block px-1 py-2 px-2 text-orange font-bold bg-black border-b border-orange"
+                placeholder="Adres e-mail"
+                type="text"
+              />
+              <textarea
+                className="mt-4 p-2 text-orange font-bold bg-black border-b border-orange"
+                placeholder="Tutaj wpisz treść wiadomości"
+                rows={8}
+              />
+              <div className="mt-5 py-4 bg-orange text-center border border-orange-t hover:bg-orange-t cursor-pointer">
+                <span className="text-xl text-black font-medium ">
+                  Wyślij wiadomość
                 </span>
               </div>
             </div>
-            <div class="arrow-container mx-auto lg:hidden">
-              <div class="chevron md:w-20 md:h-4"></div>
-              <div class="chevron md:w-20 md:h-4"></div>
-              <div class="chevron md:w-20 md:h-4"></div>
+            <div className="px-8 flex flex-row xl:flex-col justify-between xl:justify-center items-center">
+              <div className="py-4 flex flex-row items-center text-center">
+                <MdPhoneIphone className="contact-icon" />
+                <div>
+                  <h2>Telefon</h2>
+                  <p>
+                    tel <a href="tel:175830596">17 583 05 96</a>
+                    <br />
+                    kom <a href="tel:602583583">602 583 583</a>
+                  </p>
+                </div>
+              </div>
+              <div className="py-4 flex flex-row items-center text-center">
+                <MdMailOutline className="contact-icon" />
+                <div>
+                  <h2>E-mail</h2>
+                  <a href="mailto:lakiernia@mktoserwis.pl">
+                    lakiernia@mktserwis.pl
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div ref={oneRef}>
-        <CarouselProvider
-          naturalSlideWidth={Math.min(width, 1280) || 400}
-          naturalSlideHeight={carouselHeight}
-          totalSlides={3}
-          dragEnabled={true}
-          infinite={true}
-          className="container mx-auto py-4"
+        </section>
+        <section className="container mx-auto">
+          <div className="flex flex-row items-center">
+            <h3 className="flex-1 text-left md:text-4xl font-medium">
+              Tutaj nas znajdziesz
+            </h3>
+            <h3>
+              <span className="text-orange">Wola Mielecka 632</span> - 39-300
+              Mielec
+            </h3>
+          </div>
+          <iframe
+            className="w-full mx-auto min-h-screen-1/4 md:min-h-screen-1/2"
+            src="https://maps.google.com/maps?q=Wola%20mielecka%20lakiernia&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          ></iframe>
+          <div className="flex flex-col md:flex-row md:justify-between p-5">
+            <img src="/narodowa_strategia.png" className="funding-img" />
+            <img src="/podkarpackie_logo.png" className="funding-img" />
+            <img src="/ue_fundusz.png" className="funding-img" />
+          </div>
+        </section>
+        <div
+          className="p-5 md:p-8 w-full mx-auto bg-cover bg-right md:bg-cover md:bg-center"
+          style={{
+            backgroundImage: 'url(/footer_img1.jpeg)',
+          }}
         >
-          <Slider className="w-full py-4">
-            <Slide
-              innerClassName="flex flex-col xl:flex-row justify-center"
-              index={0}
-            >
-              <div className="my-auto mx-auto max-w-3xl">
-                <h1 className="section-title">
-                  Profesjonalne prace blacharskie
-                </h1>
-                <div className="line bg-orange" />
-                <p className="section-text">
-                  Wykonujemy prace blacharskie z wykorzystaniem
-                  specjalistycznych urz dze i technik naprawczych; rama do
-                  napraw blacharskich CAR-O-LINER MARK 6 oraz innowacyjny
-                  komputerowy system pomiaru nadwozia SPANESI TOUCH WHEELS.
-                </p>
-              </div>
-              <img src="/car_frame.jpg" className="section-img" />
-            </Slide>
-            <Slide
-              innerClassName="flex flex-col xl:flex-row justify-center"
-              index={1}
-            >
-              <div className="my-auto mx-auto max-w-2xl">
-                <h1 className="section-title">Perfekcyjnie położony lakier</h1>
-                <div className="line bg-orange" />
-                <p className="section-text">
-                  Wykonujemy prace blacharskie z wykorzystaniem
-                  specjalistycznych urz dze i technik naprawczych; rama do
-                  napraw blacharskich CAR-O-LINER MARK 6 oraz innowacyjny
-                  komputerowy system pomiaru nadwozia SPANESI TOUCH WHEELS.
-                </p>
-              </div>
-              <img src="/car_lacquer.jpeg" className="section-img max-w-3xl" />
-            </Slide>
-            <Slide
-              innerClassName="flex flex-col xl:flex-row justify-center"
-              index={2}
-            >
-              <div className="my-auto mx-auto max-w-3xl">
-                <h1 className="section-title">
-                  Naprawy PDR oraz Auto Detailing
-                </h1>
-                <div className="line bg-orange" />
-                <p className="section-text">
-                  Wykonujemy prace blacharskie z wykorzystaniem
-                  specjalistycznych urz dze i technik naprawczych; rama do
-                  napraw blacharskich CAR-O-LINER MARK 6 oraz innowacyjny
-                  komputerowy system pomiaru nadwozia SPANESI TOUCH WHEELS.
-                </p>
-              </div>
-              <img
-                src="/car_detailing.jpeg"
-                className="section-img max-w-3xl"
-              />
-            </Slide>
-          </Slider>
-          <CarouselSteps />
-        </CarouselProvider>
-      </div>
-      <section className="container mx-auto flex flex-col xl:flex-row">
-        <div className="mx-auto max-w-2xl">
-          <h1 className="section-title">Wypożyczalnia samochodów</h1>
-          <div className="line bg-orange" />
-          <p className="section-text">
-            Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych urz
-            dze i technik naprawczych; rama do napraw blacharskich CAR-O-LINER
-            MARK 6 oraz innowacyjny komputerowy system pomiaru nadwozia SPANESI
-            TOUCH WHEELS.
-          </p>
-        </div>
-        <FadeImage src="/car_rental.jpg" containerClass="my-auto xl:w-1/2" />
-      </section>
-      <section className="container mx-auto flex flex-col xl:flex-row">
-        <div className="mx-auto max-w-2xl">
-          <h1 className="section-title">Powypadkowe badania techniczne</h1>
-          <div className="line bg-orange" />
-          <p className="section-text">
-            Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych urz
-            dze i technik naprawczych; rama do napraw blacharskich CAR-O-LINER
-            MARK 6 oraz innowacyjny komputerowy system pomiaru nadwozia SPANESI
-            TOUCH WHEELS.
-          </p>
-        </div>
-        <FadeImage src="/car_control.jpeg" containerClass="my-auto xl:w-1/2" />
-      </section>
-      <section className="container mx-auto flex flex-col xl:flex-row">
-        <div className="mx-auto max-w-2xl">
-          <h1 className="section-title text-center">O nas</h1>
-          <div className="line bg-orange" />
-          <p className="section-text">
-            Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych urz
-            dze i technik naprawczych; rama do napraw blacharskich CAR-O-LINER
-            MARK 6 oraz innowacyjny komputerowy system pomiaru nadwozia SPANESI
-            TOUCH WHEELS.
-          </p>
-        </div>
-        <FadeImage src="/about_us.jpg" containerClass="my-auto xl:w-1/2" />
-      </section>
-      <section ref={threeRef} className="container mx-auto flex flex-col">
-        <h1 className="section-title py-4 text-center">
-          Poznaj naszych wariatów
-        </h1>
-        <div className="flex flex-row items-center border-orange">
-          <div className="flex-1">
-            <h1>Bartłomiej Kula</h1>
-            <h4>Kierownik Centrum Blacharsko-Lakierniczego</h4>
+          <div className="container mx-auto">
+            <div className="footer-item">START</div>
+            <div className="footer-item">KONTAKT</div>
+            <div className="footer-item ">USŁUGI</div>
+            <div className="footer-item">POLITYKA PRYWATNOŚCI</div>
+            <div className="footer-item">USŁUGI</div>
+            <p className="text-sm text-center pt-4 text-white md:text-lg">
+              Copyright @ 2019 MKT Serwis
+            </p>
           </div>
-          <FadeImage
-            src="/bartek.jpg"
-            containerClass="border-orange bg-orange shadow-xl"
-          />
-        </div>
-        <div className="flex flex-row items-center border-b border-t border-orange">
-          <FadeImage
-            src="/ewa.jpg"
-            containerClass="border-orange bg-orange shadow-xl"
-          />
-          <div className="flex-1 text-right">
-            <h1>Ewa Janusz</h1>
-            <h4>Asystent Centrum Blacharsko-Lakierniczego</h4>
-          </div>
-        </div>
-        <div className="flex flex-row items-center">
-          <div className="flex-1">
-            <h1>Maciej M</h1>
-            <h4>Specjalista Centrum Blacharsko-Lakierniczego</h4>
-          </div>
-          <FadeImage
-            src="/maciej.jpg"
-            containerClass="border-orange bg-orange shadow-xl"
-          />
-        </div>
-      </section>
-      <section ref={fourRef} className="container mx-auto">
-        <h2 className="font-bold text-center md:text-5xl">Skontaktuj się</h2>
-        <div className="line bg-orange" />
-        <div className="flex flex-col xl:flex-row justify-around">
-          <div
-            className="px-8 py-8 flex flex-col items-stretch justify-center"
-            style={{ flexBasis: 450 }}
-          >
-            <input
-              className="block px-1 py-2 px-2 text-orange font-bold bg-black border-b border-orange"
-              placeholder="Adres e-mail"
-              type="text"
-            />
-            <textarea
-              className="mt-4 p-2 text-orange font-bold bg-black border-b border-orange"
-              placeholder="Tutaj wpisz treść wiadomości"
-              rows={8}
-            />
-            <div className="mt-5 py-4 bg-orange text-center border border-orange-t hover:bg-orange-t cursor-pointer">
-              <span className="text-xl text-black font-medium ">
-                Wyślij wiadomość
-              </span>
-            </div>
-          </div>
-          <div className="px-8 flex flex-row xl:flex-col justify-between xl:justify-center items-center">
-            <div className="py-4 flex flex-row items-center text-center">
-              <MdPhoneIphone className="contact-icon" />
-              <div>
-                <h2>Telefon</h2>
-                <p>
-                  tel <a href="tel:175830596">17 583 05 96</a>
-                  <br />
-                  kom <a href="tel:602583583">602 583 583</a>
-                </p>
-              </div>
-            </div>
-            <div className="py-4 flex flex-row items-center text-center">
-              <MdMailOutline className="contact-icon" />
-              <div>
-                <h2>E-mail</h2>
-                <a href="mailto:lakiernia@mktoserwis.pl">
-                  lakiernia@mktserwis.pl
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div className="flex flex-row items-center">
-          <p className="flex-1 text-left text-4xl font-medium">
-            Tutaj nas znajdziesz
-          </p>
-          <h2>
-            <span className="text-orange">Wola Mielecka 632</span> - 39-300
-            Mielec
-          </h2>
-        </div>
-        <iframe
-          className="w-full mx-auto min-h-screen-1/4 md:min-h-screen-1/2"
-          src="https://maps.google.com/maps?q=Wola%20mielecka%20lakiernia&t=&z=13&ie=UTF8&iwloc=&output=embed"
-        ></iframe>
-        <div className="flex flex-col md:flex-row md:justify-between p-5">
-          <img src="/narodowa_strategia.png" className="funding-img" />
-          <img src="/podkarpackie_logo.png" className="funding-img" />
-          <img src="/ue_fundusz.png" className="funding-img" />
-        </div>
-      </section>
-      <div
-        className="p-5 md:p-8 w-full mx-auto bg-cover bg-right md:bg-cover md:bg-center"
-        style={{
-          backgroundImage: 'url(/footer_img1.jpeg)',
-        }}
-      >
-        <div className="container mx-auto">
-          <div className="footer-item">START</div>
-          <div className="footer-item">KONTAKT</div>
-          <div className="footer-item ">USŁUGI</div>
-          <div className="footer-item">POLITYKA PRYWATNOŚCI</div>
-          <div className="footer-item">USŁUGI</div>
-          <p className="text-sm text-center pt-4 text-white md:text-lg">
-            Copyright @ 2019 MKT Serwis
-          </p>
         </div>
       </div>
     </Layout>
