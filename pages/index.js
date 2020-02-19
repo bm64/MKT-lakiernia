@@ -6,8 +6,14 @@ import {
   MdLocationOn,
   MdAccessTime,
   MdMailOutline,
-} from 'react-icons/md'
 
+} from 'react-icons/md'
+import {
+  FaBars,
+  FaCarCrash,
+  FaWarehouse,
+  FaUserFriends
+} from 'react-icons/fa'
 import { CarouselProvider, Slider, Slide, WithStore } from 'pure-react-carousel'
 import 'pure-react-carousel/dist/react-carousel.es.css'
 
@@ -34,25 +40,35 @@ function Home() {
 
   return (
     <Layout>
+      <div className="md:fixed h-screen bg-black w-56 z-10 border-r border-white">
+        <div className="w-full min-h-screen-1/5 hover:bg-gray flex flex-col items-center justify-center p-2"><FaBars className="text-4xl" /></div>
+        <div className="w-full min-h-screen-1/5 hover:bg-gray flex flex-col items-center justify-around p-2"><FaWarehouse className="text-4xl" /><h3 className="text-center font-medium">Centrum blacharsko lakiernicze</h3></div>
+        <div className="w-full min-h-screen-1/5 hover:bg-gray flex flex-col items-center justify-center p-2"><FaCarCrash className="text-4xl" /><h3 className="text-center font-medium">Likwidacja szkody</h3></div>
+        <div className="w-full min-h-screen-1/5 hover:bg-gray flex flex-col items-center justify-center p-2"><FaUserFriends className="text-4xl" /><h3 className="text-center font-medium">O nas</h3></div>
+        <div className="w-full min-h-screen-1/5 hover:bg-gray flex flex-col items-center justify-center p-2"><FaBars className="text-4xl" /><h3 className="text-center font-medium">KONTAKT</h3></div>
+
+      </div>
       <div className="h-screen">
+        <Header />
+
         <video
           autoPlay={true}
           loop={true}
           playsInline={true}
-          className="absolute top-0 min-h-screen object-left-top object-cover z-0 xl:object-fill"
+          className="absolute top-0 min-h-screen object-left-top object-cover z-0 xl:w-full xl:h-screen"
         >
           <source src="/video1.mp4" type="video/mp4" />
         </video>
-        <div className="flex flex-col justify-between">
-          <div className="hero-content">
+        <div className="flex flex-col justify-between relative">
+          <div className="hero-content flex flex-col justify-between h-screen py-16">
             <div className="flex flex-col items-center py-8 z-10 md:py-20">
-              <h1 className="text-white text-center font-bold px-1 pt-10 md:text-4xl">
+              <h1 className="text-white text-center font-bold px-1 pt-10 md:text-4xl lg:hidden">
                 Centrum <br />
                 blacharsko-lakiernicze
               </h1>
               <div className="line bg-white" />
             </div>
-            <div className="flex flex-col items-center z-10">
+            <div className="flex flex-col items-center z-10 lg:hidden">
               <h2 className="text-white text-center font-bold py-5 text-black md:text-4xl">
                 Miałeś szkodę?
               </h2>
@@ -62,27 +78,17 @@ function Home() {
                 </span>
               </div>
             </div>
-          </div>
-          <div class="arrow-container mx-auto ">
-            <div class="chevron md:w-20 md:h-4"></div>
-            <div class="chevron md:w-20 md:h-4"></div>
-            <div class="chevron md:w-20 md:h-4"></div>
-          </div>
-        </div>
-      </div>
-      <Header />
+            <div class="arrow-container mx-auto lg:hidden">
+              <div class="chevron md:w-20 md:h-4"></div>
+              <div class="chevron md:w-20 md:h-4"></div>
+              <div class="chevron md:w-20 md:h-4"></div>
+            </div>
 
-      <div className="bg-white border-t-4 border-b-4 border-orange">
-        <div className="container mx-auto">
-          <p className="text-center text-3xl sm:text-5xl text-black font-bold mt-2">
-            Autoryzowany serwis
-          </p>
-          <img
-            className=" m-auto object-contain object-top px-8 py-6 md:p-8 h-32 md:h-64"
-            src={'/logos.png'}
-          />
+          </div>
         </div>
       </div>
+
+
 
       <CarouselProvider
         naturalSlideWidth={Math.min(width, 1280) || 400}
@@ -298,7 +304,7 @@ const CarouselSteps = WithStore(
             key={i.toString()}
             className={`h-1 w-12 mx-1 first:ml-0 last:mr-0 rounded-lg ${
               i === currentSlide ? 'bg-orange' : 'bg-gray'
-            }`}
+              }`}
           />
         ))}
       </div>
