@@ -24,23 +24,20 @@ html,
 body {
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden !important;
-  background-color:#1B1B1E;
+  background-color: #1b1b1e;
   @apply text-white;
   position: relative;
 }
 
 @tailwind components;
 
-.navbar-item{
-@apply w-full ;
+.navbar-item {
+  @apply w-full;
 }
-
-
 
 .hero-content {
   @apply flex flex-col justify-start items-center mt-16;
   //height: calc(100vh - 16rem);
-  
 }
 
 .line {
@@ -65,10 +62,6 @@ body {
 
 .footer-item {
   @apply text-white border-b border-white py-1;
-}
-
-.contact-item {
-  @apply flex flex-row justify-center items-center;
 }
 
 .contact-icon {
@@ -154,13 +147,6 @@ body {
   .section-img {
     @apply;
   }
-  .contact-item > * > p {
-    @apply text-lg;
-  }
-  .contact-item {
-    @apply w-1/2 py-8;
-  }
-
   .funding-img {
     @apply py-5 w-4/12;
   }

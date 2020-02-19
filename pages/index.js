@@ -6,13 +6,13 @@ import {
   MdLocationOn,
   MdAccessTime,
   MdMailOutline,
-
 } from 'react-icons/md'
 import {
   FaBars,
   FaCarCrash,
   FaWarehouse,
-  FaUserFriends
+  FaUserFriends,
+  FaPhone,
 } from 'react-icons/fa'
 import { CarouselProvider, Slider, Slide, WithStore } from 'pure-react-carousel'
 import 'pure-react-carousel/dist/react-carousel.es.css'
@@ -36,19 +36,32 @@ function Home() {
     650
   )
 
-  console.log(carouselHeight)
-
   return (
     <Layout>
       <div className="md:fixed h-screen bg-black w-56 z-10 border-r border-white">
-        <div className="w-full min-h-screen-1/5 hover:bg-gray flex flex-col items-center justify-center p-2"><FaBars className="text-4xl" /></div>
-        <div className="w-full min-h-screen-1/5 hover:bg-gray flex flex-col items-center justify-around p-2"><FaWarehouse className="text-4xl" /><h3 className="text-center font-medium">Centrum blacharsko lakiernicze</h3></div>
-        <div className="w-full min-h-screen-1/5 hover:bg-gray flex flex-col items-center justify-center p-2"><FaCarCrash className="text-4xl" /><h3 className="text-center font-medium">Likwidacja szkody</h3></div>
-        <div className="w-full min-h-screen-1/5 hover:bg-gray flex flex-col items-center justify-center p-2"><FaUserFriends className="text-4xl" /><h3 className="text-center font-medium">O nas</h3></div>
-        <div className="w-full min-h-screen-1/5 hover:bg-gray flex flex-col items-center justify-center p-2"><FaBars className="text-4xl" /><h3 className="text-center font-medium">KONTAKT</h3></div>
-
+        <div className="w-full min-h-screen-1/5 hover:bg-gray flex flex-col items-center justify-center p-2">
+          <FaBars className="text-4xl" />
+        </div>
+        <div className="w-full min-h-screen-1/5 hover:bg-gray flex flex-col items-center justify-around p-2">
+          <FaWarehouse className="text-4xl" />
+          <h3 className="text-center font-medium">
+            Centrum blacharsko lakiernicze
+          </h3>
+        </div>
+        <div className="w-full min-h-screen-1/5 hover:bg-gray flex flex-col items-center justify-center p-2">
+          <FaCarCrash className="text-4xl" />
+          <h3 className="text-center font-medium">Likwidacja szkody</h3>
+        </div>
+        <div className="w-full min-h-screen-1/5 hover:bg-gray flex flex-col items-center justify-center p-2">
+          <FaUserFriends className="text-4xl" />
+          <h3 className="text-center font-medium">O nas</h3>
+        </div>
+        <div className="w-full min-h-screen-1/5 hover:bg-gray flex flex-col items-center justify-center p-2">
+          <FaBars className="text-4xl" />
+          <h3 className="text-center font-medium">KONTAKT</h3>
+        </div>
       </div>
-      <div className="h-screen">
+      <div className="min-h-screen">
         <Header />
 
         <video
@@ -83,13 +96,9 @@ function Home() {
               <div class="chevron md:w-20 md:h-4"></div>
               <div class="chevron md:w-20 md:h-4"></div>
             </div>
-
           </div>
         </div>
       </div>
-
-
-
       <CarouselProvider
         naturalSlideWidth={Math.min(width, 1280) || 400}
         naturalSlideHeight={carouselHeight}
@@ -150,7 +159,6 @@ function Home() {
         </Slider>
         <CarouselSteps />
       </CarouselProvider>
-
       <section className="container mx-auto flex flex-col xl:flex-row">
         <div className="mx-auto max-w-2xl">
           <h1 className="section-title">Wypożyczalnia samochodów</h1>
@@ -190,77 +198,101 @@ function Home() {
         </div>
         <FadeImage src="/about_us.jpg" containerClass="my-auto xl:w-1/2" />
       </section>
-
+      <section className="container mx-auto flex flex-col">
+        <h1 className="section-title py-4 text-center">
+          Poznaj naszych wariatów
+        </h1>
+        <div className="flex flex-row items-center border-orange">
+          <div className="flex-1">
+            <h1>Bartłomiej Kula</h1>
+            <h4>Kierownik Centrum Blacharsko-Lakierniczego</h4>
+          </div>
+          <FadeImage
+            src="/bartek.jpg"
+            containerClass="border-orange bg-orange shadow-xl"
+          />
+        </div>
+        <div className="flex flex-row items-center border-b border-t border-orange">
+          <FadeImage
+            src="/ewa.jpg"
+            containerClass="border-orange bg-orange shadow-xl"
+          />
+          <div className="flex-1 text-right">
+            <h1>Ewa Janusz</h1>
+            <h4>Asystent Centrum Blacharsko-Lakierniczego</h4>
+          </div>
+        </div>
+        <div className="flex flex-row items-center">
+          <div className="flex-1">
+            <h1>Maciej M</h1>
+            <h4>Specjalista Centrum Blacharsko-Lakierniczego</h4>
+          </div>
+          <FadeImage
+            src="/maciej.jpg"
+            containerClass="border-orange bg-orange shadow-xl"
+          />
+        </div>
+      </section>
       <section className="container mx-auto">
-        <div className="mx-auto w-11/12 flex flex-col items-center justify-center border-2 border-orange px-2 py-8">
-          <h2 className="font-bold text-center md:text-5xl">
-            <span className="text-orange">Skontaktuj</span> się
+        <h2 className="font-bold text-center md:text-5xl">Skontaktuj się</h2>
+        <div className="line bg-orange" />
+        <div className="flex flex-col xl:flex-row justify-around">
+          <div
+            className="px-8 py-8 flex flex-col items-stretch justify-center"
+            style={{ flexBasis: 450 }}
+          >
+            <input
+              className="block px-1 py-2 px-2 text-orange font-bold bg-black border-b border-orange"
+              placeholder="Adres e-mail"
+              type="text"
+            />
+            <textarea
+              className="mt-4 p-2 text-orange font-bold bg-black border-b border-orange"
+              placeholder="Tutaj wpisz treść wiadomości"
+              rows={8}
+            />
+            <div className="mt-5 py-4 bg-orange text-center border border-orange-t hover:bg-orange-t cursor-pointer">
+              <span className="text-xl text-black font-medium ">
+                Wyślij wiadomość
+              </span>
+            </div>
+          </div>
+          <div className="px-8 flex flex-col justify-center items-center">
+            <div className="py-4 flex flex-col flex-row items-center text-center">
+              <MdPhoneIphone className="contact-icon" />
+              <div>
+                <h2>Telefon</h2>
+                <p>
+                  tel <a href="tel:175830596">17 583 05 96</a>
+                  <br />
+                  kom <a href="tel:602583583">602 583 583</a>
+                </p>
+              </div>
+            </div>
+            <div className="py-4 flex flex-col flex-row items-center text-center">
+              <MdMailOutline className="contact-icon" />
+              <div>
+                <h2>E-mail</h2>
+                <a href="mailto:lakiernia@mktoserwis.pl">
+                  lakiernia@mktserwis.pl
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="flex flex-row items-center">
+          <p className="flex-1 text-left text-4xl font-medium">
+            Tutaj nas znajdziesz
+          </p>
+          <h2>
+            <span className="text-orange">Wola Mielecka 632</span> - 39-300
+            Mielec
           </h2>
-          <div className="line bg-orange" />
-          <h3 className="font-medium  md:text-3xl md:mb-5">Adres e-mail</h3>
-          <input
-            className="w-5/6 px-1 py-2 text-black "
-            placeholder={'jan.kowalski@domena.pl'}
-            type="text"
-          />
-          <h3 className="font-medium  md:text-3xl md:m-5">Treść wiadomości</h3>
-          <textarea
-            className="w-5/6 text-black p-2"
-            style={{ minHeight: '8rem' }}
-          />
-          <div className="bg-orange hover:bg-orange-t border border-orange-t cursor-pointer py-4  w-3/4 text-center my-5">
-            <span className="text-xl text-black font-medium ">
-              Wyślij wiadomość
-            </span>
-          </div>
         </div>
-
-        <div className="flex flex-row justify-left p-5 flex-wrap md:justify-left md:py-8">
-          <div className="contact-item">
-            <MdLocationOn className="contact-icon" />
-            <div>
-              <h2>Adres:</h2>
-              <p>
-                Wola Mielecka 632
-                <br />
-                39-300 Mielec
-              </p>
-            </div>
-          </div>
-          <div className="contact-item">
-            <MdPhoneIphone className="contact-icon" />
-            <div>
-              <h2>Telefon:</h2>
-
-              <p>
-                tel 17 583 05 96
-                <br />
-                kom 602 583 583
-              </p>
-            </div>
-          </div>
-          <div className="contact-item">
-            <MdAccessTime className="contact-icon" />
-            <div>
-              <h2>Godziny otwarcia</h2>
-              <p>
-                pn.-pt. 7:00 - 15:00
-                <br />
-                sob. 7:00 - 14:00
-              </p>
-            </div>
-          </div>
-          <div className="contact-item">
-            <MdMailOutline className="contact-icon" />
-            <div>
-              <h2>E-mail</h2>
-              <p>lakiernia@mktserwis.pl</p>
-            </div>
-          </div>
-        </div>
-
         <iframe
-          className="w-full mx-auto p-5  min-h-screen-1/4 md:min-h-screen-1/2"
+          className="w-full mx-auto min-h-screen-1/4 md:min-h-screen-1/2"
           src="https://maps.google.com/maps?q=Wola%20mielecka%20lakiernia&t=&z=13&ie=UTF8&iwloc=&output=embed"
         ></iframe>
         <div className="flex flex-col md:flex-row md:justify-between p-5">
@@ -304,7 +336,7 @@ const CarouselSteps = WithStore(
             key={i.toString()}
             className={`h-1 w-12 mx-1 first:ml-0 last:mr-0 rounded-lg ${
               i === currentSlide ? 'bg-orange' : 'bg-gray'
-              }`}
+            }`}
           />
         ))}
       </div>
