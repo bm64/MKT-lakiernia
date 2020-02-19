@@ -31,6 +31,10 @@ body {
 
 @tailwind components;
 
+#navbar {
+  max-width: 12rem;
+}
+
 .navbar-item {
   @apply w-full;
 }
@@ -155,6 +159,12 @@ body {
   }
   section {
     @apply py-8;
+  }
+
+  @screen xl {
+    #navbar {
+      max-width: 15rem;
+    }
   }
 }
 

@@ -19,11 +19,22 @@ import 'pure-react-carousel/dist/react-carousel.es.css'
 
 import useWindowSize from '../hooks/useWindowSize'
 import useMedia from '../hooks/useMedia'
+import useOnEnterLeave from '../hooks/useOnEnterLeave'
 
 import withFadeIn from '../animations/withFadeIn'
 
 function Home() {
   const { width, height } = useWindowSize()
+
+  const oneRef = useRef()
+  const twoRef = useRef()
+  const threeRef = useRef()
+  const fourRef = useRef()
+
+  const oneVisible = useOnEnterLeave(oneRef)
+  const twoVisible = useOnEnterLeave(twoRef)
+  const threeVisible = useOnEnterLeave(threeRef)
+  const fourVisible = useOnEnterLeave(fourRef)
 
   const carouselHeight = useMedia(
     [
@@ -38,29 +49,56 @@ function Home() {
 
   return (
     <Layout>
-      <div className="md:fixed h-screen bg-black w-56 z-10 border-r border-white">
-        <div className="w-full min-h-screen-1/5 hover:bg-gray flex flex-col items-center justify-center p-2">
-          <FaBars className="text-4xl" />
-        </div>
-        <div className="w-full min-h-screen-1/5 hover:bg-gray flex flex-col items-center justify-around p-2">
-          <FaWarehouse className="text-4xl" />
+      <div
+        id="navbar"
+        className="md:fixed h-screen flex flex-col items-stretch bg-black z-10 border-r border-white"
+      >
+        <h2 className="py-4 text-center font-bold">MKT SERWIS</h2>
+        <div className="py-4 hover:bg-gray flex flex-col items-center justify-around p-2">
+          <FaWarehouse
+            className={`${oneVisible ? 'text-orange' : ''} text-5xl`}
+          />
           <h3 className="text-center font-medium">
             Centrum blacharsko lakiernicze
           </h3>
         </div>
-        <div className="w-full min-h-screen-1/5 hover:bg-gray flex flex-col items-center justify-center p-2">
-          <FaCarCrash className="text-4xl" />
+        <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2">
+          <FaCarCrash className="text-5xl" />
           <h3 className="text-center font-medium">Likwidacja szkody</h3>
         </div>
-        <div className="w-full min-h-screen-1/5 hover:bg-gray flex flex-col items-center justify-center p-2">
-          <FaUserFriends className="text-4xl" />
+        <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2">
+          <FaUserFriends
+            className={`${
+              threeVisible && !oneVisible && !twoVisible && !fourVisible
+                ? 'text-orange'
+                : ''
+            } text-5xl`}
+          />
           <h3 className="text-center font-medium">O nas</h3>
         </div>
-        <div className="w-full min-h-screen-1/5 hover:bg-gray flex flex-col items-center justify-center p-2">
-          <FaBars className="text-4xl" />
-          <h3 className="text-center font-medium">KONTAKT</h3>
+        <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2">
+          <FaBars
+            className={`${
+              fourVisible && !oneVisible && !twoVisible ? 'text-orange' : ''
+            } text-5xl`}
+          />
+          <h3 className="text-center font-medium">Kontakt</h3>
+        </div>
+        <div className="flex-1" />
+
+        <div className="py-4 flex flex-col items-center">
+          <h3 className="flex-1 font-medium">Kontakt</h3>
+          <div className="py-2 flex flex-row items-center">
+            <FaPhone className="text-3xl" />
+            <h4 className="px-4 text-orange">17 583 05 96</h4>
+          </div>
+          <div className="py-2 flex flex-row items-center">
+            <MdPhoneIphone className="text-3xl" />
+            <h4 className="px-4 text-orange">602 583 583</h4>
+          </div>
         </div>
       </div>
+
       <div className="min-h-screen">
         <Header />
 
@@ -99,66 +137,75 @@ function Home() {
           </div>
         </div>
       </div>
-      <CarouselProvider
-        naturalSlideWidth={Math.min(width, 1280) || 400}
-        naturalSlideHeight={carouselHeight}
-        totalSlides={3}
-        dragEnabled={true}
-        infinite={true}
-        className="container mx-auto py-4"
-      >
-        <Slider className="w-full py-4">
-          <Slide
-            innerClassName="flex flex-col xl:flex-row justify-center"
-            index={0}
-          >
-            <div className="my-auto mx-auto max-w-3xl">
-              <h1 className="section-title">Profesjonalne prace blacharskie</h1>
-              <div className="line bg-orange" />
-              <p className="section-text">
-                Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych
-                urz dze i technik naprawczych; rama do napraw blacharskich
-                CAR-O-LINER MARK 6 oraz innowacyjny komputerowy system pomiaru
-                nadwozia SPANESI TOUCH WHEELS.
-              </p>
-            </div>
-            <img src="/car_frame.jpg" className="section-img" />
-          </Slide>
-          <Slide
-            innerClassName="flex flex-col xl:flex-row justify-center"
-            index={1}
-          >
-            <div className="my-auto mx-auto max-w-2xl">
-              <h1 className="section-title">Perfekcyjnie położony lakier</h1>
-              <div className="line bg-orange" />
-              <p className="section-text">
-                Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych
-                urz dze i technik naprawczych; rama do napraw blacharskich
-                CAR-O-LINER MARK 6 oraz innowacyjny komputerowy system pomiaru
-                nadwozia SPANESI TOUCH WHEELS.
-              </p>
-            </div>
-            <img src="/car_lacquer.jpeg" className="section-img max-w-3xl" />
-          </Slide>
-          <Slide
-            innerClassName="flex flex-col xl:flex-row justify-center"
-            index={2}
-          >
-            <div className="my-auto mx-auto max-w-3xl">
-              <h1 className="section-title">Naprawy PDR oraz Auto Detailing</h1>
-              <div className="line bg-orange" />
-              <p className="section-text">
-                Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych
-                urz dze i technik naprawczych; rama do napraw blacharskich
-                CAR-O-LINER MARK 6 oraz innowacyjny komputerowy system pomiaru
-                nadwozia SPANESI TOUCH WHEELS.
-              </p>
-            </div>
-            <img src="/car_detailing.jpeg" className="section-img max-w-3xl" />
-          </Slide>
-        </Slider>
-        <CarouselSteps />
-      </CarouselProvider>
+      <div ref={oneRef}>
+        <CarouselProvider
+          naturalSlideWidth={Math.min(width, 1280) || 400}
+          naturalSlideHeight={carouselHeight}
+          totalSlides={3}
+          dragEnabled={true}
+          infinite={true}
+          className="container mx-auto py-4"
+        >
+          <Slider className="w-full py-4">
+            <Slide
+              innerClassName="flex flex-col xl:flex-row justify-center"
+              index={0}
+            >
+              <div className="my-auto mx-auto max-w-3xl">
+                <h1 className="section-title">
+                  Profesjonalne prace blacharskie
+                </h1>
+                <div className="line bg-orange" />
+                <p className="section-text">
+                  Wykonujemy prace blacharskie z wykorzystaniem
+                  specjalistycznych urz dze i technik naprawczych; rama do
+                  napraw blacharskich CAR-O-LINER MARK 6 oraz innowacyjny
+                  komputerowy system pomiaru nadwozia SPANESI TOUCH WHEELS.
+                </p>
+              </div>
+              <img src="/car_frame.jpg" className="section-img" />
+            </Slide>
+            <Slide
+              innerClassName="flex flex-col xl:flex-row justify-center"
+              index={1}
+            >
+              <div className="my-auto mx-auto max-w-2xl">
+                <h1 className="section-title">Perfekcyjnie położony lakier</h1>
+                <div className="line bg-orange" />
+                <p className="section-text">
+                  Wykonujemy prace blacharskie z wykorzystaniem
+                  specjalistycznych urz dze i technik naprawczych; rama do
+                  napraw blacharskich CAR-O-LINER MARK 6 oraz innowacyjny
+                  komputerowy system pomiaru nadwozia SPANESI TOUCH WHEELS.
+                </p>
+              </div>
+              <img src="/car_lacquer.jpeg" className="section-img max-w-3xl" />
+            </Slide>
+            <Slide
+              innerClassName="flex flex-col xl:flex-row justify-center"
+              index={2}
+            >
+              <div className="my-auto mx-auto max-w-3xl">
+                <h1 className="section-title">
+                  Naprawy PDR oraz Auto Detailing
+                </h1>
+                <div className="line bg-orange" />
+                <p className="section-text">
+                  Wykonujemy prace blacharskie z wykorzystaniem
+                  specjalistycznych urz dze i technik naprawczych; rama do
+                  napraw blacharskich CAR-O-LINER MARK 6 oraz innowacyjny
+                  komputerowy system pomiaru nadwozia SPANESI TOUCH WHEELS.
+                </p>
+              </div>
+              <img
+                src="/car_detailing.jpeg"
+                className="section-img max-w-3xl"
+              />
+            </Slide>
+          </Slider>
+          <CarouselSteps />
+        </CarouselProvider>
+      </div>
       <section className="container mx-auto flex flex-col xl:flex-row">
         <div className="mx-auto max-w-2xl">
           <h1 className="section-title">Wypożyczalnia samochodów</h1>
@@ -198,7 +245,7 @@ function Home() {
         </div>
         <FadeImage src="/about_us.jpg" containerClass="my-auto xl:w-1/2" />
       </section>
-      <section className="container mx-auto flex flex-col">
+      <section ref={threeRef} className="container mx-auto flex flex-col">
         <h1 className="section-title py-4 text-center">
           Poznaj naszych wariatów
         </h1>
@@ -233,7 +280,7 @@ function Home() {
           />
         </div>
       </section>
-      <section className="container mx-auto">
+      <section ref={fourRef} className="container mx-auto">
         <h2 className="font-bold text-center md:text-5xl">Skontaktuj się</h2>
         <div className="line bg-orange" />
         <div className="flex flex-col xl:flex-row justify-around">
@@ -257,8 +304,8 @@ function Home() {
               </span>
             </div>
           </div>
-          <div className="px-8 flex flex-col justify-center items-center">
-            <div className="py-4 flex flex-col flex-row items-center text-center">
+          <div className="px-8 flex flex-row xl:flex-col justify-between xl:justify-center items-center">
+            <div className="py-4 flex flex-row items-center text-center">
               <MdPhoneIphone className="contact-icon" />
               <div>
                 <h2>Telefon</h2>
@@ -269,7 +316,7 @@ function Home() {
                 </p>
               </div>
             </div>
-            <div className="py-4 flex flex-col flex-row items-center text-center">
+            <div className="py-4 flex flex-row items-center text-center">
               <MdMailOutline className="contact-icon" />
               <div>
                 <h2>E-mail</h2>
