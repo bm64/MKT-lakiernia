@@ -13,6 +13,8 @@ import {
   FaWarehouse,
   FaUserFriends,
   FaPhone,
+  FaTruck,
+  FaWrench,
 } from 'react-icons/fa'
 import { CarouselProvider, Slider, Slide, WithStore } from 'pure-react-carousel'
 import 'pure-react-carousel/dist/react-carousel.es.css'
@@ -65,6 +67,10 @@ function Home() {
         <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2">
           <FaCarCrash className="text-5xl" />
           <h3 className="text-center font-medium">Likwidacja szkody</h3>
+        </div>
+        <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2">
+          <FaWrench className="text-5xl" />
+          <h3 className="text-center font-medium">Usługi dodatkowe</h3>
         </div>
         <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2">
           <FaUserFriends
@@ -163,6 +169,13 @@ function Home() {
                     napraw blacharskich CAR-O-LINER MARK 6 oraz innowacyjny
                     komputerowy system pomiaru nadwozia SPANESI TOUCH WHEELS.
                   </p>
+                  <div className="px-8 py-4 flex flex-row items-center">
+                    <FaTruck className="text-5xl text-orange" />
+                    <h3 className="text-center">
+                      Nasze wyposażenie umożliwia także naprawę samochodów
+                      dostawczych do 3.5 ton
+                    </h3>
+                  </div>
                 </div>
                 <img
                   src="/car_frame.jpg"
@@ -215,6 +228,57 @@ function Home() {
             <CarouselSteps />
           </CarouselProvider>
         </div>
+        <div className="divider div-transparent div-arrow-down" />
+        <section className="container mx-auto">
+          <h1 className="section-title">Likwidacja szkody</h1>
+          <div className="flex flex-row items-stretch">
+            <div className="px-2 flex-1 flex flex-col">
+              <p className="pr-6 flex-1 text-3xl">
+                Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych
+                urz dze i technik naprawczych; rama do napraw blacharskich
+                CAR-O-LINER MARK 6 oraz innowacyjny komputerowy system pomiaru
+                nadwozia SPANESI TOUCH WHEELS.
+              </p>
+              <h3 className="font-semibold text-orange">
+                Za wykonane usługi udzielamy dwuletniej gwarancji
+              </h3>
+            </div>
+            <div className="flex flex-col items-stretch">
+              <div className="flex flex-row items-baseline">
+                <div className="h-16 w-16 flex justify-center items-center bg-orange text-2xl font-semibold shadow-xl">
+                  1
+                </div>
+                <h2 className="px-2">Zgłoszenie szkody z polisy AC lub OC</h2>
+              </div>
+
+              <div className="flex flex-row items-baseline">
+                <div className="mt-2 h-16 w-16 flex justify-center items-center bg-orange text-2xl font-semibold shadow-xl">
+                  2
+                </div>
+                <h2 className="px-2">Oględziny pojazdu</h2>
+              </div>
+              <div className="flex flex-row items-baseline">
+                <div className="mt-2 h-16 w-16 flex justify-center items-center bg-orange text-2xl font-semibold shadow-xl">
+                  3
+                </div>
+                <h2 className="px-2">Ustalenie zakresu odpowiedzialności</h2>
+              </div>
+              <div className="flex flex-row items-baseline">
+                <div className="mt-2 h-16 w-16 flex justify-center items-center bg-orange text-2xl font-semibold shadow-xl">
+                  4*
+                </div>
+                <h2 className="px-2">Samochód zastępczy</h2>
+              </div>
+              <div className="flex flex-row items-baseline">
+                <div className="mt-2 h-16 w-16 flex justify-center items-center bg-orange text-2xl font-semibold shadow-xl">
+                  5
+                </div>
+                <h2 className="px-2">Rozliczenie koszt napraw</h2>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div className="divider div-transparent div-arrow-down" />
         <section className="container mx-auto flex flex-col xl:flex-row">
           <div className="mx-auto max-w-2xl">
             <h1 className="section-title">Wypożyczalnia samochodów</h1>
@@ -226,10 +290,13 @@ function Home() {
               nadwozia SPANESI TOUCH WHEELS.
             </p>
           </div>
-          <FadeImage
-            src="/car_rental.jpg"
-            containerClass="m-auto w-3/4 xl:w-1/2"
-          />
+          <div className="mt-16 mx-auto relative w-3/4 xl:w-1/2">
+            <FadeImage src="/car_rental.jpg" />
+            <img
+              src="/skoda_logo.png"
+              class="absolute top-0 right-0 w-32 h-32 transform -translate-x-6 -translate-y-16"
+            />
+          </div>
         </section>
         <section className="container mx-auto flex flex-col xl:flex-row">
           <div className="mx-auto max-w-2xl">
@@ -247,6 +314,7 @@ function Home() {
             containerClass="m-auto w-3/4 xl:w-1/2"
           />
         </section>
+        <div className="divider div-transparent div-arrow-down" />
         <section className="container mx-auto flex flex-col xl:flex-row">
           <div className="mx-auto max-w-2xl">
             <h1 className="section-title text-center">O nas</h1>
@@ -264,20 +332,17 @@ function Home() {
           />
         </section>
         <section ref={threeRef} className="container mx-auto flex flex-col">
-          <h1 className="section-title py-4 text-center">
-            Poznaj naszych wariatów
+          <h1 className="section-title pt-2 text-left font-semibold text-orange">
+            Poznaj naszych pracowników
           </h1>
-          <div className="flex flex-row items-center border-orange">
+          <div className="flex flex-row items-center border-t border-orange">
             <div className="flex-1">
               <h1>Bartłomiej Kula</h1>
               <h4>Kierownik Centrum Blacharsko-Lakierniczego</h4>
             </div>
-            <FadeImage
-              src="/bartek.jpg"
-              containerClass="border-orange bg-orange shadow-xl"
-            />
+            <FadeImage src="/bartek.jpg" containerClass="bg-orange shadow-xl" />
           </div>
-          <div className="flex flex-row items-center border-b border-t border-orange">
+          <div className="flex flex-row items-center my-8 lg:my-0 lg:border-b lg:border-t lg:border-orange">
             <FadeImage
               src="/ewa.jpg"
               containerClass="border-orange bg-orange shadow-xl"
@@ -289,7 +354,7 @@ function Home() {
           </div>
           <div className="flex flex-row items-center">
             <div className="flex-1">
-              <h1>Maciej M</h1>
+              <h1>Maciej Kotwica</h1>
               <h4>Specjalista Centrum Blacharsko-Lakierniczego</h4>
             </div>
             <FadeImage
@@ -298,6 +363,7 @@ function Home() {
             />
           </div>
         </section>
+        <div className="divider2 donotcross" />
         <section ref={fourRef} className="container mx-auto">
           <h2 className="font-bold text-center md:text-5xl">Skontaktuj się</h2>
           <div className="line bg-orange" />
@@ -307,12 +373,12 @@ function Home() {
               style={{ flexBasis: 450 }}
             >
               <input
-                className="block px-1 py-2 px-2 text-orange font-bold bg-black border-b border-orange"
+                className="block px-1 py-2 px-2 text-white font-bold bg-black border border-orange"
                 placeholder="Adres e-mail"
                 type="text"
               />
               <textarea
-                className="mt-4 p-2 text-orange font-bold bg-black border-b border-orange"
+                className="mt-4 p-2 text-white font-bold bg-black border border-orange"
                 placeholder="Tutaj wpisz treść wiadomości"
                 rows={8}
               />
@@ -348,13 +414,13 @@ function Home() {
         </section>
         <section className="container mx-auto">
           <div className="flex flex-row items-center">
-            <h3 className="flex-1 text-left md:text-4xl font-medium">
+            <h3 className="flex-1 text-left md:text-3xl font-medium">
               Tutaj nas znajdziesz
             </h3>
-            <h3>
+            <h4>
               <span className="text-orange">Wola Mielecka 632</span> - 39-300
               Mielec
-            </h3>
+            </h4>
           </div>
           <iframe
             className="w-full mx-auto min-h-screen-1/4 md:min-h-screen-1/2"
@@ -366,12 +432,7 @@ function Home() {
             <img src="/ue_fundusz.png" className="funding-img" />
           </div>
         </section>
-        <div
-          className="p-5 md:p-8 w-full mx-auto bg-cover bg-right md:bg-cover md:bg-center"
-          style={{
-            backgroundImage: 'url(/footer_img1.jpeg)',
-          }}
-        >
+        <div className="p-5 md:p-8 w-full mx-auto bg-cover bg-right md:bg-cover md:bg-center">
           <div className="container mx-auto">
             <div className="footer-item">START</div>
             <div className="footer-item">KONTAKT</div>
