@@ -108,7 +108,53 @@ function Home() {
       <div id="content">
         <div className="min-h-screen">
           <Header />
-
+          <div
+            style={{ width: 'calc(100% - 12rem)' }}
+            className="flex flex-col justify-center absolute text-left py- z-10 min-h-screen w-1/2 items-center"
+          >
+            <div className="w-3/5 min-h-screen-3/4 ">
+              <h1
+                style={{ textShadow: '1px 1px 1px #1B1B1E' }}
+                className="font-bold text-white  text-5xxl py-8"
+              >
+                MKT SERWIS
+              </h1>
+              <h2
+                style={{ textShadow: '1px 1px 1px #1B1B1E' }}
+                className="text-5xl font-medium"
+              >
+                Centrum blacharsko lakiernicze
+              </h2>
+              <p
+                style={{ textShadow: '1px 1px 1px #1B1B1E' }}
+                className="text-2xl text-gray"
+              >
+                Kompleksowa likwidacja szkód komunikacyjnych.
+                <br />
+                Możliwość bezgotówkowego rozliczenia sprawy.
+              </p>
+              <div className="flex w-full h-10">
+                <button
+                  style={{ backgroundColor: '#CCCCCC88' }}
+                  className="  w-full min-h-full bg-gray mx-1"
+                >
+                  <div
+                    style={{ height: '2px', backgroundColor: '#CCCCCCDD' }}
+                    className="w-11/12 mx-auto rounded-lg"
+                  ></div>
+                </button>
+                <button
+                  style={{ backgroundColor: '#CCCCCC88' }}
+                  className="flex flex-col w-full min-h-full bg-gray mx-1"
+                >
+                  <div
+                    style={{ height: '2px', backgroundColor: '#CCCCCCDD' }}
+                    className=" w-11/12 mx-auto rounded-lg"
+                  ></div>
+                </button>
+              </div>
+            </div>
+          </div>
           <video
             autoPlay={true}
             loop={true}

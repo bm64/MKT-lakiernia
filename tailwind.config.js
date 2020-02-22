@@ -7,7 +7,7 @@ module.exports = {
         'white-t': '#fbfbfbAA',
         orange: '#FFAE03',
         'orange-t': '#FFAE03AA',
-        gray: '#515052',
+        gray: '#CCCCCC',
       },
       minHeight: {
         'screen-1/4': '25vh',
@@ -15,6 +15,11 @@ module.exports = {
         'screen-3/4': '75vh',
         'screen-1/5': '20vh',
       },
+      fontSize: {
+        '4xxl': '2.6rem',
+        '5xxl': '3.5rem',
+      },
+
       maxWidth: {
         'screen-xl': '1280px',
       },
