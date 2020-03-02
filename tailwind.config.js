@@ -7,7 +7,7 @@ module.exports = {
         'white-t': '#fbfbfbAA',
         orange: '#FFAE03',
         'orange-t': '#FFAE03AA',
-        gray: '#CCCCCC',
+        gray: '#DDDDDD',
       },
       minHeight: {
         'screen-1/4': '25vh',

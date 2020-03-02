@@ -39,9 +39,24 @@ body {
   @apply w-full;
 }
 
-.hero-content {
-  @apply flex flex-col justify-start items-center mt-16;
-  //height: calc(100vh - 16rem);
+.hero-button {
+  background-color: #cccccc88;
+  border: none;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+.hero-button:hover {
+  /*transform: scale(1.1);
+  background-color: #99999988;
+  transition-timing-function: linear;
+  
+  */
+  background-color: orange;
+  box-shadow: 0px 15px 20px rgba(255, 145, 0, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
 }
 
 .line {
@@ -72,52 +87,8 @@ body {
   @apply text-6xl text-orange mx-4;
 }
 
-.arrow-container {
-  position: relative;
-  width: 3rem;
-  height: 5rem;
-}
-
 .header-item {
   @apply px-5 font-semibold;
-}
-
-.chevron {
-  position: absolute;
-  width: 3rem;
-  height: 0.6rem;
-  opacity: 0;
-  transform: scale3d(0.5, 0.5, 0.5);
-  animation: move 3s ease-out infinite;
-}
-
-.chevron:first-child {
-  animation: move 3s ease-out 1s infinite;
-}
-
-.chevron:nth-child(2) {
-  animation: move 3s ease-out 2s infinite;
-}
-
-.chevron:before,
-.chevron:after {
-  content: ' ';
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 51%;
-  background: #fff;
-}
-
-.chevron:before {
-  left: 0;
-  transform: skew(0deg, 30deg);
-}
-
-.chevron:after {
-  right: 0;
-  width: 50%;
-  transform: skew(0deg, -30deg);
 }
 
 @keyframes move {
@@ -138,40 +109,14 @@ body {
   }
 }
 
-.divider {
-  position: relative;
-  margin-top: 90px;
-  height: 1px;
-}
+.logo-parallax {
+  background-image: url('/logo_nowe.png');
 
-.div-transparent:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 5%;
-  right: 5%;
-  width: 90%;
-  height: 1px;
-  background-image: linear-gradient(
-    to right,
-    transparent,
-    rgb(48, 49, 51),
-    transparent
-  );
-}
-
-.div-arrow-down:after {
-  content: '';
-  position: absolute;
-  z-index: 1;
-  top: -7px;
-  left: calc(50% - 7px);
-  width: 14px;
-  height: 14px;
-  transform: rotate(45deg);
+  padding-left: 12rem;
   background-color: white;
-  border-bottom: 1px solid rgb(48, 49, 51);
-  border-right: 1px solid rgb(48, 49, 51);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 90%;
 }
 
 @screen md {

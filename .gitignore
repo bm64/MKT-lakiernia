@@ -1,6 +1,6 @@
 _next
 node_modules
-
+content
 package-lock.json
 .next
 yarn.lock

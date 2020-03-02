@@ -25,6 +25,19 @@ import useOnEnterLeave from '../hooks/useOnEnterLeave'
 
 import withFadeIn from '../animations/withFadeIn'
 
+import NavSlider from 'react-slick'
+
+const settings = {
+  dots: false,
+  fade: true,
+  autoplay: true,
+  infinite: true,
+  arrows: false,
+  speed: 800,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+}
+
 function Home() {
   const { width, height } = useWindowSize()
 
@@ -53,24 +66,24 @@ function Home() {
     <Layout>
       <div
         id="navbar"
-        className="md:fixed h-screen flex flex-col items-stretch bg-black z-10 border-r border-white"
+        className="md:fixed h-screen flex flex-col items-stretch bg-black z-10 border-r border-white max-h-screen"
       >
-        <h2 className="py-4 text-center font-bold">MKT SERWIS</h2>
+        <h2 className="py-4 text-center font-bold ">MKT SERWIS</h2>
         <div className="py-4 hover:bg-gray flex flex-col items-center justify-around p-2">
           <FaWarehouse
-            className={`${oneVisible ? 'text-orange' : ''} text-5xl`}
+            className={`${oneVisible ? 'text-orange' : ''} text-4xl`}
           />
-          <h3 className="text-center font-medium">
+          <h4 className="text-center font-medium">
             Centrum blacharsko lakiernicze
-          </h3>
+          </h4>
         </div>
         <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2">
-          <FaCarCrash className="text-5xl" />
-          <h3 className="text-center font-medium">Likwidacja szkody</h3>
+          <FaCarCrash className="text-4xl" />
+          <h4 className="text-center font-medium">Likwidacja szkody</h4>
         </div>
         <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2">
-          <FaWrench className="text-5xl" />
-          <h3 className="text-center font-medium">Usługi dodatkowe</h3>
+          <FaWrench className="text-4xl" />
+          <h4 className="text-center font-medium">Usługi dodatkowe</h4>
         </div>
         <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2">
           <FaUserFriends
@@ -78,19 +91,39 @@ function Home() {
               threeVisible && !oneVisible && !twoVisible && !fourVisible
                 ? 'text-orange'
                 : ''
-            } text-5xl`}
+            } text-4xl`}
           />
-          <h3 className="text-center font-medium">O nas</h3>
+          <h4 className="text-center font-medium">O nas</h4>
         </div>
         <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2">
           <FaBars
             className={`${
               fourVisible && !oneVisible && !twoVisible ? 'text-orange' : ''
-            } text-5xl`}
+            } text-4xl`}
           />
-          <h3 className="text-center font-medium">Kontakt</h3>
+          <h4 className="text-center font-medium">Kontakt</h4>
         </div>
         <div className="flex-1" />
+
+        <NavSlider {...settings} className="bg-white">
+          <div style={{ margin: '0px' }}>
+            <img src="skoda_logo.png" />
+          </div>
+
+          <div style={{ margin: '0px' }}>
+            <img src="vw.png" />
+          </div>
+
+          <div style={{ margin: '0px' }}>
+            <img src="kia.png" />
+          </div>
+          <div style={{ margin: '0px' }}>
+            <img src="fiat.png" />
+          </div>
+          <div style={{ margin: '0px' }}>
+            <img src="fiat_professional.png" />
+          </div>
+        </NavSlider>
 
         <div className="py-4 flex flex-col items-center">
           <h3 className="flex-1 font-medium">Kontakt</h3>
@@ -110,47 +143,73 @@ function Home() {
           <Header />
           <div
             style={{ width: 'calc(100% - 12rem)' }}
-            className="flex flex-col justify-center absolute text-left py- z-10 min-h-screen w-1/2 items-center"
+            className="flex flex-col justify-center absolute text-left  z-10 min-h-screen w-1/2 items-center"
           >
             <div className="w-3/5 min-h-screen-3/4 ">
               <h1
-                style={{ textShadow: '1px 1px 1px #1B1B1E' }}
-                className="font-bold text-white  text-5xxl py-8"
+                style={{ textShadow: '2px 2px 2px #1B1B1E' }}
+                className="font-bold text-white  text-6xl py-8"
               >
                 MKT SERWIS
               </h1>
               <h2
-                style={{ textShadow: '1px 1px 1px #1B1B1E' }}
-                className="text-5xl font-medium"
+                style={{ textShadow: '2px 2px 2px #1B1B1E' }}
+                className="text-5xxl font-medium"
               >
                 Centrum blacharsko lakiernicze
               </h2>
-              <p
-                style={{ textShadow: '1px 1px 1px #1B1B1E' }}
-                className="text-2xl text-gray"
-              >
-                Kompleksowa likwidacja szkód komunikacyjnych.
-                <br />
-                Możliwość bezgotówkowego rozliczenia sprawy.
-              </p>
-              <div className="flex w-full h-10">
-                <button
-                  style={{ backgroundColor: '#CCCCCC88' }}
-                  className="  w-full min-h-full bg-gray mx-1"
+              <div className="py-5">
+                <p
+                  style={{ textShadow: '1px 1px 1px #1B1B1E' }}
+                  className="text-3xl text-gray"
                 >
-                  <div
-                    style={{ height: '2px', backgroundColor: '#CCCCCCDD' }}
-                    className="w-11/12 mx-auto rounded-lg"
-                  ></div>
-                </button>
-                <button
-                  style={{ backgroundColor: '#CCCCCC88' }}
-                  className="flex flex-col w-full min-h-full bg-gray mx-1"
-                >
+                  Kompleksowa likwidacja szkód komunikacyjnych.
+                  <br />
+                  Możliwość bezgotówkowego rozliczenia sprawy.
+                </p>
+              </div>
+              <div className="flex w-full py-8">
+                <button className="hero-button w-full min-h-full  mr-2 p-5 ">
+                  <h1
+                    style={{ textShadow: '1px 1px 1px #1B1B1E' }}
+                    className="font-medium text-3xlxl py-1"
+                  >
+                    Procedura likwidacji szkody
+                  </h1>
                   <div
                     style={{ height: '2px', backgroundColor: '#CCCCCCDD' }}
                     className=" w-11/12 mx-auto rounded-lg"
                   ></div>
+                  <p
+                    style={{ textShadow: '1px 1px 1px #1B1B1E' }}
+                    className="text-xl"
+                  >
+                    Lorem Ipsum jest tekstem stosowanym jako przykładowy
+                    wypełniacz w przemyśle poligraficznym. Został po raz
+                    pierwszy użyty w XV w. przez nieznanego drukarza do
+                    wypełnienia tekstem
+                  </p>
+                </button>
+                <button className="hero-button w-full min-h-full  ml-2 p-1">
+                  <h1
+                    style={{ textShadow: '1px 1px 1px #1B1B1E' }}
+                    className="font-medium py-1"
+                  >
+                    Procedura likwidacji szkody
+                  </h1>
+                  <div
+                    style={{ height: '2px', backgroundColor: '#CCCCCCDD' }}
+                    className="w-11/12 mx-auto rounded-lg"
+                  ></div>
+                  <p
+                    style={{ textShadow: '1px 1px 1px #1B1B1E' }}
+                    className="text-xl"
+                  >
+                    Lorem Ipsum jest tekstem stosowanym jako przykładowy
+                    wypełniacz w przemyśle poligraficznym. Został po raz
+                    pierwszy użyty w XV w. przez nieznanego drukarza do
+                    wypełnienia tekstem
+                  </p>
                 </button>
               </div>
             </div>
@@ -159,11 +218,11 @@ function Home() {
             autoPlay={true}
             loop={true}
             playsInline={true}
-            className="absolute top-0 min-h-screen object-left-top object-cover z-0 xl:w-full xl:h-screen"
+            className="min-h-screen object-cover w-full "
           >
             <source src="/video1.mp4" type="video/mp4" />
           </video>
-          <div className="flex flex-col justify-between relative">
+          <div className="hidden flex flex-col justify-between relative">
             <div className="hero-content flex flex-col justify-between h-screen py-16">
               <div className="flex flex-col items-center py-8 z-10 md:py-20">
                 <h1 className="text-white text-center font-bold px-1 pt-10 md:text-4xl lg:hidden">
@@ -338,10 +397,6 @@ function Home() {
           </div>
           <div className="mt-16 mx-auto relative w-3/4 xl:w-1/2">
             <FadeImage src="/car_rental.jpg" />
-            <img
-              src="/skoda_logo.png"
-              class="absolute top-0 right-0 w-32 h-32 transform -translate-x-6 -translate-y-16"
-            />
           </div>
         </section>
         <section className="container mx-auto flex flex-col xl:flex-row">
@@ -486,7 +541,7 @@ function Home() {
             <div className="footer-item">POLITYKA PRYWATNOŚCI</div>
             <div className="footer-item">USŁUGI</div>
             <p className="text-sm text-center pt-4 text-white md:text-lg">
-              Copyright @ 2019 MKT Serwis
+              Copyright @ 2020 MKT Serwis
             </p>
           </div>
         </div>
