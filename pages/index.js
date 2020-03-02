@@ -66,7 +66,7 @@ function Home() {
     <Layout>
       <div
         id="navbar"
-        className="md:fixed h-screen flex flex-col items-stretch bg-black z-10 border-r border-white max-h-screen"
+        className="md:fixed h-screen flex flex-col flex-between items-stretch bg-black z-10 border-r border-white max-h-screen"
       >
         <h2 className="py-4 text-center font-bold ">MKT SERWIS</h2>
         <div className="py-4 hover:bg-gray flex flex-col items-center justify-around p-2 cursor-pointer">
@@ -103,9 +103,8 @@ function Home() {
           />
           <h4 className="text-center font-medium">Kontakt</h4>
         </div>
-        <div className="flex-1" />
 
-        <NavSlider {...settings}>
+        <NavSlider {...settings} className="w-2/3 mx-auto py-2">
           <div className="m-0">
             <img src="skoda_biala.png" />
           </div>
@@ -384,6 +383,26 @@ function Home() {
           </div>
         </section>
         <div className="divider div-transparent div-arrow-down" />
+        <div
+          style={{ backgroundImage: 'url(/car_polish.jpeg)' }}
+          className="flex flex-col w-full min-h-screen bg-cover opacity-50"
+        >
+          <div className="flex-1"></div>
+          <div className="flex flex-row w-full  min-h-screen-1/4 ">
+            <div
+              style={{ backgroundColor: '#1B1B1EEE' }}
+              className="w-1/3 border-r-2 border-white min-h-full "
+            ></div>
+            <div
+              style={{ backgroundColor: '#1B1B1EEE' }}
+              className="w-1/3 border-r-2 border-white min-h-full"
+            ></div>
+            <div
+              style={{ backgroundColor: '#1B1B1EEE' }}
+              className="w-1/3 border-r-2 border-white min-h-full"
+            ></div>
+          </div>
+        </div>
         <section className="container mx-auto flex flex-col xl:flex-row">
           <div className="mx-auto max-w-2xl">
             <h1 className="section-title">Wypożyczalnia samochodów</h1>
