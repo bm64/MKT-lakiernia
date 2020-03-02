@@ -105,7 +105,7 @@ function Home() {
         </div>
         <div className="flex-1" />
 
-        <NavSlider {...settings} className="bg-white">
+        <NavSlider {...settings} className="">
           <div style={{ margin: '0px' }}>
             <img src="skoda_logo.png" />
           </div>
@@ -115,7 +115,7 @@ function Home() {
           </div>
 
           <div style={{ margin: '0px' }}>
-            <img src="kia.png" />
+            <img src="kia_srodek.png" />
           </div>
           <div style={{ margin: '0px' }}>
             <img src="fiat.png" />
