@@ -241,10 +241,10 @@ function Home() {
                   </span>
                 </div>
               </div>
-              <div class="arrow-container mx-auto lg:hidden">
-                <div class="chevron md:w-20 md:h-4"></div>
-                <div class="chevron md:w-20 md:h-4"></div>
-                <div class="chevron md:w-20 md:h-4"></div>
+              <div className="arrow-container mx-auto lg:hidden">
+                <div className="chevron md:w-20 md:h-4"></div>
+                <div className="chevron md:w-20 md:h-4"></div>
+                <div className="chevron md:w-20 md:h-4"></div>
               </div>
             </div>
           </div>
