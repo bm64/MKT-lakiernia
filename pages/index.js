@@ -107,7 +107,7 @@ function Home() {
 
         <NavSlider {...settings}>
           <div className="m-0">
-            <img src="skoda_logo.png" />
+            <img src="skoda_biala.png" />
           </div>
 
           <div className="m-0">
@@ -148,13 +148,13 @@ function Home() {
             <div className="w-3/5 min-h-screen-3/4 ">
               <h1
                 style={{ textShadow: '2px 2px 2px #1B1B1E' }}
-                className="font-bold text-white  text-6xl py-8"
+                className="font-bold text-white  text-5xxl py-8"
               >
                 MKT SERWIS
               </h1>
               <h2
                 style={{ textShadow: '2px 2px 2px #1B1B1E' }}
-                className="text-5xxl font-medium"
+                className="text-5xl font-medium"
               >
                 Centrum blacharsko lakiernicze
               </h2>
@@ -172,7 +172,7 @@ function Home() {
                 <button className="hero-button w-full min-h-full  mr-2 p-5 ">
                   <h1
                     style={{ textShadow: '1px 1px 1px #1B1B1E' }}
-                    className="font-medium text-3xlxl py-1"
+                    className="font-medium py-1"
                   >
                     Procedura likwidacji szkody
                   </h1>
