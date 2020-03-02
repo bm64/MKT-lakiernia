@@ -69,7 +69,7 @@ function Home() {
         className="md:fixed h-screen flex flex-col items-stretch bg-black z-10 border-r border-white max-h-screen"
       >
         <h2 className="py-4 text-center font-bold ">MKT SERWIS</h2>
-        <div className="py-4 hover:bg-gray flex flex-col items-center justify-around p-2">
+        <div className="py-4 hover:bg-gray flex flex-col items-center justify-around p-2 cursor-pointer">
           <FaWarehouse
             className={`${oneVisible ? 'text-orange' : ''} text-4xl`}
           />
@@ -77,15 +77,15 @@ function Home() {
             Centrum blacharsko lakiernicze
           </h4>
         </div>
-        <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2">
+        <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2 cursor-pointer">
           <FaCarCrash className="text-4xl" />
           <h4 className="text-center font-medium">Likwidacja szkody</h4>
         </div>
-        <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2">
+        <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2 cursor-pointer">
           <FaWrench className="text-4xl" />
           <h4 className="text-center font-medium">Usługi dodatkowe</h4>
         </div>
-        <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2">
+        <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2 cursor-pointer">
           <FaUserFriends
             className={`${
               threeVisible && !oneVisible && !twoVisible && !fourVisible
@@ -95,7 +95,7 @@ function Home() {
           />
           <h4 className="text-center font-medium">O nas</h4>
         </div>
-        <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2">
+        <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2 cursor-pointer">
           <FaBars
             className={`${
               fourVisible && !oneVisible && !twoVisible ? 'text-orange' : ''
@@ -127,11 +127,11 @@ function Home() {
 
         <div className="py-4 flex flex-col items-center">
           <h3 className="flex-1 font-medium">Kontakt</h3>
-          <div className="py-2 flex flex-row items-center">
+          <div className="py-2 flex flex-row items-center cursor-pointer">
             <FaPhone className="text-2xl" />
             <h5 className="px-4 text-orange">17 583 05 96</h5>
           </div>
-          <div className="py-2 flex flex-row items-center">
+          <div className="py-2 flex flex-row items-center cursor-pointer">
             <MdPhoneIphone className="text-2xl" />
             <h5 className="px-4 text-orange">602 583 583</h5>
           </div>
