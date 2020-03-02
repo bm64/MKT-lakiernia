@@ -105,22 +105,22 @@ function Home() {
         </div>
         <div className="flex-1" />
 
-        <NavSlider {...settings} className="">
-          <div style={{ margin: '0px' }}>
+        <NavSlider {...settings}>
+          <div className="m-0">
             <img src="skoda_logo.png" />
           </div>
 
-          <div style={{ margin: '0px' }}>
+          <div className="m-0">
             <img src="vw.png" />
           </div>
 
-          <div style={{ margin: '0px' }}>
+          <div className="m-0">
             <img src="kia_srodek.png" />
           </div>
-          <div style={{ margin: '0px' }}>
+          <div className="m-0">
             <img src="fiat.png" />
           </div>
-          <div style={{ margin: '0px' }}>
+          <div className="m-0">
             <img src="fiat_professional.png" />
           </div>
         </NavSlider>
