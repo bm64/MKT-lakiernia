@@ -3,6 +3,7 @@ module.exports = {
     extend: {
       colors: {
         black: '#1B1B1E',
+        'black-t': '#1B1B1EDD',
         white: '#fbfbfb',
         'white-t': '#fbfbfbAA',
         orange: '#FFAE03',

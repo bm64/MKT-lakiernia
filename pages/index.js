@@ -33,7 +33,7 @@ const settings = {
   autoplay: true,
   infinite: true,
   arrows: false,
-  speed: 800,
+  speed: 300,
   slidesToShow: 1,
   slidesToScroll: 1,
 }
@@ -104,6 +104,7 @@ function Home() {
           <h4 className="text-center font-medium">Kontakt</h4>
         </div>
 
+        <div className="flex-1"></div>
         <NavSlider {...settings} className="w-2/3 mx-auto py-2">
           <div className="m-0">
             <img src="skoda_biala.png" />
@@ -123,6 +124,7 @@ function Home() {
             <img src="fiat_professional.png" />
           </div>
         </NavSlider>
+        <div className="flex-1"></div>
 
         <div className="py-4 flex flex-col items-center">
           <h3 className="flex-1 font-medium">Kontakt</h3>
@@ -385,22 +387,24 @@ function Home() {
         <div className="divider div-transparent div-arrow-down" />
         <div
           style={{ backgroundImage: 'url(/car_polish.jpeg)' }}
-          className="flex flex-col w-full min-h-screen bg-cover opacity-50"
-        >
+          className="absolute w-full min-h-screen bg-cover opacity-50"
+        ></div>
+        <div className="flex flex-col items-center w-full min-h-screen bg-cover relative">
           <div className="flex-1"></div>
-          <div className="flex flex-row w-full  min-h-screen-1/4 ">
-            <div
-              style={{ backgroundColor: '#1B1B1EEE' }}
-              className="w-1/3 border-r-2 border-white min-h-full "
-            ></div>
-            <div
-              style={{ backgroundColor: '#1B1B1EEE' }}
-              className="w-1/3 border-r-2 border-white min-h-full"
-            ></div>
-            <div
-              style={{ backgroundColor: '#1B1B1EEE' }}
-              className="w-1/3 border-r-2 border-white min-h-full"
-            ></div>
+          <div className="max-h- w-1/2 min-h-screen-1/4  bg-black-t">
+            <h1 className="text-3xl text-white">
+              Beeeeeka z typa cnie tekst taki o
+            </h1>
+          </div>
+          <div className="flex-1 flex-row  justify-end"></div>
+          <div className="flex flex-row w-full  min-h-screen-1/5 ">
+            <div className="flex flex-col justify-around items-center bg-black-t w-1/3 border-r border-white min-h-full hover:bg-black">
+              <h1 className="text-white text-3xl font-medium">
+                Wypożyczalnia samochodów
+              </h1>
+            </div>
+            <div className="flex flex-col justify-around items-center bg-black-t w-1/3 border-r border-white min-h-full hover:bg-black"></div>
+            <div className="flex flex-col justify-around items-center bg-black-t w-1/3  border-white min-h-full hover:bg-black"></div>
           </div>
         </div>
         <section className="container mx-auto flex flex-col xl:flex-row">
