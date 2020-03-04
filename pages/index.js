@@ -62,7 +62,7 @@ function Home() {
     [650, 1100, 1000, 750],
     650
   )
-
+  const [sectionImg, setSectionImg] = useState('/car_polish2.jpeg')
   return (
     <Layout>
       <div
@@ -387,45 +387,61 @@ function Home() {
         </section>
         <div className="divider div-transparent div-arrow-down" />
         <div
-          style={{ backgroundImage: 'url(/car_polish.jpeg)' }}
-          className="absolute w-full min-h-screen bg-cover opacity-50"
+          style={{ backgroundImage: `url(${sectionImg})` }}
+          className="absolute w-full min-h-screen bg-cover  bg-center bg-no-repeat opacity-50"
         ></div>
         <div className="flex flex-col items-center w-full min-h-screen bg-cover relative">
           <div className="flex-1"></div>
-          <div className="flex flex-col text-center justify-center w-5/12 min-h-screen-1/3 bg-white">
-            <h1 className="text-3xl text-black font-semibold">
-              Beeeeeka z typa cnie tekst tak
+          <div className="flex flex-col justify-evenly items-center w-5/12 min-h-screen-1/3 bg-gray shadow-2xl p-3">
+            <h1 className="text-4xl text-black font-semibold text-center leading-tight w-5/6">
+              POZNAJ NASZĄ OFERTĘ USŁUG DODATKOWYCH
             </h1>
+            <h3 className="text-center text-black ">
+              Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w
+              przemyśle poligraficznym. Został po raz pierwszy użyty w XV w.
+              przez nenanego drukarza do wypełnienia tekstem.Został po raz
+              pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia
+              tekstem.
+            </h3>
           </div>
           <div className="flex-1 flex-row  justify-end"></div>
           <div className="flex flex-row w-full  min-h-screen-1/5 ">
-            <div className="flex flex-col justify-center items- bg-white-t w-1/3 border-r border-black min-h-full px-5 hover:bg-gray">
+            <div
+              onClick={() => setSectionImg('/car_polish3.jpeg')}
+              className="flex flex-col justify-center items- bg-white-t w-1/3 border-r border-black min-h-full px-5 py-4 hover:bg-gray"
+            >
               <div className="flex justify-start items-center">
                 <FaChevronRight className="text-orange text-3xl pr-3" />
-                <h1 className="text-black text-3xl font-semibold w-9/12 leading-tight">
-                  Wypożyczalnia samochodów
+                <h1 className="text-black text-2xl font-semibold w-9/12 leading-tight">
+                  WYPOŻYCZALNIA SAMOCHODÓW
                 </h1>
               </div>
               <h5 className="pl-8 pt-2 text-black font-medium w-4/6">
                 Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz
               </h5>
             </div>
-            <div className="flex flex-col justify-center items- bg-white-t w-1/3 border-r border-black min-h-full px-5 hover:bg-gray">
+            <div
+              onClick={() => setSectionImg('/car_polish4.jpeg')}
+              className="flex flex-col justify-center items- bg-white-t w-1/3 border-r border-black min-h-full px-5 py-4 hover:bg-gray"
+            >
               <div className="flex justify-start items-center">
                 <FaChevronRight className="text-orange text-3xl pr-3" />
-                <h1 className="text-black text-3xl font-semibold w-9/12 leading-tight">
-                  Powypadkowe badania techniczne
+                <h1 className="text-black text-2xl font-semibold w-9/12 leading-tight">
+                  POWYPADKOWE BADANIA TECHNICZNE
                 </h1>
               </div>
               <h5 className="pl-8 pt-2 text-black font-medium w-4/6">
                 Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz
               </h5>
             </div>
-            <div className="flex flex-col justify-center items- bg-white-t w-1/3 border-r border-black min-h-full px-5 hover:bg-gray">
+            <div
+              onClick={() => setSectionImg('/car_polish5.jpeg')}
+              className="flex flex-col justify-center items- bg-white-t w-1/3 border-r border-black min-h-full px-5 py-4 hover:bg-gray"
+            >
               <div className="flex justify-start items-center">
                 <FaChevronRight className="text-orange text-3xl pr-3" />
-                <h1 className="text-black text-3xl font-semibold w-9/12 leading-tight">
-                  Wypożyczalnia samochodów
+                <h1 className="text-black text-2xl font-semibold w-9/12 leading-tight p-2">
+                  HOLOWANIE
                 </h1>
               </div>
               <h5 className="pl-8 pt-2 text-black font-medium w-4/6">
