@@ -15,6 +15,7 @@ import {
   FaPhone,
   FaTruck,
   FaWrench,
+  FaChevronRight,
 } from 'react-icons/fa'
 import { CarouselProvider, Slider, Slide, WithStore } from 'pure-react-carousel'
 import 'pure-react-carousel/dist/react-carousel.es.css'
@@ -391,20 +392,46 @@ function Home() {
         ></div>
         <div className="flex flex-col items-center w-full min-h-screen bg-cover relative">
           <div className="flex-1"></div>
-          <div className="max-h- w-1/2 min-h-screen-1/4  bg-black-t">
-            <h1 className="text-3xl text-white">
-              Beeeeeka z typa cnie tekst taki o
+          <div className="flex flex-col text-center justify-center w-5/12 min-h-screen-1/3 bg-white">
+            <h1 className="text-3xl text-black font-semibold">
+              Beeeeeka z typa cnie tekst tak
             </h1>
           </div>
           <div className="flex-1 flex-row  justify-end"></div>
           <div className="flex flex-row w-full  min-h-screen-1/5 ">
-            <div className="flex flex-col justify-around items-center bg-black-t w-1/3 border-r border-white min-h-full hover:bg-black">
-              <h1 className="text-white text-3xl font-medium">
-                Wypożyczalnia samochodów
-              </h1>
+            <div className="flex flex-col justify-center items- bg-white-t w-1/3 border-r border-black min-h-full px-5 hover:bg-gray">
+              <div className="flex justify-start items-center">
+                <FaChevronRight className="text-orange text-3xl pr-3" />
+                <h1 className="text-black text-3xl font-semibold w-9/12 leading-tight">
+                  Wypożyczalnia samochodów
+                </h1>
+              </div>
+              <h5 className="pl-8 pt-2 text-black font-medium w-4/6">
+                Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz
+              </h5>
             </div>
-            <div className="flex flex-col justify-around items-center bg-black-t w-1/3 border-r border-white min-h-full hover:bg-black"></div>
-            <div className="flex flex-col justify-around items-center bg-black-t w-1/3  border-white min-h-full hover:bg-black"></div>
+            <div className="flex flex-col justify-center items- bg-white-t w-1/3 border-r border-black min-h-full px-5 hover:bg-gray">
+              <div className="flex justify-start items-center">
+                <FaChevronRight className="text-orange text-3xl pr-3" />
+                <h1 className="text-black text-3xl font-semibold w-9/12 leading-tight">
+                  Powypadkowe badania techniczne
+                </h1>
+              </div>
+              <h5 className="pl-8 pt-2 text-black font-medium w-4/6">
+                Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz
+              </h5>
+            </div>
+            <div className="flex flex-col justify-center items- bg-white-t w-1/3 border-r border-black min-h-full px-5 hover:bg-gray">
+              <div className="flex justify-start items-center">
+                <FaChevronRight className="text-orange text-3xl pr-3" />
+                <h1 className="text-black text-3xl font-semibold w-9/12 leading-tight">
+                  Wypożyczalnia samochodów
+                </h1>
+              </div>
+              <h5 className="pl-8 pt-2 text-black font-medium w-4/6">
+                Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz
+              </h5>
+            </div>
           </div>
         </div>
         <section className="container mx-auto flex flex-col xl:flex-row">

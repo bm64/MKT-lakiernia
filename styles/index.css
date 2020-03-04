@@ -90,6 +90,30 @@ body {
 .header-item {
   @apply px-5 font-semibold;
 }
+.text-arrow {
+}
+.text-arrow::before {
+  color: #005a2b;
+  transition: all 0.4s;
+  content: '';
+  font-family: 'icons';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: 0.2em;
+  vertical-align: middle;
+  letter-spacing: 0;
+  margin-left: 0;
+  text-align: left;
+}
 
 @keyframes move {
   25% {

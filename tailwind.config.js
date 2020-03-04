@@ -3,9 +3,9 @@ module.exports = {
     extend: {
       colors: {
         black: '#1B1B1E',
-        'black-t': '#1B1B1EDD',
+        'black-t': '#1B1B1EDD ',
         white: '#fbfbfb',
-        'white-t': '#fbfbfbAA',
+        'white-t': '#fbfbfbCC',
         orange: '#FFAE03',
         'orange-t': '#FFAE03AA',
         gray: '#DDDDDD',
@@ -15,6 +15,7 @@ module.exports = {
         'screen-1/2': '50vh',
         'screen-3/4': '75vh',
         'screen-1/5': '20vh',
+        'screen-1/3': '33vh',
       },
       fontSize: {
         '4xxl': '2.6rem',
