@@ -5,7 +5,7 @@ module.exports = {
         black: '#1B1B1E',
         'black-t': '#1B1B1EDD ',
         white: '#fbfbfb',
-        'white-t': '#fbfbfbCC',
+        'white-t': '#fbfbfb',
         orange: '#FFAE03',
         'orange-t': '#FFAE03AA',
         gray: '#DDDDDD',
@@ -16,6 +16,9 @@ module.exports = {
         'screen-3/4': '75vh',
         'screen-1/5': '20vh',
         'screen-1/3': '33vh',
+        '1/2': '50%',
+        'screen-4/5': '80vh',
+        'screen-9/10': '90vh',
       },
       fontSize: {
         '4xxl': '2.6rem',

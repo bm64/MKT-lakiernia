@@ -67,7 +67,7 @@ function Home() {
     <Layout>
       <div
         id="navbar"
-        className="md:fixed h-screen flex flex-col flex-between items-stretch bg-black z-10 border-r border-white max-h-screen"
+        className="md:fixed h-screen flex flex-col flex-between items-stretch bg-black z-10 max-h-screen"
       >
         <h2 className="py-4 text-center font-bold ">MKT SERWIS</h2>
         <div className="py-4 hover:bg-gray flex flex-col items-center justify-around p-2 cursor-pointer">
@@ -251,6 +251,30 @@ function Home() {
             </div>
           </div>
         </div>
+        <div className="flex flex-row w-full min-h-screen-9/10 p-5">
+          <div
+            style={{
+              backgroundImage: 'url(/mobile2.jpeg)',
+            }}
+            className="min-h-full w-2/5 bg-cover"
+          ></div>
+          <div className="flex flex-col min-h-full w-3/5 pl-6 ">
+            <div
+              style={{ backgroundImage: 'url(/car_frame.jpg)' }}
+              className="min-h-1/2 w-full bg-cover "
+            ></div>
+            <div className="flex flex-row min-h-1/2 w-full pt-6">
+              <div
+                style={{ backgroundImage: 'url(/spectrofotometr.jpg)' }}
+                className="min-h-1/2 w-1/2 bg-cover mr-3"
+              ></div>
+              <div
+                style={{ backgroundImage: 'url(/car_polish.jpeg)' }}
+                className="min-h-full w-1/2 bg-cover ml-3"
+              ></div>
+            </div>
+          </div>
+        </div>
         <div ref={oneRef}>
           <CarouselProvider
             naturalSlideWidth={Math.min(width, 1280) || 400}
@@ -258,7 +282,7 @@ function Home() {
             totalSlides={3}
             dragEnabled={true}
             infinite={true}
-            className="container mx-auto py-4"
+            className="hidden container mx-auto py-4"
           >
             <Slider className="w-full py-4">
               <Slide
@@ -388,11 +412,11 @@ function Home() {
         <div className="divider div-transparent div-arrow-down" />
         <div
           style={{ backgroundImage: `url(${sectionImg})` }}
-          className="absolute w-full min-h-screen bg-cover  bg-center bg-no-repeat opacity-50"
+          className="absolute w-full min-h-screen-3/4 bg-cover  bg-center bg-no-repeat "
         ></div>
-        <div className="flex flex-col items-center w-full min-h-screen bg-cover relative">
+        <div className="relative flex flex-col items-center w-full min-h-screen-3/4 bg-cover ">
           <div className="flex-1"></div>
-          <div className="flex flex-col justify-evenly items-center w-5/12 min-h-screen-1/3 bg-gray shadow-2xl p-3">
+          <div className="hidden flex flex-col justify-evenly items-center w-5/12 min-h-1/4 bg-gray shadow-2xl p-3">
             <h1 className="text-4xl text-black font-semibold text-center leading-tight w-5/6">
               POZNAJ NASZĄ OFERTĘ USŁUG DODATKOWYCH
             </h1>
@@ -400,12 +424,12 @@ function Home() {
               Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w
               przemyśle poligraficznym. Został po raz pierwszy użyty w XV w.
               przez nenanego drukarza do wypełnienia tekstem.Został po raz
-              pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia
+              screnszy użyty w XV w. przez nieznanego drukarza do wypełnienia
               tekstem.
             </h3>
           </div>
           <div className="flex-1 flex-row  justify-end"></div>
-          <div className="flex flex-row w-full  min-h-screen-1/5 ">
+          <div className="flex flex-row w-full   ">
             <div
               onClick={() => setSectionImg('/car_polish3.jpeg')}
               className="flex flex-col justify-center items- bg-white-t w-1/3 border-r border-black min-h-full px-5 py-4 hover:bg-gray"
@@ -441,7 +465,7 @@ function Home() {
               <div className="flex justify-start items-center">
                 <FaChevronRight className="text-orange text-3xl pr-3" />
                 <h1 className="text-black text-2xl font-semibold w-9/12 leading-tight p-2">
-                  HOLOWANIE
+                  NAPRAWY PDR
                 </h1>
               </div>
               <h5 className="pl-8 pt-2 text-black font-medium w-4/6">
@@ -450,7 +474,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <section className="container mx-auto flex flex-col xl:flex-row">
+        <section className="hidden container mx-auto flex flex-col xl:flex-row">
           <div className="mx-auto max-w-2xl">
             <h1 className="section-title">Wypożyczalnia samochodów</h1>
             <div className="line bg-orange" />
@@ -465,7 +489,7 @@ function Home() {
             <FadeImage src="/car_rental.jpg" />
           </div>
         </section>
-        <section className="container mx-auto flex flex-col xl:flex-row">
+        <section className="hidden container mx-auto flex flex-col xl:flex-row">
           <div className="mx-auto max-w-2xl">
             <h1 className="section-title">Powypadkowe badania techniczne</h1>
             <div className="line bg-orange" />
