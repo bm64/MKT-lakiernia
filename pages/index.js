@@ -251,27 +251,75 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-row w-full min-h-screen-9/10 p-5">
+        <div className="flex flex-row w-11/12 mx-auto min-h-screen-9/10 p-5">
           <div
             style={{
-              backgroundImage: 'url(/mobile2.jpeg)',
+              backgroundImage: 'url(/car_painting.jpeg)',
             }}
-            className="min-h-full w-2/5 bg-cover"
-          ></div>
+            className="flex flex-col justify-end in-h-full w-1/2 bg-cover bg-center"
+          >
+            <div className="section-item p-10 pl-16">
+              <h2 className="font-semibold">
+                Profesjonalne narzędzia lakiernicze
+              </h2>
+              <div
+                style={{ height: '0.15rem' }}
+                className="w-10 bg-orange mt-2 mb-3"
+              ></div>
+              <h5 className="text-gray font-medium">
+                Własny mieszalnik cromax pro na bazie wody
+              </h5>
+              <h5 className="text-gray font-medium">
+                Pistolety SATA oraz IWATA
+              </h5>
+            </div>
+          </div>
           <div className="flex flex-col min-h-full w-3/5 pl-6 ">
             <div
-              style={{ backgroundImage: 'url(/car_frame.jpg)' }}
-              className="min-h-1/2 w-full bg-cover "
-            ></div>
+              style={{
+                backgroundImage: 'url(/mark6.jpg)',
+              }}
+              className="flex flex-col justify-end min-h-1/2 w-full bg-cover bg-bottom
+              bg-no-repeat"
+            >
+              <div className="section-item p-10 pl-16">
+                <h2 className="font-semibold">CAR-O-LINER MARK 6</h2>
+                <div
+                  style={{ height: '0.15rem' }}
+                  className="w-10 bg-orange mt-2 mb-3"
+                ></div>
+                <h5 className="text-gray font-medium">
+                  Umożliwiający naprawę samochodów dostawczych
+                </h5>
+              </div>
+            </div>
             <div className="flex flex-row min-h-1/2 w-full pt-6">
               <div
                 style={{ backgroundImage: 'url(/spectrofotometr.jpg)' }}
-                className="min-h-1/2 w-1/2 bg-cover mr-3"
-              ></div>
+                className="flex flex-col justify-end min-h-1/2 w-1/2 bg-cover bg-center mr-3"
+              >
+                <div className="section-item p-10 pl-16">
+                  <h2 className="font-semibold">Spectrofotometr Cromax</h2>
+                  <div
+                    style={{ height: '0.15rem' }}
+                    className="w-10 bg-orange mt-2 mb-3"
+                  ></div>
+                  <h5 className="text-gray font-medium"></h5>
+                </div>
+              </div>
               <div
-                style={{ backgroundImage: 'url(/car_polish.jpeg)' }}
-                className="min-h-full w-1/2 bg-cover ml-3"
-              ></div>
+                style={{ backgroundImage: 'url(/nova_verta.jpg)' }}
+                className="flex flex-col justify-end min-h-full w-1/2 bg-cover bg-no-repeat ml-3 bg-center"
+              >
+                <div className="section-item pb-10 pt-10 pr-5 pl-16">
+                  <h2 className="font-semibold">Kabina Nova Verta</h2>
+                  <div
+                    style={{ height: '0.15rem' }}
+                    className="w-10 bg-orange mt-2 mb-3"
+                  ></div>
+                  <h5 className="text-gray font-medium"></h5>
+                </div>
+              </div>
             </div>
           </div>
         </div>

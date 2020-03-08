@@ -83,6 +83,17 @@ body {
   @apply text-white border-b border-white py-1;
 }
 
+.section-item {
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0,
+    black 60%,
+    black 100%
+  );
+}
+.section-line {
+  @apply w-1/3 h-1 my-6 rounded-lg;
+}
 .contact-icon {
   @apply text-6xl text-orange mx-4;
 }
