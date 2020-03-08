@@ -259,7 +259,7 @@ function Home() {
               }}
               className="transform h-full w-full bg-center bg-cover hover:scale-110 duration-2500"
             ></div>
-            <div className="absolute left-0 bottom-0 w-full section-item p-10 pl-16">
+            <div className="absolute left-0 bottom-0 w-full section-item p-10 pl-12 pr-5">
               <h2 className="font-semibold">
                 Profesjonalne narzędzia lakiernicze
               </h2>
@@ -287,14 +287,15 @@ function Home() {
                 className="transform h-full w-full bg-bottom bg-cover hover:scale-110 duration-2500"
               ></div>
 
-              <div className="absolute left-0 bottom-0 w-full section-item p-10 pl-16">
+              <div className="absolute left-0 bottom-0 w-full section-item p-10 pl-12 pr-5">
                 <h2 className="font-semibold">CAR-O-LINER MARK 6</h2>
                 <div
                   style={{ height: '0.15rem' }}
                   className="w-10 bg-orange mt-2 mb-3"
                 ></div>
                 <h5 className="text-gray font-medium">
-                  Umożliwiający naprawę samochodów dostawczych
+                  Umożliwiający naprawę samochodów
+                  <h5> dostawczych o wadze do 3.5t</h5>
                 </h5>
               </div>
             </div>
@@ -307,13 +308,16 @@ function Home() {
                   className="transform h-full w-full bg-bottom bg-cover hover:scale-110 duration-2500"
                 ></div>
 
-                <div className="absolute w-full left-0 bottom-0 section-item p-10 pl-16">
+                <div className="absolute w-full left-0 bottom-0 section-item p-10 pr-5 pl-12">
                   <h2 className="font-semibold">Spectrofotometr Cromax</h2>
                   <div
                     style={{ height: '0.15rem' }}
                     className="w-10 bg-orange mt-2 mb-3"
                   ></div>
-                  <h5 className="text-gray font-medium"></h5>
+                  <h5 className="text-gray font-medium">
+                    Nowy poziom dopasowania koloru ze spektrofotometrem
+                    ChromaVision Pro
+                  </h5>
                 </div>
               </div>
               <div className="relative flex flex-col justify-end min-h-full w-1/2 bg-cover bg-no-repeat ml-3 bg-center overflow-hidden">
@@ -324,13 +328,15 @@ function Home() {
                   className="transform h-full w-full bg-bottom bg-cover hover:scale-110 duration-2500"
                 ></div>
 
-                <div className="absolute w-full bot-0 left-0 section-item pb-10 pt-10 pr-5 pl-16">
+                <div className="absolute w-full bot-0 left-0 section-item pb-10 pt-10 pr-5 pl-12">
                   <h2 className="font-semibold">Kabina Nova Verta</h2>
                   <div
                     style={{ height: '0.15rem' }}
                     className="w-10 bg-orange mt-2 mb-3"
                   ></div>
-                  <h5 className="text-gray font-medium"></h5>
+                  <h5 className="text-gray font-medium">
+                    Kabiny lakiernicze przystosowane do procesów lakierniczych
+                  </h5>
                 </div>
               </div>
             </div>
