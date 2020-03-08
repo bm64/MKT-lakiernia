@@ -46,11 +46,13 @@ function Home() {
   const twoRef = useRef()
   const threeRef = useRef()
   const fourRef = useRef()
+  const fiveRef = useRef()
 
   const oneVisible = useOnEnterLeave(oneRef)
   const twoVisible = useOnEnterLeave(twoRef)
   const threeVisible = useOnEnterLeave(threeRef)
   const fourVisible = useOnEnterLeave(fourRef)
+  const fiveVisible = useOnEnterLeave(fiveRef)
 
   const carouselHeight = useMedia(
     [
@@ -67,41 +69,46 @@ function Home() {
     <Layout>
       <div
         id="navbar"
-        className="md:fixed h-screen flex flex-col flex-between items-stretch bg-black z-10 max-h-screen"
+        className="md:fixed h-screen flex flex-col flex-between items-stretch bg-black2 z-10 max-h-screen"
       >
         <h2 className="py-4 text-center font-bold ">MKT SERWIS</h2>
         <div className="py-4 hover:bg-gray flex flex-col items-center justify-around p-2 cursor-pointer">
           <FaWarehouse
-            className={`${oneVisible ? 'text-orange' : ''} text-4xl`}
+            className={`${
+              oneVisible && !twoVisible ? 'text-orange' : ''
+            } text-4xl`}
           />
           <h4 className="text-center font-medium">
             Centrum blacharsko lakiernicze
           </h4>
         </div>
         <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2 cursor-pointer">
-          <FaCarCrash className="text-4xl" />
+          <FaCarCrash
+            className={`${
+              twoVisible && !threeVisible ? 'text-orange' : ''
+            } text-4xl`}
+          />
           <h4 className="text-center font-medium">Likwidacja szkody</h4>
         </div>
         <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2 cursor-pointer">
-          <FaWrench className="text-4xl" />
+          <FaWrench
+            className={`${
+              threeVisible && !fourVisible ? 'text-orange' : ''
+            } text-4xl`}
+          />
           <h4 className="text-center font-medium">Usługi dodatkowe</h4>
         </div>
         <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2 cursor-pointer">
           <FaUserFriends
             className={`${
-              threeVisible && !oneVisible && !twoVisible && !fourVisible
-                ? 'text-orange'
-                : ''
+              fourVisible && !fiveVisible ? 'text-orange' : ''
             } text-4xl`}
           />
           <h4 className="text-center font-medium">O nas</h4>
         </div>
         <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2 cursor-pointer">
-          <FaBars
-            className={`${
-              fourVisible && !oneVisible && !twoVisible ? 'text-orange' : ''
-            } text-4xl`}
-          />
+          <FaBars className={`${fiveVisible ? 'text-orange' : ''} text-4xl`} />
+
           <h4 className="text-center font-medium">Kontakt</h4>
         </div>
 
@@ -170,50 +177,6 @@ function Home() {
                   Możliwość bezgotówkowego rozliczenia sprawy.
                 </p>
               </div>
-              <div className="flex w-full py-8">
-                <button className="hero-button w-full min-h-full  mr-2 p-5 ">
-                  <h1
-                    style={{ textShadow: '1px 1px 1px #1B1B1E' }}
-                    className="font-medium py-1"
-                  >
-                    Procedura likwidacji szkody
-                  </h1>
-                  <div
-                    style={{ height: '2px', backgroundColor: '#CCCCCCDD' }}
-                    className=" w-11/12 mx-auto rounded-lg"
-                  ></div>
-                  <p
-                    style={{ textShadow: '1px 1px 1px #1B1B1E' }}
-                    className="text-xl"
-                  >
-                    Lorem Ipsum jest tekstem stosowanym jako przykładowy
-                    wypełniacz w przemyśle poligraficznym. Został po raz
-                    pierwszy użyty w XV w. przez nieznanego drukarza do
-                    wypełnienia tekstem
-                  </p>
-                </button>
-                <button className="hero-button w-full min-h-full  ml-2 p-1">
-                  <h1
-                    style={{ textShadow: '1px 1px 1px #1B1B1E' }}
-                    className="font-medium py-1"
-                  >
-                    Procedura likwidacji szkody
-                  </h1>
-                  <div
-                    style={{ height: '2px', backgroundColor: '#CCCCCCDD' }}
-                    className="w-11/12 mx-auto rounded-lg"
-                  ></div>
-                  <p
-                    style={{ textShadow: '1px 1px 1px #1B1B1E' }}
-                    className="text-xl"
-                  >
-                    Lorem Ipsum jest tekstem stosowanym jako przykładowy
-                    wypełniacz w przemyśle poligraficznym. Został po raz
-                    pierwszy użyty w XV w. przez nieznanego drukarza do
-                    wypełnienia tekstem
-                  </p>
-                </button>
-              </div>
             </div>
           </div>
           <video
@@ -224,482 +187,370 @@ function Home() {
           >
             <source src="/video1.mp4" type="video/mp4" />
           </video>
-          <div className="hidden flex flex-col justify-between relative">
-            <div className="hero-content flex flex-col justify-between h-screen py-16">
-              <div className="flex flex-col items-center py-8 z-10 md:py-20">
-                <h1 className="text-white text-center font-bold px-1 pt-10 md:text-4xl lg:hidden">
-                  Centrum <br />
-                  blacharsko-lakiernicze
-                </h1>
-                <div className="line bg-white" />
-              </div>
-              <div className="flex flex-col items-center z-10 lg:hidden">
-                <h2 className="text-white text-center font-bold py-5 text-black md:text-4xl">
-                  Miałeś szkodę?
-                </h2>
-                <div className="border-2 border-orange hover:bg-white-t px-12 py-3 z-10 cursor-pointer">
-                  <span className="text-orange text-2xl font-bold md:text-4xl">
-                    Zadzwoń
-                  </span>
+
+          <section ref={oneRef} className="panels">
+            <div className="flex flex-row mx-auto min-h-screen-9/10">
+              <div className="relative flex flex-col justify-end in-h-full w-1/2 bg-cover bg-center  overflow-hidden">
+                <div
+                  style={{
+                    backgroundImage: 'url(/car_painting.jpeg)',
+                  }}
+                  className="transform h-full w-full bg-center bg-cover hover:scale-110 duration-2500"
+                ></div>
+                <div className="absolute left-0 bottom-0 w-full section-item p-10 pl-12 pr-5">
+                  <h2 className="font-semibold">
+                    Profesjonalne narzędzia lakiernicze
+                  </h2>
+                  <div
+                    style={{ height: '0.15rem' }}
+                    className="w-10 bg-orange mt-2 mb-3"
+                  ></div>
+                  <h5 className="text-gray font-medium">
+                    Własny mieszalnik cromax pro na bazie wody
+                  </h5>
+                  <h5 className="text-gray font-medium">
+                    Pistolety SATA oraz IWATA
+                  </h5>
                 </div>
               </div>
-              <div className="arrow-container mx-auto lg:hidden">
-                <div className="chevron md:w-20 md:h-4"></div>
-                <div className="chevron md:w-20 md:h-4"></div>
-                <div className="chevron md:w-20 md:h-4"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-row w-11/12 mx-auto min-h-screen-9/10 p-5  ">
-          <div className="relative flex flex-col justify-end in-h-full w-1/2 bg-cover bg-center  overflow-hidden">
-            <div
-              style={{
-                backgroundImage: 'url(/car_painting.jpeg)',
-              }}
-              className="transform h-full w-full bg-center bg-cover hover:scale-110 duration-2500"
-            ></div>
-            <div className="absolute left-0 bottom-0 w-full section-item p-10 pl-12 pr-5">
-              <h2 className="font-semibold">
-                Profesjonalne narzędzia lakiernicze
-              </h2>
-              <div
-                style={{ height: '0.15rem' }}
-                className="w-10 bg-orange mt-2 mb-3"
-              ></div>
-              <h5 className="text-gray font-medium">
-                Własny mieszalnik cromax pro na bazie wody
-              </h5>
-              <h5 className="text-gray font-medium">
-                Pistolety SATA oraz IWATA
-              </h5>
-            </div>
-          </div>
-          <div className="flex flex-col min-h-full w-3/5 pl-6 ">
-            <div
-              className="relative flex flex-col justify-end min-h-1/2 w-full bg-cover bg-bottom
+              <div className="flex flex-col min-h-full w-3/5 pl-6 ">
+                <div
+                  className="relative flex flex-col justify-end min-h-1/2 w-full bg-cover bg-bottom
               bg-no-repeat overflow-hidden"
-            >
-              <div
-                style={{
-                  backgroundImage: 'url(/mark6.jpg)',
-                }}
-                className="transform h-full w-full bg-bottom bg-cover hover:scale-110 duration-2500"
-              ></div>
-
-              <div className="absolute left-0 bottom-0 w-full section-item p-10 pl-12 pr-5">
-                <h2 className="font-semibold">CAR-O-LINER MARK 6</h2>
-                <div
-                  style={{ height: '0.15rem' }}
-                  className="w-10 bg-orange mt-2 mb-3"
-                ></div>
-                <h5 className="text-gray font-medium">
-                  Umożliwiający naprawę samochodów
-                  <h5> dostawczych o wadze do 3.5t</h5>
-                </h5>
-              </div>
-            </div>
-            <div className="flex flex-row min-h-1/2 w-full pt-6">
-              <div className="relative flex flex-col justify-end min-h-1/2 w-1/2 bg-cover bg-center mr-3 overflow-hidden">
-                <div
-                  style={{
-                    backgroundImage: 'url(/spectrofotometr.jpg)',
-                  }}
-                  className="transform h-full w-full bg-bottom bg-cover hover:scale-110 duration-2500"
-                ></div>
-
-                <div className="absolute w-full left-0 bottom-0 section-item p-10 pr-5 pl-12">
-                  <h2 className="font-semibold">Spectrofotometr Cromax</h2>
+                >
                   <div
-                    style={{ height: '0.15rem' }}
-                    className="w-10 bg-orange mt-2 mb-3"
+                    style={{
+                      backgroundImage: 'url(/mark6.jpg)',
+                    }}
+                    className="transform h-full w-full bg-bottom bg-cover hover:scale-110 duration-2500"
                   ></div>
-                  <h5 className="text-gray font-medium">
-                    Nowy poziom dopasowania koloru ze spektrofotometrem
-                    ChromaVision Pro
-                  </h5>
-                </div>
-              </div>
-              <div className="relative flex flex-col justify-end min-h-full w-1/2 bg-cover bg-no-repeat ml-3 bg-center overflow-hidden">
-                <div
-                  style={{
-                    backgroundImage: 'url(/nova_verta.jpg)',
-                  }}
-                  className="transform h-full w-full bg-bottom bg-cover hover:scale-110 duration-2500"
-                ></div>
 
-                <div className="absolute w-full bot-0 left-0 section-item pb-10 pt-10 pr-5 pl-12">
-                  <h2 className="font-semibold">Kabina Nova Verta</h2>
-                  <div
-                    style={{ height: '0.15rem' }}
-                    className="w-10 bg-orange mt-2 mb-3"
-                  ></div>
-                  <h5 className="text-gray font-medium">
-                    Kabiny lakiernicze przystosowane do procesów lakierniczych
-                  </h5>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div ref={oneRef}>
-          <CarouselProvider
-            naturalSlideWidth={Math.min(width, 1280) || 400}
-            naturalSlideHeight={carouselHeight}
-            totalSlides={3}
-            dragEnabled={true}
-            infinite={true}
-            className="hidden container mx-auto py-4"
-          >
-            <Slider className="w-full py-4">
-              <Slide
-                innerClassName="flex flex-col xl:flex-row justify-center"
-                index={0}
-              >
-                <div className="my-auto mx-auto max-w-3xl">
-                  <h1 className="section-title">
-                    Profesjonalne prace blacharskie
-                  </h1>
-                  <div className="line bg-orange" />
-                  <p className="section-text">
-                    Wykonujemy prace blacharskie z wykorzystaniem
-                    specjalistycznych urz dze i technik naprawczych; rama do
-                    napraw blacharskich CAR-O-LINER MARK 6 oraz innowacyjny
-                    komputerowy system pomiaru nadwozia SPANESI TOUCH WHEELS.
-                  </p>
-                  <div className="px-8 py-4 flex flex-row items-center">
-                    <FaTruck className="text-5xl text-orange" />
-                    <h3 className="text-center">
-                      Nasze wyposażenie umożliwia także naprawę samochodów
-                      dostawczych do 3.5 ton
-                    </h3>
+                  <div className="absolute left-0 bottom-0 w-full section-item p-10 pl-12 pr-5">
+                    <h2 className="font-semibold">CAR-O-LINER MARK 6</h2>
+                    <div
+                      style={{ height: '0.15rem' }}
+                      className="w-10 bg-orange mt-2 mb-3"
+                    ></div>
+                    <h5 className="text-gray font-medium">
+                      Umożliwiający naprawę samochodów
+                      <h5> dostawczych o wadze do 3.5t</h5>
+                    </h5>
                   </div>
                 </div>
-                <img
-                  src="/car_frame.jpg"
-                  className="section-img w-3/4 xl:max-w-3xl"
-                />
-              </Slide>
-              <Slide
-                innerClassName="flex flex-col xl:flex-row justify-center"
-                index={1}
-              >
-                <div className="my-auto mx-auto max-w-2xl">
-                  <h1 className="section-title">
-                    Perfekcyjnie położony lakier
-                  </h1>
-                  <div className="line bg-orange" />
-                  <p className="section-text">
-                    Wykonujemy prace blacharskie z wykorzystaniem
-                    specjalistycznych urz dze i technik naprawczych; rama do
-                    napraw blacharskich CAR-O-LINER MARK 6 oraz innowacyjny
-                    komputerowy system pomiaru nadwozia SPANESI TOUCH WHEELS.
-                  </p>
+                <div className="flex flex-row min-h-1/2 w-full pt-6">
+                  <div className="relative flex flex-col justify-end min-h-1/2 w-1/2 bg-cover bg-center mr-3 overflow-hidden">
+                    <div
+                      style={{
+                        backgroundImage: 'url(/spectrofotometr.jpg)',
+                      }}
+                      className="transform h-full w-full bg-bottom bg-cover hover:scale-110 duration-2500"
+                    ></div>
+
+                    <div className="absolute w-full left-0 bottom-0 section-item p-10 pr-5 pl-12">
+                      <h2 className="font-semibold">Spectrofotometr Cromax</h2>
+                      <div
+                        style={{ height: '0.15rem' }}
+                        className="w-10 bg-orange mt-2 mb-3"
+                      ></div>
+                      <h5 className="text-gray font-medium">
+                        Nowy poziom dopasowania koloru ze spektrofotometrem
+                        ChromaVision Pro
+                      </h5>
+                    </div>
+                  </div>
+                  <div className="relative flex flex-col justify-end min-h-full w-1/2 bg-cover bg-no-repeat ml-3 bg-center overflow-hidden">
+                    <div
+                      style={{
+                        backgroundImage: 'url(/nova_verta.jpg)',
+                      }}
+                      className="transform h-full w-full bg-bottom bg-cover hover:scale-110 duration-2500"
+                    ></div>
+
+                    <div className="absolute w-full bot-0 left-0 section-item pb-10 pt-10 pr-5 pl-12">
+                      <h2 className="font-semibold">Kabina Nova Verta</h2>
+                      <div
+                        style={{ height: '0.15rem' }}
+                        className="w-10 bg-orange mt-2 mb-3"
+                      ></div>
+                      <h5 className="text-gray font-medium">
+                        Kabiny lakiernicze przystosowane do procesów
+                        lakierniczych
+                      </h5>
+                    </div>
+                  </div>
                 </div>
-                <img
-                  src="/car_lacquer.jpeg"
-                  className="section-img w-3/4 max-w-3xl"
-                />
-              </Slide>
-              <Slide
-                innerClassName="flex flex-col xl:flex-row justify-center"
-                index={2}
-              >
-                <div className="my-auto mx-auto max-w-3xl">
-                  <h1 className="section-title">
-                    Naprawy PDR oraz Auto Detailing
-                  </h1>
-                  <div className="line bg-orange" />
-                  <p className="section-text">
-                    Wykonujemy prace blacharskie z wykorzystaniem
-                    specjalistycznych urz dze i technik naprawczych; rama do
-                    napraw blacharskich CAR-O-LINER MARK 6 oraz innowacyjny
-                    komputerowy system pomiaru nadwozia SPANESI TOUCH WHEELS.
-                  </p>
-                </div>
-                <img
-                  src="/car_detailing.jpeg"
-                  className="section-img w-3/4 max-w-3xl"
-                />
-              </Slide>
-            </Slider>
-            <CarouselSteps />
-          </CarouselProvider>
-        </div>
-        <div className="divider div-transparent div-arrow-down" />
-        <section className="container mx-auto">
-          <h1 className="section-title">Likwidacja szkody</h1>
-          <div className="flex flex-row items-stretch">
-            <div className="px-2 flex-1 flex flex-col">
-              <p className="pr-6 flex-1 text-3xl">
-                Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych
-                urz dze i technik naprawczych; rama do napraw blacharskich
-                CAR-O-LINER MARK 6 oraz innowacyjny komputerowy system pomiaru
-                nadwozia SPANESI TOUCH WHEELS.
-              </p>
-              <h3 className="font-semibold text-orange">
-                Za wykonane usługi udzielamy dwuletniej gwarancji
-              </h3>
+              </div>
             </div>
+          </section>
+
+          <section ref={twoRef} className="container mx-auto">
+            <h1 className="section-title text-left py-2">Miałeś szkodę?</h1>
+            <h1 className="text-right font-medium py-4">
+              Tutaj dowiesz się jak wygląda proces likwidacji
+            </h1>
             <div className="flex flex-col items-stretch">
               <div className="flex flex-row items-baseline">
                 <div className="h-16 w-16 flex justify-center items-center bg-orange text-2xl font-semibold shadow-xl">
                   1
                 </div>
-                <h2 className="px-2">Zgłoszenie szkody z polisy AC lub OC</h2>
+                <h2 className="px-4">Zgłoszenie szkody z polisy AC lub OC</h2>
               </div>
+              <p
+                className="font-medium text-2xl p-4"
+                style={{ maxWidth: '46rem' }}
+              >
+                Pierwszym krokiem jaki powinienes podjąć jest zgłoszenie szkody
+                z polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
+                jest zgłoszenie szkody z polisy AC lub OC do..
+              </p>
 
-              <div className="flex flex-row items-baseline">
+              <div className="h-1 w-4/6 bg-black2 rounded-sm" />
+
+              <div className="self-end flex flex-row items-baseline">
+                <h2 className="px-2">Oględziny pojazdu</h2>
                 <div className="mt-2 h-16 w-16 flex justify-center items-center bg-orange text-2xl font-semibold shadow-xl">
                   2
                 </div>
-                <h2 className="px-2">Oględziny pojazdu</h2>
               </div>
+              <p
+                className="self-end font-medium text-2xl p-4"
+                style={{ maxWidth: '46rem' }}
+              >
+                Drugim krokiem jaki powinienes podjąć jest zgłoszenie szkody z
+                polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
+                jest zgłoszenie szkody z polisy AC lub OC do..
+              </p>
+
+              <div className="self-end h-1 w-4/6 bg-black2 rounded-sm" />
+
               <div className="flex flex-row items-baseline">
                 <div className="mt-2 h-16 w-16 flex justify-center items-center bg-orange text-2xl font-semibold shadow-xl">
                   3
                 </div>
                 <h2 className="px-2">Ustalenie zakresu odpowiedzialności</h2>
               </div>
-              <div className="flex flex-row items-baseline">
+              <p
+                className="font-medium text-2xl p-4"
+                style={{ maxWidth: '46rem' }}
+              >
+                Trzecim krokiem jaki powinienes podjąć jest zgłoszenie szkody z
+                polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
+                jest zgłoszenie szkody z polisy AC lub OC do..
+              </p>
+
+              <div className="h-1 w-4/6 bg-black2 rounded-sm" />
+
+              <div className="self-end flex flex-row items-baseline">
                 <div className="mt-2 h-16 w-16 flex justify-center items-center bg-orange text-2xl font-semibold shadow-xl">
                   4*
                 </div>
                 <h2 className="px-2">Samochód zastępczy</h2>
               </div>
+              <p
+                className="self-end font-medium text-2xl p-4"
+                style={{ maxWidth: '46rem' }}
+              >
+                Czwartym krokiem jaki powinienes podjąć jest zgłoszenie szkody z
+                polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
+                jest zgłoszenie szkody z polisy AC lub OC do..
+              </p>
+
+              <div className="self-end h-1 w-4/6 bg-black2 rounded-sm" />
+
               <div className="flex flex-row items-baseline">
                 <div className="mt-2 h-16 w-16 flex justify-center items-center bg-orange text-2xl font-semibold shadow-xl">
                   5
                 </div>
                 <h2 className="px-2">Rozliczenie koszt napraw</h2>
               </div>
+              <p
+                className="font-medium text-2xl p-4"
+                style={{ maxWidth: '46rem' }}
+              >
+                Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody z
+                polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
+                jest zgłoszenie szkody z polisy AC lub OC do..
+              </p>
+
+              <div className="h-1 w-4/6 bg-black2 rounded-sm" />
             </div>
-          </div>
-        </section>
-        <div className="divider div-transparent div-arrow-down" />
-        <div
-          style={{ backgroundImage: `url(${sectionImg})` }}
-          className="absolute w-full min-h-screen-3/4 bg-cover  bg-center bg-no-repeat "
-        ></div>
-        <div className="relative flex flex-col items-center w-full min-h-screen-3/4 bg-cover ">
-          <div className="flex-1"></div>
-          <div className="hidden flex flex-col justify-evenly items-center w-5/12 min-h-1/4 bg-gray shadow-2xl p-3">
-            <h1 className="text-4xl text-black font-semibold text-center leading-tight w-5/6">
-              POZNAJ NASZĄ OFERTĘ USŁUG DODATKOWYCH
+          </section>
+
+          <section ref={threeRef}>
+            <div
+              style={{ backgroundImage: `url(${sectionImg})` }}
+              className="absolute w-full min-h-screen-3/4 bg-cover bg-center bg-no-repeat "
+            ></div>
+            <div className="relative flex flex-col items-end h-full w-full min-h-screen-3/4 bg-cover ">
+              <div className="flex-1" />
+              <div className="flex flex-row h-full w-full">
+                <div
+                  onClick={() => setSectionImg('/car_polish3.jpeg')}
+                  className="flex flex-col justify-center bg-black-t w-1/3 min-h-full px-5 py-4 hover:bg-black"
+                >
+                  <div className="flex justify-start items-center">
+                    <FaChevronRight className="text-orange text-3xl pr-3" />
+                    <h1 className="text-white text-2xl text-center font-semibold w-9/12 leading-tight">
+                      WYPOŻYCZALNIA SAMOCHODÓW
+                    </h1>
+                  </div>
+                  <h5 className="pl-8 pt-2 text-white font-medium w-4/6">
+                    Lorem Ipsum jest tekstem stosowanym jako przykładowy
+                    wypełniacz
+                  </h5>
+                </div>
+                <div
+                  onClick={() => setSectionImg('/car_polish4.jpeg')}
+                  className="flex flex-col justify-center bg-black-t w-1/3 min-h-full px-5 py-4 hover:bg-black"
+                >
+                  <div className="flex justify-start items-center">
+                    <FaChevronRight className="text-orange text-3xl pr-3" />
+                    <h1 className="text-white text-2xl text-center font-semibold w-9/12 leading-tight">
+                      POWYPADKOWE BADANIA TECHNICZNE
+                    </h1>
+                  </div>
+                  <h5 className="pl-8 pt-2 text-white font-medium w-4/6">
+                    Lorem Ipsum jest tekstem stosowanym jako przykładowy
+                    wypełniacz
+                  </h5>
+                </div>
+                <div
+                  onClick={() => setSectionImg('/car_polish5.jpeg')}
+                  className="flex flex-col justify-center bg-black-t w-1/3 min-h-full px-5 py-4 hover:bg-black"
+                >
+                  <div className="flex justify-start items-center">
+                    <FaChevronRight className="text-orange text-3xl pr-3" />
+                    <h1 className="text-white text-2xl text-center font-semibold w-9/12 leading-tight p-2">
+                      NAPRAWY PDR
+                    </h1>
+                  </div>
+                  <h5 className="pl-8 pt-2 text-white font-medium w-4/6">
+                    Lorem Ipsum jest tekstem stosowanym jako przykładowy
+                    wypełniacz
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section ref={fourRef} className="container mx-auto flex flex-col">
+            <h1 className="section-title pt-2 text-left font-semibold text-orange">
+              Poznaj naszych pracowników
             </h1>
-            <h3 className="text-center text-black ">
-              Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w
-              przemyśle poligraficznym. Został po raz pierwszy użyty w XV w.
-              przez nenanego drukarza do wypełnienia tekstem.Został po raz
-              screnszy użyty w XV w. przez nieznanego drukarza do wypełnienia
-              tekstem.
-            </h3>
-          </div>
-          <div className="flex-1 flex-row  justify-end"></div>
-          <div className="flex flex-row w-full   ">
-            <div
-              onClick={() => setSectionImg('/car_polish3.jpeg')}
-              className="flex flex-col justify-center items- bg-white-t w-1/3 border-r border-black min-h-full px-5 py-4 hover:bg-gray"
-            >
-              <div className="flex justify-start items-center">
-                <FaChevronRight className="text-orange text-3xl pr-3" />
-                <h1 className="text-black text-2xl font-semibold w-9/12 leading-tight">
-                  WYPOŻYCZALNIA SAMOCHODÓW
-                </h1>
+            <div className="flex flex-row items-center border-t border-orange">
+              <div className="flex-1">
+                <h1>Bartłomiej Kula</h1>
+                <h4>Kierownik Centrum Blacharsko-Lakierniczego</h4>
               </div>
-              <h5 className="pl-8 pt-2 text-black font-medium w-4/6">
-                Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz
-              </h5>
-            </div>
-            <div
-              onClick={() => setSectionImg('/car_polish4.jpeg')}
-              className="flex flex-col justify-center items- bg-white-t w-1/3 border-r border-black min-h-full px-5 py-4 hover:bg-gray"
-            >
-              <div className="flex justify-start items-center">
-                <FaChevronRight className="text-orange text-3xl pr-3" />
-                <h1 className="text-black text-2xl font-semibold w-9/12 leading-tight">
-                  POWYPADKOWE BADANIA TECHNICZNE
-                </h1>
-              </div>
-              <h5 className="pl-8 pt-2 text-black font-medium w-4/6">
-                Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz
-              </h5>
-            </div>
-            <div
-              onClick={() => setSectionImg('/car_polish5.jpeg')}
-              className="flex flex-col justify-center items- bg-white-t w-1/3 border-r border-black min-h-full px-5 py-4 hover:bg-gray"
-            >
-              <div className="flex justify-start items-center">
-                <FaChevronRight className="text-orange text-3xl pr-3" />
-                <h1 className="text-black text-2xl font-semibold w-9/12 leading-tight p-2">
-                  NAPRAWY PDR
-                </h1>
-              </div>
-              <h5 className="pl-8 pt-2 text-black font-medium w-4/6">
-                Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz
-              </h5>
-            </div>
-          </div>
-        </div>
-        <section className="hidden container mx-auto flex flex-col xl:flex-row">
-          <div className="mx-auto max-w-2xl">
-            <h1 className="section-title">Wypożyczalnia samochodów</h1>
-            <div className="line bg-orange" />
-            <p className="section-text">
-              Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych
-              urz dze i technik naprawczych; rama do napraw blacharskich
-              CAR-O-LINER MARK 6 oraz innowacyjny komputerowy system pomiaru
-              nadwozia SPANESI TOUCH WHEELS.
-            </p>
-          </div>
-          <div className="mt-16 mx-auto relative w-3/4 xl:w-1/2">
-            <FadeImage src="/car_rental.jpg" />
-          </div>
-        </section>
-        <section className="hidden container mx-auto flex flex-col xl:flex-row">
-          <div className="mx-auto max-w-2xl">
-            <h1 className="section-title">Powypadkowe badania techniczne</h1>
-            <div className="line bg-orange" />
-            <p className="section-text">
-              Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych
-              urz dze i technik naprawczych; rama do napraw blacharskich
-              CAR-O-LINER MARK 6 oraz innowacyjny komputerowy system pomiaru
-              nadwozia SPANESI TOUCH WHEELS.
-            </p>
-          </div>
-          <FadeImage
-            src="/car_control.jpeg"
-            containerClass="m-auto w-3/4 xl:w-1/2"
-          />
-        </section>
-        <div className="divider div-transparent div-arrow-down" />
-        <section className="container mx-auto flex flex-col xl:flex-row">
-          <div className="mx-auto max-w-2xl">
-            <h1 className="section-title text-center">O nas</h1>
-            <div className="line bg-orange" />
-            <p className="section-text">
-              Wykonujemy prace blacharskie z wykorzystaniem specjalistycznych
-              urz dze i technik naprawczych; rama do napraw blacharskich
-              CAR-O-LINER MARK 6 oraz innowacyjny komputerowy system pomiaru
-              nadwozia SPANESI TOUCH WHEELS.
-            </p>
-          </div>
-          <FadeImage
-            src="/about_us.jpg"
-            containerClass="m-auto w-3/4 xl:w-1/2"
-          />
-        </section>
-        <section ref={threeRef} className="container mx-auto flex flex-col">
-          <h1 className="section-title pt-2 text-left font-semibold text-orange">
-            Poznaj naszych pracowników
-          </h1>
-          <div className="flex flex-row items-center border-t border-orange">
-            <div className="flex-1">
-              <h1>Bartłomiej Kula</h1>
-              <h4>Kierownik Centrum Blacharsko-Lakierniczego</h4>
-            </div>
-            <FadeImage src="/bartek.jpg" containerClass="bg-orange shadow-xl" />
-          </div>
-          <div className="flex flex-row items-center my-8 lg:my-0 lg:border-b lg:border-t lg:border-orange">
-            <FadeImage
-              src="/ewa.jpg"
-              containerClass="border-orange bg-orange shadow-xl"
-            />
-            <div className="flex-1 text-right">
-              <h1>Ewa Janusz</h1>
-              <h4>Asystent Centrum Blacharsko-Lakierniczego</h4>
-            </div>
-          </div>
-          <div className="flex flex-row items-center">
-            <div className="flex-1">
-              <h1>Maciej Kotwica</h1>
-              <h4>Specjalista Centrum Blacharsko-Lakierniczego</h4>
-            </div>
-            <FadeImage
-              src="/maciej.jpg"
-              containerClass="border-orange bg-orange shadow-xl"
-            />
-          </div>
-        </section>
-        <div className="divider2 donotcross" />
-        <section ref={fourRef} className="container mx-auto">
-          <h2 className="font-bold text-center md:text-5xl">Skontaktuj się</h2>
-          <div className="line bg-orange" />
-          <div className="flex flex-col xl:flex-row justify-around">
-            <div
-              className="px-8 py-8 flex flex-col items-stretch justify-center"
-              style={{ flexBasis: 450 }}
-            >
-              <input
-                className="block px-1 py-2 px-2 text-white font-bold bg-black border border-orange"
-                placeholder="Adres e-mail"
-                type="text"
+              <FadeImage
+                src="/bartek.jpg"
+                containerClass="bg-orange shadow-xl"
               />
-              <textarea
-                className="mt-4 p-2 text-white font-bold bg-black border border-orange"
-                placeholder="Tutaj wpisz treść wiadomości"
-                rows={8}
+            </div>
+            <div className="flex flex-row items-center my-8 lg:my-0 lg:border-b lg:border-t lg:border-orange">
+              <FadeImage
+                src="/ewa.jpg"
+                containerClass="border-orange bg-orange shadow-xl"
               />
-              <div className="mt-5 py-4 bg-orange text-center border border-orange-t hover:bg-orange-t cursor-pointer">
-                <span className="text-xl text-black font-medium ">
-                  Wyślij wiadomość
-                </span>
+              <div className="flex-1 text-right">
+                <h1>Ewa Janusz</h1>
+                <h4>Asystent Centrum Blacharsko-Lakierniczego</h4>
               </div>
             </div>
-            <div className="px-8 flex flex-row xl:flex-col justify-between xl:justify-center items-stretch">
-              <div className="py-4 flex flex-row items-center text-center">
-                <div className="flex-1 text-left">
-                  <h2>Telefon</h2>
-                  <p>
-                    tel <a href="tel:175830596">17 583 05 96</a>
-                    <br />
-                    kom <a href="tel:602583583">602 583 583</a>
-                  </p>
-                </div>
-                <MdPhoneIphone className="contact-icon" />
+            <div className="flex flex-row items-center">
+              <div className="flex-1">
+                <h1>Maciej Kotwica</h1>
+                <h4>Specjalista Centrum Blacharsko-Lakierniczego</h4>
               </div>
-              <div className="py-4 flex flex-row items-center text-center">
-                <div className="flex-1 text-left">
-                  <h2>E-mail</h2>
-                  <a href="mailto:lakiernia@mktoserwis.pl">
-                    lakiernia@mktserwis.pl
-                  </a>
+              <FadeImage
+                src="/maciej.jpg"
+                containerClass="border-orange bg-orange shadow-xl"
+              />
+            </div>
+          </section>
+
+          <section ref={fiveRef} className="container mx-auto">
+            <h2 className="font-bold text-center md:text-5xl">
+              Skontaktuj się
+            </h2>
+            <div className="line bg-orange" />
+            <div className="flex flex-col xl:flex-row justify-around">
+              <div
+                className="px-8 py-8 flex flex-col items-stretch justify-center"
+                style={{ flexBasis: 450 }}
+              >
+                <input
+                  className="block px-1 py-2 px-2 text-white font-bold bg-black border border-orange"
+                  placeholder="Adres e-mail"
+                  type="text"
+                />
+                <textarea
+                  className="mt-4 p-2 text-white font-bold bg-black border border-orange"
+                  placeholder="Tutaj wpisz treść wiadomości"
+                  rows={8}
+                />
+                <div className="mt-5 py-4 bg-orange text-center border border-orange-t hover:bg-orange-t cursor-pointer">
+                  <span className="text-xl text-black font-medium ">
+                    Wyślij wiadomość
+                  </span>
                 </div>
-                <MdMailOutline className="contact-icon" />
+              </div>
+              <div className="px-8 flex flex-row xl:flex-col justify-between xl:justify-center items-stretch">
+                <div className="py-4 flex flex-row items-center text-center">
+                  <div className="flex-1 text-left">
+                    <h2>Telefon</h2>
+                    <p>
+                      tel <a href="tel:175830596">17 583 05 96</a>
+                      <br />
+                      kom <a href="tel:602583583">602 583 583</a>
+                    </p>
+                  </div>
+                  <MdPhoneIphone className="contact-icon" />
+                </div>
+                <div className="py-4 flex flex-row items-center text-center">
+                  <div className="flex-1 text-left">
+                    <h2>E-mail</h2>
+                    <a href="mailto:lakiernia@mktoserwis.pl">
+                      lakiernia@mktserwis.pl
+                    </a>
+                  </div>
+                  <MdMailOutline className="contact-icon" />
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-        <section className="container mx-auto">
-          <div className="flex flex-row items-center">
-            <h3 className="flex-1 text-left md:text-3xl font-medium">
-              Tutaj nas znajdziesz
-            </h3>
-            <h4>
-              <span className="text-orange">Wola Mielecka 632</span> - 39-300
-              Mielec
-            </h4>
-          </div>
-          <iframe
-            className="w-full mx-auto min-h-screen-1/4 md:min-h-screen-1/2"
-            src="https://maps.google.com/maps?q=Wola%20mielecka%20lakiernia&t=&z=13&ie=UTF8&iwloc=&output=embed"
-          ></iframe>
-          <div className="flex flex-col md:flex-row md:justify-between p-5">
-            <img src="/narodowa_strategia.png" className="funding-img" />
-            <img src="/podkarpackie_logo.png" className="funding-img" />
-            <img src="/ue_fundusz.png" className="funding-img" />
-          </div>
-        </section>
-        <div className="p-5 md:p-8 w-full mx-auto bg-cover bg-right md:bg-cover md:bg-center">
-          <div className="container mx-auto">
-            <div className="footer-item">START</div>
-            <div className="footer-item">KONTAKT</div>
-            <div className="footer-item ">USŁUGI</div>
-            <div className="footer-item">POLITYKA PRYWATNOŚCI</div>
-            <div className="footer-item">USŁUGI</div>
-            <p className="text-sm text-center pt-4 text-white md:text-lg">
-              Copyright @ 2020 MKT Serwis
-            </p>
+          </section>
+
+          <section className="container mx-auto">
+            <div className="flex flex-row items-center">
+              <h3 className="flex-1 text-left md:text-3xl font-medium">
+                Tutaj nas znajdziesz
+              </h3>
+              <h4>
+                <span className="text-orange">Wola Mielecka 632</span> - 39-300
+                Mielec
+              </h4>
+            </div>
+            <iframe
+              className="w-full mx-auto min-h-screen-1/4 md:min-h-screen-1/2"
+              src="https://maps.google.com/maps?q=Wola%20mielecka%20lakiernia&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            ></iframe>
+            <div className="flex flex-col md:flex-row md:justify-between p-5">
+              <img src="/narodowa_strategia.png" className="funding-img" />
+              <img src="/podkarpackie_logo.png" className="funding-img" />
+              <img src="/ue_fundusz.png" className="funding-img" />
+            </div>
+          </section>
+          <div className="p-5 md:p-8 w-full mx-auto bg-cover bg-right md:bg-cover md:bg-center">
+            <div className="container mx-auto">
+              <div className="footer-item">START</div>
+              <div className="footer-item">KONTAKT</div>
+              <div className="footer-item ">USŁUGI</div>
+              <div className="footer-item">POLITYKA PRYWATNOŚCI</div>
+              <div className="footer-item">USŁUGI</div>
+              <p className="text-sm text-center pt-4 text-white md:text-lg">
+                Copyright @ 2020 MKT Serwis
+              </p>
+            </div>
           </div>
         </div>
       </div>

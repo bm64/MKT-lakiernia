@@ -160,7 +160,7 @@ body {
   }
 
   section {
-    @apply px-12;
+    @apply px-4 py-24;
   }
   .section-title {
     @apply text-5xl;
@@ -177,9 +177,6 @@ body {
   .footer-item {
     @apply border-b-2 text-xl;
   }
-  section {
-    @apply py-8;
-  }
 }
 
 @screen xl {
@@ -189,12 +186,6 @@ body {
 
   #navbar {
     max-width: 12rem;
-  }
-}
-
-@media (min-width: calc(1400px + 18rem)) {
-  #content {
-    margin-left: 0;
   }
 }
 

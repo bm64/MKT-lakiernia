@@ -4,6 +4,7 @@ module.exports = {
       colors: {
         black: '#1B1B1E',
         'black-t': '#1B1B1EDD ',
+        black2: '#131318',
         white: '#fbfbfb',
         'white-t': '#fbfbfb',
         orange: '#FFAE03',
