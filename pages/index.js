@@ -251,14 +251,15 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-row w-11/12 mx-auto min-h-screen-9/10 p-5">
-          <div
-            style={{
-              backgroundImage: 'url(/car_painting.jpeg)',
-            }}
-            className="flex flex-col justify-end in-h-full w-1/2 bg-cover bg-center"
-          >
-            <div className="section-item p-10 pl-16">
+        <div className="flex flex-row w-11/12 mx-auto min-h-screen-9/10 p-5  ">
+          <div className="relative flex flex-col justify-end in-h-full w-1/2 bg-cover bg-center  overflow-hidden">
+            <div
+              style={{
+                backgroundImage: 'url(/car_painting.jpeg)',
+              }}
+              className="transform h-full w-full bg-center bg-cover hover:scale-110 duration-2500"
+            ></div>
+            <div className="absolute left-0 bottom-0 w-full section-item p-10 pl-16">
               <h2 className="font-semibold">
                 Profesjonalne narzędzia lakiernicze
               </h2>
@@ -276,13 +277,17 @@ function Home() {
           </div>
           <div className="flex flex-col min-h-full w-3/5 pl-6 ">
             <div
-              style={{
-                backgroundImage: 'url(/mark6.jpg)',
-              }}
-              className="flex flex-col justify-end min-h-1/2 w-full bg-cover bg-bottom
-              bg-no-repeat"
+              className="relative flex flex-col justify-end min-h-1/2 w-full bg-cover bg-bottom
+              bg-no-repeat overflow-hidden"
             >
-              <div className="section-item p-10 pl-16">
+              <div
+                style={{
+                  backgroundImage: 'url(/mark6.jpg)',
+                }}
+                className="transform h-full w-full bg-bottom bg-cover hover:scale-110 duration-2500"
+              ></div>
+
+              <div className="absolute left-0 bottom-0 w-full section-item p-10 pl-16">
                 <h2 className="font-semibold">CAR-O-LINER MARK 6</h2>
                 <div
                   style={{ height: '0.15rem' }}
@@ -294,11 +299,15 @@ function Home() {
               </div>
             </div>
             <div className="flex flex-row min-h-1/2 w-full pt-6">
-              <div
-                style={{ backgroundImage: 'url(/spectrofotometr.jpg)' }}
-                className="flex flex-col justify-end min-h-1/2 w-1/2 bg-cover bg-center mr-3"
-              >
-                <div className="section-item p-10 pl-16">
+              <div className="relative flex flex-col justify-end min-h-1/2 w-1/2 bg-cover bg-center mr-3 overflow-hidden">
+                <div
+                  style={{
+                    backgroundImage: 'url(/spectrofotometr.jpg)',
+                  }}
+                  className="transform h-full w-full bg-bottom bg-cover hover:scale-110 duration-2500"
+                ></div>
+
+                <div className="absolute w-full left-0 bottom-0 section-item p-10 pl-16">
                   <h2 className="font-semibold">Spectrofotometr Cromax</h2>
                   <div
                     style={{ height: '0.15rem' }}
@@ -307,11 +316,15 @@ function Home() {
                   <h5 className="text-gray font-medium"></h5>
                 </div>
               </div>
-              <div
-                style={{ backgroundImage: 'url(/nova_verta.jpg)' }}
-                className="flex flex-col justify-end min-h-full w-1/2 bg-cover bg-no-repeat ml-3 bg-center"
-              >
-                <div className="section-item pb-10 pt-10 pr-5 pl-16">
+              <div className="relative flex flex-col justify-end min-h-full w-1/2 bg-cover bg-no-repeat ml-3 bg-center overflow-hidden">
+                <div
+                  style={{
+                    backgroundImage: 'url(/nova_verta.jpg)',
+                  }}
+                  className="transform h-full w-full bg-bottom bg-cover hover:scale-110 duration-2500"
+                ></div>
+
+                <div className="absolute w-full bot-0 left-0 section-item pb-10 pt-10 pr-5 pl-16">
                   <h2 className="font-semibold">Kabina Nova Verta</h2>
                   <div
                     style={{ height: '0.15rem' }}
