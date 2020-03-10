@@ -149,7 +149,7 @@ function Home() {
       </div>
 
       <div id="content">
-        <div className="min-h-screen">
+        <div className="relative z-20 min-h-screen bg-black mb-64">
           <Header />
           <div
             style={{ width: 'calc(100% - 12rem)' }}
@@ -612,19 +612,23 @@ function Home() {
               <img src="/ue_fundusz.png" className="funding-img" />
             </div>
           </section>
-          <div className="p-5 md:p-8 w-full mx-auto bg-cover bg-right md:bg-cover md:bg-center">
-            <div className="container mx-auto">
-              <div className="footer-item">START</div>
-              <div className="footer-item">KONTAKT</div>
-              <div className="footer-item ">USŁUGI</div>
-              <div className="footer-item">POLITYKA PRYWATNOŚCI</div>
-              <div className="footer-item">USŁUGI</div>
-              <p className="text-sm text-center pt-4 text-white md:text-lg">
-                Copyright @ 2020 MKT Serwis
-              </p>
-            </div>
-          </div>
         </div>
+        <footer
+          className="fixed bottom-0 h-64 w-full text-center bg-black2"
+          style={{ width: 'calc(100vw - 12rem)' }}
+        >
+          <div
+            className="absolute mx-auto"
+            style={{
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+            }}
+          >
+            <h1 className="font-bold">MKT-SERWIS</h1>
+            <h4 className="font-medium text-gray">@2020</h4>
+          </div>
+        </footer>
       </div>
     </Layout>
   )
