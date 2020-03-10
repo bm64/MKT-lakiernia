@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import Layout from '../components/layout'
 import Header from '../components/header'
 import {
@@ -28,6 +28,13 @@ import withFadeIn from '../animations/withFadeIn'
 
 import NavSlider from 'react-slick'
 import { urlObjectKeys } from 'next/dist/next-server/lib/utils'
+
+import {
+  motion,
+  useViewportScroll,
+  useTransform,
+  useSpring,
+} from 'framer-motion'
 
 const settings = {
   dots: false,
@@ -66,11 +73,21 @@ function Home() {
     650
   )
   const [sectionImg, setSectionImg] = useState('/car_polish2.jpeg')
+
+  const { scrollYProgress } = useViewportScroll()
+
+  const stepOne = useRef()
+  const stepTwo = useRef()
+  const stepThree = useRef()
+  const stepFour = useRef()
+
+  const x = useTransform(scrollYProgress, [0.2, 0.3], [-300, 0])
+
   return (
     <Layout>
       <div
         id="navbar"
-        className="md:fixed h-screen flex flex-col flex-between items-stretch bg-black2 z-10 max-h-screen"
+        className="md:fixed h-screen flex flex-col flex-between items-stretch bg-black2 z-30 max-h-screen"
       >
         <h2 className="py-4 text-center font-bold ">MKT SERWIS</h2>
         <div className="py-4 hover:bg-gray flex flex-col items-center justify-around p-2 cursor-pointer">
@@ -290,90 +307,35 @@ function Home() {
               Tutaj dowiesz się jak wygląda proces likwidacji
             </h1>
             <div className="flex flex-col items-stretch">
-              <div className="flex flex-row items-baseline">
-                <div className="h-16 w-16 flex justify-center items-center bg-orange text-2xl font-semibold shadow-xl">
-                  1
-                </div>
-                <h2 className="px-4">Zgłoszenie szkody z polisy AC lub OC</h2>
-              </div>
-              <p
-                className="font-medium text-2xl p-4"
-                style={{ maxWidth: '46rem' }}
-              >
+              <Step index={1} title={'Zgłoszenie szkody z polisy AC lub OC'}>
                 Pierwszym krokiem jaki powinienes podjąć jest zgłoszenie szkody
                 z polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
                 jest zgłoszenie szkody z polisy AC lub OC do..
-              </p>
+              </Step>
 
-              <div className="h-1 w-4/6 bg-black2 rounded-sm" />
-
-              <div className="self-end flex flex-row items-baseline">
-                <h2 className="px-2">Oględziny pojazdu</h2>
-                <div className="mt-2 h-16 w-16 flex justify-center items-center bg-orange text-2xl font-semibold shadow-xl">
-                  2
-                </div>
-              </div>
-              <p
-                className="self-end font-medium text-2xl p-4"
-                style={{ maxWidth: '46rem' }}
-              >
+              <Step index={2} title="Oględziny pojazdu" reversed>
                 Drugim krokiem jaki powinienes podjąć jest zgłoszenie szkody z
                 polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
                 jest zgłoszenie szkody z polisy AC lub OC do..
-              </p>
+              </Step>
 
-              <div className="self-end h-1 w-4/6 bg-black2 rounded-sm" />
-
-              <div className="flex flex-row items-baseline">
-                <div className="mt-2 h-16 w-16 flex justify-center items-center bg-orange text-2xl font-semibold shadow-xl">
-                  3
-                </div>
-                <h2 className="px-2">Ustalenie zakresu odpowiedzialności</h2>
-              </div>
-              <p
-                className="font-medium text-2xl p-4"
-                style={{ maxWidth: '46rem' }}
-              >
+              <Step index={3} title={'Ustalenie zakresu odpowiedzialności'}>
                 Trzecim krokiem jaki powinienes podjąć jest zgłoszenie szkody z
                 polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
                 jest zgłoszenie szkody z polisy AC lub OC do..
-              </p>
+              </Step>
 
-              <div className="h-1 w-4/6 bg-black2 rounded-sm" />
-
-              <div className="self-end flex flex-row items-baseline">
-                <div className="mt-2 h-16 w-16 flex justify-center items-center bg-orange text-2xl font-semibold shadow-xl">
-                  4*
-                </div>
-                <h2 className="px-2">Samochód zastępczy</h2>
-              </div>
-              <p
-                className="self-end font-medium text-2xl p-4"
-                style={{ maxWidth: '46rem' }}
-              >
+              <Step index={'4'} title="Samochód zastępczy" reversed>
                 Czwartym krokiem jaki powinienes podjąć jest zgłoszenie szkody z
                 polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
                 jest zgłoszenie szkody z polisy AC lub OC do..
-              </p>
+              </Step>
 
-              <div className="self-end h-1 w-4/6 bg-black2 rounded-sm" />
-
-              <div className="flex flex-row items-baseline">
-                <div className="mt-2 h-16 w-16 flex justify-center items-center bg-orange text-2xl font-semibold shadow-xl">
-                  5
-                </div>
-                <h2 className="px-2">Rozliczenie koszt napraw</h2>
-              </div>
-              <p
-                className="font-medium text-2xl p-4"
-                style={{ maxWidth: '46rem' }}
-              >
+              <Step index={5} title="Rozliczanie koszt napraw">
                 Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody z
                 polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
                 jest zgłoszenie szkody z polisy AC lub OC do..
-              </p>
-
-              <div className="h-1 w-4/6 bg-black2 rounded-sm" />
+              </Step>
             </div>
           </section>
 
@@ -631,6 +593,60 @@ function Home() {
         </footer>
       </div>
     </Layout>
+  )
+}
+
+function Step({ index, title, reversed = false, children }) {
+  const ref = useRef()
+
+  const [h, setH] = useState(0)
+  const [y, setY] = useState(0)
+  useEffect(() => {
+    if (ref.current) {
+      setY(ref.current.getBoundingClientRect().top)
+      setH(ref.current.getBoundingClientRect().height)
+    }
+  }, [ref])
+
+  const { scrollY } = useViewportScroll()
+
+  const x = useTransform(
+    scrollY,
+    [y + 300, y + 1700],
+    reversed ? [600, 0] : [-600, 0]
+  )
+
+  return (
+    <>
+      <motion.div
+        ref={ref}
+        style={{ x }}
+        transition={{ type: 'spring', mass: 0.3, stiffness: 10 }}
+        className={`${reversed ? 'self-end' : ''} flex flex-row items-baseline`}
+      >
+        <div
+          className={`${
+            reversed ? 'self-end' : ''
+          } h-16 w-16 flex justify-center items-center bg-orange text-2xl font-semibold shadow-xl`}
+        >
+          {index}
+        </div>
+        <h2 className="px-4">{title}</h2>
+      </motion.div>
+      <motion.p
+        className={`${reversed ? 'self-end' : ''} font-medium text-2xl p-4`}
+        style={{ x, maxWidth: '46rem' }}
+      >
+        {children}
+      </motion.p>
+
+      <motion.div
+        style={{ x }}
+        className={`${
+          reversed ? 'self-end' : ''
+        } h-1 w-4/6 bg-black2 rounded-sm`}
+      />
+    </>
   )
 }
 
