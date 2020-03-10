@@ -27,6 +27,7 @@ import useOnEnterLeave from '../hooks/useOnEnterLeave'
 import withFadeIn from '../animations/withFadeIn'
 
 import NavSlider from 'react-slick'
+import { urlObjectKeys } from 'next/dist/next-server/lib/utils'
 
 const settings = {
   dots: false,
@@ -190,7 +191,7 @@ function Home() {
 
           <section ref={oneRef} className="panels">
             <div className="flex flex-row mx-auto min-h-screen-9/10">
-              <div className="relative flex flex-col justify-end in-h-full w-1/2 bg-cover bg-center  overflow-hidden">
+              <div className="relative flex flex-col justify-end min-h-full w-1/2 bg-cover bg-center  overflow-hidden">
                 <div
                   style={{
                     backgroundImage: 'url(/car_painting.jpeg)',
@@ -469,6 +470,77 @@ function Home() {
             </div>
           </section>
 
+          <div className="flex flex-row w-8/12 mx-auto">
+            <div className="flex-1 flex-col px-2">
+              <div className="relative ">
+                <div
+                  style={{
+                    backgroundImage: 'url(/bartek.jpg)',
+                    height: '25rem',
+                  }}
+                  className="w-full h-full bg-cover bg-no-repeat"
+                ></div>
+                <div className="absolute bottom-0 left-0 section-item w-full px-8 py-5">
+                  <h2 className="font-medium">Bartłomiej Kula</h2>
+                  <h5 className="font-normal pt-1">
+                    Kierownik Centrum Blacharsko-Lakierniczego
+                  </h5>
+                  <h5 className="font-normal pt-1 text-orange">
+                    +48 17 583 05 97
+                  </h5>
+                  <h5 className="font-normal pt-1 text-orange">
+                    b.kula@mktserwis.pl
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <div className="flex-1 flex-col px-2">
+              <div className="relative ">
+                <div
+                  style={{
+                    backgroundImage: 'url(/Maciej.jpg)',
+                    height: '25rem',
+                  }}
+                  className="w-full h-full bg-cover bg-no-repeat"
+                ></div>
+                <div className="absolute bottom-0 left-0 section-item w-full px-8 py-5">
+                  <h2 className="font-medium">Bartłomiej Kula</h2>
+                  <h5 className="font-normal pt-1">
+                    Kierownik Centrum Blacharsko-Lakierniczego
+                  </h5>
+                  <h5 className="font-normal pt-1 text-orange">
+                    +48 17 583 05 97
+                  </h5>
+                  <h5 className="font-normal pt-1 text-orange">
+                    b.kula@mktserwis.pl
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <div className="flex-1 flex-col px-2">
+              <div className="relative ">
+                <div
+                  style={{
+                    backgroundImage: 'url(/ewa.jpg)',
+                    height: '25rem',
+                  }}
+                  className="w-full h-full bg-cover bg-no-repeat"
+                ></div>
+                <div className="absolute bottom-0 left-0 section-item w-full px-8 py-5">
+                  <h2 className="font-medium">Bartłomiej Kula</h2>
+                  <h5 className="font-normal pt-1">
+                    Kierownik Centrum Blacharsko-Lakierniczego
+                  </h5>
+                  <h5 className="font-normal pt-1 text-orange">
+                    +48 17 583 05 97
+                  </h5>
+                  <h5 className="font-normal pt-1 text-orange">
+                    b.kula@mktserwis.pl
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
           <section ref={fiveRef} className="container mx-auto">
             <h2 className="font-bold text-center md:text-5xl">
               Skontaktuj się
