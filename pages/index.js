@@ -345,58 +345,36 @@ function Home() {
 
           <section ref={threeRef}>
             <div
-              style={{ backgroundImage: `url(${sectionImg})` }}
-              className="absolute w-full min-h-screen-3/4 bg-cover bg-center bg-no-repeat "
-            ></div>
-            <div className="relative flex flex-col items-end h-full w-full min-h-screen-3/4 bg-cover ">
-              <div className="flex-1" />
-              <div className="flex flex-row h-full w-full">
-                <div
-                  onClick={() => setSectionImg('/car_polish3.jpeg')}
-                  className="flex flex-col justify-center bg-black-t w-1/3 min-h-full px-5 py-4 hover:bg-black"
-                >
-                  <div className="flex justify-start items-center">
-                    <FaChevronRight className="text-orange text-3xl pr-3" />
-                    <h1 className="text-white text-2xl text-center font-semibold w-9/12 leading-tight">
-                      WYPOŻYCZALNIA SAMOCHODÓW
-                    </h1>
-                  </div>
-                  <h5 className="pl-8 pt-2 text-white font-medium w-4/6">
-                    Lorem Ipsum jest tekstem stosowanym jako przykładowy
-                    wypełniacz
-                  </h5>
-                </div>
-                <div
-                  onClick={() => setSectionImg('/car_polish4.jpeg')}
-                  className="flex flex-col justify-center bg-black-t w-1/3 min-h-full px-5 py-4 hover:bg-black"
-                >
-                  <div className="flex justify-start items-center">
-                    <FaChevronRight className="text-orange text-3xl pr-3" />
-                    <h1 className="text-white text-2xl text-center font-semibold w-9/12 leading-tight">
-                      POWYPADKOWE BADANIA TECHNICZNE
-                    </h1>
-                  </div>
-                  <h5 className="pl-8 pt-2 text-white font-medium w-4/6">
-                    Lorem Ipsum jest tekstem stosowanym jako przykładowy
-                    wypełniacz
-                  </h5>
-                </div>
-                <div
-                  onClick={() => setSectionImg('/car_polish5.jpeg')}
-                  className="flex flex-col justify-center bg-black-t w-1/3 min-h-full px-5 py-4 hover:bg-black"
-                >
-                  <div className="flex justify-start items-center">
-                    <FaChevronRight className="text-orange text-3xl pr-3" />
-                    <h1 className="text-white text-2xl text-center font-semibold w-9/12 leading-tight p-2">
-                      NAPRAWY PDR
-                    </h1>
-                  </div>
-                  <h5 className="pl-8 pt-2 text-white font-medium w-4/6">
-                    Lorem Ipsum jest tekstem stosowanym jako przykładowy
-                    wypełniacz
-                  </h5>
+              className="flex flex-row items-center"
+              style={{ flexBasis: 0 }}
+            >
+              <div
+                className="pl-2 py-4 flex flex-col rounded-lg"
+                style={{
+                  flex: 3,
+                  height: '36rem',
+                  backgroundImage: 'url(/skoda.jpg)',
+                  backgroundSize: 'cover',
+                  clipPath: 'polygon(0 0, 100% 0%, 51% 100%, 0% 100%)',
+                }}
+              >
+                <h1 className="px-4 font-semibold text-5xl bg-orange">
+                  WYPOŻYCZALNIA SAMOCHODÓW
+                </h1>
+                <div className="flex-1" />
+                <div className="flex flex-row justify-between items-end">
+                  <h4 className="px-2 text-black2 font-light bg-white rounded-sm">
+                    Naszym klientom samochody zastępcze udostępnia{' '}
+                    <span className="font-bold">SKODA</span>
+                  </h4>
+                  <img src="/skoda_biala.png" className="h-40" />
                 </div>
               </div>
+              <p className="flex-1 transform -translate-x-32 translate-y-4 text-right text-2xl">
+                Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody z
+                polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
+                jest zgłoszenie szkody z polisy AC lub OC do..
+              </p>
             </div>
           </section>
 
