@@ -32,16 +32,11 @@ module.exports = {
       screens: {
         xxl: '1400px',
       },
-      transitionDuration: {
-        '5000': '5000ms',
-      },
 
       transitionDuration: {
-        '3000': '3000ms',
-      },
-
-      transitionDuration: {
+        '3000': '3s',
         '2500': '2500ms',
+        '5000': '5000ms',
       },
     },
   },

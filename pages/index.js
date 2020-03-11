@@ -212,8 +212,9 @@ function Home() {
                 <div
                   style={{
                     backgroundImage: 'url(/car_painting.jpeg)',
+                    transitionDuration: '5000ms',
                   }}
-                  className="transform h-full w-full bg-center bg-cover hover:scale-110 duration-2500"
+                  className="transform h-full w-full bg-center bg-cover hover:scale-110"
                 ></div>
                 <div className="absolute left-0 bottom-0 w-full section-item p-10 pl-12 pr-5">
                   <h2 className="font-semibold">
@@ -239,8 +240,9 @@ function Home() {
                   <div
                     style={{
                       backgroundImage: 'url(/mark6.jpg)',
+                      transitionDuration: '4000ms',
                     }}
-                    className="transform h-full w-full bg-bottom bg-cover hover:scale-110 duration-2500"
+                    className="transform h-full w-full bg-bottom bg-cover hover:scale-110"
                   ></div>
 
                   <div className="absolute left-0 bottom-0 w-full section-item p-10 pl-12 pr-5">
@@ -259,9 +261,10 @@ function Home() {
                   <div className="relative flex flex-col justify-end min-h-1/2 w-1/2 bg-cover bg-center mr-3 overflow-hidden">
                     <div
                       style={{
+                        transitionDuration: '4000ms',
                         backgroundImage: 'url(/spectrofotometr.jpg)',
                       }}
-                      className="transform h-full w-full bg-bottom bg-cover hover:scale-110 duration-2500"
+                      className="transform h-full w-full bg-bottom bg-cover hover:scale-125"
                     ></div>
 
                     <div className="absolute w-full left-0 bottom-0 section-item p-10 pr-5 pl-12">
@@ -279,9 +282,10 @@ function Home() {
                   <div className="relative flex flex-col justify-end min-h-full w-1/2 bg-cover bg-no-repeat ml-3 bg-center overflow-hidden">
                     <div
                       style={{
+                        transitionDuration: '4000ms',
                         backgroundImage: 'url(/nova_verta.jpg)',
                       }}
-                      className="transform h-full w-full bg-bottom bg-cover hover:scale-110 duration-2500"
+                      className="transform h-full w-full bg-bottom bg-cover hover:scale-125"
                     ></div>
 
                     <div className="absolute w-full bot-0 left-0 section-item pb-10 pt-10 pr-5 pl-12">
@@ -396,7 +400,10 @@ function Home() {
             </div>
           </section>
 
-          <section ref={fourRef} className="container mx-auto flex flex-col">
+          <section
+            ref={fourRef}
+            className="container hidden mx-auto flex flex-col"
+          >
             <h1 className="section-title pt-2 text-left font-semibold text-orange">
               Poznaj naszych pracowników
             </h1>
@@ -431,16 +438,39 @@ function Home() {
               />
             </div>
           </section>
+          <section
+            style={{ height: '50rem' }}
+            className="container relative mx-auto "
+          >
+            <img
+              style={{ filter: 'contrast(150%) blur(1px)' }}
+              src="/lakiernia.jpg"
+              className="w-full h-full object-cover"
+            />
+            <div
+              style={{
+                height: '20rem',
+                width: '40rem',
+                top: '50%',
+                left: '50%',
 
-          <div className="flex flex-row w-8/12 mx-auto">
-            <div className="flex-1 flex-col px-2">
+                transform: 'translate(-50%, -50%)',
+              }}
+              className="absolute border-red border-8 z-50"
+            >
+              <h1 className="text-center vertical">xddd</h1>
+            </div>
+          </section>
+
+          <div className="flex flex-row  w-9/12 mx-auto">
+            <div className="flex-1 flex-col px-10 transform duration-500 hover:scale-110">
               <div className="relative ">
                 <div
                   style={{
                     backgroundImage: 'url(/bartek.jpg)',
-                    height: '25rem',
+                    height: ' 25rem',
                   }}
-                  className="w-full h-full bg-cover bg-no-repeat"
+                  className="w-full h-full bg-cover bg-top bg-no-repeat "
                 ></div>
                 <div className="absolute bottom-0 left-0 section-item w-full px-8 py-5">
                   <h2 className="font-medium">Bartłomiej Kula</h2>
@@ -456,7 +486,7 @@ function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex-1 flex-col px-2">
+            <div className="flex-1 flex-col px-10 transform duration-500 hover:scale-110 shadow-">
               <div className="relative ">
                 <div
                   style={{
@@ -479,7 +509,7 @@ function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex-1 flex-col px-2">
+            <div className="flex-1 flex-col px-10 transform duration-500 hover:scale-110">
               <div className="relative ">
                 <div
                   style={{
