@@ -618,19 +618,25 @@ function Step({ index, title, reversed = false, children }) {
 
   const { scrollY } = useViewportScroll()
 
-  const x = useTransform(
+  const rx = useTransform(
     scrollY,
-    [y + 300, y + 1700],
-    reversed ? [600, 0] : [-600, 0]
+    [y - 1000, y + 1000],
+    reversed ? [900, 0] : [-900, 0]
   )
+
+  const x = useSpring(rx, { damping: 600 })
+
+  const opacity = useTransform(x, reversed ? [300, 0] : [-300, 0], [0, 1])
 
   return (
     <>
       <motion.div
         ref={ref}
-        style={{ x }}
+        style={{ x, opacity }}
         transition={{ type: 'spring', mass: 0.3, stiffness: 10 }}
-        className={`${reversed ? 'self-end' : ''} flex flex-row items-baseline`}
+        className={`${
+          reversed ? 'self-end' : ''
+        } pt-8 flex flex-row items-baseline`}
       >
         <div
           className={`${
@@ -643,13 +649,13 @@ function Step({ index, title, reversed = false, children }) {
       </motion.div>
       <motion.p
         className={`${reversed ? 'self-end' : ''} font-medium text-2xl p-4`}
-        style={{ x, maxWidth: '46rem' }}
+        style={{ x, opacity, maxWidth: '46rem' }}
       >
         {children}
       </motion.p>
 
       <motion.div
-        style={{ x }}
+        style={{ x, opacity }}
         className={`${
           reversed ? 'self-end' : ''
         } h-1 w-4/6 bg-black2 rounded-sm`}
