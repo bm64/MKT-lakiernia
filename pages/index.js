@@ -351,10 +351,82 @@ function Home() {
               <div
                 className="pl-2 py-4 flex flex-col rounded-lg"
                 style={{
-                  flex: 3,
+                  flex: 2,
                   height: '36rem',
                   backgroundImage: 'url(/skoda.jpg)',
                   backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+
+                  clipPath: 'polygon(0 0, 100% 0%, 60% 100%, 0% 100%)',
+                }}
+              >
+                {/*<h1 className="px-4 font-semibold text-4xl bg-orange ">
+                  WYPOŻYCZALNIA SAMOCHODÓW
+              </h1> */}
+                <div className="flex-1" />
+                <div className="flex flex-row justify-between items-end">
+                  <h4 className="px-2 text-black2 font-light bg-white rounded-sm">
+                    Naszym klientom samochody zastępcze udostępnia{' '}
+                    <span className="font-bold">SKODA</span>
+                  </h4>
+                  <img src="/skoda_biala.png" className="h-40" />
+                </div>
+              </div>
+              <div className="flex-1">
+                <h1 className="px-4 font-semibold text-4xl leading-tight ">
+                  WYPOŻYCZALNIA SAMOCHODÓW
+                </h1>
+                <p className="flex-1 transform -translate-x-32 translate-y-4 text-right text-xl">
+                  Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody
+                  z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
+                  podjąć jest zgłoszenie szkody z polisy AC lub OC do..
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section ref={threeRef} className="transform -translate-y-56">
+            <div
+              className="flex flex-row items-center"
+              style={{ flexBasis: 0 }}
+            >
+              <div className="flex-1">
+                <h1 className="px-4 font-semibold text-4xl leading-tight ">
+                  WYPOŻYCZALNIA SAMOCHODÓW
+                </h1>
+                <p className="flex-1 transform translate-x-16 translate-y-4 text-right text-xl">
+                  Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody
+                  z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
+                  podjąć jest zgłoszenie szkody z polisy AC lub OC do..
+                </p>
+              </div>
+
+              <div
+                className="pl-2 py-4 flex flex-col rounded-lg"
+                style={{
+                  flex: 1,
+                  height: '36rem',
+                  backgroundImage: 'url(/skoda.jpg)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  clipPath: 'polygon(40% 0, 100% 0, 100% 100%, 0% 100%)',
+                }}
+              ></div>
+            </div>
+          </section>
+          <section ref={threeRef}>
+            <div
+              className="flex flex-row items-center"
+              style={{ flexBasis: 0 }}
+            >
+              <div
+                className="pl-2 py-4 flex flex-col rounded-lg"
+                style={{
+                  flex: 3,
+                  height: '36rem',
+                  backgroundImage: 'url(/lakiernia.jpg)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
                   clipPath: 'polygon(0 0, 100% 0%, 51% 100%, 0% 100%)',
                 }}
               >
@@ -377,69 +449,6 @@ function Home() {
               </p>
             </div>
           </section>
-
-          <section
-            ref={fourRef}
-            className="container hidden mx-auto flex flex-col"
-          >
-            <h1 className="section-title pt-2 text-left font-semibold text-orange">
-              Poznaj naszych pracowników
-            </h1>
-            <div className="flex flex-row items-center border-t border-orange">
-              <div className="flex-1">
-                <h1>Bartłomiej Kula</h1>
-                <h4>Kierownik Centrum Blacharsko-Lakierniczego</h4>
-              </div>
-              <FadeImage
-                src="/bartek.jpg"
-                containerClass="bg-orange shadow-xl"
-              />
-            </div>
-            <div className="flex flex-row items-center my-8 lg:my-0 lg:border-b lg:border-t lg:border-orange">
-              <FadeImage
-                src="/ewa.jpg"
-                containerClass="border-orange bg-orange shadow-xl"
-              />
-              <div className="flex-1 text-right">
-                <h1>Ewa Janusz</h1>
-                <h4>Asystent Centrum Blacharsko-Lakierniczego</h4>
-              </div>
-            </div>
-            <div className="flex flex-row items-center">
-              <div className="flex-1">
-                <h1>Maciej Kotwica</h1>
-                <h4>Specjalista Centrum Blacharsko-Lakierniczego</h4>
-              </div>
-              <FadeImage
-                src="/maciej.jpg"
-                containerClass="border-orange bg-orange shadow-xl"
-              />
-            </div>
-          </section>
-          <section
-            style={{ height: '50rem' }}
-            className="container relative mx-auto "
-          >
-            <img
-              style={{ filter: 'contrast(150%) blur(1px)' }}
-              src="/lakiernia.jpg"
-              className="w-full h-full object-cover"
-            />
-            <div
-              style={{
-                height: '20rem',
-                width: '40rem',
-                top: '50%',
-                left: '50%',
-
-                transform: 'translate(-50%, -50%)',
-              }}
-              className="absolute border-red border-8 z-50"
-            >
-              <h1 className="text-center vertical">xddd</h1>
-            </div>
-          </section>
-
           <div className="flex flex-row  w-9/12 mx-auto">
             <div className="flex-1 flex-col px-10 transform duration-500 hover:scale-110">
               <div className="relative ">
