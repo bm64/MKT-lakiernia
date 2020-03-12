@@ -305,7 +305,7 @@ function Home() {
                 jest zgłoszenie szkody z polisy AC lub OC do..
               </Step>
 
-              <Step index={'4'} title="Samochód zastępczy" reversed>
+              <Step index={4} title="Samochód zastępczy" reversed>
                 Czwartym krokiem jaki powinienes podjąć jest zgłoszenie szkody z
                 polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
                 jest zgłoszenie szkody z polisy AC lub OC do..
@@ -762,19 +762,18 @@ function Step({ index, title, reversed = false, children }) {
   return (
     <div
       className="py-12 flex flex-row"
-      style={{ alignSelf: reversed ? 'self-end' : 'self-start' }}
+      style={{ alignSelf: reversed ? 'flex-end' : 'flex-start' }}
     >
       {reversed && (
         <div
-          className="self-end arrow transform "
+          className="self-end arrow"
           style={{ transform: 'scaleX(-1) translateX(14rem)' }}
         >
           <div className="curve" />
           <div className="point" />
         </div>
       )}
-
-      <div>
+      <div className="w-full">
         <motion.div
           ref={ref}
           style={{ x, opacity }}
