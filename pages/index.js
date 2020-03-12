@@ -322,6 +322,107 @@ function Home() {
           <section ref={threeRef}>
             <div
               className="flex flex-row items-center"
+              style={{ transform: 'translateX(-18rem)' }}
+            >
+              <div
+                style={{ transform: 'skew(-35deg)', flex: '2.7 1 0%' }}
+                className="overflow-hidden"
+              >
+                <div
+                  style={{
+                    height: '40rem',
+
+                    backgroundImage: 'url(/skoda.jpg)',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    transform: 'translate(15rem) skew(35deg)',
+                  }}
+                ></div>
+              </div>
+              <div className="flex-1 transform translate-x-40">
+                <h1 className="px-4 font-semibold text-4xl leading-tight text-center">
+                  xdWYPOŻYCZALNIA SAMOCHODÓW
+                </h1>
+                <p className=" text-center text-xl py-5">
+                  Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody
+                  z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
+                  podjąć jest zgłoszenie szkody z polisy AC lub OC do..
+                </p>
+              </div>
+            </div>
+          </section>
+          <section ref={threeRef}>
+            <div
+              className="flex flex-row items-center"
+              style={{ transform: 'translate(16rem, -15.3rem)' }}
+            >
+              <div className="flex-2 transform -translate-x-40">
+                <h1 className="px-4 font-semibold text-4xl leading-tight text-center">
+                  xddPOWYPADKOWE BADANIA TECHNICZNE
+                </h1>
+                <p className=" text-center text-xl py-5">
+                  Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody
+                  z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
+                  podjąć jest zgłoszenie szkody z polisy AC lub OC do..
+                </p>
+              </div>
+              <div
+                style={{ transform: 'skew(-35deg)', flex: '1.3 1 0%' }}
+                className="flex-1 overflow-hidden"
+              >
+                <div
+                  style={{
+                    height: '40rem  ',
+                    backgroundImage: 'url(/car_control.jpeg)',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'left',
+                    transform: 'translate(-15rem) skew(35deg)',
+                  }}
+                ></div>
+              </div>
+            </div>
+          </section>
+          <section ref={threeRef}>
+            <div
+              className="flex flex-row items-center justify-between"
+              style={{ transform: 'translate(7rem, -26rem)' }}
+            >
+              <div
+                style={{ transform: 'translate(-5rem, 5rem) skew(-35deg)' }}
+                className="flex-1 overflow-hidden"
+              >
+                <div
+                  style={{
+                    height: '40rem',
+                    width: '100rem',
+                    backgroundImage: 'url(/skoda.jpg)',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    transform: 'translate(-15rem) skew(35deg)',
+                  }}
+                ></div>
+              </div>
+              <div
+                style={{ transform: 'skew(-35deg)', flex: '1.4 1 0%' }}
+                className="flex-2 overflow-hidden"
+              >
+                <div
+                  style={{
+                    height: '40rem  ',
+                    width: '100rem',
+                    backgroundImage: 'url(/car_polish.jpeg)',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    transform: 'translate(-15rem) skew(35deg)',
+                  }}
+                ></div>
+              </div>
+            </div>
+          </section>
+
+          <section ref={threeRef}>
+            <div
+              className="flex flex-row items-center"
               style={{ flexBasis: 0 }}
             >
               <div
@@ -361,14 +462,20 @@ function Home() {
             </div>
           </section>
 
-          <section ref={threeRef} className="transform -translate-y-56">
+          <section
+            style={{
+              transform: 'translate(20rem, -15rem)',
+            }}
+            ref={threeRef}
+            className="transform"
+          >
             <div
               className="flex flex-row items-center"
               style={{ flexBasis: 0 }}
             >
               <div className="flex-1">
                 <h1 className="px-4 font-semibold text-4xl leading-tight ">
-                  WYPOŻYCZALNIA SAMOCHODÓW
+                  POWYPADKOWE BADANIA TECHNICZNE
                 </h1>
                 <p className="flex-1 transform translate-x-16 translate-y-4 text-right text-xl">
                   Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody
@@ -380,9 +487,46 @@ function Home() {
               <div
                 className="pl-2 py-4 flex flex-col rounded-lg"
                 style={{
-                  flex: 1,
+                  flex: 2,
                   height: '36rem',
-                  backgroundImage: 'url(/skoda.jpg)',
+                  backgroundImage: 'url(/car_control.jpeg)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  clipPath: 'polygon(40% 0, 100% 0, 100% 100%, 0% 100%)',
+                }}
+              ></div>
+            </div>
+          </section>
+
+          <section
+            style={{
+              transform: 'translate(-rem,-26rem)',
+            }}
+            ref={threeRef}
+            className="transform"
+          >
+            <div
+              className="flex flex-row items-center"
+              style={{ flexBasis: 0 }}
+            >
+              <div className="flex-1">
+                <h1 className="px-4 font-semibold text-4xl leading-tight ">
+                  POWYPADKOWE BADANIA TECHNICZNE
+                </h1>
+                <p className="flex-1 transform translate-x-16 translate-y-4 text-right text-xl">
+                  Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody
+                  z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
+                  podjąć jest zgłoszenie szkody z polisy AC lub OC do..
+                </p>
+              </div>
+
+              <div
+                className="pl-2 py-4 flex flex-col rounded-lg"
+                style={{
+                  flex: 2,
+                  height: '36rem',
+
+                  backgroundImage: 'url(/car_detailing.jpeg)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   clipPath: 'polygon(40% 0, 100% 0, 100% 100%, 0% 100%)',
@@ -398,7 +542,7 @@ function Home() {
               <div
                 className="pl-2 py-4 flex flex-col rounded-lg"
                 style={{
-                  flex: 3,
+                  flex: 5,
                   height: '36rem',
                   backgroundImage: 'url(/lakiernia.jpg)',
                   backgroundSize: 'cover',
@@ -407,7 +551,7 @@ function Home() {
                 }}
               >
                 <h1 className="px-4 font-semibold text-5xl bg-orange">
-                  WYPOŻYCZALNIA SAMOCHODÓW
+                  AURTO DETAILING
                 </h1>
                 <div className="flex-1" />
                 <div className="flex flex-row justify-between items-end">
