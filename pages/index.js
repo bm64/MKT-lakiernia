@@ -48,8 +48,6 @@ const settings = {
 }
 
 function Home() {
-  const { width, height } = useWindowSize()
-
   const oneRef = useRef()
   const twoRef = useRef()
   const threeRef = useRef()
@@ -61,27 +59,6 @@ function Home() {
   const threeVisible = useOnEnterLeave(threeRef)
   const fourVisible = useOnEnterLeave(fourRef)
   const fiveVisible = useOnEnterLeave(fiveRef)
-
-  const carouselHeight = useMedia(
-    [
-      '(min-width: 1280px)',
-      '(min-width: 1024px)',
-      '(min-width: 768px)',
-      '(min-width: 640px)',
-    ],
-    [650, 1100, 1000, 750],
-    650
-  )
-  const [sectionImg, setSectionImg] = useState('/car_polish2.jpeg')
-
-  const { scrollYProgress } = useViewportScroll()
-
-  const stepOne = useRef()
-  const stepTwo = useRef()
-  const stepThree = useRef()
-  const stepFour = useRef()
-
-  const x = useTransform(scrollYProgress, [0.2, 0.3], [-300, 0])
 
   return (
     <Layout>
@@ -311,7 +288,7 @@ function Home() {
               Tutaj dowiesz się jak wygląda proces likwidacji
             </h1>
             <div className="flex flex-col items-stretch">
-              <Step index={1} title={'Zgłoszenie szkody z polisy AC lub OC'}>
+              <Step index={1} title="Zgłoszenie szkody z polisy AC lub OC">
                 Pierwszym krokiem jaki powinienes podjąć jest zgłoszenie szkody
                 z polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
                 jest zgłoszenie szkody z polisy AC lub OC do..
@@ -322,7 +299,6 @@ function Home() {
                 polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
                 jest zgłoszenie szkody z polisy AC lub OC do..
               </Step>
-
               <Step index={3} title={'Ustalenie zakresu odpowiedzialności'}>
                 Trzecim krokiem jaki powinienes podjąć jest zgłoszenie szkody z
                 polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
@@ -614,6 +590,8 @@ function Home() {
 }
 
 function Step({ index, title, reversed = false, children }) {
+  const { width, height } = useWindowSize()
+
   const ref = useRef()
 
   const [h, setH] = useState(0)
@@ -629,47 +607,60 @@ function Step({ index, title, reversed = false, children }) {
 
   const rx = useTransform(
     scrollY,
-    [y - 1000, y + 1000],
+    [y - height / 1.33, y + height / 1.5],
     reversed ? [900, 0] : [-900, 0]
   )
 
   const x = useSpring(rx, { damping: 600 })
 
-  const opacity = useTransform(x, reversed ? [300, 0] : [-300, 0], [0, 1])
+  const opacity = useTransform(x, reversed ? [600, 0] : [-600, 0], [0, 1])
 
   return (
-    <>
-      <motion.div
-        ref={ref}
-        style={{ x, opacity }}
-        transition={{ type: 'spring', mass: 0.3, stiffness: 10 }}
-        className={`${
-          reversed ? 'self-end' : ''
-        } pt-8 flex flex-row items-baseline`}
-      >
+    <div
+      className="py-12 flex flex-row"
+      style={{ alignSelf: reversed ? 'self-end' : 'self-start' }}
+    >
+      {reversed && (
         <div
-          className={`${
-            reversed ? 'self-end' : ''
-          } h-16 w-16 flex justify-center items-center bg-orange text-2xl font-semibold shadow-xl`}
+          className="self-end arrow transform "
+          style={{ transform: 'scaleX(-1) translateX(14rem)' }}
         >
-          {index}
+          <div className="curve" />
+          <div className="point" />
         </div>
-        <h2 className="px-4">{title}</h2>
-      </motion.div>
-      <motion.p
-        className={`${reversed ? 'self-end' : ''} font-medium text-2xl p-4`}
-        style={{ x, opacity, maxWidth: '46rem' }}
-      >
-        {children}
-      </motion.p>
+      )}
 
-      <motion.div
-        style={{ x, opacity }}
-        className={`${
-          reversed ? 'self-end' : ''
-        } h-1 w-4/6 bg-black2 rounded-sm`}
-      />
-    </>
+      <div>
+        <motion.div
+          ref={ref}
+          style={{ x, opacity }}
+          transition={{ type: 'spring', mass: 0.3, stiffness: 10 }}
+          className="pt-8 flex flex-row items-baseline"
+        >
+          <div className="h-16 w-16 flex justify-center items-center bg-orange text-2xl font-semibold shadow-xl">
+            {index}
+          </div>
+          <h2 className="px-4">{title}</h2>
+        </motion.div>
+        <motion.p
+          className="font-medium text-2xl p-4"
+          style={{ x, opacity, maxWidth: '46rem' }}
+        >
+          {children}
+        </motion.p>
+
+        <motion.div
+          style={{ x, opacity }}
+          className="h-1 w-4/6 bg-black2 rounded-sm"
+        />
+      </div>
+      {!reversed && index !== 5 && (
+        <div className="self-end arrow transform translate-x-32 translate-y-16">
+          <div className="curve" />
+          <div className="point" />
+        </div>
+      )}
+    </div>
   )
 }
 

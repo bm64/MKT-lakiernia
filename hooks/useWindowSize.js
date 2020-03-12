@@ -3,8 +3,8 @@ import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react'
 export default function useWindowSize() {
   const isClient = typeof window === 'object'
   const [windowSize, setWindowSize] = useState({
-    width: undefined,
-    height: undefined,
+    width: 0,
+    height: 0,
   })
 
   useEffect(() => {

@@ -126,6 +126,44 @@ body {
   text-align: left;
 }
 
+.arrow {
+  position: relative;
+  width: 100px;
+}
+
+.arrow .curve {
+  border: 3px solid #ffae03;
+  border-color: #ffae03 #ffae03 transparent transparent;
+  height: 150px;
+  width: 200px;
+  border-radius: 0px 400px 0px 0px;
+}
+
+.arrow .point {
+  position: absolute;
+  right: -103px;
+}
+
+.arrow .point:before,
+.arrow .point:after {
+  border: 2px solid #ffae03;
+  height: 25px;
+  content: '';
+  position: absolute;
+}
+
+.arrow .point:before {
+  top: -25px;
+  left: -13px;
+  transform: rotate(-35deg);
+}
+
+.arrow .point:after {
+  top: -25px;
+  left: 1px;
+  transform: rotate(35deg);
+}
+
 @keyframes move {
   25% {
     opacity: 1;
