@@ -1,33 +1,18 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, useMemo } from 'react'
 import Layout from '../components/layout'
 import Header from '../components/header'
-import {
-  MdPhoneIphone,
-  MdLocationOn,
-  MdAccessTime,
-  MdMailOutline,
-} from 'react-icons/md'
+import { MdPhoneIphone, MdMailOutline } from 'react-icons/md'
 import {
   FaBars,
   FaCarCrash,
   FaWarehouse,
   FaUserFriends,
   FaPhone,
-  FaTruck,
   FaWrench,
-  FaChevronRight,
 } from 'react-icons/fa'
-import { CarouselProvider, Slider, Slide, WithStore } from 'pure-react-carousel'
-import 'pure-react-carousel/dist/react-carousel.es.css'
 
 import useWindowSize from '../hooks/useWindowSize'
-import useMedia from '../hooks/useMedia'
 import useOnEnterLeave from '../hooks/useOnEnterLeave'
-
-import withFadeIn from '../animations/withFadeIn'
-
-import NavSlider from 'react-slick'
-import { urlObjectKeys } from 'next/dist/next-server/lib/utils'
 
 import {
   motion,
@@ -35,17 +20,6 @@ import {
   useTransform,
   useSpring,
 } from 'framer-motion'
-
-const settings = {
-  dots: false,
-  fade: true,
-  autoplay: true,
-  infinite: true,
-  arrows: false,
-  speed: 300,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-}
 
 function Home() {
   const oneRef = useRef()
@@ -67,7 +41,7 @@ function Home() {
         className="md:fixed h-screen flex flex-col flex-between items-stretch bg-black2 z-30 max-h-screen"
       >
         <h2 className="py-4 text-center font-bold ">MKT SERWIS</h2>
-        <div className="py-4 hover:bg-gray flex flex-col items-center justify-around p-2 cursor-pointer">
+        <div className="navbar-item">
           <FaWarehouse
             className={`${
               oneVisible && !twoVisible ? 'text-orange' : ''
@@ -77,7 +51,7 @@ function Home() {
             Centrum blacharsko lakiernicze
           </h4>
         </div>
-        <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2 cursor-pointer">
+        <div className="navbar-item">
           <FaCarCrash
             className={`${
               twoVisible && !threeVisible ? 'text-orange' : ''
@@ -85,7 +59,7 @@ function Home() {
           />
           <h4 className="text-center font-medium">Likwidacja szkody</h4>
         </div>
-        <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2 cursor-pointer">
+        <div className="navbar-item">
           <FaWrench
             className={`${
               threeVisible && !fourVisible ? 'text-orange' : ''
@@ -93,7 +67,7 @@ function Home() {
           />
           <h4 className="text-center font-medium">Usługi dodatkowe</h4>
         </div>
-        <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2 cursor-pointer">
+        <div className="navbar-item">
           <FaUserFriends
             className={`${
               fourVisible && !fiveVisible ? 'text-orange' : ''
@@ -101,32 +75,11 @@ function Home() {
           />
           <h4 className="text-center font-medium">O nas</h4>
         </div>
-        <div className="py-4 hover:bg-gray flex flex-col items-center justify-center p-2 cursor-pointer">
+        <div className="navbar-item">
           <FaBars className={`${fiveVisible ? 'text-orange' : ''} text-4xl`} />
-
           <h4 className="text-center font-medium">Kontakt</h4>
         </div>
 
-        <div className="flex-1"></div>
-        <NavSlider {...settings} className="w-2/3 mx-auto py-2">
-          <div className="m-0">
-            <img src="skoda_biala.png" />
-          </div>
-
-          <div className="m-0">
-            <img src="vw.png" />
-          </div>
-
-          <div className="m-0">
-            <img src="kia_srodek.png" />
-          </div>
-          <div className="m-0">
-            <img src="fiat.png" />
-          </div>
-          <div className="m-0">
-            <img src="fiat_professional.png" />
-          </div>
-        </NavSlider>
         <div className="flex-1"></div>
 
         <div className="py-4 flex flex-col items-center">
@@ -183,250 +136,114 @@ function Home() {
             <source src="/video1.mp4" type="video/mp4" />
           </video>
 
-          <section ref={oneRef} className="panels">
-            <div className="flex flex-row mx-auto min-h-screen-9/10">
-              <div className="relative flex flex-col justify-end min-h-full w-1/2 bg-cover bg-center  overflow-hidden">
-                <div
-                  style={{
-                    backgroundImage: 'url(/car_painting.jpeg)',
-                    transitionDuration: '5000ms',
-                  }}
-                  className="transform h-full w-full bg-center bg-cover hover:scale-110"
-                ></div>
-                <div className="absolute left-0 bottom-0 w-full section-item p-10 pl-12 pr-5">
-                  <h2 className="font-semibold">
-                    Profesjonalne narzędzia lakiernicze
-                  </h2>
-                  <div
-                    style={{ height: '0.15rem' }}
-                    className="w-10 bg-orange mt-2 mb-3"
-                  ></div>
-                  <h5 className="text-gray font-medium">
-                    Własny mieszalnik cromax pro na bazie wody
-                  </h5>
-                  <h5 className="text-gray font-medium">
-                    Pistolety SATA oraz IWATA
-                  </h5>
-                </div>
-              </div>
-              <div className="flex flex-col min-h-full w-3/5 pl-6 ">
-                <div
-                  className="relative flex flex-col justify-end min-h-1/2 w-full bg-cover bg-bottom
-              bg-no-repeat overflow-hidden"
-                >
-                  <div
-                    style={{
-                      backgroundImage: 'url(/mark6.jpg)',
-                      transitionDuration: '4000ms',
-                    }}
-                    className="transform h-full w-full bg-bottom bg-cover hover:scale-110"
-                  ></div>
-
-                  <div className="absolute left-0 bottom-0 w-full section-item p-10 pl-12 pr-5">
-                    <h2 className="font-semibold">CAR-O-LINER MARK 6</h2>
-                    <div
-                      style={{ height: '0.15rem' }}
-                      className="w-10 bg-orange mt-2 mb-3"
-                    ></div>
-                    <h5 className="text-gray font-medium">
-                      Umożliwiający naprawę samochodów
-                      <h5> dostawczych o wadze do 3.5t</h5>
-                    </h5>
-                  </div>
-                </div>
-                <div className="flex flex-row min-h-1/2 w-full pt-6">
-                  <div className="relative flex flex-col justify-end min-h-1/2 w-1/2 bg-cover bg-center mr-3 overflow-hidden">
-                    <div
-                      style={{
-                        transitionDuration: '4000ms',
-                        backgroundImage: 'url(/spectrofotometr.jpg)',
-                      }}
-                      className="transform h-full w-full bg-bottom bg-cover hover:scale-125"
-                    ></div>
-
-                    <div className="absolute w-full left-0 bottom-0 section-item p-10 pr-5 pl-12">
-                      <h2 className="font-semibold">Spectrofotometr Cromax</h2>
-                      <div
-                        style={{ height: '0.15rem' }}
-                        className="w-10 bg-orange mt-2 mb-3"
-                      ></div>
-                      <h5 className="text-gray font-medium">
-                        Nowy poziom dopasowania koloru ze spektrofotometrem
-                        ChromaVision Pro
-                      </h5>
-                    </div>
-                  </div>
-                  <div className="relative flex flex-col justify-end min-h-full w-1/2 bg-cover bg-no-repeat ml-3 bg-center overflow-hidden">
-                    <div
-                      style={{
-                        transitionDuration: '4000ms',
-                        backgroundImage: 'url(/nova_verta.jpg)',
-                      }}
-                      className="transform h-full w-full bg-bottom bg-cover hover:scale-125"
-                    ></div>
-
-                    <div className="absolute w-full bot-0 left-0 section-item pb-10 pt-10 pr-5 pl-12">
-                      <h2 className="font-semibold">Kabina Nova Verta</h2>
-                      <div
-                        style={{ height: '0.15rem' }}
-                        className="w-10 bg-orange mt-2 mb-3"
-                      ></div>
-                      <h5 className="text-gray font-medium">
-                        Kabiny lakiernicze przystosowane do procesów
-                        lakierniczych
-                      </h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <section ref={oneRef} className="mx-auto">
+            <div
+              className="panels-grid grid grid-cols-4 gap-4"
+              style={{ height: '42rem' }}
+            >
+              <Panel
+                className="row-span-2 col-span-4 lg:col-span-2"
+                title="Profesjonalne narzędzia lakiernicze"
+                image="/car_painting.jpeg"
+              >
+                Własny mieszalnik cromax pro na bazie wody
+                <br />
+                Pistolety SATA oraz IWATA
+              </Panel>
+              <Panel
+                className="col-span-4 lg:col-span-2"
+                title="CAR-O-LINER MARK 6"
+                image="/mark6.jpg"
+              >
+                Umożliwiający naprawę samochodów dostawczych o wadze do 3.5t
+              </Panel>
+              <Panel
+                className="col-span-2 lg:col-span-1"
+                title="Spectrofotometr CROMAX"
+                image="/spectrofotometr.jpg"
+              >
+                Nowy poziom dopasowania koloru ze spektrofotometrem
+              </Panel>
+              <Panel
+                className="col-span-2 lg:col-span-1"
+                title="Kabina nova Verta"
+                image="/nova_verta.jpg"
+              >
+                Kabiny lakiernicze przystosowane do procesów lakierniczych
+              </Panel>
             </div>
           </section>
 
           <section ref={twoRef} className="container mx-auto">
-            <h1 className="section-title text-left py-2">Miałeś szkodę?</h1>
-            <h1 className="text-right font-medium py-4">
-              Tutaj dowiesz się jak wygląda proces likwidacji
+            <h1 className="px-2 text-5xl text-left font-medium">
+              MIAŁEŚ SZKODĘ?
             </h1>
-            <div className="flex flex-col items-stretch">
-              <Step index={1} title="Zgłoszenie szkody z polisy AC lub OC">
+            <h2 className="px-3 pb-4">Zobacz jak wygląda proces likwidacji</h2>
+            <div className="flex flex-col items-stretch overflow-hidden shadow-inner">
+              <Step
+                index={1}
+                title="Zgłoszenie szkody z polisy AC lub OC"
+                image="insurance.jpg"
+              >
                 Pierwszym krokiem jaki powinienes podjąć jest zgłoszenie szkody
                 z polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
                 jest zgłoszenie szkody z polisy AC lub OC do..
               </Step>
 
-              <Step index={2} title="Oględziny pojazdu" reversed>
+              <Step
+                index={2}
+                title="Oględziny pojazdu"
+                image="inspection.jpg"
+                reversed
+              >
                 Drugim krokiem jaki powinienes podjąć jest zgłoszenie szkody z
                 polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
                 jest zgłoszenie szkody z polisy AC lub OC do..
               </Step>
-              <Step index={3} title={'Ustalenie zakresu odpowiedzialności'}>
+              <Step
+                index={3}
+                title={'Ustalenie zakresu odpowiedzialności'}
+                image="reception.jpg"
+              >
                 Trzecim krokiem jaki powinienes podjąć jest zgłoszenie szkody z
                 polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
                 jest zgłoszenie szkody z polisy AC lub OC do..
               </Step>
 
-              <Step index={4} title="Samochód zastępczy" reversed>
+              <Step
+                index={4}
+                title="Samochód zastępczy"
+                image="replacement.jpg"
+                reversed
+              >
                 Czwartym krokiem jaki powinienes podjąć jest zgłoszenie szkody z
                 polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
                 jest zgłoszenie szkody z polisy AC lub OC do..
               </Step>
 
-              <Step index={5} title="Rozliczanie koszt napraw">
+              <Step
+                index={5}
+                title="Rozliczanie koszt napraw"
+                image="insurance.jpg"
+              >
                 Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody z
                 polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
                 jest zgłoszenie szkody z polisy AC lub OC do..
               </Step>
             </div>
+            <h1 className="py-4 px-8 font-semibold bg-orange shadow">
+              <span className="float-right">+12345689</span>
+              ZADZWOŃ JUŻ TERAZ
+            </h1>
           </section>
 
           <section ref={threeRef}>
             <div
-              className="flex flex-row items-center"
-              style={{ transform: 'translateX(-18rem)' }}
-            >
-              <div
-                style={{ transform: 'skew(-35deg)', flex: '2.7 1 0%' }}
-                className="overflow-hidden"
-              >
-                <div
-                  style={{
-                    height: '40rem',
-
-                    backgroundImage: 'url(/skoda.jpg)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    transform: 'translate(15rem) skew(35deg)',
-                  }}
-                ></div>
-              </div>
-              <div className="flex-1 transform translate-x-40">
-                <h1 className="px-4 font-semibold text-4xl leading-tight text-center">
-                  xdWYPOŻYCZALNIA SAMOCHODÓW
-                </h1>
-                <p className=" text-center text-xl py-5">
-                  Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody
-                  z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
-                  podjąć jest zgłoszenie szkody z polisy AC lub OC do..
-                </p>
-              </div>
-            </div>
-          </section>
-          <section ref={threeRef}>
-            <div
-              className="flex flex-row items-center"
-              style={{ transform: 'translate(16rem, -15.3rem)' }}
-            >
-              <div className="flex-2 transform -translate-x-40">
-                <h1 className="px-4 font-semibold text-4xl leading-tight text-center">
-                  xddPOWYPADKOWE BADANIA TECHNICZNE
-                </h1>
-                <p className=" text-center text-xl py-5">
-                  Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody
-                  z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
-                  podjąć jest zgłoszenie szkody z polisy AC lub OC do..
-                </p>
-              </div>
-              <div
-                style={{ transform: 'skew(-35deg)', flex: '1.3 1 0%' }}
-                className="flex-1 overflow-hidden"
-              >
-                <div
-                  style={{
-                    height: '40rem  ',
-                    backgroundImage: 'url(/car_control.jpeg)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'left',
-                    transform: 'translate(-15rem) skew(35deg)',
-                  }}
-                ></div>
-              </div>
-            </div>
-          </section>
-          <section ref={threeRef}>
-            <div
-              className="flex flex-row items-center justify-between"
-              style={{ transform: 'translate(7rem, -26rem)' }}
-            >
-              <div
-                style={{ transform: 'translate(-5rem, 5rem) skew(-35deg)' }}
-                className="flex-1 overflow-hidden"
-              >
-                <div
-                  style={{
-                    height: '40rem',
-                    width: '100rem',
-                    backgroundImage: 'url(/skoda.jpg)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    transform: 'translate(-15rem) skew(35deg)',
-                  }}
-                ></div>
-              </div>
-              <div
-                style={{ transform: 'skew(-35deg)', flex: '1.4 1 0%' }}
-                className="flex-2 overflow-hidden"
-              >
-                <div
-                  style={{
-                    height: '40rem  ',
-                    width: '100rem',
-                    backgroundImage: 'url(/car_polish.jpeg)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    transform: 'translate(-15rem) skew(35deg)',
-                  }}
-                ></div>
-              </div>
-            </div>
-          </section>
-
-          <section ref={threeRef}>
-            <div
-              className="flex flex-row items-center"
+              className="flex flex-col md:flex-row items-center"
               style={{ flexBasis: 0 }}
             >
               <div
-                className="pl-2 py-4 flex flex-col rounded-lg"
+                className="pl-2 py-4 flex flex-col rounded-lg "
                 style={{
                   flex: 2,
                   height: '36rem',
@@ -437,12 +254,9 @@ function Home() {
                   clipPath: 'polygon(0 0, 100% 0%, 60% 100%, 0% 100%)',
                 }}
               >
-                {/*<h1 className="px-4 font-semibold text-4xl bg-orange ">
-                  WYPOŻYCZALNIA SAMOCHODÓW
-              </h1> */}
                 <div className="flex-1" />
                 <div className="flex flex-row justify-between items-end">
-                  <h4 className="px-2 text-black2 font-light bg-white rounded-sm">
+                  <h4 className="px-2 text-black2 font-light bg-white rounded-sm max-w-xs lg:max-w-sm xxl:max-w-none">
                     Naszym klientom samochody zastępcze udostępnia{' '}
                     <span className="font-bold">SKODA</span>
                   </h4>
@@ -450,10 +264,10 @@ function Home() {
                 </div>
               </div>
               <div className="flex-1">
-                <h1 className="px-4 font-semibold text-4xl leading-tight ">
+                <h1 className="px-4 font-semibold text-center text-4xl leading-tight ">
                   WYPOŻYCZALNIA SAMOCHODÓW
                 </h1>
-                <p className="flex-1 transform -translate-x-32 translate-y-4 text-right text-xl">
+                <p className="flex-1 transform text-center text-xl">
                   Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody
                   z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
                   podjąć jest zgłoszenie szkody z polisy AC lub OC do..
@@ -462,120 +276,13 @@ function Home() {
             </div>
           </section>
 
-          <section
-            style={{
-              transform: 'translate(20rem, -15rem)',
-            }}
-            ref={threeRef}
-            className="transform"
-          >
-            <div
-              className="flex flex-row items-center"
-              style={{ flexBasis: 0 }}
-            >
-              <div className="flex-1">
-                <h1 className="px-4 font-semibold text-4xl leading-tight ">
-                  POWYPADKOWE BADANIA TECHNICZNE
-                </h1>
-                <p className="flex-1 transform translate-x-16 translate-y-4 text-right text-xl">
-                  Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody
-                  z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
-                  podjąć jest zgłoszenie szkody z polisy AC lub OC do..
-                </p>
-              </div>
-
-              <div
-                className="pl-2 py-4 flex flex-col rounded-lg"
-                style={{
-                  flex: 2,
-                  height: '36rem',
-                  backgroundImage: 'url(/car_control.jpeg)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  clipPath: 'polygon(40% 0, 100% 0, 100% 100%, 0% 100%)',
-                }}
-              ></div>
-            </div>
-          </section>
-
-          <section
-            style={{
-              transform: 'translate(-rem,-26rem)',
-            }}
-            ref={threeRef}
-            className="transform"
-          >
-            <div
-              className="flex flex-row items-center"
-              style={{ flexBasis: 0 }}
-            >
-              <div className="flex-1">
-                <h1 className="px-4 font-semibold text-4xl leading-tight ">
-                  POWYPADKOWE BADANIA TECHNICZNE
-                </h1>
-                <p className="flex-1 transform translate-x-16 translate-y-4 text-right text-xl">
-                  Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody
-                  z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
-                  podjąć jest zgłoszenie szkody z polisy AC lub OC do..
-                </p>
-              </div>
-
-              <div
-                className="pl-2 py-4 flex flex-col rounded-lg"
-                style={{
-                  flex: 2,
-                  height: '36rem',
-
-                  backgroundImage: 'url(/car_detailing.jpeg)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  clipPath: 'polygon(40% 0, 100% 0, 100% 100%, 0% 100%)',
-                }}
-              ></div>
-            </div>
-          </section>
-          <section ref={threeRef}>
-            <div
-              className="flex flex-row items-center"
-              style={{ flexBasis: 0 }}
-            >
-              <div
-                className="pl-2 py-4 flex flex-col rounded-lg"
-                style={{
-                  flex: 5,
-                  height: '36rem',
-                  backgroundImage: 'url(/lakiernia.jpg)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  clipPath: 'polygon(0 0, 100% 0%, 51% 100%, 0% 100%)',
-                }}
-              >
-                <h1 className="px-4 font-semibold text-5xl bg-orange">
-                  AURTO DETAILING
-                </h1>
-                <div className="flex-1" />
-                <div className="flex flex-row justify-between items-end">
-                  <h4 className="px-2 text-black2 font-light bg-white rounded-sm">
-                    Naszym klientom samochody zastępcze udostępnia{' '}
-                    <span className="font-bold">SKODA</span>
-                  </h4>
-                  <img src="/skoda_biala.png" className="h-40" />
-                </div>
-              </div>
-              <p className="flex-1 transform -translate-x-32 translate-y-4 text-right text-2xl">
-                Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody z
-                polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
-                jest zgłoszenie szkody z polisy AC lub OC do..
-              </p>
-            </div>
-          </section>
           <div className="flex flex-row  w-9/12 mx-auto">
             <div className="flex-1 flex-col px-10 transform duration-500 hover:scale-110">
               <div className="relative ">
                 <div
                   style={{
                     backgroundImage: 'url(/bartek.jpg)',
-                    height: ' 25rem',
+                    height: '25rem',
                   }}
                   className="w-full h-full bg-cover bg-top bg-no-repeat "
                 ></div>
@@ -661,7 +368,7 @@ function Home() {
                   rows={8}
                 />
                 <div className="mt-5 py-4 bg-orange text-center border border-orange-t hover:bg-orange-t cursor-pointer">
-                  <span className="text-xl text-black font-medium ">
+                  <span className="text-xl text-black font-medium">
                     Wyślij wiadomość
                   </span>
                 </div>
@@ -676,7 +383,7 @@ function Home() {
                       kom <a href="tel:602583583">602 583 583</a>
                     </p>
                   </div>
-                  <MdPhoneIphone className="contact-icon" />
+                  <MdPhoneIphone className="text-6xl text-orange mx-4" />
                 </div>
                 <div className="py-4 flex flex-row items-center text-center">
                   <div className="flex-1 text-left">
@@ -685,7 +392,7 @@ function Home() {
                       lakiernia@mktserwis.pl
                     </a>
                   </div>
-                  <MdMailOutline className="contact-icon" />
+                  <MdMailOutline className="text-6xl text-orange mx-4" />
                 </div>
               </div>
             </div>
@@ -706,9 +413,18 @@ function Home() {
               src="https://maps.google.com/maps?q=Wola%20mielecka%20lakiernia&t=&z=13&ie=UTF8&iwloc=&output=embed"
             ></iframe>
             <div className="flex flex-col md:flex-row md:justify-between p-5">
-              <img src="/narodowa_strategia.png" className="funding-img" />
-              <img src="/podkarpackie_logo.png" className="funding-img" />
-              <img src="/ue_fundusz.png" className="funding-img" />
+              <img
+                src="/narodowa_strategia.png"
+                className="p-5 w-full object-contain"
+              />
+              <img
+                src="/podkarpackie_logo.png"
+                className="p-5 w-full object-contain"
+              />
+              <img
+                src="/ue_fundusz.png"
+                className="p-5 w-full object-contain"
+              />
             </div>
           </section>
         </div>
@@ -733,7 +449,43 @@ function Home() {
   )
 }
 
-function Step({ index, title, reversed = false, children }) {
+function NavbarIcon({ icon, title, highlighted }) {
+  const Icon = useMemo(() => Fa[`${icon}`], [icon])
+
+  return (
+    <div className="py-4 hover:bg-gray flex flex-col items-center justify-around p-2 cursor-pointer">
+      <Icon className={`${hightlighted ? 'text-orange' : ''} text-4xl`} />
+      <h4 className="text-center font-medium">{title}</h4>
+    </div>
+  )
+}
+
+function Panel({ className = '', title, image, children }) {
+  return (
+    <div className={`relative overflow-hidden ${className}`}>
+      <div
+        style={{
+          backgroundImage: `url(${image})`,
+          transitionDuration: '3500ms',
+        }}
+        className="transform h-full w-full bg-center bg-cover hover:scale-110"
+      />
+      <div
+        className="absolute left-0 bottom-0 w-full p-4"
+        style={{
+          background:
+            '-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0, black 60%, black 100%)',
+        }}
+      >
+        <h2 className="font-semibold">{title}</h2>
+        <div className="w-2/3 h-1 bg-orange" />
+        <h5>{children}</h5>
+      </div>
+    </div>
+  )
+}
+
+function Step({ index, title, reversed = false, image, children }) {
   const { width, height } = useWindowSize()
 
   const ref = useRef()
@@ -751,7 +503,7 @@ function Step({ index, title, reversed = false, children }) {
 
   const rx = useTransform(
     scrollY,
-    [y - height / 1.33, y + height / 1.5],
+    [y - height / 6, y + height / 2.3],
     reversed ? [900, 0] : [-900, 0]
   )
 
@@ -761,8 +513,14 @@ function Step({ index, title, reversed = false, children }) {
 
   return (
     <div
-      className="py-12 flex flex-row"
-      style={{ alignSelf: reversed ? 'flex-end' : 'flex-start' }}
+      className="relative w-full px-4 py-12 flex flex-row"
+      style={{
+        alignSelf: reversed ? 'flex-end' : 'flex-start',
+        backgroundImage: `url(/${image})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        boxShadow: '0 0 3px 1px black inset',
+      }}
     >
       {reversed && (
         <div
@@ -773,29 +531,38 @@ function Step({ index, title, reversed = false, children }) {
           <div className="point" />
         </div>
       )}
-      <div className="w-full">
+      <div
+        className={`flex flex-col ${
+          reversed ? 'items-end' : 'items-start'
+        } w-full`}
+      >
         <motion.div
           ref={ref}
-          style={{ x, opacity }}
+          style={{
+            justifyContent: reversed ? 'flex-end' : 'flex-start',
+            x,
+            opacity,
+            backgroundColor: '#333333',
+          }}
           transition={{ type: 'spring', mass: 0.3, stiffness: 10 }}
-          className="pt-8 flex flex-row items-baseline"
+          className="flex flex-row items-baseline"
         >
-          <div className="h-16 w-16 flex justify-center items-center bg-orange text-2xl font-semibold shadow-xl">
+          <div
+            className="h-16 w-16 flex justify-center items-center bg-orange text-2xl font-semibold shadow-xl"
+            style={reversed ? { order: 2 } : {}}
+          >
             {index}
           </div>
-          <h2 className="px-4">{title}</h2>
+          <h2 className="px-4 inline">{title}</h2>
         </motion.div>
         <motion.p
-          className="font-medium text-2xl p-4"
+          className={`font-medium text-2xl py-4 px-2 bg-black2 ${
+            reversed ? 'text-right' : ''
+          }`}
           style={{ x, opacity, maxWidth: '46rem' }}
         >
           {children}
         </motion.p>
-
-        <motion.div
-          style={{ x, opacity }}
-          className="h-1 w-4/6 bg-black2 rounded-sm"
-        />
       </div>
       {!reversed && index !== 5 && (
         <div className="self-end arrow transform translate-x-32 translate-y-16">
@@ -806,31 +573,5 @@ function Step({ index, title, reversed = false, children }) {
     </div>
   )
 }
-
-const FadeImage = withFadeIn(
-  ({ src }) => <img src={src} className="section-img" />,
-  1000
-)
-
-const CarouselSteps = WithStore(
-  ({ currentSlide, totalSlides }) => {
-    return (
-      <div className="mx-auto flex flex-row items-center justify-center">
-        {[0, 1, 2].map(i => (
-          <div
-            key={i.toString()}
-            className={`h-1 w-12 mx-1 first:ml-0 last:mr-0 rounded-lg ${
-              i === currentSlide ? 'bg-orange' : 'bg-gray'
-            }`}
-          />
-        ))}
-      </div>
-    )
-  },
-  state => ({
-    currentSlide: state.currentSlide,
-    totalSlides: state.totalSlides,
-  })
-)
 
 export default Home
