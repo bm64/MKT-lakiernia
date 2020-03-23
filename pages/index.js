@@ -9,6 +9,7 @@ import {
   FaUserFriends,
   FaPhone,
   FaWrench,
+  FaUserAstronaut,
 } from 'react-icons/fa'
 
 import useWindowSize from '../hooks/useWindowSize'
@@ -33,6 +34,13 @@ function Home() {
   const threeVisible = useOnEnterLeave(threeRef)
   const fourVisible = useOnEnterLeave(fourRef)
   const fiveVisible = useOnEnterLeave(fiveRef)
+
+  const { scrollY } = useViewportScroll()
+
+  const oxx = useTransform(scrollY, [1500, 2700], [100, -100])
+  const oxx2 = useTransform(scrollY, [2700, 4000], [200, -200])
+  const ox = useSpring(oxx)
+  const ox2 = useSpring(oxx2)
 
   return (
     <Layout>
@@ -153,116 +161,140 @@ function Home() {
             <img src="fiat_professional.png" className="p-12" />
           </section>
 
-          <section
-            ref={oneRef}
-            className="container mx-auto border-l border-orange"
-          >
-            <h1 className="px-2 font-semibold text-5xl leading-tight tracking-wide">
-              Projesjonalne
-            </h1>
-            <h3 className="font-normal text-5xl text-orange transform translate-x-10 leading-tight tracking-tight">
-              usługi lakiernicze
-            </h3>
-            <div className="py-6 panels-grid grid grid-cols-4 gap-4">
-              <Panel
-                className="row-span-2 col-span-4 lg:col-span-2"
-                title="Profesjonalne narzędzia lakiernicze"
-                image="/car_painting.jpeg"
-              >
-                Własny mieszalnik cromax pro na bazie wody
-                <br />
-                Pistolety SATA oraz IWATA
-              </Panel>
-              <Panel
-                className="col-span-4 lg:col-span-2"
-                title="CAR-O-LINER MARK 6"
-                image="/mark6.jpg"
-              >
-                Umożliwiający naprawę samochodów dostawczych o wadze do 3.5t
-              </Panel>
-              <Panel
-                className="col-span-2 lg:col-span-1"
-                title="Spectrofotometr CROMAX"
-                image="/spectrofotometr.jpg"
-              >
-                Nowy poziom dopasowania koloru ze spektrofotometrem
-              </Panel>
-              <Panel
-                className="col-span-2 lg:col-span-1"
-                title="Kabina nova Verta"
-                image="/nova_verta.jpg"
-              >
-                Kabiny lakiernicze przystosowane do procesów lakierniczych
-              </Panel>
-            </div>
+          <section ref={oneRef} className="relative mx-auto">
+            <div
+              className="absolute top-0 left-0 w-full h-full"
+              style={{
+                backgroundImage: 'url(/drying.jpg)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundAttachment: 'fixed',
+                clipPath:
+                  'polygon(89% 0, 0 36%, 0 66%, 89% 100%, 100% 100%, 100% 86%, 39% 57%, 39% 41%, 100% 12%, 100% 0);',
+              }}
+            />
+
+            <motion.div style={{ y: ox }} className="container mx-auto">
+              <h1 className="px-2 font-semibold text-5xl transform leading-tight tracking-wide">
+                Projesjonalne
+              </h1>
+              <h3 className="font-normal text-5xl text-orange transform translate-x-10 leading-tight tracking-tight">
+                usługi lakiernicze
+              </h3>
+              <div className="py-6 panels-grid grid grid-cols-4 gap-4">
+                <Panel
+                  className="row-span-2 col-span-4 lg:col-span-2"
+                  title="Profesjonalne narzędzia lakiernicze"
+                  image="/car_painting.jpeg"
+                >
+                  Własny mieszalnik cromax pro na bazie wody
+                  <br />
+                  Pistolety SATA oraz IWATA
+                </Panel>
+                <Panel
+                  className="col-span-4 lg:col-span-2"
+                  title="CAR-O-LINER MARK 6"
+                  image="/mark6.jpg"
+                >
+                  Umożliwiający naprawę samochodów dostawczych o wadze do 3.5t
+                </Panel>
+                <Panel
+                  className="col-span-2 lg:col-span-1"
+                  title="Spectrofotometr CROMAX"
+                  image="/spectrofotometr.jpg"
+                >
+                  Nowy poziom dopasowania koloru ze spektrofotometrem
+                </Panel>
+                <Panel
+                  className="col-span-2 lg:col-span-1"
+                  title="Kabina nova Verta"
+                  image="/nova_verta.jpg"
+                >
+                  Kabiny lakiernicze przystosowane do procesów lakierniczych
+                </Panel>
+              </div>
+            </motion.div>
           </section>
 
-          <section ref={twoRef} className="container mx-auto">
-            <h1
-              className="inline px-6 py-2 text-5xl text-black text-left font-medium"
-              style={{ backgroundColor: '#cccccc' }}
+          <section ref={twoRef} className="mt-4 relative">
+            <div
+              className="absolute top-0 left-0 w-full h-full"
+              style={{
+                backgroundImage: 'url(/drying.jpg)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                zIndex: '0',
+                clipPath: 'polygon(7% 1%, 30% 1%, 30% 97%, 7% 97%)',
+              }}
+            />
+            <motion.div
+              style={{ y: ox2 }}
+              className="container mx-auto transform"
             >
-              MIAŁEŚ SZKODĘ?
-            </h1>
-            <h2 className="px-3 py-4 pb-4">
-              Zobacz jak wygląda proces likwidacji
-            </h2>
-            <div className="flex flex-col items-stretch overflow-hidden shadow-inner">
-              <Step
-                index={1}
-                title="Zgłoszenie szkody z polisy AC lub OC"
-                image="insurance.jpg"
-              >
-                Pierwszym krokiem jaki powinienes podjąć jest zgłoszenie szkody
-                z polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
-                jest zgłoszenie szkody z polisy AC lub OC do..
-              </Step>
+              <h1 className="inline px-6 py-2 text-5xl text-black text-left font-medium bg-white">
+                MIAŁEŚ SZKODĘ?
+              </h1>
+              <h2 className="px-3 py-4 pb-4 text-right">
+                Zobacz jak wygląda proces likwidacji
+              </h2>
+              <div className="flex flex-col items-stretch overflow-hidden shadow-inner">
+                <Step
+                  index={1}
+                  title="Zgłoszenie szkody z polisy AC lub OC"
+                  image="insurance.jpg"
+                >
+                  Pierwszym krokiem jaki powinienes podjąć jest zgłoszenie
+                  szkody z polisy AC lub OC do..Pierwszym krokiem jaki
+                  powinienes podjąć jest zgłoszenie szkody z polisy AC lub OC
+                  do..
+                </Step>
 
-              <Step
-                index={2}
-                title="Oględziny pojazdu"
-                image="inspection.jpg"
-                reversed
-              >
-                Drugim krokiem jaki powinienes podjąć jest zgłoszenie szkody z
-                polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
-                jest zgłoszenie szkody z polisy AC lub OC do..
-              </Step>
-              <Step
-                index={3}
-                title={'Ustalenie zakresu odpowiedzialności'}
-                image="reception.jpg"
-              >
-                Trzecim krokiem jaki powinienes podjąć jest zgłoszenie szkody z
-                polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
-                jest zgłoszenie szkody z polisy AC lub OC do..
-              </Step>
+                <Step
+                  index={2}
+                  title="Oględziny pojazdu"
+                  image="inspection.jpg"
+                  reversed
+                >
+                  Drugim krokiem jaki powinienes podjąć jest zgłoszenie szkody z
+                  polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
+                  jest zgłoszenie szkody z polisy AC lub OC do..
+                </Step>
+                <Step
+                  index={3}
+                  title={'Ustalenie zakresu odpowiedzialności'}
+                  image="reception.jpg"
+                >
+                  Trzecim krokiem jaki powinienes podjąć jest zgłoszenie szkody
+                  z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
+                  podjąć jest zgłoszenie szkody z polisy AC lub OC do..
+                </Step>
 
-              <Step
-                index={4}
-                title="Samochód zastępczy"
-                image="replacement.jpg"
-                reversed
-              >
-                Czwartym krokiem jaki powinienes podjąć jest zgłoszenie szkody z
-                polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
-                jest zgłoszenie szkody z polisy AC lub OC do..
-              </Step>
+                <Step
+                  index={4}
+                  title="Samochód zastępczy"
+                  image="replacement.jpg"
+                  reversed
+                >
+                  Czwartym krokiem jaki powinienes podjąć jest zgłoszenie szkody
+                  z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
+                  podjąć jest zgłoszenie szkody z polisy AC lub OC do..
+                </Step>
 
-              <Step
-                index={5}
-                title="Rozliczanie koszt napraw"
-                image="insurance.jpg"
-              >
-                Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody z
-                polisy AC lub OC do..Pierwszym krokiem jaki powinienes podjąć
-                jest zgłoszenie szkody z polisy AC lub OC do..
-              </Step>
-            </div>
-            <h1 className="py-4 px-8 font-semibold text-white bg-black2 shadow">
-              <span className="float-right text-orange">+48 123 456 789</span>
-              ZADZWOŃ JUŻ TERAZ
-            </h1>
+                <Step
+                  index={5}
+                  title="Rozliczanie koszt napraw"
+                  image="insurance.jpg"
+                >
+                  Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody
+                  z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
+                  podjąć jest zgłoszenie szkody z polisy AC lub OC do..
+                </Step>
+              </div>
+              <h1 className="py-4 px-8 font-semibold text-white bg-black2 shadow transform">
+                <span className="float-right text-orange">+48 123 456 789</span>
+                ZADZWOŃ JUŻ TERAZ
+              </h1>
+            </motion.div>
           </section>
 
           <section ref={threeRef} className="container mx-auto">
@@ -543,13 +575,12 @@ function Step({ index, title, reversed = false, image, children }) {
 
   return (
     <div
-      className="relative w-full px-4 py-12 flex flex-row"
+      className="relative w-full px-4 py-12 mb-4 flex flex-row rounded"
       style={{
         alignSelf: reversed ? 'flex-end' : 'flex-start',
         backgroundImage: `url(/${image})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        boxShadow: '0 0 3px 1px black inset',
       }}
     >
       {reversed && (
