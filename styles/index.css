@@ -1,133 +1,133 @@
 @tailwind base;
 
 h1 {
-  @apply text-3xl;
+	@apply text-3xl;
 }
 
 h2 {
-  @apply text-2xl;
+	@apply text-2xl;
 }
 
 h3 {
-  @apply text-xl;
+	@apply text-xl;
 }
 
 h4 {
-  @apply text-lg;
+	@apply text-lg;
 }
 
 section {
-  @apply py-4;
+	@apply py-4;
 }
 
 html,
 body {
-  font-family: 'Montserrat', sans-serif;
-  overflow-x: hidden !important;
-  background-color: #242424;
-  @apply text-white;
-  position: relative;
+	font-family: 'Montserrat', sans-serif;
+	overflow-x: hidden !important;
+	background-color: #242424;
+	@apply text-white;
+	position: relative;
 }
 
 @tailwind components;
 
 #navbar {
-  max-width: 10rem;
+	max-width: 10rem;
 }
 
 .navbar-item {
-  @apply py-4 flex flex-col items-center justify-around p-2 cursor-pointer;
+	@apply py-4 flex flex-col items-center justify-around p-2 cursor-pointer;
 }
 
 .line {
-  @apply w-1/3 h-1 mx-auto my-6 rounded-lg;
+	@apply w-1/3 h-1 mx-auto my-6 rounded-lg;
 }
 
 .panels-grid {
-  min-height: 42rem;
+	min-height: 42rem;
 }
 
 @screen md {
-  #content {
-    margin-left: 10rem;
-  }
+	#content {
+		margin-left: 10rem;
+	}
 
-  .panel {
-    width: 46rem;
-    height: 28rem;
-  }
+	.panel {
+		width: 46rem;
+		height: 28rem;
+	}
 
-  .panels-grid {
-    min-height: 62rem;
-  }
+	.panels-grid {
+		min-height: 54rem;
+	}
 
-  section {
-    @apply px-4 py-24;
-  }
-  .section-text {
-    @apply text-2xl;
-  }
-  .section-img {
-    @apply;
-  }
-  .funding-img {
-    @apply py-5 w-4/12;
-  }
-  .footer-item {
-    @apply border-b-2 text-xl;
-  }
+	section {
+		@apply px-4 py-24;
+	}
+	.section-text {
+		@apply text-2xl;
+	}
+	.section-img {
+		@apply;
+	}
+	.funding-img {
+		@apply py-5 w-4/12;
+	}
+	.footer-item {
+		@apply border-b-2 text-xl;
+	}
 }
 
 @screen xl {
-  #content {
-    margin-left: 12rem;
-  }
+	#content {
+		margin-left: 12rem;
+	}
 
-  #navbar {
-    max-width: 12rem;
-  }
+	#navbar {
+		max-width: 12rem;
+	}
 
-  .panels-grid {
-    min-height: 80rem;
-  }
+	.panels-grid {
+		min-height: 80rem;
+	}
 }
 
 .arrow {
-  position: relative;
-  width: 100px;
+	position: relative;
+	width: 100px;
 }
 
 .arrow .curve {
-  border: 3px solid;
-  border-color: transparent #ffae03 transparent transparent;
-  height: 150px;
-  width: 200px;
-  border-radius: 0px 400px 0px 0px;
+	border: 3px solid;
+	border-color: transparent #ffae03 transparent transparent;
+	height: 150px;
+	width: 200px;
+	border-radius: 0px 400px 0px 0px;
 }
 
 .arrow .point {
-  position: absolute;
-  right: -103px;
+	position: absolute;
+	right: -103px;
 }
 
 .arrow .point:before,
 .arrow .point:after {
-  border: 2px solid #ffae03;
-  height: 25px;
-  content: '';
-  position: absolute;
+	border: 2px solid #ffae03;
+	height: 25px;
+	content: '';
+	position: absolute;
 }
 
 .arrow .point:before {
-  top: -25px;
-  left: -13px;
-  transform: rotate(-35deg);
+	top: -25px;
+	left: -13px;
+	transform: rotate(-35deg);
 }
 
 .arrow .point:after {
-  top: -25px;
-  left: 1px;
-  transform: rotate(35deg);
+	top: -25px;
+	left: 1px;
+	transform: rotate(35deg);
 }
 
 @tailwind utilities;

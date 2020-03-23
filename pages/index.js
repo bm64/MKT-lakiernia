@@ -40,7 +40,7 @@ function Home() {
         id="navbar"
         className="md:fixed h-screen flex flex-col flex-between items-stretch bg-black2 z-30 max-h-screen"
       >
-        <h2 className="py-4 text-center font-bold ">MKT SERWIS</h2>
+        <h2 className="py-4 text-center font-bold">MKT SERWIS</h2>
         <div className="navbar-item">
           <FaWarehouse
             className={`${
@@ -127,20 +127,43 @@ function Home() {
               </div>
             </div>
           </div>
-          <video
-            autoPlay={true}
-            loop={true}
-            playsInline={true}
-            className="min-h-screen object-cover w-full "
-          >
-            <source src="/video1.mp4" type="video/mp4" />
-          </video>
-
-          <section ref={oneRef} className="mx-auto">
-            <div
-              className="panels-grid grid grid-cols-4 gap-4"
-              style={{ height: '42rem' }}
+          <div className="relative">
+            <video
+              autoPlay={true}
+              loop={true}
+              playsInline={true}
+              className="min-h-screen object-cover w-full"
             >
+              <source src="/video1.mp4" type="video/mp4" />
+            </video>
+            <div
+              className="absolute bottom-0 left-0 h-64 w-full"
+              style={{
+                background:
+                  '-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0,  #1b1b1e 90%,  #1b1b1e 100%)',
+              }}
+            />
+          </div>
+
+          <section className="pb-0 container mx-auto flex flex-row justify-around">
+            <img src="skoda_biala.png" className="p-12" />
+            <img src="vw.png" className="p-12" />
+            <img src="kia_srodek.png" className="p-12" />
+            <img src="fiat.png" className="p-12" />
+            <img src="fiat_professional.png" className="p-12" />
+          </section>
+
+          <section
+            ref={oneRef}
+            className="container mx-auto border-l border-orange"
+          >
+            <h1 className="px-2 font-semibold text-5xl leading-tight tracking-wide">
+              Projesjonalne
+            </h1>
+            <h3 className="font-normal text-5xl text-orange transform translate-x-10 leading-tight tracking-tight">
+              usługi lakiernicze
+            </h3>
+            <div className="py-6 panels-grid grid grid-cols-4 gap-4">
               <Panel
                 className="row-span-2 col-span-4 lg:col-span-2"
                 title="Profesjonalne narzędzia lakiernicze"
@@ -175,10 +198,15 @@ function Home() {
           </section>
 
           <section ref={twoRef} className="container mx-auto">
-            <h1 className="px-2 text-5xl text-left font-medium">
+            <h1
+              className="inline px-6 py-2 text-5xl text-black text-left font-medium"
+              style={{ backgroundColor: '#cccccc' }}
+            >
               MIAŁEŚ SZKODĘ?
             </h1>
-            <h2 className="px-3 pb-4">Zobacz jak wygląda proces likwidacji</h2>
+            <h2 className="px-3 py-4 pb-4">
+              Zobacz jak wygląda proces likwidacji
+            </h2>
             <div className="flex flex-col items-stretch overflow-hidden shadow-inner">
               <Step
                 index={1}
@@ -231,19 +259,31 @@ function Home() {
                 jest zgłoszenie szkody z polisy AC lub OC do..
               </Step>
             </div>
-            <h1 className="py-4 px-8 font-semibold bg-orange shadow">
-              <span className="float-right">+12345689</span>
+            <h1 className="py-4 px-8 font-semibold text-white bg-black2 shadow">
+              <span className="float-right text-orange">+48 123 456 789</span>
               ZADZWOŃ JUŻ TERAZ
             </h1>
           </section>
 
-          <section ref={threeRef}>
+          <section ref={threeRef} className="container mx-auto">
             <div
-              className="flex flex-col md:flex-row items-center"
+              className="relative flex flex-col md:flex-row items-center shadow-inner"
               style={{ flexBasis: 0 }}
             >
               <div
-                className="pl-2 py-4 flex flex-col rounded-lg "
+                className="absolute top-0 left-0 w-full"
+                style={{
+                  flex: 2,
+                  height: '36rem',
+                  backgroundImage: 'url(/skoda.jpg)',
+                  backgroundSize: 'cover',
+
+                  backgroundPosition: '77% 100%',
+                  filter: 'blur(4px)',
+                }}
+              />
+              <div
+                className="pl-2 py-4 flex flex-col rounded-lg"
                 style={{
                   flex: 2,
                   height: '36rem',
@@ -256,7 +296,7 @@ function Home() {
               >
                 <div className="flex-1" />
                 <div className="flex flex-row justify-between items-end">
-                  <h4 className="px-2 text-black2 font-light bg-white rounded-sm max-w-xs lg:max-w-sm xxl:max-w-none">
+                  <h4 className="px-2 text-black2 font-light bg-white rounded-sm max-w-xs xxl:max-w-none">
                     Naszym klientom samochody zastępcze udostępnia{' '}
                     <span className="font-bold">SKODA</span>
                   </h4>
@@ -264,10 +304,10 @@ function Home() {
                 </div>
               </div>
               <div className="flex-1">
-                <h1 className="px-4 font-semibold text-center text-4xl leading-tight ">
+                <h1 className="px-8 transform -translate-x-8 font-semibold text-right text-white text-4xl leading-tight">
                   WYPOŻYCZALNIA SAMOCHODÓW
                 </h1>
-                <p className="flex-1 transform text-center text-xl">
+                <p className="px-8 py-4 flex-1 transform -translate-x-8 text-white text-right font-medium text-xl">
                   Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody
                   z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
                   podjąć jest zgłoszenie szkody z polisy AC lub OC do..
@@ -400,10 +440,10 @@ function Home() {
 
           <section className="container mx-auto">
             <div className="flex flex-row items-center">
-              <h3 className="flex-1 text-left md:text-3xl font-medium">
-                Tutaj nas znajdziesz
+              <h3 className="py-2 px-6 text-black text-left md:text-3xl font-semibold bg-white">
+                TUTAJ NAS ZNAJDZIESZ
               </h3>
-              <h4>
+              <h4 className="flex-1 text-right">
                 <span className="text-orange">Wola Mielecka 632</span> - 39-300
                 Mielec
               </h4>
@@ -428,6 +468,7 @@ function Home() {
             </div>
           </section>
         </div>
+
         <footer
           className="fixed bottom-0 h-64 w-full text-center bg-black2"
           style={{ width: 'calc(100vw - 12rem)' }}
@@ -446,17 +487,6 @@ function Home() {
         </footer>
       </div>
     </Layout>
-  )
-}
-
-function NavbarIcon({ icon, title, highlighted }) {
-  const Icon = useMemo(() => Fa[`${icon}`], [icon])
-
-  return (
-    <div className="py-4 hover:bg-gray flex flex-col items-center justify-around p-2 cursor-pointer">
-      <Icon className={`${hightlighted ? 'text-orange' : ''} text-4xl`} />
-      <h4 className="text-center font-medium">{title}</h4>
-    </div>
   )
 }
 
