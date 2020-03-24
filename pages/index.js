@@ -153,12 +153,12 @@ function Home() {
             />
           </div>
 
-          <section className="pb-0 container mx-auto flex flex-row justify-around">
-            <img src="skoda_biala.png" className="p-12" />
-            <img src="vw.png" className="p-12" />
-            <img src="kia_srodek.png" className="p-12" />
-            <img src="fiat.png" className="p-12" />
-            <img src="fiat_professional.png" className="p-12" />
+          <section className="container mx-auto flex flex-row justify-around">
+            <img src="skoda_biala.png" className="h-24 lg:h-32 xl:h-48" />
+            <img src="vw.png" className="h-24 lg:h-32 xl:h-48" />
+            <img src="kia_srodek.png" className="h-24 lg:h-32 xl:h-48" />
+            <img src="fiat.png" className="h-24 lg:h-32 xl:h-48" />
+            <img src="fiat_professional.png" className="h-24 lg:h-32 xl:h-48" />
           </section>
 
           <section ref={oneRef} className="relative mx-auto">
@@ -484,18 +484,18 @@ function Home() {
               className="w-full mx-auto min-h-screen-1/4 md:min-h-screen-1/2"
               src="https://maps.google.com/maps?q=Wola%20mielecka%20lakiernia&t=&z=13&ie=UTF8&iwloc=&output=embed"
             ></iframe>
-            <div className="flex flex-col md:flex-row md:justify-between p-5">
+            <div className="flex flex-col lg:flex-row md:justify-between p-5">
               <img
                 src="/narodowa_strategia.png"
-                className="p-5 w-full object-contain"
+                className="h-32 xxl:h-40 p-5 object-contain"
               />
               <img
                 src="/podkarpackie_logo.png"
-                className="p-5 w-full object-contain"
+                className="h-32 xxl:h-40 p-5 object-contain"
               />
               <img
                 src="/ue_fundusz.png"
-                className="p-5 w-full object-contain"
+                className="h-32 xxl:h-40 p-5 object-contain"
               />
             </div>
           </section>
