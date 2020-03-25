@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react'
 import Layout from '../components/layout'
 import Header from '../components/header'
-import { MdPhoneIphone, MdMailOutline } from 'react-icons/md'
+import { MdPhoneIphone } from 'react-icons/md'
 import {
   FaBars,
   FaCarCrash,
@@ -9,7 +9,6 @@ import {
   FaUserFriends,
   FaPhone,
   FaWrench,
-  FaUserAstronaut,
 } from 'react-icons/fa'
 
 import useWindowSize from '../hooks/useWindowSize'
@@ -584,7 +583,7 @@ function Panel({ className = '', title, image, children }) {
       >
         <h2 className="py-2 font-semibold">{title}</h2>
         <div className="w-24 h-1 bg-orange" />
-        <h5 className="py-2">{children}</h5>
+        <h5 className="py-2 font-medium">{children}</h5>
       </div>
     </div>
   )
