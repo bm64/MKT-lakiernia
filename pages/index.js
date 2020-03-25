@@ -37,6 +37,19 @@ function Home() {
 
   const { scrollY } = useViewportScroll()
 
+  const [blur, setBlur] = useState(0)
+
+  useEffect(() => {
+    scrollY.onChange(() => {
+      const value = scrollY.get()
+      if (value > 6000) setBlur(6)
+      else if (value > 5500) setBlur(4)
+      else if (value > 4900) setBlur(2)
+      else if (value > 4200) setBlur(1)
+      else setBlur(0)
+    })
+  }, [])
+
   const oxx = useTransform(scrollY, [1500, 2700], [100, -100])
   const oxx2 = useTransform(scrollY, [2700, 4000], [200, -200])
   const ox = useSpring(oxx)
@@ -292,7 +305,7 @@ function Home() {
               </div>
               <h1 className="py-4 px-8 font-semibold text-white bg-black2 shadow transform">
                 <span className="float-right text-orange">+48 123 456 789</span>
-                ZADZWOŃ JUŻ TERAZ
+                UMÓW SIĘ NA OGLĘDZINY JUŻ DZIŚ
               </h1>
             </motion.div>
           </section>
@@ -302,7 +315,7 @@ function Home() {
               className="relative flex flex-col md:flex-row items-center shadow-inner"
               style={{ flexBasis: 0 }}
             >
-              <div
+              <motion.div
                 className="absolute top-0 left-0 w-full"
                 style={{
                   flex: 2,
@@ -311,7 +324,7 @@ function Home() {
                   backgroundSize: 'cover',
 
                   backgroundPosition: '77% 100%',
-                  filter: 'blur(4px)',
+                  filter: `blur(${blur}px)`,
                 }}
               />
               <div
@@ -367,13 +380,13 @@ function Home() {
                   <div className="p-4">
                     <h2 className="font-semibold text-orange">Kim jesteśmy?</h2>
                     <div className="py-2 flex flex-col lg:flex-row">
-                      <p className="pr-1">
+                      <p className="pr-1 font-medium">
                         Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
                         szkody z polisy AC lub OC do..Pierwszym krokiem jaki
                         powinienes podjąć jest zgłoszenie szkody z polisy AC lub
                         OC do..
                       </p>
-                      <p>
+                      <p className="font-medium">
                         Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
                         szkody z polisy AC lub OC do..Pierwszym krokiem jaki
                         powinienes podjąć jest zgłoszenie szkody z polisy AC lub
@@ -387,13 +400,13 @@ function Home() {
                       Czym się zajmujemy?
                     </h2>
                     <div className="py-2 flex flex-col lg:flex-row">
-                      <p className="pr-1">
+                      <p className="pr-1 font-medium">
                         Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
                         szkody z polisy AC lub OC do..Pierwszym krokiem jaki
                         powinienes podjąć jest zgłoszenie szkody z polisy AC lub
                         OC do..
                       </p>
-                      <p>
+                      <p className="font-medium">
                         Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
                         szkody z polisy AC lub OC do..Pierwszym krokiem jaki
                         powinienes podjąć jest zgłoszenie szkody z polisy AC lub
@@ -442,17 +455,46 @@ function Home() {
           </section>
 
           <section ref={fiveRef} className="container mx-auto">
-            <h2 className="font-bold text-center md:text-5xl">
-              Skontaktuj się
-            </h2>
-            <div className="line bg-orange" />
-            <div className="flex flex-col xl:flex-row justify-around">
+            <div className="flex flex-col md:flex-row justify-center">
               <div
-                className="px-8 py-8 flex flex-col items-stretch justify-center"
+                className="relative shadow-md"
+                style={{
+                  backgroundImage: 'url(mobile2.jpeg)',
+                  backgroundSize: 'cover',
+                }}
+              >
+                <h2 className="absolute top-0 left-0 px-12 py-4 bg-orange text-black font-semibold transform -translate-y-12">
+                  SKONTAKTUJ SIĘ Z NAMI
+                </h2>
+                <div className="pl-16 pr-32 py-12 h-full bg-black-t">
+                  <h1 className="font-bold">Potrzebujesz pomocy?</h1>
+                  <p className="p-2 font-medium max-w-xs">
+                    Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
+                    szkody z polisy AC lub OC do..Pierwszym krokiem jaki
+                    powinienes podjąć jest zgłoszenie szkody z polisy AC lub OC
+                    do..
+                  </p>
+
+                  <h3 className="mt-8 text-orange font-bold">
+                    +48 17 583 05 96
+                  </h3>
+                  <h3 className="text-orange font-bold">+48 17 583 05 96</h3>
+                  <h3 className="text-orange font-bold">
+                    lakiernia@mktserwis.pl
+                  </h3>
+                </div>
+              </div>
+              <div
+                className="px-32 py-20 flex flex-col items-stretch justify-center bg-black2 transform -translate-x-20 translate-y-20 shadow-lg"
                 style={{ flexBasis: 450 }}
               >
                 <input
                   className="block px-1 py-2 px-2 text-white font-bold bg-black border border-orange"
+                  placeholder="Twoje imię"
+                  type="text"
+                />
+                <input
+                  className="mt-4 block px-1 py-2 px-2 text-white font-bold bg-black border border-orange"
                   placeholder="Adres e-mail"
                   type="text"
                 />
@@ -465,28 +507,6 @@ function Home() {
                   <span className="text-xl text-black font-medium">
                     Wyślij wiadomość
                   </span>
-                </div>
-              </div>
-              <div className="px-8 flex flex-row xl:flex-col justify-between xl:justify-center items-stretch">
-                <div className="py-4 flex flex-row items-center text-center">
-                  <div className="flex-1 text-left">
-                    <h2>Telefon</h2>
-                    <p>
-                      tel <a href="tel:175830596">17 583 05 96</a>
-                      <br />
-                      kom <a href="tel:602583583">602 583 583</a>
-                    </p>
-                  </div>
-                  <MdPhoneIphone className="text-6xl text-orange mx-4" />
-                </div>
-                <div className="py-4 flex flex-row items-center text-center">
-                  <div className="flex-1 text-left">
-                    <h2>E-mail</h2>
-                    <a href="mailto:lakiernia@mktoserwis.pl">
-                      lakiernia@mktserwis.pl
-                    </a>
-                  </div>
-                  <MdMailOutline className="text-6xl text-orange mx-4" />
                 </div>
               </div>
             </div>
