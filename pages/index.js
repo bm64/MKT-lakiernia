@@ -49,8 +49,8 @@ function Home() {
     })
   }, [])
 
-  const oxx = useTransform(scrollY, [1500, 2700], [100, -100])
-  const oxx2 = useTransform(scrollY, [2700, 4000], [200, -200])
+  const oxx = useTransform(scrollY, [700, 2700], [0, -150])
+  const oxx2 = useTransform(scrollY, [1500, 4000], [50, -200])
   const ox = useSpring(oxx)
   const ox2 = useSpring(oxx2)
 
@@ -193,9 +193,9 @@ function Home() {
               <h3 className="font-normal text-5xl text-orange transform translate-x-10 leading-tight tracking-tight">
                 usługi lakiernicze
               </h3>
-              <div className="py-6 panels-grid grid grid-cols-4 gap-4">
+              <div className="py-8 panels-grid grid grid-cols-4 gap-4">
                 <Panel
-                  className="row-span-2 col-span-4 lg:col-span-2"
+                  className="row-span-4 col-span-4 lg:col-span-2"
                   title="Profesjonalne narzędzia lakiernicze"
                   image="/car_painting.jpeg"
                 >
@@ -204,23 +204,30 @@ function Home() {
                   Pistolety SATA oraz IWATA
                 </Panel>
                 <Panel
-                  className="col-span-4 lg:col-span-2"
+                  className="col-span-4 row-span-2 lg:col-span-2"
                   title="CAR-O-LINER MARK 6"
                   image="/mark6.jpg"
                 >
                   Umożliwiający naprawę samochodów dostawczych o wadze do 3.5t
                 </Panel>
                 <Panel
-                  className="col-span-2 lg:col-span-1"
+                  className="col-span-2 row-span-2 lg:col-span-1"
                   title="Spectrofotometr CROMAX"
                   image="/spectrofotometr.jpg"
                 >
                   Nowy poziom dopasowania koloru ze spektrofotometrem
                 </Panel>
                 <Panel
-                  className="col-span-2 lg:col-span-1"
+                  className="col-span-2 row-span-2 lg:col-span-1"
                   title="Kabina Nova Verta"
                   image="/nova_verta.jpg"
+                >
+                  Kabiny lakiernicze przystosowane do procesów lakierniczych
+                </Panel>
+                <Panel
+                  className="col-span-4 row-span-2"
+                  title="CROMAX"
+                  image="/puszki.jpg"
                 >
                   Kabiny lakiernicze przystosowane do procesów lakierniczych
                 </Panel>
@@ -308,57 +315,6 @@ function Home() {
                 UMÓW SIĘ NA OGLĘDZINY JUŻ DZIŚ
               </h1>
             </motion.div>
-          </section>
-
-          <section ref={threeRef} className="container mx-auto">
-            <div
-              className="relative flex flex-col md:flex-row items-center shadow-inner"
-              style={{ flexBasis: 0 }}
-            >
-              <motion.div
-                className="absolute top-0 left-0 w-full"
-                style={{
-                  flex: 2,
-                  height: '36rem',
-                  backgroundImage: 'url(/skoda.jpg)',
-                  backgroundSize: 'cover',
-
-                  backgroundPosition: '77% 100%',
-                  filter: `blur(${blur}px)`,
-                }}
-              />
-              <div
-                className="pl-2 py-4 flex flex-col rounded-lg"
-                style={{
-                  flex: 2,
-                  height: '36rem',
-                  backgroundImage: 'url(/skoda.jpg)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-
-                  clipPath: 'polygon(0 0, 100% 0%, 60% 100%, 0% 100%)',
-                }}
-              >
-                <div className="flex-1" />
-                <div className="flex flex-row justify-between items-end">
-                  <h4 className="px-2 text-black2 font-light bg-white rounded-sm max-w-xs xxl:max-w-none">
-                    Naszym klientom samochody zastępcze udostępnia{' '}
-                    <span className="font-bold">SKODA</span>
-                  </h4>
-                  <img src="/skoda_biala.png" className="h-40" />
-                </div>
-              </div>
-              <div className="flex-1">
-                <h1 className="px-8 transform -translate-x-8 font-semibold text-right text-white text-4xl leading-tight">
-                  WYPOŻYCZALNIA SAMOCHODÓW
-                </h1>
-                <p className="px-8 py-4 flex-1 transform -translate-x-8 text-white text-right font-medium text-xl">
-                  Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody
-                  z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
-                  podjąć jest zgłoszenie szkody z polisy AC lub OC do..
-                </p>
-              </div>
-            </div>
           </section>
 
           <section ref={fourRef} className="container mx-auto">
@@ -566,7 +522,7 @@ function Home() {
 
 function Panel({ className = '', title, image, children }) {
   return (
-    <div className={`relative overflow-hidden ${className}`}>
+    <div className={`relative overflow-hidden rounded ${className}`}>
       <div
         style={{
           backgroundImage: `url(${image})`,
