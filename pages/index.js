@@ -183,7 +183,7 @@ function Home() {
                 backgroundPosition: 'center',
                 backgroundAttachment: 'fixed',
                 clipPath:
-                  'polygon(89% 0, 0 36%, 0 66%, 89% 100%, 100% 100%, 100% 86%, 39% 57%, 39% 41%, 100% 12%, 100% 0);',
+                  'polygon(89% 0, 0 36%, 0 66%, 89% 100%, 100% 100%, 100% 86%, 39% 57%, 39% 41%, 100% 12%, 100% 0)',
               }}
             />
 
@@ -220,7 +220,7 @@ function Home() {
                 </Panel>
                 <Panel
                   className="col-span-2 lg:col-span-1"
-                  title="Kabina nova Verta"
+                  title="Kabina Nova Verta"
                   image="/nova_verta.jpg"
                 >
                   Kabiny lakiernicze przystosowane do procesów lakierniczych
@@ -297,6 +297,7 @@ function Home() {
                   index={5}
                   title="Rozliczanie koszt napraw"
                   image="insurance.jpg"
+                  className="mb-0"
                 >
                   Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody
                   z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
@@ -581,15 +582,22 @@ function Panel({ className = '', title, image, children }) {
             '-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0, black 60%, black 100%)',
         }}
       >
-        <h2 className="font-semibold">{title}</h2>
-        <div className="w-2/3 h-1 bg-orange" />
-        <h5>{children}</h5>
+        <h2 className="py-2 font-semibold">{title}</h2>
+        <div className="w-24 h-1 bg-orange" />
+        <h5 className="py-2">{children}</h5>
       </div>
     </div>
   )
 }
 
-function Step({ index, title, reversed = false, image, children }) {
+function Step({
+  index,
+  className = '',
+  title,
+  reversed = false,
+  image,
+  children,
+}) {
   const { width, height } = useWindowSize()
 
   const ref = useRef()
@@ -617,7 +625,7 @@ function Step({ index, title, reversed = false, image, children }) {
 
   return (
     <div
-      className="relative w-full px-4 py-12 mb-4 flex flex-row rounded"
+      className={`relative w-full px-4 py-12 mb-4 flex flex-row rounded ${className}`}
       style={{
         alignSelf: reversed ? 'flex-end' : 'flex-start',
         backgroundImage: `url(/${image})`,
@@ -659,7 +667,7 @@ function Step({ index, title, reversed = false, image, children }) {
           <h2 className="px-4 inline">{title}</h2>
         </motion.div>
         <motion.p
-          className={`font-medium text-2xl py-4 px-2 bg-black2 ${
+          className={`font-medium text-2xl py-4 px-2 bg-black-t ${
             reversed ? 'text-right' : ''
           }`}
           style={{ x, opacity, maxWidth: '46rem' }}
