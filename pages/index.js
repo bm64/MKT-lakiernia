@@ -348,77 +348,83 @@ function Home() {
             </div>
           </section>
 
-          <div className="flex flex-row  w-9/12 mx-auto">
-            <div className="flex-1 flex-col px-10 transform duration-500 hover:scale-110">
-              <div className="relative ">
-                <div
-                  style={{
-                    backgroundImage: 'url(/bartek.jpg)',
-                    height: '25rem',
-                  }}
-                  className="w-full h-full bg-cover bg-top bg-no-repeat "
-                ></div>
-                <div className="absolute bottom-0 left-0 section-item w-full px-8 py-5">
-                  <h2 className="font-medium">Bartłomiej Kula</h2>
-                  <h5 className="font-normal pt-1">
+          <section ref={fourRef} className="container mx-auto">
+            <img className="w-full" src="/lakiernia.jpg" />
+            <div
+              className="flex flex-col items-start bg-black-t transform -translate-y-12 bg-blac"
+              style={{ backgroundColor: '#1B1B1EAA' }}
+            >
+              <h2 className="inline-block px-12 py-4 bg-orange font-semibold text-white">
+                O NASZEJ FIRMIE
+              </h2>
+              <div className="flex flex-col lg:flex-row items-stretch">
+                <div className="p-4">
+                  <h2 className="font-semibold text-orange">Kim jesteśmy?</h2>
+                  <div className="py-2 flex flex-col lg:flex-row">
+                    <p>
+                      Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
+                      szkody z polisy AC lub OC do..Pierwszym krokiem jaki
+                      powinienes podjąć jest zgłoszenie szkody z polisy AC lub
+                      OC do..
+                    </p>
+                    <p>
+                      Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
+                      szkody z polisy AC lub OC do..Pierwszym krokiem jaki
+                      powinienes podjąć jest zgłoszenie szkody z polisy AC lub
+                      OC do..
+                    </p>
+                  </div>
+                </div>
+                <div className="h-64 w-2 bg-orange rounded" />
+                <div className="p-4">
+                  <h2 className="font-semibold text-orange">
+                    Czym się zajmujemy?
+                  </h2>
+                  <div className="py-2 flex flex-col lg:flex-row">
+                    <p>
+                      Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
+                      szkody z polisy AC lub OC do..Pierwszym krokiem jaki
+                      powinienes podjąć jest zgłoszenie szkody z polisy AC lub
+                      OC do..
+                    </p>
+                    <p>
+                      Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
+                      szkody z polisy AC lub OC do..Pierwszym krokiem jaki
+                      powinienes podjąć jest zgłoszenie szkody z polisy AC lub
+                      OC do..
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <h2 className="inline-block px-12 py-4 bg-orange font-semibold text-white">
+                NASI PRACOWNICY
+              </h2>
+              <div className="py-4 w-full flex flex-row justify-evenly">
+                <div>
+                  <img src="/bartek.jpg" className="h-64 w-64" />
+                  <h2 className="font-semibold">Bartłomiej Kula</h2>
+                  <h4 style={{ maxWidth: '15rem' }}>
                     Kierownik Centrum Blacharsko-Lakierniczego
-                  </h5>
-                  <h5 className="font-normal pt-1 text-orange">
-                    +48 17 583 05 97
-                  </h5>
-                  <h5 className="font-normal pt-1 text-orange">
-                    b.kula@mktserwis.pl
-                  </h5>
+                  </h4>
+                </div>
+                <div>
+                  <img src="/maciej.jpg" className="h-64 w-64" />
+                  <h2 className="font-semibold">Maciej Kotwica</h2>
+                  <h4 style={{ maxWidth: '15rem' }}>
+                    Specjalista Centrum Blacharsko-Lakierniczego
+                  </h4>
+                </div>
+                <div>
+                  <img src="/ewa.jpg" className="h-64 w-64" />
+                  <h2 className="font-semibold">Ewa Janusz</h2>
+                  <h4 style={{ maxWidth: '15rem' }}>
+                    Asystentka Centrum Blacharsko-Lakierniczego
+                  </h4>
                 </div>
               </div>
             </div>
-            <div className="flex-1 flex-col px-10 transform duration-500 hover:scale-110 shadow-">
-              <div className="relative ">
-                <div
-                  style={{
-                    backgroundImage: 'url(/Maciej.jpg)',
-                    height: '25rem',
-                  }}
-                  className="w-full h-full bg-cover bg-no-repeat"
-                ></div>
-                <div className="absolute bottom-0 left-0 section-item w-full px-8 py-5">
-                  <h2 className="font-medium">Bartłomiej Kula</h2>
-                  <h5 className="font-normal pt-1">
-                    Kierownik Centrum Blacharsko-Lakierniczego
-                  </h5>
-                  <h5 className="font-normal pt-1 text-orange">
-                    +48 17 583 05 97
-                  </h5>
-                  <h5 className="font-normal pt-1 text-orange">
-                    b.kula@mktserwis.pl
-                  </h5>
-                </div>
-              </div>
-            </div>
-            <div className="flex-1 flex-col px-10 transform duration-500 hover:scale-110">
-              <div className="relative ">
-                <div
-                  style={{
-                    backgroundImage: 'url(/ewa.jpg)',
-                    height: '25rem',
-                  }}
-                  className="w-full h-full bg-cover bg-no-repeat"
-                ></div>
-                <div className="absolute bottom-0 left-0 section-item w-full px-8 py-5">
-                  <h2 className="font-medium">Bartłomiej Kula</h2>
-                  <h5 className="font-normal pt-1">
-                    Kierownik Centrum Blacharsko-Lakierniczego
-                  </h5>
-                  <h5 className="font-normal pt-1 text-orange">
-                    +48 17 583 05 97
-                  </h5>
-                  <h5 className="font-normal pt-1 text-orange">
-                    b.kula@mktserwis.pl
-                  </h5>
-                </div>
-              </div>
-            </div>
-          </div>
+          </section>
+
           <section ref={fiveRef} className="container mx-auto">
             <h2 className="font-bold text-center md:text-5xl">
               Skontaktuj się
