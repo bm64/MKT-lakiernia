@@ -317,6 +317,75 @@ function Home() {
             </motion.div>
           </section>
 
+          <section className="container mx-auto">
+            <div
+              style={{
+                backgroundImage: 'url(/bmw.jpg)',
+                backgroundSize: 'cover',
+              }}
+              className="min-h-screen-1/2 w-full relative rounded-sm"
+            >
+              <div className="bg-black-t absolute top-0 left-0 transform translate-x-24 translate-y-12">
+                <h3 className="px-8 py-4 bg-white font-medium text-black text-center">
+                  USUWANIE WGNIECIEŃ BEZ LAKIEROWNIA
+                </h3>
+                <p className="p-8 max-w-xl">
+                  Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody
+                  z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
+                  podjąć jest zgłoszenie szkody z polisy AC lub OC do.. Ostatnim
+                  krokiem jaki powinienes podjąć jest zgłoszenie szkody z polisy
+                  AC lub OC do..Pierwszym krokiem jaki powinienes podjąć jest
+                  zgłoszenie szkody z polisy AC lub OC do..
+                </p>
+              </div>
+            </div>
+
+            <div
+              style={{
+                backgroundImage: 'url(/car_polish5.jpeg)',
+                backgroundSize: 'cover',
+              }}
+              className="mt-4 min-h-screen-1/2 w-full relative rounded-sm"
+            >
+              <div className="bg-black-t absolute top-0 right-0 transform -translate-x-24 translate-y-12">
+                <h3 className="px-8 py-4 bg-white font-medium text-black text-center">
+                  USUWANIE WGNIECIEŃ BEZ LAKIEROWNIA
+                </h3>
+                <p className="p-8 max-w-xl">
+                  Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody
+                  z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
+                  podjąć jest zgłoszenie szkody z polisy AC lub OC do.. Ostatnim
+                  krokiem jaki powinienes podjąć jest zgłoszenie szkody z polisy
+                  AC lub OC do..Pierwszym krokiem jaki powinienes podjąć jest
+                  zgłoszenie szkody z polisy AC lub OC do..
+                </p>
+              </div>
+            </div>
+
+            <div
+              style={{
+                backgroundImage: 'url(/skoda.jpg)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+              className="mt-4 min-h-screen-1/2 w-full relative rounded-sm"
+            >
+              <div className="bg-black-t absolute top-0 left-0 transform translate-x-24 translate-y-12">
+                <h3 className="px-8 py-4 bg-white font-medium text-black text-center">
+                  WYPOŻYCZALNIA SAMOCHODÓW
+                </h3>
+                <p className="p-8 max-w-xl">
+                  Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody
+                  z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
+                  podjąć jest zgłoszenie szkody z polisy AC lub OC do.. Ostatnim
+                  krokiem jaki powinienes podjąć jest zgłoszenie szkody z polisy
+                  AC lub OC do..Pierwszym krokiem jaki powinienes podjąć jest
+                  zgłoszenie szkody z polisy AC lub OC do..
+                </p>
+              </div>
+            </div>
+          </section>
+
           <section ref={fourRef} className="container mx-auto">
             <img className="w-full" src="/lakiernia.jpg" />
             <div
