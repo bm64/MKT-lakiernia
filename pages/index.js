@@ -563,8 +563,9 @@ function Home() {
               <div
                 className="relative shadow-md"
                 style={{
-                  backgroundImage: 'url(mobile2.jpeg)',
+                  backgroundImage: 'url(car3.jpeg)',
                   backgroundSize: 'cover',
+                  boxShadow: '10px 10px 10px rgba(0,0,0,0.9)',
                 }}
               >
                 <h2 className="absolute top-0 left-0 px-12 py-4 bg-orange text-black font-semibold transform -translate-y-12">
@@ -590,7 +591,11 @@ function Home() {
               </div>
               <div
                 className="px-32 py-20 flex flex-col items-stretch justify-center bg-black2 transform -translate-x-20 translate-y-20 shadow-lg"
-                style={{ flexBasis: 450 }}
+                style={{
+                  flexBasis: 450,
+
+                  boxShadow: '-10px 10px 10px rgba(0,0,0,0.9)',
+                }}
               >
                 <input
                   className="block px-1 py-2 px-2 text-white font-bold bg-black border border-orange"
