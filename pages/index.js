@@ -13,6 +13,9 @@ import {
   FaHandshake,
   FaThumbsUp,
   FaCalendarCheck,
+  FaEnvelope,
+  FaMobile,
+  FaMobileAlt,
 } from 'react-icons/fa'
 
 import useWindowSize from '../hooks/useWindowSize'
@@ -109,7 +112,7 @@ function Home() {
         <div className="py-4 flex flex-col items-center">
           <h3 className="flex-1 font-medium">Kontakt</h3>
           <div className="py-2 flex flex-row items-center cursor-pointer">
-            <FaPhone className="text-2xl" />
+            <FaPhone className="text-2xl" style={{ transform: 'scaleX(-1)' }} />
             <h5 className="px-4 text-orange">17 583 05 96</h5>
           </div>
           <div className="py-2 flex flex-row items-center cursor-pointer">
@@ -224,7 +227,7 @@ function Home() {
                 <Panel
                   className="col-span-2 row-span-2 lg:col-span-1"
                   title="Kabina Nova Verta"
-                  image="/nova_verta.jpg"
+                  image="/kabina.jpg"
                 >
                   Kabiny lakiernicze przystosowane do procesów lakierniczych
                 </Panel>
@@ -321,7 +324,7 @@ function Home() {
             </motion.div>
           </section>
           <section>
-            <div className="container overflow-hidden grid grid-cols-4 mx-auto">
+            <div className="container overflow-hidden grid grid-cols-2 lg:grid-cols-4 mx-auto">
               <div
                 style={{
                   backgroundImage: 'url(/gallery1.png)',
@@ -367,13 +370,11 @@ function Home() {
               >
                 <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
                 <div
-                  style={{ top: '50%', transform: 'translateY(-50%)' }}
+                  style={{ top: '52%', transform: 'translateY(-50%)' }}
                   className="absolute w-full text-center p-5 pointer-events-none"
                 >
-                  <div className="font-medium text-2xl py-1">
-                    Doskonała Obsługa
-                  </div>
-                  <FaHandshake className="text-5xl mx-auto pointer-events-none" />
+                  <div className="font-medium text-2xl ">Doskonała Obsługa</div>
+                  <FaHandshake className="text-6xl mx-auto pointer-events-none" />
                 </div>
               </div>
               <div
@@ -466,7 +467,7 @@ function Home() {
           </section>
 
           <section ref={fourRef} className="container mx-auto">
-            <img className="w-full" src="/lakiernia.jpg" />
+            <img className="w-full" src="/lakiernia3.jpg" />
             <div
               className="flex flex-col items-start bg-black-t transform -translate-y-32 bg-blac"
               style={{
@@ -568,35 +569,56 @@ function Home() {
                   boxShadow: '10px 10px 10px rgba(0,0,0,0.9)',
                 }}
               >
-                <h2 className="absolute top-0 left-0 px-12 py-4 bg-orange text-black font-semibold transform -translate-y-12">
+                <h2
+                  style={{
+                    boxShadow: '10px 10px 10px rgba(0,0,0,0.9)',
+                  }}
+                  className="absolute top-0 left-0 px-12 py-4 bg-orange text-black font-semibold transform -translate-y-12"
+                >
                   SKONTAKTUJ SIĘ Z NAMI
                 </h2>
-                <div className="pl-16 pr-32 py-12 h-full bg-black-t">
-                  <h1 className="font-bold">Potrzebujesz pomocy?</h1>
-                  <p className="p-2 font-medium max-w-xs">
+                <div className="pl-16 pr-40 py-16 h-full bg-black-t">
+                  <h1 className="font-semibold">Potrzebujesz pomocy?</h1>
+                  <p className="p-4 font-medium max-w-sm">
                     Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
                     szkody z polisy AC lub OC do..Pierwszym krokiem jaki
                     powinienes podjąć jest zgłoszenie szkody z polisy AC lub OC
                     do..
                   </p>
-
-                  <h3 className="mt-8 text-orange font-bold">
-                    +48 17 583 05 96
-                  </h3>
-                  <h3 className="text-orange font-bold">+48 17 583 05 96</h3>
-                  <h3 className="text-orange font-bold">
-                    lakiernia@mktserwis.pl
-                  </h3>
+                  <div className="flex flex-row items-center py-1 pt-8 ">
+                    <FaPhone
+                      className="text-orange text-xl mr-3"
+                      style={{ transform: 'scaleX(-1)' }}
+                    />
+                    <h3 className=" text-orange font-semibold">
+                      +48 17 583 05 96
+                    </h3>
+                  </div>
+                  <div className="flex flex-row items-center py-1 ">
+                    <FaMobileAlt className="text-orange text-xl mr-3" />
+                    <h3 className=" text-orange font-semibold">
+                      +48 17 583 05 96
+                    </h3>
+                  </div>
+                  <div className="flex flex-row items-center py-1 ">
+                    <FaEnvelope className="text-orange text-xl mr-3" />
+                    <h3 className=" text-orange font-semibold">
+                      lakiernia@mktserwis.pl
+                    </h3>
+                  </div>
                 </div>
               </div>
               <div
-                className="px-32 py-20 flex flex-col items-stretch justify-center bg-black2 transform -translate-x-20 translate-y-20 shadow-lg"
+                className="px-20 pb-10 pt-6 flex flex-col items-stretch justify-center bg-black2 transform -translate-x-20 translate-y-20 shadow-lg"
                 style={{
-                  flexBasis: 450,
+                  flexBasis: 550,
 
                   boxShadow: '-10px 10px 10px rgba(0,0,0,0.9)',
                 }}
               >
+                <h1 className="font-semibold text-center pb-4">
+                  Napisz do nas!
+                </h1>
                 <input
                   className="block px-1 py-2 px-2 text-white font-bold bg-black border border-orange"
                   placeholder="Twoje imię"
@@ -613,7 +635,7 @@ function Home() {
                   rows={8}
                 />
                 <div className="mt-5 py-4 bg-orange text-center border border-orange-t hover:bg-orange-t cursor-pointer">
-                  <span className="text-xl text-black font-medium">
+                  <span className="text-xl text-black font-semibold">
                     Wyślij wiadomość
                   </span>
                 </div>
@@ -684,7 +706,7 @@ function Panel({ className = '', title, image, children }) {
         className="transform h-full w-full bg-center bg-cover hover:scale-110"
       />
       <div
-        className="absolute left-0 bottom-0 w-full p-4"
+        className="absolute left-0 bottom-0 w-full p-4 pointer-events-none"
         style={{
           background:
             '-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0, black 60%, black 100%)',
