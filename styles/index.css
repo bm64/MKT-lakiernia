@@ -92,6 +92,14 @@ body {
   }
 }
 
+.gallery-effect {
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
+}
+.gallery-effect:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
 .arrow {
   position: relative;
   width: 100px;

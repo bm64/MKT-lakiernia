@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react'
 import Layout from '../components/layout'
 import Header from '../components/header'
-import { MdPhoneIphone } from 'react-icons/md'
+import { MdPhoneIphone, MdUpdate } from 'react-icons/md'
 import {
   FaBars,
   FaCarCrash,
@@ -9,6 +9,10 @@ import {
   FaUserFriends,
   FaPhone,
   FaWrench,
+  FaTools,
+  FaHandshake,
+  FaThumbsUp,
+  FaCalendarCheck,
 } from 'react-icons/fa'
 
 import useWindowSize from '../hooks/useWindowSize'
@@ -316,7 +320,82 @@ function Home() {
               </h1>
             </motion.div>
           </section>
-
+          <section>
+            <div className="container overflow-hidden grid grid-cols-4 mx-auto">
+              <div
+                style={{
+                  backgroundImage: 'url(/gallery1.png)',
+                  paddingTop: '150%',
+                }}
+                className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
+              >
+                <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
+                <div
+                  style={{ top: '50%', transform: 'translateY(-50%)' }}
+                  className="absolute w-full text-center p-5 pointer-events-none"
+                >
+                  <div className="font-medium text-2xl py-1">
+                    Szybka realizacja
+                  </div>
+                  <FaCalendarCheck className="text-5xl mx-auto pointer-events-none" />
+                </div>
+              </div>
+              <div
+                style={{
+                  backgroundImage: 'url(/gallery2.jpeg)',
+                  paddingTop: '150%',
+                }}
+                className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
+              >
+                <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
+                <div
+                  style={{ top: '50%', transform: 'translateY(-50%)' }}
+                  className="absolute w-full text-center p-5 pointer-events-none"
+                >
+                  <div className="font-medium text-2xl py-2">
+                    Profesjonalny Sprzęt
+                  </div>
+                  <FaTools className="text-5xl mx-auto pointer-events-none" />
+                </div>
+              </div>
+              <div
+                style={{
+                  backgroundImage: 'url(/gallery3.png)',
+                  paddingTop: '150%',
+                }}
+                className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
+              >
+                <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
+                <div
+                  style={{ top: '50%', transform: 'translateY(-50%)' }}
+                  className="absolute w-full text-center p-5 pointer-events-none"
+                >
+                  <div className="font-medium text-2xl py-1">
+                    Doskonała Obsługa
+                  </div>
+                  <FaHandshake className="text-5xl mx-auto pointer-events-none" />
+                </div>
+              </div>
+              <div
+                style={{
+                  backgroundImage: 'url(/gallery4.png)',
+                  paddingTop: '150%',
+                }}
+                className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
+              >
+                <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
+                <div
+                  style={{ top: '50%', transform: 'translateY(-50%)' }}
+                  className="absolute w-full text-center p-5 pointer-events-none"
+                >
+                  <div className="font-medium text-2xl py-1">
+                    Zadowoleni Klienci
+                  </div>
+                  <FaThumbsUp className="text-5xl mx-auto pointer-events-none" />
+                </div>
+              </div>
+            </div>
+          </section>
           <section className="container mx-auto">
             <div
               style={{
