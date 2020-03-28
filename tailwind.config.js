@@ -29,8 +29,10 @@ module.exports = {
       maxWidth: {
         'screen-xl': '1280px',
       },
+
       screens: {
-        xxl: '1400px',
+        //xxl: '1400px',
+        xxl: '2000px',
       },
 
       transitionDuration: {

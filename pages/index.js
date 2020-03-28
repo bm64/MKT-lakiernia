@@ -3,6 +3,8 @@ import Layout from '../components/layout'
 import Header from '../components/header'
 import { MdPhoneIphone, MdUpdate } from 'react-icons/md'
 import {
+  FaMapMarkedAlt,
+  FaRegCalendarAlt,
   FaBars,
   FaCarCrash,
   FaWarehouse,
@@ -67,47 +69,72 @@ function Home() {
         id="navbar"
         className="md:fixed h-screen flex flex-col flex-between items-stretch bg-black2 z-30 max-h-screen"
       >
-        <h2 className="py-4 text-center font-bold">MKT SERWIS</h2>
-        <div className="navbar-item">
-          <FaWarehouse
+        <h2 className="text-center font-bold">MKT SERWIS</h2>
+        <div
+          className="flex flex-col h-full flex-1 py-4"
+          style={{ flexBasis: 0 }}
+        >
+          <div
             className={`${
-              oneVisible && !twoVisible ? 'text-orange' : ''
-            } text-4xl`}
-          />
-          <h4 className="text-center font-medium">
-            Centrum blacharsko lakiernicze
-          </h4>
+              oneVisible && !twoVisible ? 'bg-black-t' : ''
+            } navbar-item`}
+          >
+            <FaWarehouse
+              className={`${
+                oneVisible && !twoVisible ? 'text-orange ' : ''
+              } text-4xl`}
+            />
+            <h4
+              className={`${
+                oneVisible && !twoVisible ? '' : ''
+              } text-center font-medium px-2 pt-1`}
+            >
+              Usługi lakiernicze
+            </h4>
+          </div>
+          <div className="navbar-item">
+            <FaCarCrash
+              className={`${
+                twoVisible && !threeVisible ? 'text-orange' : ''
+              } text-4xl`}
+            />
+            <h4 className="text-center font-medium px-2 pt-1m">
+              Likwidacja szkody
+            </h4>
+          </div>
+          <div className="navbar-item">
+            <FaWrench
+              className={`${
+                threeVisible && !fourVisible ? 'text-orange' : ''
+              } text-4xl`}
+            />
+            <h4 className="text-center font-medium px-2 pt-1">
+              Usługi dodatkowe
+            </h4>
+          </div>
+          <div className="navbar-item">
+            <FaUserFriends
+              className={`${
+                fourVisible && !fiveVisible ? 'text-orange' : ''
+              } text-4xl`}
+            />
+            <h4 className="text-center font-medium px-2 pt-1">O nas</h4>
+          </div>
+          <div className="navbar-item">
+            <FaBars
+              className={`${fiveVisible ? 'text-orange' : ''} text-4xl`}
+            />
+            <h4 className="text-center font-medium px-2 pt-1">Kontakt</h4>
+          </div>
+          <div className="navbar-item">
+            <FaRegCalendarAlt
+              className={`${fiveVisible ? 'text-orange' : ''} text-4xl`}
+            />
+            <h4 className="text-center font-medium px-2 pt-1">
+              Zarezerwuj termin
+            </h4>
+          </div>
         </div>
-        <div className="navbar-item">
-          <FaCarCrash
-            className={`${
-              twoVisible && !threeVisible ? 'text-orange' : ''
-            } text-4xl`}
-          />
-          <h4 className="text-center font-medium">Likwidacja szkody</h4>
-        </div>
-        <div className="navbar-item">
-          <FaWrench
-            className={`${
-              threeVisible && !fourVisible ? 'text-orange' : ''
-            } text-4xl`}
-          />
-          <h4 className="text-center font-medium">Usługi dodatkowe</h4>
-        </div>
-        <div className="navbar-item">
-          <FaUserFriends
-            className={`${
-              fourVisible && !fiveVisible ? 'text-orange' : ''
-            } text-4xl`}
-          />
-          <h4 className="text-center font-medium">O nas</h4>
-        </div>
-        <div className="navbar-item">
-          <FaBars className={`${fiveVisible ? 'text-orange' : ''} text-4xl`} />
-          <h4 className="text-center font-medium">Kontakt</h4>
-        </div>
-
-        <div className="flex-1"></div>
 
         <div className="py-4 flex flex-col items-center">
           <h3 className="flex-1 font-medium">Kontakt</h3>
@@ -140,7 +167,7 @@ function Home() {
                 style={{ textShadow: '2px 2px 2px #1B1B1E' }}
                 className="text-5xl font-medium"
               >
-                Centrum blacharsko lakiernicze
+                CENTRUM BLACHARSKO LAKIERNICZE
               </h2>
               <div className="py-5">
                 <p
@@ -154,12 +181,13 @@ function Home() {
               </div>
             </div>
           </div>
+
           <div className="relative">
             <video
               autoPlay={true}
               loop={true}
               playsInline={true}
-              className="min-h-screen object-cover w-full"
+              className=" min-h-screen object-cover w-full"
             >
               <source src="/video1.mp4" type="video/mp4" />
             </video>
@@ -182,24 +210,46 @@ function Home() {
 
           <section ref={oneRef} className="relative mx-auto">
             <div
-              className="absolute top-0 left-0 w-full h-full"
+              className="absolute top-0 left-0 h-48 w-full z-10"
               style={{
-                backgroundImage: 'url(/drying.jpg)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundAttachment: 'fixed',
-                clipPath:
-                  'polygon(89% 0, 0 36%, 0 66%, 89% 100%, 100% 100%, 100% 86%, 39% 57%, 39% 41%, 100% 12%, 100% 0)',
+                background:
+                  '-webkit-linear-gradient(bottom, rgba(0, 0, 0, 0) 0,  #1B1B1E 90%,  #1B1B1E 100%)',
               }}
             />
 
-            <motion.div style={{ y: ox }} className="container mx-auto">
+            <div
+              className="absolute bottom-0 left-0 h-64 w-full z-10"
+              style={{
+                background:
+                  '-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0,  #1b1b1e 90%,  #1b1b1e 100%)',
+              }}
+            />
+            <div
+              className="absolute top-0 left-0 w-full h-full"
+              style={{
+                backgroundImage: 'url(/bg_img.jpeg)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundAttachment: 'fixed',
+                /*
+                clipPath:
+                  'polygon(89% 0, 0 36%, 0 66%, 89% 100%, 100% 100%, 100% 86%, 39% 57%, 39% 41%, 100% 12%, 100% 0)',
+                */
+              }}
+            />
+
+            <div style={{ y: ox }} className="container mx-auto pt-20">
+              {/*
               <h1 className="px-2 font-semibold text-5xl transform leading-tight tracking-wide">
                 Projesjonalne
               </h1>
               <h3 className="font-normal text-5xl text-orange transform translate-x-10 leading-tight tracking-tight">
                 usługi lakiernicze
               </h3>
+              */}
+              <h1 className="relative inline-block px-10 py-4 bg-orange font-semibold text-black z-10">
+                PROFESJONALNE USŁUGI LAKIERNICZE
+              </h1>
               <div className="py-8 panels-grid grid grid-cols-4 gap-4">
                 <Panel
                   className="row-span-4 col-span-4 lg:col-span-2"
@@ -239,27 +289,38 @@ function Home() {
                   Kabiny lakiernicze przystosowane do procesów lakierniczych
                 </Panel>
               </div>
-            </motion.div>
+            </div>
           </section>
 
           <section ref={twoRef} className="mt-4 relative">
             <div
               className="absolute top-0 left-0 w-full h-full"
-              style={{
+              style={
+                {
+                  /*
                 backgroundImage: 'url(/drying.jpg)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 zIndex: '0',
+
                 clipPath: 'polygon(7% 1%, 30% 1%, 30% 97%, 7% 97%)',
-              }}
+                */
+                }
+              }
             />
             <motion.div
               style={{ y: ox2 }}
               className="container mx-auto transform"
             >
+              {/*
               <h1 className="inline px-6 py-2 text-5xl text-black text-left font-medium bg-white">
                 MIAŁEŚ SZKODĘ?
+              </h1>*/}
+
+              <h1 className="inline-block px-12 py-4 bg-orange font-semibold text-black">
+                MIAŁEŚ SZKODĘ?
               </h1>
+
               <h2 className="px-3 py-4 pb-4 text-right">
                 Zobacz jak wygląda proces likwidacji
               </h2>
@@ -406,9 +467,9 @@ function Home() {
               className="min-h-screen-1/2 w-full relative rounded-sm"
             >
               <div className="bg-black-t absolute top-0 left-0 transform translate-x-24 translate-y-12">
-                <h3 className="px-8 py-4 bg-white font-medium text-black text-center">
-                  USUWANIE WGNIECIEŃ BEZ LAKIEROWNIA
-                </h3>
+                <h2 className="px-8 py-4 bg-white font-semibold text-black text-center">
+                  NAPRAWY PDR
+                </h2>
                 <p className="p-8 max-w-xl">
                   Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody
                   z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
@@ -428,9 +489,9 @@ function Home() {
               className="mt-4 min-h-screen-1/2 w-full relative rounded-sm"
             >
               <div className="bg-black-t absolute top-0 right-0 transform -translate-x-24 translate-y-12">
-                <h3 className="px-8 py-4 bg-white font-medium text-black text-center">
-                  USUWANIE WGNIECIEŃ BEZ LAKIEROWNIA
-                </h3>
+                <h2 className="px-8 py-4 bg-white font-semibold text-black text-center">
+                  AUTO DETAILING
+                </h2>
                 <p className="p-8 max-w-xl">
                   Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody
                   z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
@@ -446,14 +507,14 @@ function Home() {
               style={{
                 backgroundImage: 'url(/skoda.jpg)',
                 backgroundSize: 'cover',
-                backgroundPosition: 'center',
+                backgroundPosition: 'left',
               }}
               className="mt-4 min-h-screen-1/2 w-full relative rounded-sm"
             >
               <div className="bg-black-t absolute top-0 left-0 transform translate-x-24 translate-y-12">
-                <h3 className="px-8 py-4 bg-white font-medium text-black text-center">
+                <h2 className="px-8 py-4 bg-black font-bold text-white text-center">
                   WYPOŻYCZALNIA SAMOCHODÓW
-                </h3>
+                </h2>
                 <p className="p-8 max-w-xl">
                   Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie szkody
                   z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
@@ -467,7 +528,7 @@ function Home() {
           </section>
 
           <section ref={fourRef} className="container mx-auto">
-            <img className="w-full" src="/lakiernia3.jpg" />
+            <img className="w-full" src="/lakiernia2.jpg" />
             <div
               className="flex flex-col items-start bg-black-t transform -translate-y-32 bg-blac"
               style={{
@@ -477,10 +538,13 @@ function Home() {
                 backgroundPositionX: '70%',
               }}
             >
-              <div className="py-8 bg-black-t">
-                <h2 className="inline-block px-12 py-4 bg-orange font-semibold text-white">
-                  O NASZEJ FIRMIE
-                </h2>
+              <h2
+                style={{ transform: 'translateY(-50%)' }}
+                className="absolute top-0 left-0 inline-block px-12 py-4 bg-orange font-semibold text-white"
+              >
+                O NASZEJ FIRMIE
+              </h2>
+              <div className="pb-10 pt-16 bg-black-t">
                 <div className="flex flex-col lg:flex-row items-stretch">
                   <div className="p-4">
                     <h2 className="font-semibold text-orange">Kim jesteśmy?</h2>
@@ -520,6 +584,82 @@ function Home() {
                     </div>
                   </div>
                 </div>
+                <section>
+                  <div className="container overflow-hidden grid grid-cols-2 lg:grid-cols-4 mx-auto">
+                    <div
+                      style={{
+                        backgroundImage: 'url(/gallery1.png)',
+                        paddingTop: '150%',
+                      }}
+                      className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
+                    >
+                      <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
+                      <div
+                        style={{ top: '50%', transform: 'translateY(-50%)' }}
+                        className="absolute w-full text-center p-5 pointer-events-none"
+                      >
+                        <div className="font-medium text-2xl py-1">
+                          Szybka realizacja
+                        </div>
+                        <FaCalendarCheck className="text-5xl mx-auto pointer-events-none" />
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        backgroundImage: 'url(/gallery2.jpeg)',
+                        paddingTop: '150%',
+                      }}
+                      className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
+                    >
+                      <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
+                      <div
+                        style={{ top: '50%', transform: 'translateY(-50%)' }}
+                        className="absolute w-full text-center p-5 pointer-events-none"
+                      >
+                        <div className="font-medium text-2xl py-2">
+                          Profesjonalny Sprzęt
+                        </div>
+                        <FaTools className="text-5xl mx-auto pointer-events-none" />
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        backgroundImage: 'url(/gallery3.png)',
+                        paddingTop: '150%',
+                      }}
+                      className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
+                    >
+                      <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
+                      <div
+                        style={{ top: '52%', transform: 'translateY(-50%)' }}
+                        className="absolute w-full text-center p-5 pointer-events-none"
+                      >
+                        <div className="font-medium text-2xl ">
+                          Doskonała Obsługa
+                        </div>
+                        <FaHandshake className="text-6xl mx-auto pointer-events-none" />
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        backgroundImage: 'url(/gallery4.png)',
+                        paddingTop: '150%',
+                      }}
+                      className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
+                    >
+                      <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
+                      <div
+                        style={{ top: '50%', transform: 'translateY(-50%)' }}
+                        className="absolute w-full text-center p-5 pointer-events-none"
+                      >
+                        <div className="font-medium text-2xl py-1">
+                          Zadowoleni Klienci
+                        </div>
+                        <FaThumbsUp className="text-5xl mx-auto pointer-events-none" />
+                      </div>
+                    </div>
+                  </div>
+                </section>
                 <h2 className="inline-block px-12 py-4 bg-orange font-semibold text-white">
                   NASI PRACOWNICY
                 </h2>
@@ -579,7 +719,7 @@ function Home() {
                 </h2>
                 <div className="pl-16 pr-40 py-16 h-full bg-black-t">
                   <h1 className="font-semibold">Potrzebujesz pomocy?</h1>
-                  <p className="p-4 font-medium max-w-sm">
+                  <p className="p-4 font-medium text-lg max-w-sm">
                     Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
                     szkody z polisy AC lub OC do..Pierwszym krokiem jaki
                     powinienes podjąć jest zgłoszenie szkody z polisy AC lub OC
@@ -604,6 +744,12 @@ function Home() {
                     <FaEnvelope className="text-orange text-xl mr-3" />
                     <h3 className=" text-orange font-semibold">
                       lakiernia@mktserwis.pl
+                    </h3>
+                  </div>
+                  <div className="flex flex-row items-center py-1 ">
+                    <FaMapMarkedAlt className="text-orange text-xl mr-3" />
+                    <h3 className=" text-orange font-semibold">
+                      Wola Mielecka
                     </h3>
                   </div>
                 </div>
@@ -701,7 +847,8 @@ function Panel({ className = '', title, image, children }) {
       <div
         style={{
           backgroundImage: `url(${image})`,
-          transitionDuration: '3500ms',
+          transitionDuration: '1000ms',
+          boxShadow: '-10px 10px 10px rgba(0,0,0,0.9)',
         }}
         className="transform h-full w-full bg-center bg-cover hover:scale-110"
       />
@@ -713,7 +860,7 @@ function Panel({ className = '', title, image, children }) {
         }}
       >
         <h2 className="py-2 font-semibold">{title}</h2>
-        <div className="w-24 h-1 bg-orange" />
+        <div className="w-12 h-1 bg-orange" />
         <h5 className="py-2 font-medium">{children}</h5>
       </div>
     </div>

@@ -36,7 +36,10 @@ body {
 }
 
 .navbar-item {
-  @apply py-4 flex flex-col items-center justify-around p-2 cursor-pointer;
+  @apply py-4 flex flex-col items-center justify-center p-2 cursor-pointer flex-1 transform duration-200;
+}
+.navbar-item:hover {
+  background-color: #1b1b1e;
 }
 
 .line {
