@@ -43,6 +43,7 @@ function Home() {
   const fourVisible = useOnEnterLeave(fourRef)
   const fiveVisible = useOnEnterLeave(fiveRef)
 
+  const [showFooter, setShowFooter] = useState(false)
   const { scrollY } = useViewportScroll()
 
   const [blur, setBlur] = useState(0)
@@ -50,11 +51,14 @@ function Home() {
   useEffect(() => {
     scrollY.onChange(() => {
       const value = scrollY.get()
+
       if (value > 6000) setBlur(6)
       else if (value > 5500) setBlur(4)
       else if (value > 4900) setBlur(2)
       else if (value > 4200) setBlur(1)
       else setBlur(0)
+
+      setShowFooter(value > 3000) // Arbitrary number really
     })
   }, [])
 
@@ -816,22 +820,24 @@ function Home() {
           </div>
         </div>
 
-        <footer
-          className="fixed bottom-0 h-64 w-full text-center bg-black2"
-          style={{ width: 'calc(100vw - 12rem)' }}
-        >
-          <div
-            className="absolute mx-auto"
-            style={{
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-            }}
+        {showFooter && (
+          <footer
+            className="fixed bottom-0 h-64 w-full text-center bg-black2 z-20"
+            style={{ width: 'calc(100vw - 12rem)' }}
           >
-            <h1 className="font-bold">MKT-SERWIS</h1>
-            <h4 className="font-medium text-gray">@2020</h4>
-          </div>
-        </footer>
+            <div
+              className="absolute mx-auto"
+              style={{
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+              }}
+            >
+              <h1 className="font-bold">MKT-SERWIS</h1>
+              <h4 className="font-medium text-gray">@2020</h4>
+            </div>
+          </footer>
+        )}
       </div>
     </Layout>
   )
