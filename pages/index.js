@@ -453,72 +453,107 @@ function Home() {
               </div>
             </section>
             <section className="container mx-auto bg-black">
+              <h1 className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black">
+                USŁUGI DODATKOWE
+              </h1>
+
               <div
                 style={{
-                  backgroundImage: 'url(/bmw.jpg)',
+                  backgroundImage: 'url(/services1.png)',
                   backgroundSize: 'cover',
+                  minHeight: '35rem',
                 }}
-                className="min-h-screen-1/2 w-full relative rounded-sm"
+                className="background w-full relative rounded-sm"
               >
-                <div className="bg-black-t absolute top-0 left-0 transform translate-x-24 translate-y-12">
-                  <h2 className="px-8 py-4 bg-white font-semibold text-black text-center">
+                <div
+                  style={{ backgroundColor: 'rgba(27,27,30,.7)' }}
+                  className=" absolute top-0 right-0  transform -translate-x-16 translate-y-16"
+                >
+                  <h1 className="px-8 pt-5  font-medium text-white text-3xl text-center">
                     NAPRAWY PDR
-                  </h2>
-                  <p className="p-8 max-w-xl">
+                  </h1>
+                  <p className="p-5 pt-2 text-center text-xl font- leading-tight max-w-xl">
                     Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
                     szkody z polisy AC lub OC do..Pierwszym krokiem jaki
                     powinienes podjąć jest zgłoszenie szkody z polisy AC lub OC
-                    do.. Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
-                    szkody z polisy AC lub OC do..Pierwszym krokiem jaki
-                    powinienes podjąć jest zgłoszenie szkody z polisy AC lub OC
-                    do..
+                    do..Pierwszym krokiem jaki powinienes podjąć jest zgłoszenie
+                    szkody z polisy AC lub OC do..
                   </p>
                 </div>
               </div>
-
               <div
                 style={{
-                  backgroundImage: 'url(/car_polish5.jpeg)',
+                  backgroundImage: 'url(/services2.png)',
                   backgroundSize: 'cover',
+                  minHeight: '35rem',
                 }}
-                className="mt-4 min-h-screen-1/2 w-full relative rounded-sm"
+                className="background w-full relative rounded-sm"
               >
-                <div className="bg-black-t absolute top-0 right-0 transform -translate-x-24 translate-y-12">
-                  <h2 className="px-8 py-4 bg-white font-semibold text-black text-center">
+                <div
+                  style={{ backgroundColor: 'rgba(27,27,30,.7)' }}
+                  className=" absolute top-0 left-0  transform translate-x-16 translate-y-16"
+                >
+                  <h1 className="px-8 pt-5  font-medium text-white text-3xl text-center">
                     AUTO DETAILING
-                  </h2>
-                  <p className="p-8 max-w-xl">
+                  </h1>
+                  <p className="p-5 pt-2 text-center text-xl font- leading-tight max-w-xl">
                     Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
                     szkody z polisy AC lub OC do..Pierwszym krokiem jaki
                     powinienes podjąć jest zgłoszenie szkody z polisy AC lub OC
-                    do.. Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
-                    szkody z polisy AC lub OC do..Pierwszym krokiem jaki
-                    powinienes podjąć jest zgłoszenie szkody z polisy AC lub OC
-                    do..
+                    do..Pierwszym krokiem jaki powinienes podjąć jest zgłoszenie
+                    szkody z polisy AC lub OC do..
                   </p>
                 </div>
               </div>
-
               <div
                 style={{
-                  backgroundImage: 'url(/skoda.jpg)',
+                  backgroundImage: 'url(/services3.png)',
                   backgroundSize: 'cover',
-                  backgroundPosition: 'left',
+                  minHeight: '35rem',
                 }}
-                className="mt-4 min-h-screen-1/2 w-full relative rounded-sm"
+                className="background w-full relative rounded-sm"
               >
-                <div className="bg-black-t absolute top-0 left-0 transform translate-x-24 translate-y-12">
-                  <h2 className="px-8 py-4 bg-black font-bold text-white text-center">
+                <div
+                  style={{ backgroundColor: 'rgba(27,27,30,.7)' }}
+                  className=" absolute top-0 right-0  transform -translate-x-16 translate-y-16"
+                >
+                  <h1 className="px-8 pt-5  font-medium text-white text-3xl text-center">
                     WYPOŻYCZALNIA SAMOCHODÓW
-                  </h2>
-                  <p className="p-8 max-w-xl">
+                  </h1>
+                  <p className="p-5 pt-2 text-center text-xl font- leading-tight max-w-xl">
                     Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
                     szkody z polisy AC lub OC do..Pierwszym krokiem jaki
                     powinienes podjąć jest zgłoszenie szkody z polisy AC lub OC
-                    do.. Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
+                    do..Pierwszym krokiem jaki powinienes podjąć jest zgłoszenie
+                    szkody z polisy AC lub OC do..
+                  </p>
+                </div>
+              </div>
+              <div
+                style={{
+                  backgroundImage: 'url(/services4.png)',
+                  backgroundSize: 'cover',
+                  minHeight: '35rem',
+                  transform: 'scaleX(-1)',
+                }}
+                className="background w-full relative rounded-sm"
+              >
+                <div
+                  style={{
+                    backgroundColor: 'rgba(27,27,30,.7)',
+                    transform: 'scaleX(-1) translateY(4rem) translateX(4rem)',
+                  }}
+                  className=" absolute top-0 right-0  "
+                >
+                  <h1 className="px-8 pt-5  font-medium text-white text-3xl text-center max-w-xl leading-snug">
+                    POWYPADKOWE BADANIA TECHNICZNE
+                  </h1>
+                  <p className="p-5 pt-2 text-center text-xl font- leading-tight max-w-xl">
+                    Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
                     szkody z polisy AC lub OC do..Pierwszym krokiem jaki
                     powinienes podjąć jest zgłoszenie szkody z polisy AC lub OC
-                    do..
+                    do..Pierwszym krokiem jaki powinienes podjąć jest zgłoszenie
+                    szkody z polisy AC lub OC do..
                   </p>
                 </div>
               </div>
