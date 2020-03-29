@@ -376,82 +376,6 @@ function Home() {
                 </h1>
               </motion.div>
             </section>
-            <section>
-              <div className="container overflow-hidden grid grid-cols-2 lg:grid-cols-4 mx-auto">
-                <div
-                  style={{
-                    backgroundImage: 'url(/gallery1.png)',
-                    paddingTop: '150%',
-                  }}
-                  className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
-                >
-                  <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
-                  <div
-                    style={{ top: '50%', transform: 'translateY(-50%)' }}
-                    className="absolute w-full text-center p-5 pointer-events-none"
-                  >
-                    <div className="font-medium text-2xl py-1">
-                      Szybka realizacja
-                    </div>
-                    <FaCalendarCheck className="text-5xl mx-auto pointer-events-none" />
-                  </div>
-                </div>
-                <div
-                  style={{
-                    backgroundImage: 'url(/gallery2.jpeg)',
-                    paddingTop: '150%',
-                  }}
-                  className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
-                >
-                  <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
-                  <div
-                    style={{ top: '50%', transform: 'translateY(-50%)' }}
-                    className="absolute w-full text-center p-5 pointer-events-none"
-                  >
-                    <div className="font-medium text-2xl py-2">
-                      Profesjonalny Sprzęt
-                    </div>
-                    <FaTools className="text-5xl mx-auto pointer-events-none" />
-                  </div>
-                </div>
-                <div
-                  style={{
-                    backgroundImage: 'url(/gallery3.png)',
-                    paddingTop: '150%',
-                  }}
-                  className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
-                >
-                  <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
-                  <div
-                    style={{ top: '52%', transform: 'translateY(-50%)' }}
-                    className="absolute w-full text-center p-5 pointer-events-none"
-                  >
-                    <div className="font-medium text-2xl ">
-                      Doskonała Obsługa
-                    </div>
-                    <FaHandshake className="text-6xl mx-auto pointer-events-none" />
-                  </div>
-                </div>
-                <div
-                  style={{
-                    backgroundImage: 'url(/gallery4.png)',
-                    paddingTop: '150%',
-                  }}
-                  className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
-                >
-                  <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
-                  <div
-                    style={{ top: '50%', transform: 'translateY(-50%)' }}
-                    className="absolute w-full text-center p-5 pointer-events-none"
-                  >
-                    <div className="font-medium text-2xl py-1">
-                      Zadowoleni Klienci
-                    </div>
-                    <FaThumbsUp className="text-5xl mx-auto pointer-events-none" />
-                  </div>
-                </div>
-              </div>
-            </section>
             <section className="container mx-auto bg-black">
               <h1 className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black">
                 USŁUGI DODATKOWE
@@ -559,7 +483,90 @@ function Home() {
               </div>
             </section>
 
-            <section ref={fourRef} className="container mx-auto">
+            <section className="container mx-auto">
+              <h1 className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black">
+                USŁUGI DODATKOWE
+              </h1>
+              <div className="container overflow-hidden grid grid-cols-2 lg:grid-cols-4 mx-auto">
+                <div
+                  style={{
+                    backgroundImage: 'url(/gallery1.png)',
+                    paddingTop: '150%',
+                  }}
+                  className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
+                >
+                  <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
+                  <div
+                    style={{ top: '50%', transform: 'translateY(-50%)' }}
+                    className="absolute w-full text-center p-5 pointer-events-none"
+                  >
+                    <div className="font-medium text-2xl py-1">
+                      Szybka realizacja
+                    </div>
+                    <FaCalendarCheck className="text-5xl mx-auto pointer-events-none" />
+                  </div>
+                </div>
+                <div
+                  style={{
+                    backgroundImage: 'url(/gallery2.jpeg)',
+                    paddingTop: '150%',
+                  }}
+                  className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
+                >
+                  <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
+                  <div
+                    style={{ top: '50%', transform: 'translateY(-50%)' }}
+                    className="absolute w-full text-center p-5 pointer-events-none"
+                  >
+                    <div className="font-medium text-2xl py-2">
+                      Profesjonalny Sprzęt
+                    </div>
+                    <FaTools className="text-5xl mx-auto pointer-events-none" />
+                  </div>
+                </div>
+                <div
+                  style={{
+                    backgroundImage: 'url(/gallery3.png)',
+                    paddingTop: '150%',
+                  }}
+                  className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
+                >
+                  <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
+                  <div
+                    style={{ top: '52%', transform: 'translateY(-50%)' }}
+                    className="absolute w-full text-center p-5 pointer-events-none"
+                  >
+                    <div className="font-medium text-2xl ">
+                      Doskonała Obsługa
+                    </div>
+                    <FaHandshake className="text-6xl mx-auto pointer-events-none" />
+                  </div>
+                </div>
+                <div
+                  style={{
+                    backgroundImage: 'url(/gallery4.png)',
+                    paddingTop: '150%',
+                  }}
+                  className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
+                >
+                  <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
+                  <div
+                    style={{ top: '50%', transform: 'translateY(-50%)' }}
+                    className="absolute w-full text-center p-5 pointer-events-none"
+                  >
+                    <div className="font-medium text-2xl py-1">
+                      Zadowoleni Klienci
+                    </div>
+                    <FaThumbsUp className="text-5xl mx-auto pointer-events-none" />
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section
+              ref={fourRef}
+              className="container mx-auto "
+              style={{ paddingTop: '12rem', paddingBottom: '2rem' }}
+            >
               <img className="w-full" src="/lakiernia2.jpg" />
               <div
                 className="flex flex-col items-start bg-black-t transform -translate-y-32 bg-blac"
@@ -572,12 +579,12 @@ function Home() {
               >
                 <h2
                   style={{ transform: 'translateY(-50%)' }}
-                  className="absolute top-0 left-0 inline-block px-12 py-4 bg-orange font-semibold text-white"
+                  className="absolute top-0 left-0 inline-block px-12 py-4 bg-orange font-semibold text-black"
                 >
                   O NASZEJ FIRMIE
                 </h2>
-                <div className="pb-10 pt-16 bg-black-t">
-                  <div className="flex flex-col lg:flex-row items-stretch">
+                <div className="pb-8 pt-16 bg-black-t">
+                  <div className="pb-8 flex flex-col lg:flex-row items-stretch">
                     <div className="p-4">
                       <h2 className="font-semibold text-orange">
                         Kim jesteśmy?
@@ -597,7 +604,7 @@ function Home() {
                         </p>
                       </div>
                     </div>
-                    <div className="h-64 w-2 bg-orange rounded" />
+                    <div className="h-56 w-2 bg-orange rounded" />
                     <div className="p-4">
                       <h2 className="font-semibold text-orange">
                         Czym się zajmujemy?
@@ -618,86 +625,10 @@ function Home() {
                       </div>
                     </div>
                   </div>
-                  <section>
-                    <div className="container overflow-hidden grid grid-cols-2 lg:grid-cols-4 mx-auto">
-                      <div
-                        style={{
-                          backgroundImage: 'url(/gallery1.png)',
-                          paddingTop: '150%',
-                        }}
-                        className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
-                      >
-                        <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
-                        <div
-                          style={{ top: '50%', transform: 'translateY(-50%)' }}
-                          className="absolute w-full text-center p-5 pointer-events-none"
-                        >
-                          <div className="font-medium text-2xl py-1">
-                            Szybka realizacja
-                          </div>
-                          <FaCalendarCheck className="text-5xl mx-auto pointer-events-none" />
-                        </div>
-                      </div>
-                      <div
-                        style={{
-                          backgroundImage: 'url(/gallery2.jpeg)',
-                          paddingTop: '150%',
-                        }}
-                        className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
-                      >
-                        <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
-                        <div
-                          style={{ top: '50%', transform: 'translateY(-50%)' }}
-                          className="absolute w-full text-center p-5 pointer-events-none"
-                        >
-                          <div className="font-medium text-2xl py-2">
-                            Profesjonalny Sprzęt
-                          </div>
-                          <FaTools className="text-5xl mx-auto pointer-events-none" />
-                        </div>
-                      </div>
-                      <div
-                        style={{
-                          backgroundImage: 'url(/gallery3.png)',
-                          paddingTop: '150%',
-                        }}
-                        className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
-                      >
-                        <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
-                        <div
-                          style={{ top: '52%', transform: 'translateY(-50%)' }}
-                          className="absolute w-full text-center p-5 pointer-events-none"
-                        >
-                          <div className="font-medium text-2xl ">
-                            Doskonała Obsługa
-                          </div>
-                          <FaHandshake className="text-6xl mx-auto pointer-events-none" />
-                        </div>
-                      </div>
-                      <div
-                        style={{
-                          backgroundImage: 'url(/gallery4.png)',
-                          paddingTop: '150%',
-                        }}
-                        className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
-                      >
-                        <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
-                        <div
-                          style={{ top: '50%', transform: 'translateY(-50%)' }}
-                          className="absolute w-full text-center p-5 pointer-events-none"
-                        >
-                          <div className="font-medium text-2xl py-1">
-                            Zadowoleni Klienci
-                          </div>
-                          <FaThumbsUp className="text-5xl mx-auto pointer-events-none" />
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                  <h2 className="inline-block px-12 py-4 bg-orange font-semibold text-white">
+                  <h2 className="inline-block px-12 py-4 bg-orange font-semibold text-black">
                     NASI PRACOWNICY
                   </h2>
-                  <div className="py-8 w-full flex flex-row justify-evenly">
+                  <div className="py-16 w-full flex flex-row justify-evenly">
                     <div>
                       <img src="/bartek.jpg" className="h-64 w-64" />
                       <h2 className="font-semibold">Bartłomiej Kula</h2>
@@ -823,7 +754,10 @@ function Home() {
               </div>
             </section>
 
-            <section className="container mx-auto">
+            <section
+              style={{ paddingTop: '10rem' }}
+              className="container mx-auto"
+            >
               <div className="flex flex-row items-center">
                 <h3 className="py-2 px-6 text-black text-left md:text-3xl font-semibold bg-white">
                   TUTAJ NAS ZNAJDZIESZ
