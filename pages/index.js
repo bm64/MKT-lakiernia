@@ -18,6 +18,7 @@ import {
   FaEnvelope,
   FaMobile,
   FaMobileAlt,
+
 } from 'react-icons/fa'
 
 import useWindowSize from '../hooks/useWindowSize'
@@ -73,7 +74,7 @@ function Home() {
         id="navbar"
         className="md:fixed h-screen flex flex-col flex-between items-stretch bg-black2 z-30 max-h-screen"
       >
-        <h2 className="text-center font-bold">MKT SERWIS</h2>
+        <h2 className="text-center font-bold pt-2">MKT SERWIS</h2>
         <div
           className="flex flex-col h-full flex-1 py-4"
           style={{ flexBasis: 0 }}
@@ -170,13 +171,35 @@ function Home() {
             className="relative h-screen bg-transparent z-30"
             style={{ maxHeight: '90rem' }}
           >
-            {/* PLACE YOUR SHIT THERE */}
-            <h1 className="inline-block">WTF</h1>
             <div
-              className="absolute bottom-0 left-0 h-64 w-full"
+              className="absolute flex flex-col  px-8 py-5"
+              style={{
+                top: '25%',
+                left: '35%',
+                transform: 'translateX(-50%)',
+                backgroundColor: 'rgba(27,27,29, .7)',
+              }}
+            >
+              <h2 className="font-bold text-5xl leading-tight py-3" style={{letterSpacing: '0.3em'}}>MKT SERWIS</h2>
+              <h1 className="font-bold text-6xl whitespace-no-wrap leading-none pt-3">
+                CENTRUM 
+              </h1>
+              <h1 className="font-bold text-6xl whitespace-no-wrap leading-none pb-3">
+                 BLACHARSKO LAKIERNICZE
+              </h1>
+
+             <h4 className="font-regular text-2xl py-3">Kompleksowa obsługa szkód komunikacyjnych. Możliwość bezgotówkowego rozliczenia sprawy.</h4>
+             <div className="flex flex-row">
+               <div className="text-2xl bg-black2 py-3 px-5 font-medium my-5 transform duration-300 hover:bg-orange hover:text-black">Zobacz więcej</div>
+               <div></div>
+               </div>
+            </div>
+             <a className="ca3-scroll-down-link ca3-scroll-down-arrow absolute" data-ca3_iconfont="ETmodules" data-ca3_icon=""></a> 
+            <div
+              className="absolute bottom-0 left-0 h-40 w-full"
               style={{
                 background:
-                  '-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0,  #1b1b1e 90%,  #1b1b1e 100%)',
+                  '-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0,  #1b1b1e 98%,  #1b1b1e 100%)',
               }}
             />
           </div>
