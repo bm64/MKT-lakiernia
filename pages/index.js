@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useMemo } from 'react'
+import React, { useState, useRef, useCallback, useEffect, useMemo } from 'react'
 import Layout from '../components/layout'
 import Header from '../components/header'
 import { MdPhoneIphone, MdUpdate } from 'react-icons/md'
@@ -225,7 +225,7 @@ function Home() {
                 }}
               />
 
-              <div style={{ y: ox }} className="container mx-auto pt-20">
+              <motion.div className="container mx-auto pt-20">
                 {/*
               <h1 className="px-2 font-semibold text-5xl transform leading-tight tracking-wide">
                 Projesjonalne
@@ -276,7 +276,7 @@ function Home() {
                     Kabiny lakiernicze przystosowane do procesów lakierniczych
                   </Panel>
                 </div>
-              </div>
+              </motion.div>
             </section>
 
             <section ref={twoRef} className="mt-4 relative">
@@ -296,7 +296,7 @@ function Home() {
                 }
               />
               <motion.div
-                style={{ y: ox2 }}
+                //style={{ y: ox2 }}
                 className="container mx-auto transform"
               >
                 {/*
@@ -848,31 +848,32 @@ function Step({
 }) {
   const { width, height } = useWindowSize()
 
-  const ref = useRef()
-
   const [h, setH] = useState(0)
   const [y, setY] = useState(0)
-  useEffect(() => {
-    if (ref.current) {
-      setY(ref.current.getBoundingClientRect().top)
-      setH(ref.current.getBoundingClientRect().height)
+
+  const measureStep = useCallback(ref => {
+    if (ref !== null) {
+      setY(ref.getBoundingClientRect().top + window.scrollY)
+      console.log(ref.getBoundingClientRect().top + window.scrollY)
+      setH(ref.getBoundingClientRect().height)
     }
-  }, [ref])
+  }, [])
 
   const { scrollY } = useViewportScroll()
 
   const rx = useTransform(
     scrollY,
-    [y - height / 6, y + height / 2.3],
-    reversed ? [900, 0] : [-900, 0]
+    [y - height + h, y - height + h * 2],
+    reversed ? [1500, 0] : [-1500, 0]
   )
 
-  const x = useSpring(rx, { damping: 600 })
+  const x = useSpring(rx, { mass: 0.3 })
 
   const opacity = useTransform(x, reversed ? [600, 0] : [-600, 0], [0, 1])
 
   return (
     <div
+      ref={measureStep}
       className={`relative w-full px-4 py-12 mb-4 flex flex-row rounded ${className}`}
       style={{
         alignSelf: reversed ? 'flex-end' : 'flex-start',
@@ -896,14 +897,13 @@ function Step({
         } w-full`}
       >
         <motion.div
-          ref={ref}
           style={{
             justifyContent: reversed ? 'flex-end' : 'flex-start',
             x,
             opacity,
             backgroundColor: '#333333',
           }}
-          transition={{ type: 'spring', mass: 0.3, stiffness: 10 }}
+          transition={{ type: 'spring', mass: 5, stiffness: 10 }}
           className="flex flex-row items-baseline"
         >
           <div
