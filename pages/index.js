@@ -240,7 +240,7 @@ function Home() {
               <div
                 className="absolute top-0 left-0 w-full h-full"
                 style={{
-                  backgroundImage: 'url(/bg_img2.png)',
+                  backgroundImage: 'url(/bg_img10.jpeg)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundAttachment: 'fixed',
@@ -341,7 +341,7 @@ function Home() {
                   <Step
                     index={1}
                     title="Zgłoszenie szkody z polisy AC lub OC"
-                    image="insurance.jpg"
+                    image="l1.png"
                   >
                     Pierwszym krokiem jaki powinienes podjąć jest zgłoszenie
                     szkody z polisy AC lub OC do..Pierwszym krokiem jaki
@@ -352,7 +352,7 @@ function Home() {
                   <Step
                     index={2}
                     title="Oględziny pojazdu"
-                    image="inspection.jpg"
+                    image="l2.png"
                     reversed
                   >
                     Drugim krokiem jaki powinienes podjąć jest zgłoszenie szkody
@@ -362,7 +362,7 @@ function Home() {
                   <Step
                     index={3}
                     title={'Ustalenie zakresu odpowiedzialności'}
-                    image="reception.jpg"
+                    image="l3.png"
                   >
                     Trzecim krokiem jaki powinienes podjąć jest zgłoszenie
                     szkody z polisy AC lub OC do..Pierwszym krokiem jaki
@@ -373,7 +373,7 @@ function Home() {
                   <Step
                     index={4}
                     title="Samochód zastępczy"
-                    image="replacement.jpg"
+                    image="l4.png"
                     reversed
                   >
                     Czwartym krokiem jaki powinienes podjąć jest zgłoszenie
@@ -385,7 +385,7 @@ function Home() {
                   <Step
                     index={5}
                     title="Rozliczanie koszt napraw"
-                    image="insurance.jpg"
+                    image="l5.png"
                     className="mb-0"
                   >
                     Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
@@ -511,7 +511,7 @@ function Home() {
 
             <section className="container mx-auto">
               <h2 className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black">
-                USŁUGI DODATKOWE
+                PLACEHOLDER
               </h2>
               <div className="container overflow-hidden grid grid-cols-2 lg:grid-cols-4 mx-auto">
                 <div
@@ -593,9 +593,9 @@ function Home() {
               className="container mx-auto "
               style={{ paddingTop: '12rem', paddingBottom: '2rem' }}
             >
-              <img className="w-full" src="/lakiernia2.jpg" />
+              <img className="w-full" src="/lakierniaxdd.png" />
               <div
-                className="flex flex-col items-start bg-black-t transform -translate-y-32 bg-blac"
+                className="flex flex-col items-start bg-black-t transform bg-blac"
                 style={{
                   backgroundColor: '#1B1B1EAA',
                   backgroundImage: 'url(/footer_img.jpeg)',
@@ -721,26 +721,26 @@ function Home() {
                         className="text-orange text-xl mr-3"
                         style={{ transform: 'scaleX(-1)' }}
                       />
-                      <h3 className=" text-orange font-semibold">
+                      <h3 className="text-white font-medium">
                         +48 17 583 05 96
                       </h3>
                     </div>
                     <div className="flex flex-row items-center py-1 ">
                       <FaMobileAlt className="text-orange text-xl mr-3" />
-                      <h3 className=" text-orange font-semibold">
+                      <h3 className=" text-white font-medium">
                         +48 17 583 05 96
                       </h3>
                     </div>
                     <div className="flex flex-row items-center py-1 ">
                       <FaEnvelope className="text-orange text-xl mr-3" />
-                      <h3 className=" text-orange font-semibold">
+                      <h3 className=" text-white font-medium">
                         lakiernia@mktserwis.pl
                       </h3>
                     </div>
-                    <div className="flex flex-row items-center py-1 ">
-                      <FaMapMarkedAlt className="text-orange text-xl mr-3" />
-                      <h3 className=" text-orange font-semibold">
-                        Wola Mielecka
+                    <div className="flex flex-row items-top py-1 ">
+                      <FaMapMarkedAlt className="text-orange text-xl mr-3 mt-1" />
+                      <h3 className=" text-white font-medium">
+                        Wola Mielecka 632<br/>39-300 Mielec
                       </h3>
                     </div>
                   </div>
@@ -785,9 +785,9 @@ function Home() {
               className="container mx-auto"
             >
               <div className="flex flex-row items-center">
-                <h3 className="py-2 px-6 text-black text-left md:text-3xl font-semibold bg-white">
+                <h2 className="py-2 px-6 text-black text-left  font-semibold bg-orange">
                   TUTAJ NAS ZNAJDZIESZ
-                </h3>
+                </h2>
                 <h4 className="flex-1 text-right">
                   <span className="text-orange">Wola Mielecka 632</span> -
                   39-300 Mielec
