@@ -18,7 +18,6 @@ import {
   FaEnvelope,
   FaMobile,
   FaMobileAlt,
-
 } from 'react-icons/fa'
 
 import useWindowSize from '../hooks/useWindowSize'
@@ -180,21 +179,35 @@ function Home() {
                 backgroundColor: 'rgba(27,27,29, .7)',
               }}
             >
-              <h2 className="font-bold text-5xl leading-tight py-3" style={{letterSpacing: '0.3em'}}>MKT SERWIS</h2>
+              <h2
+                className="font-bold text-5xl leading-tight py-3"
+                style={{ letterSpacing: '0.3em' }}
+              >
+                MKT SERWIS
+              </h2>
               <h1 className="font-bold text-6xl whitespace-no-wrap leading-none pt-3">
-                CENTRUM 
+                CENTRUM
               </h1>
               <h1 className="font-bold text-6xl whitespace-no-wrap leading-none pb-3">
-                 BLACHARSKO LAKIERNICZE
+                BLACHARSKO LAKIERNICZE
               </h1>
 
-             <h4 className="font-regular text-2xl py-3">Kompleksowa obsługa szkód komunikacyjnych. Możliwość bezgotówkowego rozliczenia sprawy.</h4>
-             <div className="flex flex-row">
-               <div className="text-2xl bg-black2 py-3 px-5 font-medium my-5 transform duration-300 hover:bg-orange hover:text-black">Zobacz więcej</div>
-               <div></div>
-               </div>
+              <h4 className="font-regular text-2xl py-3">
+                Kompleksowa obsługa szkód komunikacyjnych. Możliwość
+                bezgotówkowego rozliczenia sprawy.
+              </h4>
+              <div className="flex flex-row">
+                <div className="text-2xl bg-black2 py-3 px-5 font-medium my-5 transform duration-300 hover:bg-orange hover:text-black">
+                  Zobacz więcej
+                </div>
+                <div></div>
+              </div>
             </div>
-             <a className="ca3-scroll-down-link ca3-scroll-down-arrow absolute" data-ca3_iconfont="ETmodules" data-ca3_icon=""></a> 
+            <a
+              className="ca3-scroll-down-link ca3-scroll-down-arrow absolute"
+              data-ca3_iconfont="ETmodules"
+              data-ca3_icon=""
+            ></a>
             <div
               className="absolute bottom-0 left-0 h-40 w-full"
               style={{
@@ -792,20 +805,23 @@ function Home() {
               </div>
               <iframe
                 className="w-full mx-auto min-h-screen-1/4 md:min-h-screen-1/2"
-                src="https://maps.google.com/maps?q=Wola%20mielecka%20lakiernia&t=&z=13&ie=UTF8&iwloc=&output=embed"
-              ></iframe>
-              <div className="flex flex-col lg:flex-row md:justify-between p-5">
+                src="https://maps.google.com/maps?q=MKT%20SERWIS%20CENTRUM%20BLACHARSKO%20LAKIERNICZE%20WOLA%20MIELECKA&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              />
+              <div
+                className="flex flex-col lg:flex-row md:justify-center p-5"
+                style={{ flexBasis: 0 }}
+              >
                 <img
                   src="/narodowa_strategia.png"
-                  className="h-32 xxl:h-40 p-5 object-contain"
+                  className="flex-1 h-24 xl:h-32 p-5 object-contain"
                 />
                 <img
                   src="/podkarpackie_logo.png"
-                  className="h-32 xxl:h-40 p-5 object-contain"
+                  className="flex-1 h-24 xl:h-32 p-5 object-contain"
                 />
                 <img
                   src="/ue_fundusz.png"
-                  className="h-32 xxl:h-40 p-5 object-contain"
+                  className="flex-1 h-24 xl:h-32 p-5 object-contain"
                 />
               </div>
             </section>
@@ -877,7 +893,6 @@ function Step({
   const measureStep = useCallback(ref => {
     if (ref !== null) {
       setY(ref.getBoundingClientRect().top + window.scrollY)
-      console.log(ref.getBoundingClientRect().top + window.scrollY)
       setH(ref.getBoundingClientRect().height)
     }
   }, [])
@@ -886,7 +901,7 @@ function Step({
 
   const rx = useTransform(
     scrollY,
-    [y - height + h, y - height + h * 2],
+    [y - height - h, y - height + h * 2],
     reversed ? [1500, 0] : [-1500, 0]
   )
 
