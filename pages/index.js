@@ -171,37 +171,27 @@ function Home() {
             style={{ maxHeight: '90rem' }}
           >
             <div
-              className="absolute flex flex-col  px-8 py-5"
+              className="absolute flex flex-col  px-8 py-2"
               style={{
-                top: '25%',
-                left: '35%',
-                transform: 'translateX(-50%)',
+                top: '18%',
+                left: '7%',
+                
                 backgroundColor: 'rgba(27,27,29, .7)',
               }}
             >
-              <h2
-                className="font-bold text-5xl leading-tight py-3"
-                style={{ letterSpacing: '0.3em' }}
-              >
-                MKT SERWIS
-              </h2>
-              <h1 className="font-bold text-6xl whitespace-no-wrap leading-none pt-3">
-                CENTRUM
+              <h2 className="font-bold text-4xxl leading-tight py-2 " style={{letterSpacing: '0.2em'}}>MKT SERWIS</h2>
+              <h1 className="font-semibold text-6xl whitespace-no-wrap leading-tight pt-2">
+                CENTRUM 
               </h1>
-              <h1 className="font-bold text-6xl whitespace-no-wrap leading-none pb-3">
-                BLACHARSKO LAKIERNICZE
+              <h1 className="font-semibold text-6xl whitespace-no-wrap leading-none pb-3">
+                 BLACHARSKO LAKIERNICZE
               </h1>
 
-              <h4 className="font-regular text-2xl py-3">
-                Kompleksowa obsługa szkód komunikacyjnych. Możliwość
-                bezgotówkowego rozliczenia sprawy.
-              </h4>
-              <div className="flex flex-row">
-                <div className="text-2xl bg-black2 py-3 px-5 font-medium my-5 transform duration-300 hover:bg-orange hover:text-black">
-                  Zobacz więcej
-                </div>
-                <div></div>
-              </div>
+             <h4 className="font-regular text-xl py-3 max-w-4xl  ">Kompleksowa obsługa szkód komunikacyjnych. Możliwość bezgotówkowego rozliczenia sprawy. Kompleksowa obsługa szkód komunikacyjnych.</h4>
+             <div className="flex flex-row">
+               <div className="text-2xl bg-black2 py-3 px-5 font-medium my-5 transform duration-300 hover:bg-orange hover:text-black">Zobacz więcej</div>
+               <div></div>
+               </div>
             </div>
             <a
               className="ca3-scroll-down-link ca3-scroll-down-arrow absolute"
@@ -212,7 +202,7 @@ function Home() {
               className="absolute bottom-0 left-0 h-40 w-full"
               style={{
                 background:
-                  '-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0,  #1b1b1e 98%,  #1b1b1e 100%)',
+                  '-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0,  #1b1b1e 90%,  #1b1b1e 100%)',
               }}
             />
           </div>
@@ -233,7 +223,7 @@ function Home() {
 
             <section ref={oneRef} className="relative mx-auto">
               <div
-                className="absolute top-0 left-0 h-48 w-full z-10"
+                className="absolute top-0 left-0 h-40 w-full z-10"
                 style={{
                   background:
                     '-webkit-linear-gradient(bottom, rgba(0, 0, 0, 0) 0,  #1B1B1E 90%,  #1B1B1E 100%)',
@@ -241,7 +231,7 @@ function Home() {
               />
 
               <div
-                className="absolute bottom-0 left-0 h-64 w-full z-10"
+                className="absolute bottom-0 left-0 h-40 w-full z-10"
                 style={{
                   background:
                     '-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0,  #1b1b1e 90%,  #1b1b1e 100%)',
@@ -250,7 +240,7 @@ function Home() {
               <div
                 className="absolute top-0 left-0 w-full h-full"
                 style={{
-                  backgroundImage: 'url(/bg_img.jpeg)',
+                  backgroundImage: 'url(/bg_img2.png)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundAttachment: 'fixed',
@@ -270,9 +260,9 @@ function Home() {
                 usługi lakiernicze
               </h3>
               */}
-                <h1 className="relative inline-block px-10 py-4 bg-orange font-semibold text-black z-10">
+                <h2 className="relative inline-block px-10 py-4 bg-orange font-semibold text-black z-10">
                   PROFESJONALNE USŁUGI LAKIERNICZE
-                </h1>
+                </h2>
                 <div className="py-8 panels-grid grid grid-cols-4 gap-4">
                   <Panel
                     className="row-span-4 col-span-4 lg:col-span-2"
@@ -340,9 +330,9 @@ function Home() {
                 MIAŁEŚ SZKODĘ?
               </h1>*/}
 
-                <h1 className="inline-block px-12 py-4 bg-orange font-semibold text-black">
-                  MIAŁEŚ SZKODĘ?
-                </h1>
+                <h2 className="inline-block px-12 py-4 bg-orange font-semibold text-black">
+                  ZOBACZ JAK WYGLĄDA PROCES LIKWIDACJI SZKODY
+                </h2>
 
                 <h2 className="px-3 py-4 pb-4 text-right">
                   Zobacz jak wygląda proces likwidacji
@@ -413,9 +403,9 @@ function Home() {
               </motion.div>
             </section>
             <section className="container mx-auto bg-black">
-              <h1 className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black">
+              <h2 className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black">
                 USŁUGI DODATKOWE
-              </h1>
+              </h2>
 
               <div
                 style={{
@@ -520,9 +510,9 @@ function Home() {
             </section>
 
             <section className="container mx-auto">
-              <h1 className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black">
+              <h2 className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black">
                 USŁUGI DODATKOWE
-              </h1>
+              </h2>
               <div className="container overflow-hidden grid grid-cols-2 lg:grid-cols-4 mx-auto">
                 <div
                   style={{
