@@ -90,46 +90,81 @@ function Home() {
             />
             <h4
               className={`${
-                oneVisible && !twoVisible ? '' : ''
+                oneVisible && !twoVisible ? 'text-orange' : ''
               } text-center font-medium px-2 pt-1`}
             >
               Usługi lakiernicze
             </h4>
           </div>
-          <div className="navbar-item">
+          <div
+            className={`${
+              twoVisible && !threeVisible ? 'bg-black-t' : ''
+            } navbar-item`}
+          >
             <FaCarCrash
               className={`${
                 twoVisible && !threeVisible ? 'text-orange' : ''
               } text-4xl`}
             />
-            <h4 className="text-center font-medium px-2 pt-1m">
+            <h4
+              className={`${
+                twoVisible && !threeVisible ? 'text-orange' : ''
+              } text-center font-medium px-2 pt-1`}
+            >
               Likwidacja szkody
             </h4>
           </div>
-          <div className="navbar-item">
+          <div
+            className={`${
+              threeVisible && !fourVisible ? 'bg-black-t' : ''
+            } navbar-item`}
+          >
             <FaWrench
               className={`${
                 threeVisible && !fourVisible ? 'text-orange' : ''
               } text-4xl`}
             />
-            <h4 className="text-center font-medium px-2 pt-1">
+            <h4
+              className={`${
+                threeVisible && !fourVisible ? 'text-orange' : ''
+              } text-center font-medium px-2 pt-1`}
+            >
               Usługi dodatkowe
             </h4>
           </div>
-          <div className="navbar-item">
+          <div
+            className={`${
+              fourVisible && !fiveVisible ? 'bg-black-t' : ''
+            } navbar-item`}
+          >
             <FaUserFriends
               className={`${
                 fourVisible && !fiveVisible ? 'text-orange' : ''
               } text-4xl`}
             />
-            <h4 className="text-center font-medium px-2 pt-1">O nas</h4>
+            <h4
+              className={`${
+                fourVisible && !fiveVisible ? 'text-orange' : ''
+              } text-center font-medium px-2 pt-1`}
+            >
+              O nas</h4>
           </div>
-          <div className="navbar-item">
+          <div
+            className={`${
+              fiveVisible ? 'bg-black-t' : ''
+            } navbar-item`}
+          >
             <FaBars
               className={`${fiveVisible ? 'text-orange' : ''} text-4xl`}
             />
-            <h4 className="text-center font-medium px-2 pt-1">Kontakt</h4>
+            <h4
+              className={`${
+                fiveVisible ? 'text-orange' : ''
+              } text-center font-medium px-2 pt-1`}
+            >
+            Kontakt</h4>
           </div>
+          {/*
           <div className="navbar-item">
             <FaRegCalendarAlt
               className={`${fiveVisible ? 'text-orange' : ''} text-4xl`}
@@ -137,7 +172,7 @@ function Home() {
             <h4 className="text-center font-medium px-2 pt-1">
               Zarezerwuj termin
             </h4>
-          </div>
+          </div>*/}
         </div>
 
         <div className="py-4 flex flex-col items-center">
@@ -402,7 +437,7 @@ function Home() {
                 </h1>
               </motion.div>
             </section>
-            <section className="container mx-auto bg-black">
+            <section ref={threeRef} className="container mx-auto bg-black">
               <h2 className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black">
                 USŁUGI DODATKOWE
               </h2>
@@ -514,79 +549,11 @@ function Home() {
                 PLACEHOLDER
               </h2>
               <div className="container overflow-hidden grid grid-cols-2 lg:grid-cols-4 mx-auto">
-                <div
-                  style={{
-                    backgroundImage: 'url(/gallery1.png)',
-                    paddingTop: '150%',
-                  }}
-                  className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
-                >
-                  <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
-                  <div
-                    style={{ top: '50%', transform: 'translateY(-50%)' }}
-                    className="absolute w-full text-center p-5 pointer-events-none"
-                  >
-                    <div className="font-medium text-2xl py-1">
-                      Szybka realizacja
-                    </div>
-                    <FaCalendarCheck className="text-5xl mx-auto pointer-events-none" />
-                  </div>
+                <GalleryItem title="Szybka realizacja" image="/gallery1.png"><FaCalendarCheck className="gallery-item"/></GalleryItem>
+                <GalleryItem title="Profesjonalny sprzęt" image="/gallery2.png"><FaTools className="gallery-item"/></GalleryItem>
+                <GalleryItem title="Doskonała obsluga" image="/gallery3.png"><FaHandshake className="gallery-item text-6xl"/></GalleryItem>
+                <GalleryItem title="Zadowoleni klienici" image="/gallery4.png"><FaThumbsUp className="gallery-item"/></GalleryItem>
                 </div>
-                <div
-                  style={{
-                    backgroundImage: 'url(/gallery2.jpeg)',
-                    paddingTop: '150%',
-                  }}
-                  className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
-                >
-                  <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
-                  <div
-                    style={{ top: '50%', transform: 'translateY(-50%)' }}
-                    className="absolute w-full text-center p-5 pointer-events-none"
-                  >
-                    <div className="font-medium text-2xl py-2">
-                      Profesjonalny Sprzęt
-                    </div>
-                    <FaTools className="text-5xl mx-auto pointer-events-none" />
-                  </div>
-                </div>
-                <div
-                  style={{
-                    backgroundImage: 'url(/gallery3.png)',
-                    paddingTop: '150%',
-                  }}
-                  className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
-                >
-                  <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
-                  <div
-                    style={{ top: '52%', transform: 'translateY(-50%)' }}
-                    className="absolute w-full text-center p-5 pointer-events-none"
-                  >
-                    <div className="font-medium text-2xl ">
-                      Doskonała Obsługa
-                    </div>
-                    <FaHandshake className="text-6xl mx-auto pointer-events-none" />
-                  </div>
-                </div>
-                <div
-                  style={{
-                    backgroundImage: 'url(/gallery4.png)',
-                    paddingTop: '150%',
-                  }}
-                  className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
-                >
-                  <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
-                  <div
-                    style={{ top: '50%', transform: 'translateY(-50%)' }}
-                    className="absolute w-full text-center p-5 pointer-events-none"
-                  >
-                    <div className="font-medium text-2xl py-1">
-                      Zadowoleni Klienci
-                    </div>
-                    <FaThumbsUp className="text-5xl mx-auto pointer-events-none" />
-                  </div>
-                </div>
-              </div>
             </section>
             <section
               ref={fourRef}
@@ -838,6 +805,30 @@ function Home() {
         )}
       </div>
     </Layout>
+  )
+}
+
+function GalleryItem({image, title, children}){
+  return (
+    <div
+                  style={{
+                    backgroundImage: `url(${image})`,
+                    paddingTop: '150%',
+                  }}
+                  className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
+    >
+                  <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
+                  <div
+                    style={{ top: '50%', transform: 'translateY(-50%)' }}
+                    className="absolute w-full text-center p-5 pointer-events-none"
+                  >
+                    <div className="font-medium text-2xl py-1">
+                      {title}
+                    </div>
+                    {children}
+                  </div>
+
+    </div>
   )
 }
 
