@@ -27,6 +27,7 @@ body {
   background-color: #242424;
   @apply text-white;
   position: relative;
+  scroll-behavior: smooth;
 }
 
 @tailwind components;

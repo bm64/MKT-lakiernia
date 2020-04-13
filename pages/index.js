@@ -38,6 +38,13 @@ function Home() {
   const fiveRef = useRef()
   const sixRef = useRef()
 
+  const oneScrollRef = useRef()
+  const twoScrollRef = useRef()
+  const threeScrollRef = useRef()
+  const fourScrollRef = useRef()
+  const fiveScrollRef = useRef()
+  const sixScrollRef = useRef()
+
   const oneVisible = useOnEnterLeave(oneRef)
   const twoVisible = useOnEnterLeave(twoRef)
   const threeVisible = useOnEnterLeave(threeRef)
@@ -69,18 +76,21 @@ function Home() {
   const ox = useSpring(oxx)
   const ox2 = useSpring(oxx2)
 
+  const scrollToRef = (ref) => window.scrollTo(0, (window.pageYOffset + ref.current.getBoundingClientRect().top - 32) )
+  
+
   return (
     <Layout>
       <div
         id="navbar"
-        className="md:fixed h-screen flex flex-col flex-between items-stretch bg-black2 z-30 max-h-screen"
+        className="md:fixed h-screen  flex flex-col flex-between items-stretch bg-black2 z-30 max-h-screen"
       >
-        <h2 className={`${sixVisible && !oneVisible ? 'text-orange ' : ''}   text-center w-full font-bold py-2 mx-auto cursor-pointer transform duration-700 hover:text-orange hover:bg-black-t`}>MKT SERWIS</h2>
+        <h2 onClick={()=>scrollToRef(oneScrollRef)} className={`${sixVisible && !oneVisible ? 'text-orange ' : ''}   text-center w-full font-bold py-2 mx-auto cursor-pointer transform duration-700 hover:text-orange hover:bg-black-t`}>MKT SERWIS</h2>
         <div
           className="flex flex-col h-full flex-1"
           style={{ flexBasis: 0 }}
-        >
-          <div
+        > 
+          <div onClick={()=>scrollToRef(twoScrollRef)} 
             className={`${
               oneVisible && !twoVisible ? 'bg-black-t' : ''
             } navbar-item`}
@@ -98,7 +108,7 @@ function Home() {
               Usługi lakiernicze
             </h4>
           </div>
-          <div
+          <div onClick={()=>scrollToRef(threeScrollRef)}
             className={`${
               twoVisible && !threeVisible ? 'bg-black-t' : ''
             } navbar-item`}
@@ -116,7 +126,7 @@ function Home() {
               Likwidacja szkody
             </h4>
           </div>
-          <div
+          <div onClick={()=>scrollToRef(fourScrollRef)}
             className={`${
               threeVisible && !fourVisible ? 'bg-black-t' : ''
             } navbar-item`}
@@ -127,6 +137,7 @@ function Home() {
               } text-4xl`}
             />
             <h4
+              
               className={`${
                 threeVisible && !fourVisible ? 'text-orange' : ''
               } text-center font-medium px-2 pt-1`}
@@ -135,6 +146,7 @@ function Home() {
             </h4>
           </div>
           <div
+            onClick={()=>scrollToRef(fiveScrollRef)}
             className={`${
               fourVisible && !fiveVisible ? 'bg-black-t' : ''
             } navbar-item`}
@@ -151,7 +163,7 @@ function Home() {
             >
               O nas</h4>
           </div>
-          <div
+          <div onClick={()=>scrollToRef(sixScrollRef)}
             className={`${
               fiveVisible ? 'bg-black-t' : ''
             } navbar-item`}
@@ -188,10 +200,10 @@ function Home() {
             <h5 className="px-4 text-orange font-semibold">602 583 583</h5>
           </div>
         </div>
-      </div>q
+      </div>
 
       <div id="content">
-        <div className="bg-black mb-64">
+        <div ref={oneScrollRef} className="bg-black mb-64">
           <div ref={sixRef} className="relative z-20">
             <video
               autoPlay={true}
@@ -297,7 +309,7 @@ function Home() {
                 usługi lakiernicze
               </h3>
               */}
-                <h2 className="relative inline-block px-10 py-4 bg-orange font-semibold text-black z-10">
+                <h2 ref={twoScrollRef} className="relative inline-block px-10 py-4 bg-orange font-semibold text-black z-10">
                   PROFESJONALNE USŁUGI LAKIERNICZE
                 </h2>
                 <div className="py-8 panels-grid grid grid-cols-4 gap-4">
@@ -367,7 +379,7 @@ function Home() {
                 MIAŁEŚ SZKODĘ?
               </h1>*/}
 
-                <h2 className="inline-block px-12 py-4 bg-orange font-semibold text-black">
+                <h2 ref={threeScrollRef} className="inline-block px-12 py-4 bg-orange font-semibold text-black">
                   ZOBACZ JAK WYGLĄDA PROCES LIKWIDACJI SZKODY
                 </h2>
 
@@ -440,7 +452,8 @@ function Home() {
               </motion.div>
             </section>
             <section ref={threeRef} className="container mx-auto bg-black">
-              <h2 className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black">
+              <h2 ref={fourScrollRef}
+              className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black">
                 USŁUGI DODATKOWE
               </h2>
 
@@ -572,7 +585,7 @@ function Home() {
                   backgroundPositionX: '70%',
                 }}
               >
-                <h2
+                <h2 ref={fiveScrollRef}
                   style={{ transform: 'translateY(-50%)' }}
                   className="absolute top-0 left-0 inline-block px-12 py-4 bg-orange font-semibold text-black"
                 >
@@ -659,10 +672,10 @@ function Home() {
               </div>
             </section>
 
-            <section ref={fiveRef} className="container mx-auto">
+            <section ref={fiveRef} ref={sixScrollRef} className="container mx-auto">
               <div className="flex flex-col md:flex-row justify-center">
-                <div
-                  className="relative shadow-md"
+                <div onClick={()=>scrollToRef(sixScrollRef)}
+                  className="relative shadow-md transform translate-x-10"
                   style={{
                     backgroundImage: 'url(car3.jpeg)',
                     backgroundSize: 'cover',
@@ -715,7 +728,7 @@ function Home() {
                   </div>
                 </div>
                 <div
-                  className="px-20 pb-10 pt-6 flex flex-col items-stretch justify-center bg-black2 transform -translate-x-20 translate-y-20 shadow-lg"
+                  className="px-20 pb-10 pt-6 flex flex-col items-stretch justify-center bg-black2 transform -translate-x-10 translate-y-20 shadow-lg"
                   style={{
                     flexBasis: 550,
 
