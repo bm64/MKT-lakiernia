@@ -36,12 +36,14 @@ function Home() {
   const threeRef = useRef()
   const fourRef = useRef()
   const fiveRef = useRef()
+  const sixRef = useRef()
 
   const oneVisible = useOnEnterLeave(oneRef)
   const twoVisible = useOnEnterLeave(twoRef)
   const threeVisible = useOnEnterLeave(threeRef)
   const fourVisible = useOnEnterLeave(fourRef)
   const fiveVisible = useOnEnterLeave(fiveRef)
+  const sixVisible = useOnEnterLeave(sixRef)
 
   const [showFooter, setShowFooter] = useState(false)
   const { scrollY } = useViewportScroll()
@@ -73,9 +75,9 @@ function Home() {
         id="navbar"
         className="md:fixed h-screen flex flex-col flex-between items-stretch bg-black2 z-30 max-h-screen"
       >
-        <h2 className="text-center font-bold pt-2">MKT SERWIS</h2>
+        <h2 className={`${sixVisible && !oneVisible ? 'text-orange ' : ''}   text-center w-full font-bold py-2 mx-auto cursor-pointer transform duration-700 hover:text-orange hover:bg-black-t`}>MKT SERWIS</h2>
         <div
-          className="flex flex-col h-full flex-1 py-4"
+          className="flex flex-col h-full flex-1"
           style={{ flexBasis: 0 }}
         >
           <div
@@ -162,7 +164,7 @@ function Home() {
                 fiveVisible ? 'text-orange' : ''
               } text-center font-medium px-2 pt-1`}
             >
-            Kontakt</h4>
+           Kontakt</h4>
           </div>
           {/*
           <div className="navbar-item">
@@ -175,22 +177,22 @@ function Home() {
           </div>*/}
         </div>
 
-        <div className="py-4 flex flex-col items-center">
-          <h3 className="flex-1 font-medium">Kontakt</h3>
+        <div className=" flex flex-col items-center">
+          <h3 className="flex-1 font-medium mx-auto text-center pb-2">Zadzwoń do nas!</h3>
           <div className="py-2 flex flex-row items-center cursor-pointer">
             <FaPhone className="text-2xl" style={{ transform: 'scaleX(-1)' }} />
-            <h5 className="px-4 text-orange">17 583 05 96</h5>
+            <h5 className="px-4 text-orange font-semibold">17 583 05 96</h5>
           </div>
           <div className="py-2 flex flex-row items-center cursor-pointer">
             <MdPhoneIphone className="text-2xl" />
-            <h5 className="px-4 text-orange">602 583 583</h5>
+            <h5 className="px-4 text-orange font-semibold">602 583 583</h5>
           </div>
         </div>
-      </div>
+      </div>q
 
       <div id="content">
         <div className="bg-black mb-64">
-          <div className="relative z-20">
+          <div ref={sixRef} className="relative z-20">
             <video
               autoPlay={true}
               loop={true}

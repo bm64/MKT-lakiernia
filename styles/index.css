@@ -77,7 +77,7 @@ body {
 }
 
 .navbar-item {
-  @apply py-4 flex flex-col items-center justify-center p-2 cursor-pointer flex-1 transform duration-200;
+  @apply py-4 flex flex-col items-center justify-center p-2 cursor-pointer flex-1 transform duration-500;
 }
 .navbar-item:hover {
   background-color: #1b1b1e;
