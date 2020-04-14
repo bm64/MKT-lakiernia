@@ -169,11 +169,11 @@ function Home() {
             } navbar-item`}
           >
             <FaBars
-              className={`${fiveVisible ? 'text-orange' : ''} text-4xl`}
+              className={`${fiveVisible ? 'text-orange ' : ''} text-4xl`}
             />
             <h4
               className={`${
-                fiveVisible ? 'text-orange' : ''
+                fiveVisible ? 'text-orange ' : ''
               } text-center font-medium px-2 pt-1`}
             >
            Kontakt</h4>
@@ -571,12 +571,12 @@ function Home() {
                 </div>
             </section>
             <section
-              ref={fourRef}
               className="container mx-auto "
               style={{ paddingTop: '12rem', paddingBottom: '2rem' }}
             >
               <img className="w-full" src="/lakierniaxdd.png" />
-              <div
+              <div 
+              ref={fourRef}
                 className="flex flex-col items-start bg-black-t transform bg-blac"
                 style={{
                   backgroundColor: '#1B1B1EAA',
@@ -672,8 +672,8 @@ function Home() {
               </div>
             </section>
 
-            <section ref={fiveRef} ref={sixScrollRef} className="container mx-auto">
-              <div className="flex flex-col md:flex-row justify-center">
+            <section  ref={sixScrollRef} className="container mx-auto">
+              <div ref={fiveRef} className="flex flex-col md:flex-row justify-center">
                 <div onClick={()=>scrollToRef(sixScrollRef)}
                   className="relative shadow-md transform translate-x-10"
                   style={{
