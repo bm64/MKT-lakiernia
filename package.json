@@ -9,21 +9,21 @@
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
-    "bootstrap": "^4.4.0",
+    "bootstrap": "^4.4.1",
     "flickity": "^2.2.1",
     "framer-motion": "^1.10.2",
     "next": "9.1.4",
-    "pure-react-carousel": "^1.24.1",
+    "pure-react-carousel": "^1.27.0",
     "react": "16.12.0",
-    "react-bootstrap": "^1.0.0-beta.16",
+    "react-bootstrap": "^1.0.0",
     "react-dom": "16.12.0",
-    "react-flickity-component": "^3.4.0",
-    "react-icons": "^3.8.0",
+    "react-flickity-component": "^3.5.0",
+    "react-icons": "^3.9.0",
     "react-slick": "^0.25.2",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "autoprefixer": "^9.7.4",
+    "autoprefixer": "^9.7.6",
     "postcss-preset-env": "^6.7.0",
     "tailwindcss": "^1.2.0"
   },

@@ -76,8 +76,11 @@ function Home() {
   const ox = useSpring(oxx)
   const ox2 = useSpring(oxx2)
 
-  const scrollToRef = (ref) => window.scrollTo(0, (window.pageYOffset + ref.current.getBoundingClientRect().top - 32) )
-  
+  const scrollToRef = ref =>
+    window.scrollTo(
+      0,
+      window.pageYOffset + ref.current.getBoundingClientRect().top - 32
+    )
 
   return (
     <Layout>
@@ -85,12 +88,17 @@ function Home() {
         id="navbar"
         className="md:fixed h-screen  flex flex-col flex-between items-stretch bg-black2 z-30 max-h-screen"
       >
-        <h2 onClick={()=>scrollToRef(oneScrollRef)} className={`${sixVisible && !oneVisible ? 'text-orange ' : ''}   text-center w-full font-bold py-2 mx-auto cursor-pointer transform duration-700 hover:text-orange hover:bg-black-t`}>MKT SERWIS</h2>
-        <div
-          className="flex flex-col h-full flex-1"
-          style={{ flexBasis: 0 }}
-        > 
-          <div onClick={()=>scrollToRef(twoScrollRef)} 
+        <h2
+          onClick={() => scrollToRef(oneScrollRef)}
+          className={`${
+            sixVisible && !oneVisible ? 'text-orange ' : ''
+          }   text-center navbar-heading w-full font-bold py-2 mx-auto cursor-pointer transform duration-500 hover:text-orange hover:bg-black-t`}
+        >
+          MKT SERWIS
+        </h2>
+        <div className="flex flex-col h-full flex-1" style={{ flexBasis: 0 }}>
+          <div
+            onClick={() => scrollToRef(twoScrollRef)}
             className={`${
               oneVisible && !twoVisible ? 'bg-black-t' : ''
             } navbar-item`}
@@ -108,7 +116,8 @@ function Home() {
               Usługi lakiernicze
             </h4>
           </div>
-          <div onClick={()=>scrollToRef(threeScrollRef)}
+          <div
+            onClick={() => scrollToRef(threeScrollRef)}
             className={`${
               twoVisible && !threeVisible ? 'bg-black-t' : ''
             } navbar-item`}
@@ -126,7 +135,8 @@ function Home() {
               Likwidacja szkody
             </h4>
           </div>
-          <div onClick={()=>scrollToRef(fourScrollRef)}
+          <div
+            onClick={() => scrollToRef(fourScrollRef)}
             className={`${
               threeVisible && !fourVisible ? 'bg-black-t' : ''
             } navbar-item`}
@@ -137,7 +147,6 @@ function Home() {
               } text-4xl`}
             />
             <h4
-              
               className={`${
                 threeVisible && !fourVisible ? 'text-orange' : ''
               } text-center font-medium px-2 pt-1`}
@@ -146,7 +155,7 @@ function Home() {
             </h4>
           </div>
           <div
-            onClick={()=>scrollToRef(fiveScrollRef)}
+            onClick={() => scrollToRef(fiveScrollRef)}
             className={`${
               fourVisible && !fiveVisible ? 'bg-black-t' : ''
             } navbar-item`}
@@ -161,12 +170,12 @@ function Home() {
                 fourVisible && !fiveVisible ? 'text-orange' : ''
               } text-center font-medium px-2 pt-1`}
             >
-              O nas</h4>
+              O nas
+            </h4>
           </div>
-          <div onClick={()=>scrollToRef(sixScrollRef)}
-            className={`${
-              fiveVisible ? 'bg-black-t' : ''
-            } navbar-item`}
+          <div
+            onClick={() => scrollToRef(sixScrollRef)}
+            className={`${fiveVisible ? 'bg-black-t' : ''} navbar-item`}
           >
             <FaBars
               className={`${fiveVisible ? 'text-orange ' : ''} text-4xl`}
@@ -176,7 +185,8 @@ function Home() {
                 fiveVisible ? 'text-orange ' : ''
               } text-center font-medium px-2 pt-1`}
             >
-           Kontakt</h4>
+              Kontakt
+            </h4>
           </div>
           {/*
           <div className="navbar-item">
@@ -190,7 +200,9 @@ function Home() {
         </div>
 
         <div className=" flex flex-col items-center">
-          <h3 className="flex-1 font-medium mx-auto text-center pb-2">Zadzwoń do nas!</h3>
+          <h3 className="flex-1 font-medium mx-auto text-center pb-2">
+            Zadzwoń do nas!
+          </h3>
           <div className="py-2 flex flex-row items-center cursor-pointer">
             <FaPhone className="text-2xl" style={{ transform: 'scaleX(-1)' }} />
             <h5 className="px-4 text-orange font-semibold">17 583 05 96</h5>
@@ -224,23 +236,34 @@ function Home() {
               style={{
                 top: '18%',
                 left: '7%',
-                
+
                 backgroundColor: 'rgba(27,27,29, .7)',
               }}
             >
-              <h2 className="font-bold text-4xxl leading-tight py-2 " style={{letterSpacing: '0.2em'}}>MKT SERWIS</h2>
+              <h2
+                className="font-bold text-4xxl leading-tight py-2 "
+                style={{ letterSpacing: '0.2em' }}
+              >
+                MKT SERWIS
+              </h2>
               <h1 className="font-semibold text-6xl whitespace-no-wrap leading-tight pt-2">
-                CENTRUM 
+                CENTRUM
               </h1>
               <h1 className="font-semibold text-6xl whitespace-no-wrap leading-none pb-3">
-                 BLACHARSKO LAKIERNICZE
+                BLACHARSKO LAKIERNICZE
               </h1>
 
-             <h4 className="font-regular text-xl py-3 max-w-4xl  ">Kompleksowa obsługa szkód komunikacyjnych. Możliwość bezgotówkowego rozliczenia sprawy. Kompleksowa obsługa szkód komunikacyjnych.</h4>
-             <div className="flex flex-row">
-               <div className="text-2xl bg-black2 py-3 px-5 font-medium my-5 transform duration-300 hover:bg-orange hover:text-black">Zobacz więcej</div>
-               <div></div>
-               </div>
+              <h4 className="font-regular text-xl py-3 max-w-4xl  ">
+                Kompleksowa obsługa szkód komunikacyjnych. Możliwość
+                bezgotówkowego rozliczenia sprawy. Kompleksowa obsługa szkód
+                komunikacyjnych.
+              </h4>
+              <div className="flex flex-row">
+                <div className="text-2xl bg-black2 py-3 px-5 font-medium my-5 transform duration-300 hover:bg-orange hover:text-black">
+                  Zobacz więcej
+                </div>
+                <div></div>
+              </div>
             </div>
             <a
               className="ca3-scroll-down-link ca3-scroll-down-arrow absolute"
@@ -309,7 +332,10 @@ function Home() {
                 usługi lakiernicze
               </h3>
               */}
-                <h2 ref={twoScrollRef} className="relative inline-block px-10 py-4 bg-orange font-semibold text-black z-10">
+                <h2
+                  ref={twoScrollRef}
+                  className="relative inline-block px-10 py-4 bg-orange font-semibold text-black z-10"
+                >
                   PROFESJONALNE USŁUGI LAKIERNICZE
                 </h2>
                 <div className="py-8 panels-grid grid grid-cols-4 gap-4">
@@ -379,7 +405,10 @@ function Home() {
                 MIAŁEŚ SZKODĘ?
               </h1>*/}
 
-                <h2 ref={threeScrollRef} className="inline-block px-12 py-4 bg-orange font-semibold text-black">
+                <h2
+                  ref={threeScrollRef}
+                  className="inline-block px-12 py-4 bg-orange font-semibold text-black"
+                >
                   ZOBACZ JAK WYGLĄDA PROCES LIKWIDACJI SZKODY
                 </h2>
 
@@ -452,8 +481,10 @@ function Home() {
               </motion.div>
             </section>
             <section ref={threeRef} className="container mx-auto bg-black">
-              <h2 ref={fourScrollRef}
-              className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black">
+              <h2
+                ref={fourScrollRef}
+                className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black"
+              >
                 USŁUGI DODATKOWE
               </h2>
 
@@ -561,22 +592,30 @@ function Home() {
 
             <section className="container mx-auto">
               <h2 className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black">
-                PLACEHOLDER
+                TO NAS WYRÓŻNIA
               </h2>
               <div className="container overflow-hidden grid grid-cols-2 lg:grid-cols-4 mx-auto">
-                <GalleryItem title="Szybka realizacja" image="/gallery1.png"><FaCalendarCheck className="gallery-item"/></GalleryItem>
-                <GalleryItem title="Profesjonalny sprzęt" image="/gallery2.png"><FaTools className="gallery-item"/></GalleryItem>
-                <GalleryItem title="Doskonała obsluga" image="/gallery3.png"><FaHandshake className="gallery-item text-6xl"/></GalleryItem>
-                <GalleryItem title="Zadowoleni klienici" image="/gallery4.png"><FaThumbsUp className="gallery-item"/></GalleryItem>
-                </div>
+                <GalleryItem title="Szybka realizacja" image="/gallery1.png">
+                  <FaCalendarCheck className="gallery-item" />
+                </GalleryItem>
+                <GalleryItem title="Profesjonalny sprzęt" image="/gallery2.png">
+                  <FaTools className="gallery-item" />
+                </GalleryItem>
+                <GalleryItem title="Doskonała obsluga" image="/gallery3.png">
+                  <FaHandshake className="gallery-item text-6xl" />
+                </GalleryItem>
+                <GalleryItem title="Zadowoleni klienici" image="/gallery4.png">
+                  <FaThumbsUp className="gallery-item" />
+                </GalleryItem>
+              </div>
             </section>
             <section
               className="container mx-auto "
               style={{ paddingTop: '12rem', paddingBottom: '2rem' }}
             >
               <img className="w-full" src="/lakierniaxdd.png" />
-              <div 
-              ref={fourRef}
+              <div
+                ref={fourRef}
                 className="flex flex-col items-start bg-black-t transform bg-blac"
                 style={{
                   backgroundColor: '#1B1B1EAA',
@@ -585,7 +624,8 @@ function Home() {
                   backgroundPositionX: '70%',
                 }}
               >
-                <h2 ref={fiveScrollRef}
+                <h2
+                  ref={fiveScrollRef}
                   style={{ transform: 'translateY(-50%)' }}
                   className="absolute top-0 left-0 inline-block px-12 py-4 bg-orange font-semibold text-black"
                 >
@@ -672,9 +712,13 @@ function Home() {
               </div>
             </section>
 
-            <section  ref={sixScrollRef} className="container mx-auto">
-              <div ref={fiveRef} className="flex flex-col md:flex-row justify-center">
-                <div onClick={()=>scrollToRef(sixScrollRef)}
+            <section ref={sixScrollRef} className="container mx-auto">
+              <div
+                ref={fiveRef}
+                className="flex flex-col md:flex-row justify-center"
+              >
+                <div
+                  onClick={() => scrollToRef(sixScrollRef)}
                   className="relative shadow-md transform translate-x-10"
                   style={{
                     backgroundImage: 'url(car3.jpeg)',
@@ -722,7 +766,9 @@ function Home() {
                     <div className="flex flex-row items-top py-1 ">
                       <FaMapMarkedAlt className="text-orange text-xl mr-3 mt-1" />
                       <h3 className=" text-white font-medium">
-                        Wola Mielecka 632<br/>39-300 Mielec
+                        Wola Mielecka 632
+                        <br />
+                        39-300 Mielec
                       </h3>
                     </div>
                   </div>
@@ -823,26 +869,23 @@ function Home() {
   )
 }
 
-function GalleryItem({image, title, children}){
+function GalleryItem({ image, title, children }) {
   return (
     <div
-                  style={{
-                    backgroundImage: `url(${image})`,
-                    paddingTop: '150%',
-                  }}
-                  className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
+      style={{
+        backgroundImage: `url(${image})`,
+        paddingTop: '150%',
+      }}
+      className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
     >
-                  <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
-                  <div
-                    style={{ top: '50%', transform: 'translateY(-50%)' }}
-                    className="absolute w-full text-center p-5 pointer-events-none"
-                  >
-                    <div className="font-medium text-2xl py-1">
-                      {title}
-                    </div>
-                    {children}
-                  </div>
-
+      <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
+      <div
+        style={{ top: '50%', transform: 'translateY(-50%)' }}
+        className="absolute w-full text-center p-5 pointer-events-none"
+      >
+        <div className="font-medium text-2xl py-1">{title}</div>
+        {children}
+      </div>
     </div>
   )
 }
