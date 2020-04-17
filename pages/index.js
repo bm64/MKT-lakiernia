@@ -18,6 +18,7 @@ import {
   FaEnvelope,
   FaMobile,
   FaMobileAlt,
+  FaMicrophoneAlt,
 } from 'react-icons/fa'
 
 import useWindowSize from '../hooks/useWindowSize'
@@ -76,7 +77,7 @@ function Home() {
   const ox = useSpring(oxx)
   const ox2 = useSpring(oxx2)
 
-  const scrollToRef = ref =>
+  const scrollToRef = (ref) =>
     window.scrollTo(
       0,
       window.pageYOffset + ref.current.getBoundingClientRect().top - 32
@@ -92,7 +93,7 @@ function Home() {
           onClick={() => scrollToRef(oneScrollRef)}
           className={`${
             sixVisible && !oneVisible ? 'text-orange ' : ''
-          }   text-center navbar-heading w-full font-bold py-2 mx-auto cursor-pointer transform duration-500 hover:text-orange hover:bg-black-t`}
+          }   text-center navbar-headingw-full font-bold py-2 mx-auto cursor-pointer transform duration-500 hover:text-orange hover:bg-black-t`}
         >
           MKT SERWIS
         </h2>
@@ -609,6 +610,143 @@ function Home() {
                 </GalleryItem>
               </div>
             </section>
+            <section className="relative mx-auto about-us">
+              <div
+                className="absolute top-0 left-0 h-40 w-full z-10"
+                style={{
+                  background:
+                    '-webkit-linear-gradient(bottom, rgba(0, 0, 0, 0) 0,  #1B1B1E 90%,  #1B1B1E 100%)',
+                }}
+              />
+
+              <div
+                className="absolute bottom-0 left-0 h-40 w-full z-10"
+                style={{
+                  background:
+                    '-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0,  #1b1b1e 90%,  #1b1b1e 100%)',
+                }}
+              />
+              <div
+                className="absolute top-0 left-0 w-full h-full bg-no-repeat"
+                style={{
+                  backgroundImage: 'url(/lakierniaxdd.png)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundAttachment: 'fixed',
+                }}
+              />
+              <div
+                className="absolute top-0 left-0 w-full h-full"
+                style={{ backgroundColor: 'rgba(17,18,18, 0.7)' }}
+              />
+
+              <div className="relative container overflow-hidden gap-8 grid grid-cols-4 grid-rows-2 mx-auto py-20">
+                <div
+                  style={{ transform: 'none' }}
+                  className="about-us-item col-span-4 row-span-2 lg:col-span-2 flex-col justify-between px-12"
+                >
+                  <h1>beeeka</h1>
+                  <img src="lakiernia_nowa.jpg" className="rounded-lg" />
+                </div>
+                <div className="about-us-item col-span-2 row-span-1 lg:col-span-1 pt-6">
+                  <h1 className="text-left text-orange font-semibold text-5xl leading-snug px-5 ">
+                    POZNAJ NASZ ZESPÓŁ
+                  </h1>
+                </div>
+                <div className="about-us-item col-span-2 row-span-1 lg:col-span-1">
+                  <img src="/bartek1.png" className="w-24" />
+                  <h2 className="pt-2 pb-1 font-medium">Bartłomiej Kula</h2>
+                  <p className="text-center text-gray text-sm font-medium pb-1 leading-tight">
+                    KIEROWNIK CETRUM BLACHARSKO-LAKIERNICZEGO
+                  </p>
+                  <div
+                    style={{ height: '2px' }}
+                    className="about-us-line bg-gray w-9/12 mt-2 mb-4"
+                  />
+                  <div className="flex flex-row items-center py-1">
+                    <FaPhone
+                      style={{ transform: 'scaleX(-1)' }}
+                      className="font-sm"
+                    />
+                    <p className="pl-2 font-medium text-base">
+                      +48 17 583 05 97
+                    </p>
+                  </div>
+                  <div className="flex flex-row items-center py-1">
+                    <FaMobileAlt className="font-sm" />
+                    <p className="pl-2 font-medium">+48 795 570 800</p>
+                  </div>
+                  <div className="flex flex-row items-center py-1">
+                    <FaEnvelope className="font-sm" />
+                    <p className="pl-2 font-medium">b.kula@mktserwis.pl</p>
+                  </div>
+                  <div
+                    style={{ height: '2px' }}
+                    className="about-us-line bg-gray mt-4 w-9/12"
+                  />
+                </div>
+                <div className="about-us-item col-span-2 row-span-1 lg:col-span-1">
+                  <img src="/ewa_bg.png" className="w-24" />
+                  <h2 className="pt-2 pb-1 font-medium">Ewa Janusz</h2>
+                  <p className="text-center text-gray text-sm font-medium pb-1 leading-tight">
+                    KIEROWNIK CETRUM BLACHARSKO-LAKIERNICZEGO
+                  </p>
+                  <div
+                    style={{ height: '2px' }}
+                    className="about-us-line bg-gray w-9/12 mt-2 mb-4"
+                  />
+                  <div className="flex flex-row items-center py-1">
+                    <FaPhone
+                      style={{ transform: 'scaleX(-1)' }}
+                      className="font-sm"
+                    />
+                    <p className="pl-2 font-medium">+48 17 583 05 97</p>
+                  </div>
+                  <div className="flex flex-row items-center py-1">
+                    <FaMobileAlt className="font-sm" />
+                    <p className="pl-2 font-medium">+48 795 570 800</p>
+                  </div>
+                  <div className="flex flex-row items-center py-1">
+                    <FaEnvelope className="font-sm" />
+                    <p className="pl-2 font-medium">b.kula@mktserwis.pl</p>
+                  </div>
+                  <div
+                    style={{ height: '2px' }}
+                    className="about-us-line bg-gray w-9/12 mt-4"
+                  />
+                </div>
+                <div className="about-us-item col-span-2 row-span-1 lg:col-span-1">
+                  <img src="/maciej1.png" className="w-24" />
+                  <h2 className="pt-2 pb-1 font-medium">Maciej Kotwica</h2>
+                  <p className="text-center text-gray text-sm font-medium pb-1 leading-tight">
+                    KIEROWNIK CETRUM BLACHARSKO-LAKIERNICZEGO
+                  </p>
+                  <div
+                    style={{ height: '2px' }}
+                    className="about-us-line bg-gray w-9/12 mt-2 mb-4"
+                  />
+                  <div className="flex flex-row items-center py-1">
+                    <FaPhone
+                      style={{ transform: 'scaleX(-1)' }}
+                      className="font-sm"
+                    />
+                    <p className="pl-2 font-medium">+48 17 583 05 97</p>
+                  </div>
+                  <div className="flex flex-row items-center py-1">
+                    <FaMobileAlt className="font-sm" />
+                    <p className="pl-2 font-medium">+48 795 570 800</p>
+                  </div>
+                  <div className="flex flex-row items-center py-1">
+                    <FaEnvelope className="font-sm" />
+                    <p className="pl-2 font-medium">b.kula@mktserwis.pl</p>
+                  </div>
+                  <div
+                    style={{ height: '2px' }}
+                    className="about-us-line bg-gray w-9/12 mt-4"
+                  />
+                </div>
+              </div>
+            </section>
             <section
               className="container mx-auto "
               style={{ paddingTop: '12rem', paddingBottom: '2rem' }}
@@ -616,7 +754,7 @@ function Home() {
               <img className="w-full" src="/lakierniaxdd.png" />
               <div
                 ref={fourRef}
-                className="flex flex-col items-start bg-black-t transform bg-blac"
+                className="flex flex-col items-start bg-black-t transform bg-black"
                 style={{
                   backgroundColor: '#1B1B1EAA',
                   backgroundImage: 'url(/footer_img.jpeg)',
@@ -929,7 +1067,7 @@ function Step({
   const [h, setH] = useState(0)
   const [y, setY] = useState(0)
 
-  const measureStep = useCallback(ref => {
+  const measureStep = useCallback((ref) => {
     if (ref !== null) {
       setY(ref.getBoundingClientRect().top + window.scrollY)
       setH(ref.getBoundingClientRect().height)

@@ -4,12 +4,12 @@ module.exports = {
       colors: {
         black: '#1B1B1E',
         'black-t': '#1B1B1EDD ',
-        black2: '#131318',
+        black2: '#111212',
         white: '#fbfbfb',
         'white-t': '#fbfbfb',
         orange: '#FFAE03',
         'orange-t': '#FFAE03AA',
-        gray: '#DDDDDD',
+        gray: '#8D8D8D',
       },
       minHeight: {
         'screen-1/4': '25vh',
