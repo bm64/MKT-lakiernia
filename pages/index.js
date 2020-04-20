@@ -643,9 +643,28 @@ function Home() {
               <div className="relative container overflow-hidden gap-8 grid grid-cols-4 grid-rows-2 mx-auto py-20">
                 <div
                   style={{ transform: 'none' }}
-                  className="about-us-item col-span-4 row-span-2 lg:col-span-2 flex-col justify-between px-12"
+                  className="about-us-item col-span-4 row-span-2 lg:col-span-2 flex-col items-start justify-between px-12"
                 >
-                  <h1>beeeka</h1>
+                  <div className="flex flex-col items-start w-full">
+                    <h1 className="text-gray font-medium text-left">
+                      O NASZEJ FIRMIE
+                    </h1>
+                    <h1 className="text-5xl font-medium leading-tight pt-2">
+                      Czym się zajmujemy?
+                    </h1>
+                    <div
+                      style={{ height: '2px' }}
+                      className="about-us-line bg-orange w-full my-6"
+                    />
+                    <h4 className="text-lg text-gray text-left font-medium">
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat, sed diam voluptua. At vero eos et
+                      accusam et justo duo dolores et ea rebum. Stet clita kasd
+                      gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                      sit
+                    </h4>
+                  </div>
                   <img src="lakiernia_nowa.jpg" className="rounded-lg" />
                 </div>
                 <div className="about-us-item col-span-2 row-span-1 lg:col-span-1 pt-6">

@@ -116,6 +116,11 @@ body {
   @apply flex flex-col items-center justify-start bg-black2 rounded-lg border border-gray pt-8 pb-8 px-4 transform duration-500;
 }
 
+.about-us-line {
+  @apply rounded-lg;
+  height: 2px !important;
+}
+
 .about-us-item:hover {
   @apply -translate-y-2;
 }
