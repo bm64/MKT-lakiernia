@@ -343,7 +343,7 @@ function Home() {
                   <Panel
                     className="row-span-4 col-span-4 lg:col-span-2"
                     title="Profesjonalne narzędzia lakiernicze"
-                    image="/car_painting.jpeg"
+                    image="/car_painting.jpg"
                   >
                     Własny mieszalnik cromax pro na bazie wody
                     <br />
@@ -602,7 +602,7 @@ function Home() {
                 <GalleryItem title="Profesjonalny sprzęt" image="/gallery2.jpg">
                   <FaTools className="gallery-item" />
                 </GalleryItem>
-                <GalleryItem title="Doskonała obsluga" image="/gallery3.png">
+                <GalleryItem title="Doskonała obsluga" image="/gallery3.jpg">
                   <FaHandshake className="gallery-item text-6xl" />
                 </GalleryItem>
                 <GalleryItem title="Zadowoleni klienici" image="/gallery4.jpg">
@@ -631,7 +631,7 @@ function Home() {
                 style={{
                   backgroundImage: 'url(/lakiernia.jpg)',
                   backgroundSize: 'cover',
-                  backgroundPosition: 'center',
+                  backgroundPosition: 'left',
                   backgroundAttachment: 'fixed',
                 }}
               />
@@ -931,7 +931,7 @@ function GalleryItem({ image, title, children }) {
     <div
       style={{
         backgroundImage: `url(${image})`,
-        paddingTop: '150%',
+        paddingTop: '125%',
       }}
       className="relative overflow-hidden bg-contain bg-no-repeat hover:scale-105 transform  duration-300"
     >
