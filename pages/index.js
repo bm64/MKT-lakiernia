@@ -93,7 +93,7 @@ function Home() {
           onClick={() => scrollToRef(oneScrollRef)}
           className={`${
             sixVisible && !oneVisible ? 'text-orange ' : ''
-          }   text-center navbar-headingw-full font-bold py-2 mx-auto cursor-pointer transform duration-500 hover:text-orange hover:bg-black-t`}
+          }   text-center navbar-heading w-full font-bold py-2 mx-auto cursor-pointer transform duration-500 hover:text-orange hover:bg-black-t`}
         >
           MKT SERWIS
         </h2>
@@ -610,7 +610,7 @@ function Home() {
                 </GalleryItem>
               </div>
             </section>
-            <section className="relative mx-auto about-us">
+            <section ref={fourRef} className="relative mx-auto about-us">
               <div
                 className="absolute top-0 left-0 h-40 w-full z-10"
                 style={{
@@ -640,7 +640,10 @@ function Home() {
                 style={{ backgroundColor: 'rgba(17,18,18, 0.7)' }}
               />
 
-              <div className="relative container overflow-hidden gap-8 grid grid-cols-4 grid-rows-2 mx-auto py-20">
+              <div
+                ref={fiveScrollRef}
+                className="relative container overflow-hidden gap-8 grid grid-cols-4 grid-rows-2 mx-auto py-20"
+              >
                 <div
                   style={{ transform: 'none' }}
                   className="about-us-item col-span-4 row-span-2 lg:col-span-2 flex-col items-start justify-between px-12"
