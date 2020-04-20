@@ -491,7 +491,7 @@ function Home() {
 
               <div
                 style={{
-                  backgroundImage: 'url(/services1.png)',
+                  backgroundImage: 'url(/services1.jpg)',
                   backgroundSize: 'cover',
                   minHeight: '35rem',
                 }}
@@ -515,7 +515,7 @@ function Home() {
               </div>
               <div
                 style={{
-                  backgroundImage: 'url(/services2.png)',
+                  backgroundImage: 'url(/services2.jpg)',
                   backgroundSize: 'cover',
                   minHeight: '35rem',
                 }}
@@ -539,7 +539,7 @@ function Home() {
               </div>
               <div
                 style={{
-                  backgroundImage: 'url(/services3.png)',
+                  backgroundImage: 'url(/services3.jpg)',
                   backgroundSize: 'cover',
                   minHeight: '35rem',
                 }}
@@ -563,7 +563,7 @@ function Home() {
               </div>
               <div
                 style={{
-                  backgroundImage: 'url(/services4.png)',
+                  backgroundImage: 'url(/services4.jpg)',
                   backgroundSize: 'cover',
                   minHeight: '35rem',
                   transform: 'scaleX(-1)',
@@ -596,23 +596,23 @@ function Home() {
                 TO NAS WYRÓŻNIA
               </h2>
               <div className="container overflow-hidden grid grid-cols-2 lg:grid-cols-4 mx-auto">
-                <GalleryItem title="Szybka realizacja" image="/gallery1.png">
+                <GalleryItem title="Szybka realizacja" image="/gallery1.jpg">
                   <FaCalendarCheck className="gallery-item" />
                 </GalleryItem>
-                <GalleryItem title="Profesjonalny sprzęt" image="/gallery2.png">
+                <GalleryItem title="Profesjonalny sprzęt" image="/gallery2.jpg">
                   <FaTools className="gallery-item" />
                 </GalleryItem>
                 <GalleryItem title="Doskonała obsluga" image="/gallery3.png">
                   <FaHandshake className="gallery-item text-6xl" />
                 </GalleryItem>
-                <GalleryItem title="Zadowoleni klienici" image="/gallery4.png">
+                <GalleryItem title="Zadowoleni klienici" image="/gallery4.jpg">
                   <FaThumbsUp className="gallery-item" />
                 </GalleryItem>
               </div>
             </section>
-            <section ref={fourRef} className="relative mx-auto about-us">
+            <section ref={fourRef} className="relative mx-auto about-us ">
               <div
-                className="absolute top-0 left-0 h-40 w-full z-10"
+                className="absolute top-0 left-0 h-24 w-full z-10"
                 style={{
                   background:
                     '-webkit-linear-gradient(bottom, rgba(0, 0, 0, 0) 0,  #1B1B1E 90%,  #1B1B1E 100%)',
@@ -620,7 +620,7 @@ function Home() {
               />
 
               <div
-                className="absolute bottom-0 left-0 h-40 w-full z-10"
+                className="absolute bottom-0 left-0 h-24 w-full z-10"
                 style={{
                   background:
                     '-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0,  #1b1b1e 90%,  #1b1b1e 100%)',
@@ -629,7 +629,7 @@ function Home() {
               <div
                 className="absolute top-0 left-0 w-full h-full bg-no-repeat"
                 style={{
-                  backgroundImage: 'url(/lakierniaxdd.png)',
+                  backgroundImage: 'url(/lakiernia.jpg)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundAttachment: 'fixed',
@@ -642,7 +642,7 @@ function Home() {
 
               <div
                 ref={fiveScrollRef}
-                className="relative container overflow-hidden gap-8 grid grid-cols-4 grid-rows-2 mx-auto py-20"
+                className="relative container overflow-hidden gap-8 grid grid-cols-4 grid-rows-2 mx-auto py-32"
               >
                 <div
                   style={{ transform: 'none' }}
@@ -671,7 +671,7 @@ function Home() {
                   <img src="lakiernia_nowa.jpg" className="rounded-lg" />
                 </div>
                 <div className="about-us-item col-span-2 row-span-1 lg:col-span-1 pt-6">
-                  <h1 className="text-left text-orange font-semibold text-5xl leading-snug px-5 ">
+                  <h1 className="text-left text-orange font-semibold text-5xl leading-snug px-5 my-auto ">
                     POZNAJ NASZ ZESPÓŁ
                   </h1>
                 </div>
@@ -870,7 +870,7 @@ function Home() {
               className="container mx-auto"
             >
               <div className="flex flex-row items-center">
-                <h2 className="py-2 px-6 text-black text-left  font-semibold bg-orange">
+                <h2 className="inline-block px-12 py-4 mb-8  bg-orange font-semibold text-black">
                   TUTAJ NAS ZNAJDZIESZ
                 </h2>
                 <h4 className="flex-1 text-right">
