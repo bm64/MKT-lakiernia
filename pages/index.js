@@ -224,6 +224,7 @@ function Home() {
               playsInline={true}
               className="fixed top-0 left-0 h-screen object-cover w-full"
               style={{ maxHeight: '90rem' }}
+              muted
             >
               <source src="/video1.mp4" type="video/mp4" />
             </video>
@@ -381,8 +382,9 @@ function Home() {
               </motion.div>
             </section>
 
-            <section ref={twoRef} className="mt-4 relative">
+            <section ref={threeScrollRef} className="mt-4 relative">
               <div
+                ref={twoRef}
                 className="absolute top-0 left-0 w-full h-full"
                 style={
                   {
@@ -406,15 +408,8 @@ function Home() {
                 MIAŁEŚ SZKODĘ?
               </h1>*/}
 
-                <h2
-                  ref={threeScrollRef}
-                  className="inline-block px-12 py-4 bg-orange font-semibold text-black"
-                >
+                <h2 className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black">
                   ZOBACZ JAK WYGLĄDA PROCES LIKWIDACJI SZKODY
-                </h2>
-
-                <h2 className="px-3 py-4 pb-4 text-right">
-                  Zobacz jak wygląda proces likwidacji
                 </h2>
                 <div className="flex flex-col items-stretch overflow-hidden shadow-inner">
                   <Step
@@ -793,7 +788,7 @@ function Home() {
                   </h2>
                   <div className="pl-16 pr-40 py-16 h-full bg-black-t">
                     <h1 className="font-semibold">Potrzebujesz pomocy?</h1>
-                    <p className="p-4 font-medium text-lg max-w-sm">
+                    <p className="p-4 font-medium text-lg max-w-sm text-white">
                       Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
                       szkody z polisy AC lub OC do..Pierwszym krokiem jaki
                       powinienes podjąć jest zgłoszenie szkody z polisy AC lub
