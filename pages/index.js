@@ -19,6 +19,9 @@ import {
   FaMobile,
   FaMobileAlt,
   FaMicrophoneAlt,
+  FaUserCheck,
+  FaUserTie,
+  FaCheck,
 } from 'react-icons/fa'
 
 import useWindowSize from '../hooks/useWindowSize'
@@ -282,7 +285,37 @@ function Home() {
           </div>
 
           <div className="relative bg-black z-30">
-            <section className="w-full bg-black">
+            <section className="container mx-auto">
+              <h2 className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black">
+                TO NAS WYRÓŻNIA
+              </h2>
+              <h2 className="text-gray font-medium text-left">
+                ZAPEWNIAMY NAJWYŻSZĄ JAKOŚĆ USŁUG
+              </h2>
+              <div
+                style={{ height: '2px' }}
+                className="rounded-lg bg-orange w-24  my-8"
+              />
+              <h1 className="text-4xl font-medium leading-tight max-w-2xl pb-8">
+                Good design is like a refrigerator — when it works, no one
+                notices, but when it doesn’t, it sure stinks.
+              </h1>
+              <div className="container overflow-hidden grid grid-cols-2 lg:grid-cols-4 mx-auto">
+                <GalleryItem title="Szybka realizacja" image="/gallery1.jpg">
+                  <FaCalendarCheck className="gallery-item" />
+                </GalleryItem>
+                <GalleryItem title="Profesjonalny sprzęt" image="/gallery2.jpg">
+                  <FaTools className="gallery-item" />
+                </GalleryItem>
+                <GalleryItem title="Doskonała obsluga" image="/gallery3.jpg">
+                  <FaCheck className="gallery-item" />
+                </GalleryItem>
+                <GalleryItem title="Zadowoleni klienici" image="/gallery4.jpg">
+                  <FaThumbsUp className="gallery-item" />
+                </GalleryItem>
+              </div>
+            </section>
+            <section className="container mx-auto">
               <div className="z-20 bg-black container mx-auto flex flex-row justify-around">
                 <img src="skoda_biala.png" className="h-24 lg:h-32 xl:h-48" />
                 <img src="vw.png" className="h-24 lg:h-32 xl:h-48" />
@@ -586,25 +619,6 @@ function Home() {
               </div>
             </section>
 
-            <section className="container mx-auto">
-              <h2 className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black">
-                TO NAS WYRÓŻNIA
-              </h2>
-              <div className="container overflow-hidden grid grid-cols-2 lg:grid-cols-4 mx-auto">
-                <GalleryItem title="Szybka realizacja" image="/gallery1.jpg">
-                  <FaCalendarCheck className="gallery-item" />
-                </GalleryItem>
-                <GalleryItem title="Profesjonalny sprzęt" image="/gallery2.jpg">
-                  <FaTools className="gallery-item" />
-                </GalleryItem>
-                <GalleryItem title="Doskonała obsluga" image="/gallery3.jpg">
-                  <FaHandshake className="gallery-item text-6xl" />
-                </GalleryItem>
-                <GalleryItem title="Zadowoleni klienici" image="/gallery4.jpg">
-                  <FaThumbsUp className="gallery-item" />
-                </GalleryItem>
-              </div>
-            </section>
             <section ref={fourRef} className="relative mx-auto about-us ">
               <div
                 className="absolute top-0 left-0 h-24 w-full z-10"
@@ -648,7 +662,8 @@ function Home() {
                       O NASZEJ FIRMIE
                     </h1>
                     <h1 className="text-5xl font-medium leading-tight pt-2">
-                      Czym się zajmujemy?
+                      Czym się <br />
+                      zajmujemy?
                     </h1>
                     <div
                       style={{ height: '2px' }}
@@ -877,6 +892,16 @@ function Home() {
                 className="w-full mx-auto min-h-screen-1/4 md:min-h-screen-1/2"
                 src="https://maps.google.com/maps?q=MKT%20SERWIS%20CENTRUM%20BLACHARSKO%20LAKIERNICZE%20WOLA%20MIELECKA&t=&z=13&ie=UTF8&iwloc=&output=embed"
               />
+            </section>
+          </div>
+        </div>
+
+        {showFooter && (
+          <footer
+            className="fixed bottom-0 h-64 w-full text-center bg-black2 z-20"
+            style={{ width: 'calc(100vw - 12rem)' }}
+          >
+            <div className="continer mx-auto flex-row items-start ">
               <div
                 className="flex flex-col lg:flex-row md:justify-center p-5"
                 style={{ flexBasis: 0 }}
@@ -894,15 +919,7 @@ function Home() {
                   className="flex-1 h-24 xl:h-32 p-5 object-contain"
                 />
               </div>
-            </section>
-          </div>
-        </div>
-
-        {showFooter && (
-          <footer
-            className="fixed bottom-0 h-64 w-full text-center bg-black2 z-20"
-            style={{ width: 'calc(100vw - 12rem)' }}
-          >
+              {/*
             <div
               className="absolute mx-auto"
               style={{
@@ -911,6 +928,13 @@ function Home() {
                 transform: 'translate(-50%, -50%)',
               }}
             >
+              <h1 className="font-bold">MKT-SERWIS</h1>
+              <h4 className="font-medium text-gray">@2020</h4>
+            </div>
+
+            */}
+            </div>
+            <div>
               <h1 className="font-bold">MKT-SERWIS</h1>
               <h4 className="font-medium text-gray">@2020</h4>
             </div>

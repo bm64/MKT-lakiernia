@@ -31,8 +31,8 @@ module.exports = {
       },
 
       screens: {
-        //xxl: '1400px',
-        xxl: '2000px',
+        xxl: '1400px',
+        //xxl: '2000px',
       },
 
       transitionDuration: {

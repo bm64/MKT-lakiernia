@@ -151,7 +151,7 @@ body {
     min-height: 54rem;
   }
   .gallery-item {
-    @apply text-5xl mx-auto pointer-events-none mt-1;
+    @apply text-4xxl mx-auto pointer-events-none mt-1;
   }
   section {
     @apply px-4 py-24;
