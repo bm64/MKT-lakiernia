@@ -154,7 +154,7 @@ body {
     @apply text-4xxl mx-auto pointer-events-none mt-1;
   }
   section {
-    @apply px-4 py-24;
+    @apply py-24;
   }
   .section-text {
     @apply text-2xl;

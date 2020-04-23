@@ -91,7 +91,7 @@ function Home() {
     <Layout>
       <div
         id="navbar"
-        className="md:fixed h-screen  flex flex-col flex-between items-stretch bg-black2 z-30 max-h-screen"
+        className="hidden fixed h-screen  lg:flex flex-col flex-between items-stretch bg-black2 z-30 max-h-screen"
       >
         <h2
           onClick={() => scrollToRef(oneScrollRef)}
@@ -241,40 +241,38 @@ function Home() {
             style={{ maxHeight: '90rem' }}
           >
             <div
-              className="absolute flex flex-col  px-8 py-2"
+              className="absolute h-full flex flex-col  px-8 py-2"
               style={{
-                top: '18%',
-                left: '7%',
-
                 backgroundColor: 'rgba(27,27,29, .7)',
               }}
             >
-              <h2
-                className="font-bold text-4xxl leading-tight py-2 "
-                style={{ letterSpacing: '0.2em' }}
-              >
-                MKT SERWIS
-              </h2>
-              <h1 className="font-semibold text-6xl whitespace-no-wrap leading-tight pt-2">
-                CENTRUM
-              </h1>
-              <h1 className="font-semibold text-6xl whitespace-no-wrap leading-none pb-3">
-                BLACHARSKO LAKIERNICZE
-              </h1>
-
-              <h4 className="font-regular text-xl py-3 max-w-4xl  ">
-                Kompleksowa obsługa szkód komunikacyjnych. Możliwość
-                bezgotówkowego rozliczenia sprawy. Kompleksowa obsługa szkód
-                komunikacyjnych.
-              </h4>
-              <div className="flex flex-row">
-                <div
-                  onClick={() => scrollToRef(sevenScrollRef)}
-                  className="text-2xl bg-black2 py-3 px-5 font-medium my-5 transform duration-300 hover:bg-orange hover:text-black"
+              <div className="translate-x-32 translate-y-32 transform">
+                <h2
+                  className="font-bold text-4xxl leading-tight py-2 "
+                  style={{ letterSpacing: '0.2em' }}
                 >
-                  Zobacz więcej
+                  MKT SERWIS
+                </h2>
+                <h1 className="font-semibold text-6xl whitespace-no-wrap leading-tight pt-2">
+                  CENTRUM
+                </h1>
+                <h1 className="font-semibold text-6xl whitespace-no-wrap leading-none pb-3">
+                  BLACHARSKO LAKIERNICZE
+                </h1>
+
+                <h2 className="font-white font-regular  py-3 max-w-4xl  ">
+                  Kompleksowa obsługa szkód komunikacyjnych. Możliwość
+                  bezgotówkowego rozliczenia sprawy. Kompleksowa obsługa szkód
+                  komunikacyjnych.
+                </h2>
+                <div className="flex flex-row">
+                  <div
+                    onClick={() => scrollToRef(sevenScrollRef)}
+                    className="text-2xl bg-black2 py-3 px-5 font-medium my-5 cursor-pointer transform duration-300 hover:bg-orange hover:text-black"
+                  >
+                    Zobacz więcej
+                  </div>
                 </div>
-                <div></div>
               </div>
             </div>
             <a
@@ -295,14 +293,14 @@ function Home() {
             <section className="container mx-auto">
               <h2
                 ref={sevenScrollRef}
-                className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black2"
+                className="text-center inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black2"
               >
                 TO NAS WYRÓŻNIA
               </h2>
-              <h2 className="text-gray font-medium text-left">
+              <h2 className="text-gray font-regular text-left">
                 ZAPEWNIAMY NAJWYŻSZĄ JAKOŚĆ USŁUG
               </h2>
-              <h1 className="text-4xl  leading-tight max-w-2xl pb-8 pt-4">
+              <h1 className="text-4xl font-medium leading-tight max-w-2xl pb-8 pt-4">
                 Good design is like a refrigerator — when it works, no one
                 notices, but when it doesn’t, it sure stinks.
               </h1>
@@ -325,10 +323,10 @@ function Home() {
                 style={{ height: '2px' }}
                 className="bg-gray mx-auto w-24 mt-16"
               />
-              <h1 className="text-5xl font-medium leading-tight  w-full text-center pt-12 pb-4">
+              <h1 className="text-4xxl font-medium leading-tight  w-full text-center pt-12 pb-4">
                 AUTORYZOWANY SERWIS
               </h1>
-              <h2 className="text-gray  text-center   max-w-4xl pb-16 mx-auto">
+              <h2 className="text-gray  text-center font-regular   max-w-4xl pb-16 mx-auto leading-tight">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry.
               </h2>
@@ -829,7 +827,7 @@ function Home() {
                     </p>
                     <div className="flex flex-row items-center py-1 pt-8 ">
                       <FaPhone
-                        className="text-orange text-xl mr-3"
+                        className="text-white text-xl mr-3"
                         style={{ transform: 'scaleX(-1)' }}
                       />
                       <h3 className="text-white font-medium">
@@ -837,19 +835,19 @@ function Home() {
                       </h3>
                     </div>
                     <div className="flex flex-row items-center py-1 ">
-                      <FaMobileAlt className="text-orange text-xl mr-3" />
+                      <FaMobileAlt className="text-white text-xl mr-3" />
                       <h3 className=" text-white font-medium">
                         +48 17 583 05 96
                       </h3>
                     </div>
                     <div className="flex flex-row items-center py-1 ">
-                      <FaEnvelope className="text-orange text-xl mr-3" />
+                      <FaEnvelope className="text-white text-xl mr-3" />
                       <h3 className=" text-white font-medium">
                         lakiernia@mktserwis.pl
                       </h3>
                     </div>
                     <div className="flex flex-row items-top py-1 ">
-                      <FaMapMarkedAlt className="text-orange text-xl mr-3 mt-1" />
+                      <FaMapMarkedAlt className="text-white text-xl mr-3 mt-1" />
                       <h3 className=" text-white font-medium">
                         Wola Mielecka 632
                         <br />
@@ -920,14 +918,14 @@ function Home() {
             className="fixed bottom-0 h-64 w-full text-center  bg-black2 z-20"
             style={{ width: 'calc(100vw - 12rem)' }}
           >
-            <div className="continer mx-auto flex-col items-start justify-between ">
-              <div className="flex flex-row container justify-around mx-auto">
+            <div className="container mx-auto flex flex-col h-full justify-around ">
+              <div className="container mx-auto flex flex-col md:flex-row justify-around mx-auto">
                 <img className="h-24" src="/narodowa_strategia.png" />
                 <img className="h-24" src="/podkarpackie_logo.png" />
                 <img className="h-24" src="/ue_fundusz.png" />
               </div>
 
-              <div>
+              <div className="mx-auto container mx-auto pb-4">
                 <h1 className="font-bold text-center">MKT-SERWIS </h1>
                 <h4 className="font-medium text-gray text-center">@2020</h4>
               </div>
