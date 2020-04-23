@@ -241,37 +241,36 @@ function Home() {
             style={{ maxHeight: '90rem' }}
           >
             <div
-              className="absolute h-full flex flex-col  px-8 py-2"
+              className="absolute top-0 left-0 h-screen w-full"
               style={{
                 backgroundColor: 'rgba(27,27,29, .7)',
               }}
-            >
-              <div className="translate-x-32 translate-y-32 transform">
-                <h2
-                  className="font-bold text-4xxl leading-tight py-2 "
-                  style={{ letterSpacing: '0.2em' }}
-                >
-                  MKT SERWIS
-                </h2>
-                <h1 className="font-semibold text-6xl whitespace-no-wrap leading-tight pt-2">
-                  CENTRUM
-                </h1>
-                <h1 className="font-semibold text-6xl whitespace-no-wrap leading-none pb-3">
-                  BLACHARSKO LAKIERNICZE
-                </h1>
+            />
+            <div className="translate-x-32 translate-y-32 transform">
+              <h2
+                className="font-bold text-4xxl leading-tight py-2 "
+                style={{ letterSpacing: '0.2em' }}
+              >
+                MKT SERWIS
+              </h2>
+              <h1 className="font-semibold text-6xl whitespace-no-wrap leading-tight pt-2">
+                CENTRUM
+              </h1>
+              <h1 className="font-semibold text-6xl whitespace-no-wrap leading-none pb-3">
+                BLACHARSKO LAKIERNICZE
+              </h1>
 
-                <h2 className="font-white font-regular  py-3 max-w-4xl  ">
-                  Kompleksowa obsługa szkód komunikacyjnych. Możliwość
-                  bezgotówkowego rozliczenia sprawy. Kompleksowa obsługa szkód
-                  komunikacyjnych.
-                </h2>
-                <div className="flex flex-row">
-                  <div
-                    onClick={() => scrollToRef(sevenScrollRef)}
-                    className="text-2xl bg-black2 py-3 px-5 font-medium my-5 cursor-pointer transform duration-300 hover:bg-orange hover:text-black"
-                  >
-                    Zobacz więcej
-                  </div>
+              <h2 className="font-white font-regular  py-3 max-w-4xl  ">
+                Kompleksowa obsługa szkód komunikacyjnych. Możliwość
+                bezgotówkowego rozliczenia sprawy. Kompleksowa obsługa szkód
+                komunikacyjnych.
+              </h2>
+              <div className="flex flex-row">
+                <div
+                  onClick={() => scrollToRef(sevenScrollRef)}
+                  className="text-2xl bg-black2 py-3 px-5 font-medium my-5 cursor-pointer transform duration-300 hover:bg-orange hover:text-black"
+                >
+                  Zobacz więcej
                 </div>
               </div>
             </div>
