@@ -204,16 +204,19 @@ function Home() {
         </div>
 
         <div className=" flex flex-col items-center">
-          <h3 className="flex-1 font-medium mx-auto text-center pb-2">
+          <h3 className="flex-1 font-medium text-white mx-auto text-center pb-2">
             Zadzwoń do nas!
           </h3>
           <div className="py-2 flex flex-row items-center cursor-pointer">
-            <FaPhone className="text-2xl" style={{ transform: 'scaleX(-1)' }} />
-            <h5 className="px-4 text-orange font-semibold">17 583 05 96</h5>
+            <FaPhone
+              className="text-2xl text-orange"
+              style={{ transform: 'scaleX(-1)' }}
+            />
+            <h5 className="px-4 text-white font-semibold ">17 583 05 96</h5>
           </div>
           <div className="py-2 flex flex-row items-center cursor-pointer">
-            <MdPhoneIphone className="text-2xl" />
-            <h5 className="px-4 text-orange font-semibold">602 583 583</h5>
+            <MdPhoneIphone className="text-2xl text-orange " />
+            <h5 className="px-4 text-white-white font-semibold">602 583 583</h5>
           </div>
         </div>
       </div>
@@ -286,20 +289,17 @@ function Home() {
 
           <div className="relative bg-black z-30">
             <section className="container mx-auto">
-              <h2 className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black">
+              <h2 className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black2">
                 TO NAS WYRÓŻNIA
               </h2>
               <h2 className="text-gray font-medium text-left">
                 ZAPEWNIAMY NAJWYŻSZĄ JAKOŚĆ USŁUG
               </h2>
-              <div
-                style={{ height: '2px' }}
-                className="rounded-lg bg-orange w-24  my-8"
-              />
-              <h1 className="text-4xl font-medium leading-tight max-w-2xl pb-8">
+              <h1 className="text-4xl  leading-tight max-w-2xl pb-8 pt-4">
                 Good design is like a refrigerator — when it works, no one
                 notices, but when it doesn’t, it sure stinks.
               </h1>
+
               <div className="container overflow-hidden grid grid-cols-2 lg:grid-cols-4 mx-auto">
                 <GalleryItem title="Szybka realizacja" image="/gallery1.jpg">
                   <FaCalendarCheck className="gallery-item" />
@@ -314,8 +314,17 @@ function Home() {
                   <FaThumbsUp className="gallery-item" />
                 </GalleryItem>
               </div>
-            </section>
-            <section className="container mx-auto">
+              <div
+                style={{ height: '2px' }}
+                className="bg-gray mx-auto w-24 mt-16"
+              />
+              <h1 className="text-5xl font-medium leading-tight  w-full text-center pt-12 pb-4">
+                AUTORYZOWANY SERWIS
+              </h1>
+              <h2 className="text-gray  text-center   max-w-4xl pb-16 mx-auto">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry.
+              </h2>
               <div className="z-20 bg-black container mx-auto flex flex-row justify-around">
                 <img src="skoda_biala.png" className="h-24 lg:h-32 xl:h-48" />
                 <img src="vw.png" className="h-24 lg:h-32 xl:h-48" />
@@ -369,7 +378,7 @@ function Home() {
               */}
                 <h2
                   ref={twoScrollRef}
-                  className="relative inline-block px-10 py-4 bg-orange font-semibold text-black z-10"
+                  className="relative inline-block px-10 py-4 bg-orange font-semibold text-black2 z-10"
                 >
                   PROFESJONALNE USŁUGI LAKIERNICZE
                 </h2>
@@ -441,7 +450,7 @@ function Home() {
                 MIAŁEŚ SZKODĘ?
               </h1>*/}
 
-                <h2 className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black">
+                <h2 className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black2">
                   ZOBACZ JAK WYGLĄDA PROCES LIKWIDACJI SZKODY
                 </h2>
                 <div className="flex flex-col items-stretch overflow-hidden shadow-inner">
@@ -512,7 +521,7 @@ function Home() {
             <section ref={threeRef} className="container mx-auto bg-black">
               <h2
                 ref={fourScrollRef}
-                className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black"
+                className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black2"
               >
                 USŁUGI DODATKOWE
               </h2>
@@ -797,7 +806,7 @@ function Home() {
                     style={{
                       boxShadow: '10px 10px 10px rgba(0,0,0,0.9)',
                     }}
-                    className="absolute top-0 left-0 px-12 py-4 bg-orange text-black font-semibold transform -translate-y-12"
+                    className="absolute top-0 left-0 px-12 py-4 bg-orange text-black2 font-semibold transform -translate-y-12"
                   >
                     SKONTAKTUJ SIĘ Z NAMI
                   </h2>
@@ -880,11 +889,12 @@ function Home() {
               className="container mx-auto"
             >
               <div className="flex flex-row items-center">
-                <h2 className="inline-block px-12 py-4 mb-8  bg-orange font-semibold text-black">
+                <h2 className="inline-block px-12 py-4 mb-8  bg-orange font-semibold text-black2">
                   TUTAJ NAS ZNAJDZIESZ
                 </h2>
                 <h4 className="flex-1 text-right">
-                  <span className="text-orange">Wola Mielecka 632</span> -
+                  <span className="text-orange">Wola Mielecka 632 </span>
+                  <br />
                   39-300 Mielec
                 </h4>
               </div>
@@ -902,37 +912,11 @@ function Home() {
             style={{ width: 'calc(100vw - 12rem)' }}
           >
             <div className="continer mx-auto flex-row items-start ">
-              <div
-                className="flex flex-col lg:flex-row md:justify-center p-5"
-                style={{ flexBasis: 0 }}
-              >
-                <img
-                  src="/narodowa_strategia.png"
-                  className="flex-1 h-24 xl:h-32 p-5 object-contain"
-                />
-                <img
-                  src="/podkarpackie_logo.png"
-                  className="flex-1 h-24 xl:h-32 p-5 object-contain"
-                />
-                <img
-                  src="/ue_fundusz.png"
-                  className="flex-1 h-24 xl:h-32 p-5 object-contain"
-                />
+              <div className="flex flex-row container mx-auto">
+                <img className="h-24" src="/narodowa_strategia.png" />
+                <img className="h-24" src="/podkarpackie_logo.png" />
+                <img className="h-24" src="/ue_fundusz.png" />
               </div>
-              {/*
-            <div
-              className="absolute mx-auto"
-              style={{
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-              }}
-            >
-              <h1 className="font-bold">MKT-SERWIS</h1>
-              <h4 className="font-medium text-gray">@2020</h4>
-            </div>
-
-            */}
             </div>
             <div>
               <h1 className="font-bold">MKT-SERWIS</h1>
