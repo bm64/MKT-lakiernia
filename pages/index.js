@@ -48,6 +48,7 @@ function Home() {
   const fourScrollRef = useRef()
   const fiveScrollRef = useRef()
   const sixScrollRef = useRef()
+  const sevenScrollRef = useRef()
 
   const oneVisible = useOnEnterLeave(oneRef)
   const twoVisible = useOnEnterLeave(twoRef)
@@ -267,7 +268,10 @@ function Home() {
                 komunikacyjnych.
               </h4>
               <div className="flex flex-row">
-                <div className="text-2xl bg-black2 py-3 px-5 font-medium my-5 transform duration-300 hover:bg-orange hover:text-black">
+                <div
+                  onClick={() => scrollToRef(sevenScrollRef)}
+                  className="text-2xl bg-black2 py-3 px-5 font-medium my-5 transform duration-300 hover:bg-orange hover:text-black"
+                >
                   Zobacz więcej
                 </div>
                 <div></div>
@@ -289,7 +293,10 @@ function Home() {
 
           <div className="relative bg-black z-30">
             <section className="container mx-auto">
-              <h2 className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black2">
+              <h2
+                ref={sevenScrollRef}
+                className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black2"
+              >
                 TO NAS WYRÓŻNIA
               </h2>
               <h2 className="text-gray font-medium text-left">
@@ -424,7 +431,7 @@ function Home() {
               </motion.div>
             </section>
 
-            <section ref={threeScrollRef} className="mt-4 relative">
+            <section className="mt-4 relative">
               <div
                 ref={twoRef}
                 className="absolute top-0 left-0 w-full h-full"
@@ -450,7 +457,10 @@ function Home() {
                 MIAŁEŚ SZKODĘ?
               </h1>*/}
 
-                <h2 className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black2">
+                <h2
+                  ref={threeScrollRef}
+                  className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black2"
+                >
                   ZOBACZ JAK WYGLĄDA PROCES LIKWIDACJI SZKODY
                 </h2>
                 <div className="flex flex-col items-stretch overflow-hidden shadow-inner">
@@ -658,11 +668,9 @@ function Home() {
                 style={{ backgroundColor: 'rgba(17,18,18, 0.7)' }}
               />
 
-              <div
-                ref={fiveScrollRef}
-                className="relative container overflow-hidden gap-8 grid grid-cols-4 grid-rows-2 mx-auto py-32"
-              >
+              <div className="relative container overflow-hidden gap-8 grid grid-cols-4 grid-rows-2 mx-auto py-32">
                 <div
+                  ref={fiveScrollRef}
                   style={{ transform: 'none' }}
                   className="about-us-item col-span-4 row-span-2 lg:col-span-2 flex-col items-start justify-between px-12"
                 >
@@ -788,7 +796,7 @@ function Home() {
                 </div>
               </div>
             </section>
-            <section ref={sixScrollRef} className="container mx-auto">
+            <section className="container mx-auto">
               <div
                 ref={fiveRef}
                 className="flex flex-col md:flex-row justify-center"
@@ -803,6 +811,7 @@ function Home() {
                   }}
                 >
                   <h2
+                    ref={sixScrollRef}
                     style={{
                       boxShadow: '10px 10px 10px rgba(0,0,0,0.9)',
                     }}
@@ -908,19 +917,20 @@ function Home() {
 
         {showFooter && (
           <footer
-            className="fixed bottom-0 h-64 w-full text-center bg-black2 z-20"
+            className="fixed bottom-0 h-64 w-full text-center  bg-black2 z-20"
             style={{ width: 'calc(100vw - 12rem)' }}
           >
-            <div className="continer mx-auto flex-row items-start ">
-              <div className="flex flex-row container mx-auto">
+            <div className="continer mx-auto flex-col items-start justify-between ">
+              <div className="flex flex-row container justify-around mx-auto">
                 <img className="h-24" src="/narodowa_strategia.png" />
                 <img className="h-24" src="/podkarpackie_logo.png" />
                 <img className="h-24" src="/ue_fundusz.png" />
               </div>
-            </div>
-            <div>
-              <h1 className="font-bold">MKT-SERWIS</h1>
-              <h4 className="font-medium text-gray">@2020</h4>
+
+              <div>
+                <h1 className="font-bold text-center">MKT-SERWIS </h1>
+                <h4 className="font-medium text-gray text-center">@2020</h4>
+              </div>
             </div>
           </footer>
         )}
