@@ -112,6 +112,10 @@ body {
   @apply border-solid border-l-4 border-orange;
 }
 
+.heading {
+  @apply inline-block px-10 py-4 mb-8 bg-orange font-semibold text-black2;
+}
+
 .about-us-item {
   @apply flex flex-col items-center justify-start bg-black2 rounded-lg border border-gray pt-8 pb-8 px-4 transform duration-500;
 }

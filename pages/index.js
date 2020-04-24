@@ -22,6 +22,7 @@ import {
   FaUserCheck,
   FaUserTie,
   FaCheck,
+  FaDog,
 } from 'react-icons/fa'
 
 import useWindowSize from '../hooks/useWindowSize'
@@ -89,6 +90,13 @@ function Home() {
 
   return (
     <Layout>
+      <div className="fixed top-0 left-0 bg-black2 w-full flex flex-row justify-between items-center z-50 lg:hidden px-2 py-3">
+        <h1 className="font-semibold text-3xl">MKT SERWIS</h1>
+        <div className="flex flex-row">
+          <FaMobileAlt className="text-3xl mr-3" />
+          <FaBars className="text-3xl ml-3" />
+        </div>
+      </div>
       <div
         id="navbar"
         className="hidden fixed h-screen  lg:flex flex-col flex-between items-stretch bg-black2 z-30 max-h-screen"
@@ -246,21 +254,35 @@ function Home() {
                 backgroundColor: 'rgba(27,27,29, .7)',
               }}
             />
-            <div className="translate-x-32 translate-y-32 transform">
+            <div className="relative container lg:hidden pt-24 z-50">
+              <h1 className="text-white text-4xxl font-semibold pl-5 leading-snug">
+                CENTRUM <br /> BLACHARSKO LAKIERNICZE
+              </h1>
+              <h2 className="text-gray font-medium   py-3 max-w-4xl px-5  ">
+                Kompleksowa obsługa szkód komunikacyjnych.
+              </h2>
+              <button
+                onClick={() => scrollToRef(sevenScrollRef)}
+                className="block text-center px-2 text-2xl  bg-black2 py-3 px-3 font-semibold cursor-pointer mx-auto transform duration-300 hover:bg-orange hover:text-black"
+              >
+                ZOBACZ WIĘCEJ
+              </button>
+            </div>
+            <div className="hidden lg:block transform  lg:translate-x-32 lg:translate-y-32">
               <h2
-                className="font-bold text-4xxl leading-tight py-2 "
+                className=" lg:block text-3xl lg:text-4xxl font-bold  leading-tight py-2"
                 style={{ letterSpacing: '0.2em' }}
               >
                 MKT SERWIS
               </h2>
-              <h1 className="font-semibold text-6xl whitespace-no-wrap leading-tight pt-2">
+              <h1 className=" font-semibold text-6xl whitespace-no-wrap leading-tight pt-2">
                 CENTRUM
               </h1>
-              <h1 className="font-semibold text-6xl whitespace-no-wrap leading-none pb-3">
-                BLACHARSKO LAKIERNICZE
+              <h1 className="  font-semibold text-6xl  whitespace-no-wrap leading-none pb-3">
+                BLACHARSKO <br className="lg:hidden" /> LAKIERNICZE
               </h1>
 
-              <h2 className="font-white font-regular  py-3 max-w-4xl  ">
+              <h2 className="  font-white font-regular  py-3 max-w-4xl  ">
                 Kompleksowa obsługa szkód komunikacyjnych. Możliwość
                 bezgotówkowego rozliczenia sprawy. Kompleksowa obsługa szkód
                 komunikacyjnych.
@@ -268,9 +290,9 @@ function Home() {
               <div className="flex flex-row">
                 <div
                   onClick={() => scrollToRef(sevenScrollRef)}
-                  className="text-2xl bg-black2 py-3 px-5 font-medium my-5 cursor-pointer transform duration-300 hover:bg-orange hover:text-black"
+                  className="text-2xl bg-black2 py-3 px-5 font-semibold my-5 cursor-pointer transform duration-300 hover:bg-orange hover:text-black"
                 >
-                  Zobacz więcej
+                  ZOBACZ WIĘCEJ
                 </div>
               </div>
             </div>
@@ -289,14 +311,11 @@ function Home() {
           </div>
 
           <div className="relative bg-black z-30">
-            <section className="container mx-auto">
-              <h2
-                ref={sevenScrollRef}
-                className="text-center inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black2"
-              >
+            <section className="container mx-auto flex flex-col items-center lg:items-start text-center lg:text-left">
+              <h2 ref={sevenScrollRef} className="heading px-10 py-4  mb-8">
                 TO NAS WYRÓŻNIA
               </h2>
-              <h2 className="text-gray font-regular text-left">
+              <h2 className="text-gray font-regular text-center lg:text-left">
                 ZAPEWNIAMY NAJWYŻSZĄ JAKOŚĆ USŁUG
               </h2>
               <h1 className="text-4xl font-medium leading-tight max-w-2xl pb-8 pt-4">
@@ -326,8 +345,9 @@ function Home() {
                 AUTORYZOWANY SERWIS
               </h1>
               <h2 className="text-gray  text-center font-regular   max-w-4xl pb-16 mx-auto leading-tight">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry.
+                Przedsiębiorstwo MKT Serwis oferuje Państwu profesjonalne
+                naprawy blacharsko lakiernicze nadwozi samochodów wszystkich
+                marek
               </h2>
               <div className="z-20 bg-black container mx-auto flex flex-row justify-around">
                 <img src="skoda_biala.png" className="h-24 lg:h-32 xl:h-48" />
@@ -382,11 +402,11 @@ function Home() {
               */}
                 <h2
                   ref={twoScrollRef}
-                  className="relative inline-block px-10 py-4 bg-orange font-semibold text-black2 z-10"
+                  className="heading relative  px-10 py-4 z-10 mb-8"
                 >
                   PROFESJONALNE USŁUGI LAKIERNICZE
                 </h2>
-                <div className="py-8 panels-grid grid grid-cols-4 gap-4">
+                <div className=" panels-grid grid grid-cols-4 gap-4">
                   <Panel
                     className="row-span-4 col-span-4 lg:col-span-2"
                     title="Profesjonalne narzędzia lakiernicze"
@@ -454,10 +474,7 @@ function Home() {
                 MIAŁEŚ SZKODĘ?
               </h1>*/}
 
-                <h2
-                  ref={threeScrollRef}
-                  className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black2"
-                >
+                <h2 ref={threeScrollRef} className="heading px-10 py-4 mb-8">
                   ZOBACZ JAK WYGLĄDA PROCES LIKWIDACJI SZKODY
                 </h2>
                 <div className="flex flex-col items-stretch overflow-hidden shadow-inner">
@@ -526,10 +543,7 @@ function Home() {
               </motion.div>
             </section>
             <section ref={threeRef} className="container mx-auto bg-black">
-              <h2
-                ref={fourScrollRef}
-                className="inline-block px-12 py-4  mb-8 bg-orange font-semibold text-black2"
-              >
+              <h2 ref={fourScrollRef} className="heading px-10 py-4  mb-8">
                 USŁUGI DODATKOWE
               </h2>
 
@@ -812,7 +826,7 @@ function Home() {
                     style={{
                       boxShadow: '10px 10px 10px rgba(0,0,0,0.9)',
                     }}
-                    className="absolute top-0 left-0 px-12 py-4 bg-orange text-black2 font-semibold transform -translate-y-12"
+                    className="heading absolute top-0 left-0 px-10 py-4 transform -translate-y-12"
                   >
                     SKONTAKTUJ SIĘ Z NAMI
                   </h2>
@@ -895,7 +909,7 @@ function Home() {
               className="container mx-auto"
             >
               <div className="flex flex-row items-center">
-                <h2 className="inline-block px-12 py-4 mb-8  bg-orange font-semibold text-black2">
+                <h2 className="heading inline-block px-10 py-4 mb-8">
                   TUTAJ NAS ZNAJDZIESZ
                 </h2>
                 <h4 className="flex-1 text-right">
