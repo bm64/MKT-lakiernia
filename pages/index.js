@@ -237,7 +237,11 @@ function Home() {
       </div>
 
       <div id="content">
-        <div ref={oneScrollRef} className="bg-black mb-64">
+        <div
+          ref={oneScrollRef}
+          className="bg-black"
+          style={{ marginBottom: '26rem' }}
+        >
           <div ref={sixRef} className="relative z-20">
             <video
               autoPlay={true}
@@ -980,11 +984,11 @@ function Home() {
 
         {showFooter && (
           <footer
-            className="fixed bottom-0 h-64 w-full text-center  bg-black2 z-20"
-            style={{ width: 'calc(100vw - 12rem)' }}
+            className="fixed bottom-0 w-full text-center  bg-black2 z-20"
+            style={{ height: '26rem', width: 'calc(min(100%, 100vw - 12rem))' }}
           >
             <div className="container mx-auto flex flex-col h-full justify-around ">
-              <div className="container mx-auto flex flex-col md:flex-row justify-around mx-auto">
+              <div className="container mx-auto flex flex-col lg:flex-row justify-around items-center mx-auto">
                 <img className="h-24" src="/narodowa_strategia.png" />
                 <img className="h-24" src="/podkarpackie_logo.png" />
                 <img className="h-24" src="/ue_fundusz.png" />
