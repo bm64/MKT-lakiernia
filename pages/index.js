@@ -318,7 +318,7 @@ function Home() {
           </div>
 
           <div className="relative bg-black z-30">
-            <section className="container flex flex-col items-start lg:items-start lg:text-left">
+            <section className="container mx-auto flex flex-col items-start lg:items-start lg:text-left">
               <h2
                 ref={sevenScrollRef}
                 className="heading text-xl lg:text-2xl text-gray lg:text-black2 lg:bg-orange px-4 lg:px-10 pt-2 pb-0 lg:py-4  mb-4 lg:mb-8"
