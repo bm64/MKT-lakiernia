@@ -105,7 +105,7 @@ function Home() {
       </div>
       <div
         id="navbar"
-        className="hidden fixed h-screen  lg:flex flex-col flex-between items-stretch bg-black2 z-30 max-h-screen"
+        className="fixed hidden  lg:flex  h-screen flex flex-col flex-between items-stretch bg-black2 z-50 max-h-screen"
       >
         <h2
           onClick={() => scrollToRef(oneScrollRef)}

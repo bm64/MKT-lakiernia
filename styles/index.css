@@ -97,10 +97,6 @@ body {
   }
 }
 
-#navbar {
-  max-width: 10rem;
-}
-
 .navbar-item {
   @apply py-4 flex flex-col items-center justify-center p-2 cursor-pointer flex-1 transform duration-500;
 }
@@ -186,6 +182,12 @@ footer {
 }
 
 @screen lg {
+  #content {
+    margin-left: 10rem;
+  }
+  #navbar {
+    max-width: 10rem;
+  }
   #chatbot {
     margin-left: 10rem;
   }
