@@ -68,7 +68,6 @@ function Home() {
     ['(min-width: 1000px)', '(min-width: 400px)'],
     [true, false]
   )
-  console.log(reversed)
 
   useEffect(() => {
     scrollY.onChange(() => {
@@ -1091,25 +1090,28 @@ function Step({
   return (
     <div className="relative">
       <div
+        className="absolute hidden lg:block h-full w-full z-0 top-0 left-0 z-0"
+        style={{
+          backgroundImage: `url(/${image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+
+      <div
         ref={measureStep}
-        className={`relative z-50 w-full px-4  p-0 lg:py-12 mb-4 flex flex-row rounded ${className}`}
+        className={`relative z-10 w-full px-4 p-0 lg:py-12 mb-4 flex flex-col rounded ${className}`}
         style={{
           alignSelf: reversed ? 'flex-end' : 'flex-start',
         }}
       >
-        <div
-          className={`flex flex-col ${
-            reversed ? 'items-end' : 'items-start'
-          } w-full`}
-        >
+        <div className="flex flex-col items-stretch w-full">
           <motion.div
+            className="flex flex-row items-stretch"
             style={{
               justifyContent: reversed ? 'flex-end' : 'flex-start',
-
-              backgroundColor: '#333333',
             }}
             transition={{ type: 'spring', mass: 5, stiffness: 10 }}
-            className="flex flex-row items-center lg:items-baseline"
           >
             <div
               className="h-16 w-16 flex justify-center items-center bg-orange text-2xl font-semibold shadow-xl"
@@ -1117,9 +1119,11 @@ function Step({
             >
               {index}
             </div>
-            <h2 className="text-lg leading-tight lg:leading-normal lg:text-2xl px-4 inline">
-              {title}
-            </h2>
+            <div className="flex-1 lg:flex-initial flex items-center bg-black2">
+              <h2 className="text-lg leading-tight lg:leading-normal lg:text-2xl px-4 bg-black2">
+                {title}
+              </h2>
+            </div>
           </motion.div>
           <motion.p
             className={`hidden lg:block font-medium text-2xl py-4 px-2 bg-black-t ${
@@ -1130,14 +1134,6 @@ function Step({
           </motion.p>
         </div>
       </div>
-      <div
-        className="absolute hidden lg:block h-full w-full z-0 top-0 left-0"
-        style={{
-          backgroundImage: `url(/${image})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      />
     </div>
   )
 }
