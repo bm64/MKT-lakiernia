@@ -145,6 +145,10 @@ body {
   @apply text-4xxl mx-auto pointer-events-none mt-1;
 }
 
+footer {
+  @apply w-full;
+}
+
 @screen md {
   #content {
   }
@@ -207,6 +211,10 @@ body {
 
   .panels-grid {
     min-height: 70rem;
+  }
+
+  footer {
+    width: calc(100vw - 12rem);
   }
 }
 
