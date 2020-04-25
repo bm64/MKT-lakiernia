@@ -7,7 +7,7 @@ export default function useOnEnterLeave(ref) {
     if (!ref.current) return
 
     let onEnter = new IntersectionObserver(
-      entries => {
+      (entries) => {
         setShouldShow(entries[0].intersectionRatio !== 0)
       },
       { threshold: [0, 1] }

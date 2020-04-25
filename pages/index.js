@@ -27,6 +27,7 @@ import {
 
 import useWindowSize from '../hooks/useWindowSize'
 import useOnEnterLeave from '../hooks/useOnEnterLeave'
+import useMedia from '../hooks/useMedia'
 
 import {
   motion,
@@ -62,6 +63,12 @@ function Home() {
   const { scrollY } = useViewportScroll()
 
   const [blur, setBlur] = useState(0)
+
+  const reversed = useMedia(
+    ['(min-width: 1000px)', '(min-width: 400px)'],
+    [true, false]
+  )
+  console.log(reversed)
 
   useEffect(() => {
     scrollY.onChange(() => {
@@ -311,52 +318,59 @@ function Home() {
           </div>
 
           <div className="relative bg-black z-30">
-            <section className="container mx-auto flex flex-col items-center lg:items-start text-center lg:text-left">
-              <h2 ref={sevenScrollRef} className="heading px-10 py-4  mb-8">
+            <section className="container flex flex-col items-start lg:items-start lg:text-left">
+              <h2
+                ref={sevenScrollRef}
+                className="heading text-xl lg:text-2xl text-gray lg:text-black2 lg:bg-orange px-4 lg:px-10 pt-2 pb-0 lg:py-4  mb-4 lg:mb-8"
+              >
                 TO NAS WYRÓŻNIA
               </h2>
-              <h2 className="text-gray font-regular text-center lg:text-left">
+              <h2 className="hidden lg:block text-gray text- font-regular text-left leading-tight lg:leading-normal lg:text-left">
                 ZAPEWNIAMY NAJWYŻSZĄ JAKOŚĆ USŁUG
               </h2>
-              <h1 className="text-4xl font-medium leading-tight max-w-2xl pb-8 pt-4">
+              <h1 className="text-3xl lg:text-4xl font-regular lg:font-medium leading-tight max-w-2xl px-4 lg:px-0 pb-6 lg:pb-8 lg:pt-4">
                 Good design is like a refrigerator — when it works, no one
                 notices, but when it doesn’t, it sure stinks.
               </h1>
 
               <div className="container overflow-hidden grid grid-cols-2 lg:grid-cols-4 mx-auto">
                 <GalleryItem title="Szybka realizacja" image="/gallery1.jpg">
-                  <FaCalendarCheck className="gallery-item" />
+                  <FaCalendarCheck className="gallery-item hidden lg:block" />
                 </GalleryItem>
                 <GalleryItem title="Profesjonalny sprzęt" image="/gallery2.jpg">
-                  <FaTools className="gallery-item" />
+                  <FaTools className="gallery-item hidden lg:block" />
                 </GalleryItem>
                 <GalleryItem title="Doskonała obsluga" image="/gallery3.jpg">
-                  <FaCheck className="gallery-item" />
+                  <FaCheck className="gallery-item hidden lg:block" />
                 </GalleryItem>
                 <GalleryItem title="Zadowoleni klienici" image="/gallery4.jpg">
-                  <FaThumbsUp className="gallery-item" />
+                  <FaThumbsUp className="gallery-item hidden lg:block" />
                 </GalleryItem>
               </div>
               <div
                 style={{ height: '2px' }}
-                className="bg-gray mx-auto w-24 mt-16"
+                className="hidden lg:block bg-gray mx-auto w-24 mt-8 lg:mt-16"
               />
-              <h1 className="text-4xxl font-medium leading-tight  w-full text-center pt-12 pb-4">
+              <h1 className="text-white lg:text-white text-2xl lg:text-4xxl font-medium lg:font-medium leading-tight w-full text-center px-1 lg:px-0 pt-0 pt-8 lg:pt-12  lg:pb-4">
                 AUTORYZOWANY SERWIS
               </h1>
-              <h2 className="text-gray  text-center font-regular   max-w-4xl pb-16 mx-auto leading-tight">
+              <h2 className="hidden lg:block text-gray  text-center font-regular   max-w-4xl pb-16 mx-auto leading-tight">
                 Przedsiębiorstwo MKT Serwis oferuje Państwu profesjonalne
                 naprawy blacharsko lakiernicze nadwozi samochodów wszystkich
                 marek
               </h2>
-              <div className="z-20 bg-black container mx-auto flex flex-row justify-around">
-                <img src="skoda_biala.png" className="h-24 lg:h-32 xl:h-48" />
-                <img src="vw.png" className="h-24 lg:h-32 xl:h-48" />
-                <img src="kia_srodek.png" className="h-24 lg:h-32 xl:h-48" />
-                <img src="fiat.png" className="h-24 lg:h-32 xl:h-48" />
+              <div
+                style={{ height: '2px' }}
+                className=" lg:hidden bg-gray mx-auto w-16 my-5 "
+              />
+              <div className="z-20 bg-black container mx-auto flex flex-row justify-around px-2">
+                <img src="skoda_biala.png" className="h-16 lg:h-32 xl:h-48" />
+                <img src="vw.png" className="h-16 lg:h-32 xl:h-48" />
+                <img src="kia_srodek.png" className="h-16 lg:h-32 xl:h-48" />
+                <img src="fiat.png" className="h-16 lg:h-32 xl:h-48" />
                 <img
                   src="fiat_professional.png"
-                  className="h-24 lg:h-32 xl:h-48"
+                  className="h-16 lg:h-32 xl:h-48"
                 />
               </div>
             </section>
@@ -365,14 +379,16 @@ function Home() {
               <div
                 className="absolute top-0 left-0 h-40 w-full z-10"
                 style={{
+                  transform: 'translateY(-1px)',
                   background:
-                    '-webkit-linear-gradient(bottom, rgba(0, 0, 0, 0) 0,  #1B1B1E 90%,  #1B1B1E 100%)',
+                    '-webkit-linear-gradient(bottom, rgba(0, 0, 0, 0) 0,  #1B1B1E 90%,  rgba(27,27,30,1) )',
                 }}
               />
 
               <div
                 className="absolute bottom-0 left-0 h-40 w-full z-10"
                 style={{
+                  transform: 'translateY(1px)',
                   background:
                     '-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0,  #1b1b1e 90%,  #1b1b1e 100%)',
                 }}
@@ -391,7 +407,7 @@ function Home() {
                 }}
               />
 
-              <motion.div className="container mx-auto pt-20">
+              <motion.div className="container mx-auto pt-10 pb-12 lg:pt-20">
                 {/*
               <h1 className="px-2 font-semibold text-5xl transform leading-tight tracking-wide">
                 Projesjonalne
@@ -402,11 +418,11 @@ function Home() {
               */}
                 <h2
                   ref={twoScrollRef}
-                  className="heading relative  px-10 py-4 z-10 mb-8"
+                  className="relative heading text-xl lg:text-2xl text-gray lg:text-black2 lg:bg-orange px-4 lg:px-10 lg:pt-2 lg:py-4  mb-4 lg:mb-8 z-10"
                 >
                   PROFESJONALNE USŁUGI LAKIERNICZE
                 </h2>
-                <div className=" panels-grid grid grid-cols-4 gap-4">
+                <div className=" panels-grid grid grid-cols-4 gap-1 lg:gap-4">
                   <Panel
                     className="row-span-4 col-span-4 lg:col-span-2"
                     title="Profesjonalne narzędzia lakiernicze"
@@ -474,8 +490,12 @@ function Home() {
                 MIAŁEŚ SZKODĘ?
               </h1>*/}
 
-                <h2 ref={threeScrollRef} className="heading px-10 py-4 mb-8">
-                  ZOBACZ JAK WYGLĄDA PROCES LIKWIDACJI SZKODY
+                <h2
+                  ref={threeScrollRef}
+                  className="heading text-xl lg:text-2xl text-gray lg:text-black2 lg:bg-orange px-4 lg:px-10 pt-2 pb-0 lg:py-4  mb-4 lg:mb-8"
+                >
+                  ZOBACZ JAK WYGLĄDA <br className="md:hidden" />
+                  PROCES LIKWIDACJI SZKODY
                 </h2>
                 <div className="flex flex-col items-stretch overflow-hidden shadow-inner">
                   <Step
@@ -493,7 +513,7 @@ function Home() {
                     index={2}
                     title="Oględziny pojazdu"
                     image="l2.png"
-                    reversed
+                    reversed={reversed}
                   >
                     Drugim krokiem jaki powinienes podjąć jest zgłoszenie szkody
                     z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
@@ -514,7 +534,7 @@ function Home() {
                     index={4}
                     title="Samochód zastępczy"
                     image="l4.png"
-                    reversed
+                    reversed={reversed}
                   >
                     Czwartym krokiem jaki powinienes podjąć jest zgłoszenie
                     szkody z polisy AC lub OC do..Pierwszym krokiem jaki
@@ -534,16 +554,22 @@ function Home() {
                     do..
                   </Step>
                 </div>
-                <h1 className="py-4 px-8 font-semibold text-white bg-black2 shadow transform">
-                  <span className="float-right text-orange">
-                    +48 123 456 789
+                <h1 className="text-xl w-full lg:text-3xl py-4 px-4 lg:px-8 font-semibold text-white bg-black2 shadow transform">
+                  UMÓW SIĘ NA OGLĘDZINY TERAZ{' '}
+                  <span className="inline-block lg:float-right text-orange">
+                    <br className="  hidden" /> +48 123 456 789
                   </span>
-                  UMÓW SIĘ NA OGLĘDZINY JUŻ DZIŚ
                 </h1>
               </motion.div>
             </section>
-            <section ref={threeRef} className="container mx-auto bg-black">
-              <h2 ref={fourScrollRef} className="heading px-10 py-4  mb-8">
+            <section
+              ref={threeRef}
+              className="hidden lg:block container mx-auto bg-black"
+            >
+              <h2
+                ref={fourScrollRef}
+                className="heading text-xl lg:text-2xl text-gray lg:text-black2 lg:bg-orange px-4 lg:px-10 pt-2 pb-0 lg:py-4  mb-4 lg:mb-8"
+              >
                 USŁUGI DODATKOWE
               </h2>
 
@@ -559,7 +585,7 @@ function Home() {
                   style={{ backgroundColor: 'rgba(27,27,30,.7)' }}
                   className=" absolute top-0 right-0  transform -translate-x-16 translate-y-16"
                 >
-                  <h1 className="px-8 pt-5  font-medium text-white text-3xl text-center">
+                  <h1 className="px-4 lg:px-8 pt-5  font-medium text-white text-3xl text-center">
                     NAPRAWY PDR
                   </h1>
                   <p className="p-5 pt-2 text-center text-xl font- leading-tight max-w-xl">
@@ -653,6 +679,7 @@ function Home() {
               <div
                 className="absolute top-0 left-0 h-24 w-full z-10"
                 style={{
+                  transform: 'translateY(-1px)',
                   background:
                     '-webkit-linear-gradient(bottom, rgba(0, 0, 0, 0) 0,  #1B1B1E 90%,  #1B1B1E 100%)',
                 }}
@@ -661,6 +688,7 @@ function Home() {
               <div
                 className="absolute bottom-0 left-0 h-24 w-full z-10"
                 style={{
+                  transform: 'translateY(1px)',
                   background:
                     '-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0,  #1b1b1e 90%,  #1b1b1e 100%)',
                 }}
@@ -679,130 +707,155 @@ function Home() {
                 style={{ backgroundColor: 'rgba(17,18,18, 0.7)' }}
               />
 
-              <div className="relative container overflow-hidden gap-8 grid grid-cols-4 grid-rows-2 mx-auto py-32">
+              <div className="relative z-10 container overflow-hidden gap-2 lg:gap-8 grid grid-cols-4 grid-rows-2 mx-auto lg:py-32">
                 <div
                   ref={fiveScrollRef}
                   style={{ transform: 'none' }}
-                  className="about-us-item col-span-4 row-span-2 lg:col-span-2 flex-col items-start justify-between px-12"
+                  className="about-us-item col-span-4 row-span-2 lg:col-span-2 flex-col items-start justify-between px-4 lg:px-12"
                 >
                   <div className="flex flex-col items-start w-full">
-                    <h1 className="text-gray font-medium text-left">
-                      O NASZEJ FIRMIE
+                    <h1 className="text-base leading-tight lg:leading-normal lg:text-2xl text-gray font-medium text-left">
+                      O NASZEJ FIRMIE{' '}
                     </h1>
-                    <h1 className="text-5xl font-medium leading-tight pt-2">
+                    <h1 className="text-3xl lg:text-5xl font-medium leading-tight lg:pt-2">
                       Czym się <br />
                       zajmujemy?
                     </h1>
                     <div
                       style={{ height: '2px' }}
-                      className="about-us-line bg-orange w-full my-6"
+                      className="about-us-line bg-orange w-full my-2 lg:my-6"
                     />
-                    <h4 className="text-lg text-gray text-left font-medium">
+                    <h4 className="text-sm lg:text-lg text-gray text-left font-medium leading-tight lg:leading-normal pb-2 lg:pb-0">
                       Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                       sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                      magna aliquyam erat, sed diam voluptua. At vero eos et
-                      accusam et justo duo dolores et ea rebum. Stet clita kasd
-                      gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                      sit
+                      magna aliquyam erat, sed diam voluptua.
+                      <span className="hidden lg:block">
+                        {' '}
+                        At vero eos et accusam et justo duo dolores et ea rebum.
+                        Stet clita kasd gubergren, no sea takimata sanctus est
+                        Lorem ipsum dolor sit
+                      </span>
                     </h4>
                   </div>
                   <img src="lakiernia_nowa.jpg" className="rounded-lg" />
                 </div>
                 <div className="about-us-item col-span-2 row-span-1 lg:col-span-1 pt-6">
-                  <h1 className="text-left text-orange font-semibold text-5xl leading-snug px-5 my-auto ">
+                  <h1 className="text-left text-orange font-semibold text-3xl lg:text-5xl leading-snug lg:px-5 my-auto ">
                     POZNAJ NASZ ZESPÓŁ
                   </h1>
                 </div>
-                <div className="about-us-item col-span-2 row-span-1 lg:col-span-1">
-                  <img src="/bartek1.png" className="w-24" />
-                  <h2 className="pt-2 pb-1 font-medium">Bartłomiej Kula</h2>
-                  <p className="text-center text-gray text-sm font-medium pb-1 leading-tight">
+                <div className="about-us-item col-span-2 row-span-1 px-1 lg:px-4 lg:col-span-1">
+                  <img src="/bartek1.png" className="w-16 lg:w-24" />
+                  <h2 className="text-lg lg:text-2xl pt-1 lg:pt-2 pb-1 font-medium">
+                    Bartłomiej Kula
+                  </h2>
+                  <p className="text-xs lg:text-sm text-center text-gray font-medium lg:pb-1 leading-tight lg:leading-normal">
                     KIEROWNIK CETRUM BLACHARSKO-LAKIERNICZEGO
                   </p>
                   <div
                     style={{ height: '2px' }}
-                    className="about-us-line bg-gray w-9/12 mt-2 mb-4"
+                    className="about-us-line bg-gray w-9/12 mt-2 mb-1 lg:mb-4"
                   />
-                  <div className="flex flex-row items-center py-1">
+                  <div className="flex flex-row items-center pb-1  lg:py-1">
                     <FaPhone
                       style={{ transform: 'scaleX(-1)' }}
-                      className="font-sm"
+                      className="text-xs lg:text-base"
                     />
-                    <p className="pl-2 font-medium text-base">
+                    <p className="text-xs lg:text-base pl-1  lg:pl-2 font-medium">
                       +48 17 583 05 97
                     </p>
                   </div>
-                  <div className="flex flex-row items-center py-1">
-                    <FaMobileAlt className="font-sm" />
-                    <p className="pl-2 font-medium">+48 795 570 800</p>
+                  <div className="flex flex-row items-center pb-1 lg:py-1">
+                    <FaMobileAlt className="text-xs lg:text-base" />
+                    <p className="text-xs lg:text-base pl-1 lg:pl-2 font-medium ">
+                      +48 795 570 800
+                    </p>
                   </div>
-                  <div className="flex flex-row items-center py-1">
-                    <FaEnvelope className="font-sm" />
-                    <p className="pl-2 font-medium">b.kula@mktserwis.pl</p>
+                  <div className="flex flex-row items-center lg:py-1">
+                    <FaEnvelope className="text-xs lg:text-base" />
+                    <p className="text-xs lg:text-base pl-2 font-medium">
+                      b.kula@mktserwis.pl
+                    </p>
                   </div>
                   <div
                     style={{ height: '2px' }}
-                    className="about-us-line bg-gray mt-4 w-9/12"
+                    className="about-us-line bg-gray mt-1 lg:mt-4 w-9/12"
                   />
                 </div>
-                <div className="about-us-item col-span-2 row-span-1 lg:col-span-1">
-                  <img src="/ewa_bg.png" className="w-24" />
-                  <h2 className="pt-2 pb-1 font-medium">Ewa Janusz</h2>
-                  <p className="text-center text-gray text-sm font-medium pb-1 leading-tight">
+                <div className="about-us-item col-span-2 row-span-1 px-1 lg:px-4 lg:col-span-1">
+                  <img src="/ewa_bg.png" className="w-16 lg:w-24" />
+                  <h2 className="text-lg lg:text-2xl pt-1 lg:pt-2 pb-1 font-medium">
+                    Ewa Janusz
+                  </h2>
+                  <p className="text-xs lg:text-sm text-center text-gray font-medium lg:pb-1 leading-tight lg:leading-normal">
                     KIEROWNIK CETRUM BLACHARSKO-LAKIERNICZEGO
                   </p>
                   <div
                     style={{ height: '2px' }}
-                    className="about-us-line bg-gray w-9/12 mt-2 mb-4"
+                    className="about-us-line bg-gray w-9/12 mt-2 mb-1 lg:mb-4"
                   />
-                  <div className="flex flex-row items-center py-1">
+                  <div className="flex flex-row items-center pb-1  lg:py-1">
                     <FaPhone
                       style={{ transform: 'scaleX(-1)' }}
-                      className="font-sm"
+                      className="text-xs lg:text-base"
                     />
-                    <p className="pl-2 font-medium">+48 17 583 05 97</p>
+                    <p className="text-xs lg:text-base pl-1  lg:pl-2 font-medium">
+                      +48 17 583 05 97
+                    </p>
                   </div>
-                  <div className="flex flex-row items-center py-1">
-                    <FaMobileAlt className="font-sm" />
-                    <p className="pl-2 font-medium">+48 795 570 800</p>
+                  <div className="flex flex-row items-center pb-1 lg:py-1">
+                    <FaMobileAlt className="text-xs lg:text-base" />
+                    <p className="text-xs lg:text-base pl-1 lg:pl-2 font-medium ">
+                      +48 795 570 800
+                    </p>
                   </div>
-                  <div className="flex flex-row items-center py-1">
-                    <FaEnvelope className="font-sm" />
-                    <p className="pl-2 font-medium">b.kula@mktserwis.pl</p>
+                  <div className="flex flex-row items-center lg:py-1">
+                    <FaEnvelope className="text-xs lg:text-base" />
+                    <p className="text-xs lg:text-base pl-2 font-medium">
+                      b.kula@mktserwis.pl
+                    </p>
                   </div>
                   <div
                     style={{ height: '2px' }}
-                    className="about-us-line bg-gray w-9/12 mt-4"
+                    className="about-us-line bg-gray mt-1 lg:mt-4 w-9/12"
                   />
                 </div>
-                <div className="about-us-item col-span-2 row-span-1 lg:col-span-1">
-                  <img src="/maciej1.png" className="w-24" />
-                  <h2 className="pt-2 pb-1 font-medium">Maciej Kotwica</h2>
-                  <p className="text-center text-gray text-sm font-medium pb-1 leading-tight">
+                <div className="about-us-item col-span-2 row-span-1 px-1 lg:px-4 lg:col-span-1">
+                  <img src="/maciej1.png" className="w-16 lg:w-24" />
+                  <h2 className="text-lg lg:text-2xl pt-1 lg:pt-2 pb-1 font-medium">
+                    Maciej Kotwica
+                  </h2>
+                  <p className="text-xs lg:text-sm text-center text-gray font-medium lg:pb-1 leading-tight lg:leading-normal">
                     KIEROWNIK CETRUM BLACHARSKO-LAKIERNICZEGO
                   </p>
                   <div
                     style={{ height: '2px' }}
-                    className="about-us-line bg-gray w-9/12 mt-2 mb-4"
+                    className="about-us-line bg-gray w-9/12 mt-2 mb-1 lg:mb-4"
                   />
-                  <div className="flex flex-row items-center py-1">
+                  <div className="flex flex-row items-center pb-1  lg:py-1">
                     <FaPhone
                       style={{ transform: 'scaleX(-1)' }}
-                      className="font-sm"
+                      className="text-xs lg:text-base"
                     />
-                    <p className="pl-2 font-medium">+48 17 583 05 97</p>
+                    <p className="text-xs lg:text-base pl-1  lg:pl-2 font-medium">
+                      +48 17 583 05 97
+                    </p>
                   </div>
-                  <div className="flex flex-row items-center py-1">
-                    <FaMobileAlt className="font-sm" />
-                    <p className="pl-2 font-medium">+48 795 570 800</p>
+                  <div className="flex flex-row items-center pb-1 lg:py-1">
+                    <FaMobileAlt className="text-xs lg:text-base" />
+                    <p className="text-xs lg:text-base pl-1 lg:pl-2 font-medium ">
+                      +48 795 570 800
+                    </p>
                   </div>
-                  <div className="flex flex-row items-center py-1">
-                    <FaEnvelope className="font-sm" />
-                    <p className="pl-2 font-medium">b.kula@mktserwis.pl</p>
+                  <div className="flex flex-row items-center lg:py-1">
+                    <FaEnvelope className="text-xs lg:text-base" />
+                    <p className="text-xs lg:text-base pl-2 font-medium">
+                      b.kula@mktserwis.pl
+                    </p>
                   </div>
                   <div
                     style={{ height: '2px' }}
-                    className="about-us-line bg-gray w-9/12 mt-4"
+                    className="about-us-line bg-gray mt-1 lg:mt-4 w-9/12"
                   />
                 </div>
               </div>
@@ -826,7 +879,7 @@ function Home() {
                     style={{
                       boxShadow: '10px 10px 10px rgba(0,0,0,0.9)',
                     }}
-                    className="heading absolute top-0 left-0 px-10 py-4 transform -translate-y-12"
+                    className="heading absolute bg-orange top-0 left-0 px-10 py-4 transform -translate-y-12"
                   >
                     SKONTAKTUJ SIĘ Z NAMI
                   </h2>
@@ -909,7 +962,7 @@ function Home() {
               className="container mx-auto"
             >
               <div className="flex flex-row items-center">
-                <h2 className="heading inline-block px-10 py-4 mb-8">
+                <h2 className="heading text-xl lg:text-2xl text-gray lg:text-black2 lg:bg-orange px-4 lg:px-10 pt-2 pb-0 lg:py-4  mb-4 lg:mb-8">
                   TUTAJ NAS ZNAJDZIESZ
                 </h2>
                 <h4 className="flex-1 text-right">
@@ -962,9 +1015,11 @@ function GalleryItem({ image, title, children }) {
       <div className="gallery-effect h-full w-full absolute left-0 bottom-0 cursor-pointer" />
       <div
         style={{ top: '50%', transform: 'translateY(-50%)' }}
-        className="absolute w-full text-center p-5 pointer-events-none"
+        className="absolute w-full text-center p-1 lg:p-5 pointer-events-none"
       >
-        <div className="font-medium text-2xl py-1">{title}</div>
+        <div className="font-medium text-2xl leading-tight lg:leading-normal py-1">
+          {title}
+        </div>
         {children}
       </div>
     </div>
@@ -989,9 +1044,13 @@ function Panel({ className = '', title, image, children }) {
             '-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0, black 60%, black 100%)',
         }}
       >
-        <h2 className="py-2 font-semibold">{title}</h2>
+        <h2 className="text-lg leading-tight lg:leading-normal lg:text-2xl py-1 lg:py-2 font-medium lg:font-semibold">
+          {title}
+        </h2>
         <div className="w-12 h-1 bg-orange" />
-        <h5 className="py-2 font-medium">{children}</h5>
+        <h5 className="hidden md:block text-sm lg:text-base py-1 lg:py-2 font-medium">
+          {children}
+        </h5>
       </div>
     </div>
   )
@@ -1030,63 +1089,55 @@ function Step({
   const opacity = useTransform(x, reversed ? [600, 0] : [-600, 0], [0, 1])
 
   return (
-    <div
-      ref={measureStep}
-      className={`relative w-full px-4 py-12 mb-4 flex flex-row rounded ${className}`}
-      style={{
-        alignSelf: reversed ? 'flex-end' : 'flex-start',
-        backgroundImage: `url(/${image})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
-      {reversed && (
-        <div
-          className="self-end arrow"
-          style={{ transform: 'scaleX(-1) translateX(14rem)' }}
-        >
-          <div className="curve" />
-          <div className="point" />
-        </div>
-      )}
+    <div className="relative">
       <div
-        className={`flex flex-col ${
-          reversed ? 'items-end' : 'items-start'
-        } w-full`}
+        ref={measureStep}
+        className={`relative z-50 w-full px-4  p-0 lg:py-12 mb-4 flex flex-row rounded ${className}`}
+        style={{
+          alignSelf: reversed ? 'flex-end' : 'flex-start',
+        }}
       >
-        <motion.div
-          style={{
-            justifyContent: reversed ? 'flex-end' : 'flex-start',
-            x,
-            opacity,
-            backgroundColor: '#333333',
-          }}
-          transition={{ type: 'spring', mass: 5, stiffness: 10 }}
-          className="flex flex-row items-baseline"
+        <div
+          className={`flex flex-col ${
+            reversed ? 'items-end' : 'items-start'
+          } w-full`}
         >
-          <div
-            className="h-16 w-16 flex justify-center items-center bg-orange text-2xl font-semibold shadow-xl"
-            style={reversed ? { order: 2 } : {}}
+          <motion.div
+            style={{
+              justifyContent: reversed ? 'flex-end' : 'flex-start',
+
+              backgroundColor: '#333333',
+            }}
+            transition={{ type: 'spring', mass: 5, stiffness: 10 }}
+            className="flex flex-row items-center lg:items-baseline"
           >
-            {index}
-          </div>
-          <h2 className="px-4 inline">{title}</h2>
-        </motion.div>
-        <motion.p
-          className={`font-medium text-2xl py-4 px-2 bg-black-t ${
-            reversed ? 'text-right' : ''
-          }`}
-          style={{ x, opacity, maxWidth: '46rem' }}
-        >
-          {children}
-        </motion.p>
-      </div>
-      {!reversed && index !== 5 && (
-        <div className="self-end arrow transform translate-x-32 translate-y-16">
-          <div className="curve" />
-          <div className="point" />
+            <div
+              className="h-16 w-16 flex justify-center items-center bg-orange text-2xl font-semibold shadow-xl"
+              style={reversed ? { order: 2 } : {}}
+            >
+              {index}
+            </div>
+            <h2 className="text-lg leading-tight lg:leading-normal lg:text-2xl px-4 inline">
+              {title}
+            </h2>
+          </motion.div>
+          <motion.p
+            className={`hidden lg:block font-medium text-2xl py-4 px-2 bg-black-t ${
+              reversed ? 'text-right' : ''
+            }`}
+          >
+            {children}
+          </motion.p>
         </div>
-      )}
+      </div>
+      <div
+        className="absolute hidden lg:block h-full w-full z-0 top-0 left-0"
+        style={{
+          backgroundImage: `url(/${image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
     </div>
   )
 }
