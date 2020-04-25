@@ -117,7 +117,7 @@ body {
 }
 
 .about-us-item {
-  @apply flex flex-col items-center justify-start bg-black2 rounded-lg border border-gray py-3  px-4 transform duration-500;
+  @apply flex flex-col items-center justify-start bg-black2 rounded-lg  border-gray py-3 px-4 transform duration-500;
 }
 
 .about-us-line {
@@ -190,13 +190,16 @@ footer {
     margin-left: 10rem;
   }
   section {
-    @apply px-0;
+    @apply;
   }
   .about-us-item {
-    @apply py-8;
+    @apply py-8 border;
   }
   .about-us-item:hover {
     @apply -translate-y-2;
+  }
+  footer {
+    width: calc(100vw - 12rem);
   }
 }
 

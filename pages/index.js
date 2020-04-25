@@ -331,7 +331,7 @@ function Home() {
               <h2 className="hidden lg:block text-gray text- font-regular text-left leading-tight lg:leading-normal lg:text-left">
                 ZAPEWNIAMY NAJWYŻSZĄ JAKOŚĆ USŁUG
               </h2>
-              <h1 className="text-3xl lg:text-4xl font-regular lg:font-medium leading-tight max-w-2xl px-4 lg:px-0 pb-6 lg:pb-8 lg:pt-4">
+              <h1 className="text-3xl lg:text-4xl font-regular lg:font-medium leading-tight  max-w-2xl px-4 lg:px-0 pb-6 lg:pb-8 lg:pt-4">
                 Good design is like a refrigerator — when it works, no one
                 notices, but when it doesn’t, it sure stinks.
               </h1>
@@ -425,7 +425,7 @@ function Home() {
                 >
                   PROFESJONALNE USŁUGI LAKIERNICZE
                 </h2>
-                <div className=" panels-grid grid grid-cols-4 gap-1 lg:gap-4">
+                <div className="relative z-10 panels-grid grid grid-cols-4 gap-1 lg:gap-4">
                   <Panel
                     className="row-span-4 col-span-4 lg:col-span-2"
                     title="Profesjonalne narzędzia lakiernicze"
@@ -680,7 +680,7 @@ function Home() {
 
             <section ref={fourRef} className="relative mx-auto about-us ">
               <div
-                className="absolute top-0 left-0 h-24 w-full z-10"
+                className="absolute hidden lg:block top-0 left-0 h-24 w-full z-10"
                 style={{
                   transform: 'translateY(-1px)',
                   background:
@@ -689,7 +689,7 @@ function Home() {
               />
 
               <div
-                className="absolute bottom-0 left-0 h-24 w-full z-10"
+                className="absolute hidden lg:block bottom-0 left-0 h-24 w-full z-10"
                 style={{
                   transform: 'translateY(1px)',
                   background:
@@ -697,20 +697,21 @@ function Home() {
                 }}
               />
               <div
-                className="absolute top-0 left-0 w-full h-full bg-no-repeat"
+                className="absolute hidden lg:block top-0 left-0 w-full h-full bg-no-repeat"
                 style={{
                   backgroundImage: 'url(/lakiernia.jpg)',
                   backgroundSize: 'cover',
-                  backgroundPosition: 'left',
+                  backgroundPosition: 'right',
                   backgroundAttachment: 'fixed',
                 }}
               />
+              <div className="absolute lg:hidden bg-black top-0 left-0 w-full h-full" />
               <div
-                className="absolute top-0 left-0 w-full h-full"
+                className="absolute hidden lg:block top-0 left-0 w-full h-full"
                 style={{ backgroundColor: 'rgba(17,18,18, 0.7)' }}
               />
 
-              <div className="relative z-10 container overflow-hidden gap-2 lg:gap-8 grid grid-cols-4 grid-rows-2 mx-auto lg:py-32">
+              <div className="relative z-10 container overflow-hidden gap-2 lg:gap-8 grid grid-cols-4 grid-rows-2 mx-auto lg:py-24 px-3 lg:px-0">
                 <div
                   ref={fiveScrollRef}
                   style={{ transform: 'none' }}
@@ -743,7 +744,7 @@ function Home() {
                   <img src="lakiernia_nowa.jpg" className="rounded-lg" />
                 </div>
                 <div className="about-us-item col-span-2 row-span-1 lg:col-span-1 pt-6">
-                  <h1 className="text-left text-orange font-semibold text-3xl lg:text-5xl leading-snug lg:px-5 my-auto ">
+                  <h1 className="text-left  text-orange font-semibold text-3xl lg:text-5xl leading-snug lg:px-5 my-auto pb-8">
                     POZNAJ NASZ ZESPÓŁ
                   </h1>
                 </div>
@@ -863,7 +864,7 @@ function Home() {
                 </div>
               </div>
             </section>
-            <section className="container mx-auto">
+            <section className="hidden lg:block container mx-auto">
               <div
                 ref={fiveRef}
                 className="flex flex-col md:flex-row justify-center"
@@ -960,22 +961,19 @@ function Home() {
               </div>
             </section>
 
-            <section
-              style={{ paddingTop: '10rem' }}
-              className="container mx-auto"
-            >
-              <div className="flex flex-row items-center">
-                <h2 className="heading text-xl lg:text-2xl text-gray lg:text-black2 lg:bg-orange px-4 lg:px-10 pt-2 pb-0 lg:py-4  mb-4 lg:mb-8">
+            <section className="container mx-auto pb-0">
+              <div className="flex flex-col lg:flex-row items-start lg:items-center">
+                <h2 className="heading text-xl lg:text-2xl leading-tight lg:leading-normal text-gray lg:text-black2 lg:bg-orange px-4 lg:px-10 pt-2 pb-0 lg:py-4  lg:mb-4 lg:mb-8">
                   TUTAJ NAS ZNAJDZIESZ
                 </h2>
-                <h4 className="flex-1 text-right">
+                <h4 className="flex-1 px-4 leading- lg:leading-normal pb-2 lg:pb-0 lg:px-0 font-medium lg:font-regular text-left lg:text-right">
                   <span className="text-orange">Wola Mielecka 632 </span>
                   <br />
                   39-300 Mielec
                 </h4>
               </div>
               <iframe
-                className="w-full mx-auto min-h-screen-1/4 md:min-h-screen-1/2"
+                className="w-full mx-auto min-h-screen-1/3 hlg:min-h-screen-1/4 md:min-h-screen-1/2"
                 src="https://maps.google.com/maps?q=MKT%20SERWIS%20CENTRUM%20BLACHARSKO%20LAKIERNICZE%20WOLA%20MIELECKA&t=&z=13&ie=UTF8&iwloc=&output=embed"
               />
             </section>
