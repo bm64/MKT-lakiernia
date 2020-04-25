@@ -985,7 +985,7 @@ function Home() {
         {showFooter && (
           <footer
             className="fixed bottom-0 w-full text-center  bg-black2 z-20"
-            style={{ height: '26rem', width: 'calc(min(100%, 100vw - 12rem))' }}
+            style={{ height: '26rem', width: 'calc(max(100%, 100vw - 12rem))' }}
           >
             <div className="container mx-auto flex flex-col h-full justify-around ">
               <div className="container mx-auto flex flex-col lg:flex-row justify-around items-center mx-auto">
