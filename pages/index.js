@@ -331,7 +331,7 @@ function Home() {
               <h2 className="hidden lg:block text-gray text- font-regular text-left leading-tight lg:leading-normal lg:text-left">
                 ZAPEWNIAMY NAJWYŻSZĄ JAKOŚĆ USŁUG
               </h2>
-              <h1 className="text-3xl lg:text-4xl font-regular lg:font-medium leading-tight max-w-2xl px-4 lg:px-0 pb-6 lg:pb-8 lg:pt-4">
+              <h1 className="text-3xl lg:text-4xl font-regular lg:font-medium leading-tight  max-w-2xl px-4 lg:px-0 pb-6 lg:pb-8 lg:pt-4">
                 Good design is like a refrigerator — when it works, no one
                 notices, but when it doesn’t, it sure stinks.
               </h1>
@@ -680,7 +680,7 @@ function Home() {
 
             <section ref={fourRef} className="relative mx-auto about-us ">
               <div
-                className="absolute top-0 left-0 h-24 w-full z-10"
+                className="absolute hidden lg:block top-0 left-0 h-24 w-full z-10"
                 style={{
                   transform: 'translateY(-1px)',
                   background:
@@ -689,7 +689,7 @@ function Home() {
               />
 
               <div
-                className="absolute bottom-0 left-0 h-24 w-full z-10"
+                className="absolute hidden lg:block bottom-0 left-0 h-24 w-full z-10"
                 style={{
                   transform: 'translateY(1px)',
                   background:
@@ -697,20 +697,21 @@ function Home() {
                 }}
               />
               <div
-                className="absolute top-0 left-0 w-full h-full bg-no-repeat"
+                className="absolute hidden lg:block top-0 left-0 w-full h-full bg-no-repeat"
                 style={{
                   backgroundImage: 'url(/lakiernia.jpg)',
                   backgroundSize: 'cover',
-                  backgroundPosition: 'left',
+                  backgroundPosition: 'right',
                   backgroundAttachment: 'fixed',
                 }}
               />
+              <div className="absolute lg:hidden bg-black top-0 left-0 w-full h-full" />
               <div
-                className="absolute top-0 left-0 w-full h-full"
+                className="absolute hidden lg:block top-0 left-0 w-full h-full"
                 style={{ backgroundColor: 'rgba(17,18,18, 0.7)' }}
               />
 
-              <div className="relative z-10 container overflow-hidden gap-2 lg:gap-8 grid grid-cols-4 grid-rows-2 mx-auto lg:py-32">
+              <div className="relative z-10 container overflow-hidden gap-2 lg:gap-8 grid grid-cols-4 grid-rows-2 mx-auto lg:py-24 px-3 lg:px-0">
                 <div
                   ref={fiveScrollRef}
                   style={{ transform: 'none' }}
@@ -743,7 +744,7 @@ function Home() {
                   <img src="lakiernia_nowa.jpg" className="rounded-lg" />
                 </div>
                 <div className="about-us-item col-span-2 row-span-1 lg:col-span-1 pt-6">
-                  <h1 className="text-left  text-orange font-semibold text-3xl lg:text-5xl leading-snug lg:px-5 my-auto ">
+                  <h1 className="text-left  text-orange font-semibold text-3xl lg:text-5xl leading-snug lg:px-5 my-auto pb-8">
                     POZNAJ NASZ ZESPÓŁ
                   </h1>
                 </div>
@@ -982,7 +983,7 @@ function Home() {
         {showFooter && (
           <footer
             className="fixed bottom-0 w-full text-center  bg-black2 z-20"
-            style={{ height: '26rem', width: 'calc(min(100%, 100vw - 12rem))' }}
+            style={{ height: '26rem' }}
           >
             <div className="container mx-auto flex flex-col h-full justify-around ">
               <div className="container mx-auto flex flex-col lg:flex-row justify-around items-center mx-auto">
