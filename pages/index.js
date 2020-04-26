@@ -381,10 +381,10 @@ function Home() {
                 LAKIERNICZE
               </h1>
 
-              <h2 className="  font-white font-regular  py-3 max-w-4xl  ">
-                Kompleksowa obsługa szkód komunikacyjnych. Możliwość
-                bezgotówkowego rozliczenia sprawy. Kompleksowa obsługa szkód
-                komunikacyjnych.
+              <h2 className="  text-white font-regular leading-snug  py-3 max-w-3xl  ">
+                Wysokiej jakości blacharstwo pojazdowe. Profesjonalne usługi
+                lakiernicze. Kompleksowa likwidacja szkód komunikacyjnych.
+                Szybka naprawa drobnych usterek lakierniczych.
               </h2>
               <div className="flex flex-row">
                 <div
@@ -420,9 +420,10 @@ function Home() {
               <h2 className="hidden lg:block text-gray text- font-regular text-left leading-tight lg:leading-normal lg:text-left">
                 ZAPEWNIAMY NAJWYŻSZĄ JAKOŚĆ USŁUG
               </h2>
-              <h1 className="text-3xl lg:text-4xl font-regular lg:font-medium leading-tight  max-w-2xl px-4 lg:px-0 pb-6 lg:pb-8 lg:pt-4">
-                Good design is like a refrigerator — when it works, no one
-                notices, but when it doesn’t, it sure stinks.
+              <h1 className="text-3xl lg:text-4xl font-regular lg:font-medium leading-tight  max-w-3xl px-4 lg:px-0 pb-6 lg:pb-8 lg:pt-4">
+                Naprawy są wykonywane z największą starannością oraz z
+                wykorzystaniem Odpowiedniej technologii i sztuki
+                blacharsko-lakierniczej.
               </h1>
 
               <div className="container overflow-hidden grid grid-cols-2 lg:grid-cols-4 mx-auto">
@@ -549,7 +550,7 @@ function Home() {
                     title="CROMAX"
                     image="/puszki.jpg"
                   >
-                    Kabiny lakiernicze przystosowane do procesów lakierniczych
+                    Zaawansowany system lakierniczy marki CROMAX
                   </Panel>
                 </div>
               </motion.div>
@@ -594,10 +595,10 @@ function Home() {
                     title="Zgłoszenie szkody z polisy AC lub OC"
                     image="l1.png"
                   >
-                    Pierwszym krokiem jaki powinienes podjąć jest zgłoszenie
-                    szkody z polisy AC lub OC do..Pierwszym krokiem jaki
-                    powinienes podjąć jest zgłoszenie szkody z polisy AC lub OC
-                    do..
+                    Z pomocą naszych wykwalifikowanych pracowników mogą Państwo
+                    dokonać zgłoszenia szkody. Telefoniczne zgłoszenie szkody
+                    odbywa się terminowo z wszystkimi Towarzystwami
+                    Ubezpieczeniowymi działającymi w Polsce.
                   </Step>
 
                   <Step
@@ -606,19 +607,25 @@ function Home() {
                     image="l2.png"
                     reversed={reversed}
                   >
-                    Drugim krokiem jaki powinienes podjąć jest zgłoszenie szkody
-                    z polisy AC lub OC do..Pierwszym krokiem jaki powinienes
-                    podjąć jest zgłoszenie szkody z polisy AC lub OC do..
+                    Dzięki stosownym umową podpisanym z wiodącymi Towarzystwami
+                    Ubezpieczeniowymi, wykonujemy oględziny pojazdu w celu
+                    ustalenia zakresu uszkodzeń. Oględziny wykonywane są
+                    niezwłocznie przez upoważnionych pracowników naszej firmy.
+                    Istnieje też możliwość wykonania oględzin w terminie
+                    wyznaczonym przez Ubezpieczyciela w naszym zakładzie, gdzie
+                    udostępniamy serwis z podnośnikiem
                   </Step>
                   <Step
                     index={3}
                     title={'Ustalenie zakresu odpowiedzialności'}
                     image="l3.png"
                   >
-                    Trzecim krokiem jaki powinienes podjąć jest zgłoszenie
-                    szkody z polisy AC lub OC do..Pierwszym krokiem jaki
-                    powinienes podjąć jest zgłoszenie szkody z polisy AC lub OC
-                    do..
+                    Po oględzinach rzeczoznawcy zostaje sporządzony stosowny
+                    kosztorys, który uwzględnia szczegóły przeprowadzanej
+                    naprawy. Do zamawiania niezbędnych części i naprawy
+                    przystępujemy po sprawdzaniu kosztorysu przez naszego
+                    pracownika pod kątem tego czy obejmuje cały zakres
+                    powstałych uszkodzeń.
                   </Step>
 
                   <Step
@@ -627,15 +634,16 @@ function Home() {
                     image="l4.png"
                     reversed={reversed}
                   >
-                    Czwartym krokiem jaki powinienes podjąć jest zgłoszenie
-                    szkody z polisy AC lub OC do..Pierwszym krokiem jaki
-                    powinienes podjąć jest zgłoszenie szkody z polisy AC lub OC
-                    do..
+                    Na czas naprawy istnieje możliwość skorzystania z odpłatnego
+                    wypożyczenia samochodu zastępczego. W przypadku likwidacji
+                    szkody z AC/OC wypożyczenie nieodpłatnego samochodu
+                    pozostaje w gestii Towarzystwa Ubezpieczeniowego i jest
+                    rozpatrywana indywidualnie dla każdej szkody.
                   </Step>
 
                   <Step
                     index={5}
-                    title="Rozliczanie koszt napraw"
+                    title="Rozliczenie kosztów naprawy "
                     image="l5.png"
                     className="mb-0"
                   >
@@ -680,11 +688,12 @@ function Home() {
                     NAPRAWY PDR
                   </h1>
                   <p className="p-5 pt-2 text-center text-xl font- leading-tight max-w-xl">
-                    Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
-                    szkody z polisy AC lub OC do..Pierwszym krokiem jaki
-                    powinienes podjąć jest zgłoszenie szkody z polisy AC lub OC
-                    do..Pierwszym krokiem jaki powinienes podjąć jest zgłoszenie
-                    szkody z polisy AC lub OC do..
+                    Oferujemy Państwu usługę usuwania wgnieceń bez lakierowania.
+                    To szybkie rozwiązanie, które pozwala na usunięcie
+                    niewielkich wgnieceń powstałych na wskutek m.in. gradobicia,
+                    szkód parkingowych lub kolizji. Dzięki temu samochód
+                    zachowuje oryginalną powłokę lakierniczą - pozostaje
+                    bezwypadkowy.
                   </p>
                 </div>
               </div>
@@ -704,11 +713,12 @@ function Home() {
                     AUTO DETAILING
                   </h1>
                   <p className="p-5 pt-2 text-center text-xl font- leading-tight max-w-xl">
-                    Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
-                    szkody z polisy AC lub OC do..Pierwszym krokiem jaki
-                    powinienes podjąć jest zgłoszenie szkody z polisy AC lub OC
-                    do..Pierwszym krokiem jaki powinienes podjąć jest zgłoszenie
-                    szkody z polisy AC lub OC do..
+                    Kompleksowa pielęgnacja i renowacja samochodu. Odnowa
+                    lakieru, renowacja poprzez polerowanie oraz woskowanie przy
+                    użyciu profesjonalnych materiałów konserwujących i
+                    polerskich, które przywraca pojazdowi salonowy wygląd bez
+                    konieczności ponownego lakierowania. Zabezpieczenie lakieru
+                    powłoką ceramiczną, które zapewnia trwałą ochronę.
                   </p>
                 </div>
               </div>
@@ -728,11 +738,11 @@ function Home() {
                     WYPOŻYCZALNIA SAMOCHODÓW
                   </h1>
                   <p className="p-5 pt-2 text-center text-xl font- leading-tight max-w-xl">
-                    Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
-                    szkody z polisy AC lub OC do..Pierwszym krokiem jaki
-                    powinienes podjąć jest zgłoszenie szkody z polisy AC lub OC
-                    do..Pierwszym krokiem jaki powinienes podjąć jest zgłoszenie
-                    szkody z polisy AC lub OC do..
+                    Oferujemy także możliwość odpłatnego wypożyczenia samochodu
+                    zastępczego na czas naprawy. w sytuacji, gdy nie przysługuje
+                    on z Ubezpieczenia. Istnieje też możliwość transportu
+                    uszkodzonego pojazdu z miejsca wskazanego przez Klienta do
+                    naszego serwisu.
                   </p>
                 </div>
               </div>
@@ -756,11 +766,11 @@ function Home() {
                     POWYPADKOWE BADANIA TECHNICZNE
                   </h1>
                   <p className="p-5 pt-2 text-center text-xl font- leading-tight max-w-xl">
-                    Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
-                    szkody z polisy AC lub OC do..Pierwszym krokiem jaki
-                    powinienes podjąć jest zgłoszenie szkody z polisy AC lub OC
-                    do..Pierwszym krokiem jaki powinienes podjąć jest zgłoszenie
-                    szkody z polisy AC lub OC do..
+                    Zakres badania technicznego obejmuje sprawdzenie i ocenę
+                    spełnienia warunków technicznych związanych z dokonaną
+                    naprawą oraz badanie, w którego zakres wchodzi również
+                    badanie okresowe. Takie badanie wykonywane jest w sytuacji,
+                    którym doszło do znacznego uszkodzenia pojazdu.
                   </p>
                 </div>
               </div>
@@ -818,14 +828,12 @@ function Home() {
                       className="about-us-line bg-orange w-full my-2 lg:my-6"
                     />
                     <h4 className="text-sm lg:text-lg text-gray text-left font-medium leading-tight lg:leading-normal pb-2 lg:pb-0">
-                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                      magna aliquyam erat, sed diam voluptua.
+                      Jesteśmy autoryzowanym zakładem blacharsko-lakierniczym.
+                      Nasz personel cechuje się wieloletnim doświadczeniem,
+                      dzięki czemu mają państwo gwarancję, że nasze usługi są
+                      wykonywane na najwyższym poziomie.
                       <span className="hidden lg:block">
-                        {' '}
-                        At vero eos et accusam et justo duo dolores et ea rebum.
-                        Stet clita kasd gubergren, no sea takimata sanctus est
-                        Lorem ipsum dolor sit
+                        Obsługujemy samochody osobowe, dostawcze i motocykle.
                       </span>
                     </h4>
                   </div>
@@ -880,7 +888,7 @@ function Home() {
                     Ewa Janusz
                   </h2>
                   <p className="text-xs lg:text-sm text-center text-gray font-medium lg:pb-1 leading-tight lg:leading-normal">
-                    KIEROWNIK CETRUM BLACHARSKO-LAKIERNICZEGO
+                    Asystentka Centrum Blacharsko-Lakierniczego
                   </p>
                   <div
                     style={{ height: '2px' }}
@@ -892,19 +900,19 @@ function Home() {
                       className="text-xs lg:text-base"
                     />
                     <p className="text-xs lg:text-base pl-1  lg:pl-2 font-medium">
-                      +48 17 583 05 97
+                      +48 17 583 05 96
                     </p>
                   </div>
                   <div className="flex flex-row items-center pb-1 lg:py-1">
                     <FaMobileAlt className="text-xs lg:text-base" />
                     <p className="text-xs lg:text-base pl-1 lg:pl-2 font-medium ">
-                      +48 795 570 800
+                      +48 728 583 583
                     </p>
                   </div>
                   <div className="flex flex-row items-center lg:py-1">
                     <FaEnvelope className="text-xs lg:text-base" />
                     <p className="text-xs lg:text-base pl-2 font-medium">
-                      b.kula@mktserwis.pl
+                      lakiernia@mktserwis.pl
                     </p>
                   </div>
                   <div
@@ -918,7 +926,7 @@ function Home() {
                     Maciej Kotwica
                   </h2>
                   <p className="text-xs lg:text-sm text-center text-gray font-medium lg:pb-1 leading-tight lg:leading-normal">
-                    KIEROWNIK CETRUM BLACHARSKO-LAKIERNICZEGO
+                    Specjalista Centrum Blacharsko-Lakierniczego
                   </p>
                   <div
                     style={{ height: '2px' }}
@@ -930,19 +938,19 @@ function Home() {
                       className="text-xs lg:text-base"
                     />
                     <p className="text-xs lg:text-base pl-1  lg:pl-2 font-medium">
-                      +48 17 583 05 97
+                      +48 17 583 05 96
                     </p>
                   </div>
                   <div className="flex flex-row items-center pb-1 lg:py-1">
                     <FaMobileAlt className="text-xs lg:text-base" />
                     <p className="text-xs lg:text-base pl-1 lg:pl-2 font-medium ">
-                      +48 795 570 800
+                      +48 602 583 583
                     </p>
                   </div>
                   <div className="flex flex-row items-center lg:py-1">
                     <FaEnvelope className="text-xs lg:text-base" />
                     <p className="text-xs lg:text-base pl-2 font-medium">
-                      b.kula@mktserwis.pl
+                      m.kotwica@mktserwis.pl
                     </p>
                   </div>
                   <div
@@ -978,10 +986,9 @@ function Home() {
                   <div className="pl-16 pr-40 py-16 h-full bg-black-t">
                     <h1 className="font-semibold">Potrzebujesz pomocy?</h1>
                     <p className="p-4 font-medium text-lg max-w-sm text-white">
-                      Ostatnim krokiem jaki powinienes podjąć jest zgłoszenie
-                      szkody z polisy AC lub OC do..Pierwszym krokiem jaki
-                      powinienes podjąć jest zgłoszenie szkody z polisy AC lub
-                      OC do..
+                      Zadzwoń do nas lub skontaktuj się z nami za pośrednictwem
+                      formularza kontaktowego, a nasz pracownik odpowie
+                      najszybciej jak to możliwe.
                     </p>
                     <div className="flex flex-row items-center py-1 pt-8 ">
                       <FaPhone
