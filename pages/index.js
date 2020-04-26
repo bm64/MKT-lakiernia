@@ -23,6 +23,9 @@ import {
   FaUserTie,
   FaCheck,
   FaDog,
+  FaAngleDoubleRight,
+  FaAngleDown,
+  FaMapMarked,
 } from 'react-icons/fa'
 
 import useWindowSize from '../hooks/useWindowSize'
@@ -34,6 +37,7 @@ import {
   useViewportScroll,
   useTransform,
   useSpring,
+  AnimatePresence,
 } from 'framer-motion'
 
 function Home() {
@@ -69,6 +73,8 @@ function Home() {
     [true, false]
   )
 
+  const [isMenuVisible, setIsMenuVisible] = useState(false)
+
   useEffect(() => {
     scrollY.onChange(() => {
       const value = scrollY.get()
@@ -96,12 +102,93 @@ function Home() {
 
   return (
     <Layout>
-      <div className="fixed top-0 left-0 bg-black2 w-full flex flex-row justify-between items-center z-50 lg:hidden px-2 py-3">
-        <h1 className="font-semibold text-3xl">MKT SERWIS</h1>
-        <div className="flex flex-row">
-          <FaMobileAlt className="text-3xl mr-3" />
-          <FaBars className="text-3xl ml-3" />
+      <div className="fixed top-0 left-0 bg-black2 w-full  z-50 lg:hidden  py-3">
+        <div className="flex flex-row justify-between items-center px-2">
+          <h1 className="font-semibold text-3xl">MKT SERWIS</h1>
+          <div className="flex flex-row">
+            <FaMobileAlt className="text-3xl mr-3" />
+            <FaBars
+              onClick={() => setIsMenuVisible(!isMenuVisible)}
+              className="text-3xl ml-3"
+            />
+          </div>
         </div>
+        <AnimatePresence>
+          {isMenuVisible && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="min-h-screen bg-black2 pt-8 px-8"
+            >
+              <div className="flex flex-row items-center justify-between py-2">
+                <h3 className="font-semibold">USŁUGI LAKIERNICZE</h3>
+                <FaAngleDown className="text-2xl transform -rotate-90" />
+              </div>
+              <div className="flex flex-row items-center justify-between py-2">
+                <h3 className="font-semibold">LIKWIDACJA SZKODY</h3>
+                <FaAngleDown className="text-2xl transform -rotate-90" />
+              </div>
+              <div className="flex flex-row items-center justify-between py-2">
+                <h3 className="font-semibold">USŁUGI DODATKOWE</h3>
+                <FaAngleDown className="text-2xl transform -rotate-90" />
+              </div>
+              <div className="flex flex-row items-center justify-between py-2">
+                <h3 className="font-semibold">O NAS</h3>
+                <FaAngleDown className="text-2xl transform -rotate-90" />
+              </div>
+              <div className="flex flex-row items-center justify-between py-2">
+                <h3 className="font-semibold">KONTAKT</h3>
+                <FaAngleDown className="text-2xl transform -rotate-90" />
+              </div>
+              <div
+                style={{ height: '1px' }}
+                className=" bg-gray mx-auto w-full my-3 "
+              />
+              <div className="pl-5">
+                <div className="flex flex-row items-center justify-start py-1">
+                  <FaPhone
+                    className="text-white text-base mr-3"
+                    style={{ transform: 'scaleX(-1)' }}
+                  />
+                  <h3 className="inline-block text-white font-medium">
+                    +48 17 583 05 96
+                  </h3>
+                </div>
+                <div className="flex flex-row items-center  justify-start py-1">
+                  <FaMobileAlt
+                    className="text-white text-base mr-3"
+                    style={{ transform: 'scaleX(-1)' }}
+                  />
+                  <h3 className="text-white font-medium">+48 17 583 05 96</h3>
+                </div>
+                <div className="flex flex-row items-center  justify-start py-1">
+                  <FaEnvelope
+                    className="text-white text-base mr-3"
+                    style={{ transform: 'scaleX(-1)' }}
+                  />
+
+                  <h3 className="text-white font-medium">
+                    lakiernia@mktserwis.pl
+                  </h3>
+                </div>
+                <div className="flex flex-row items-center  justify-start py-1">
+                  <FaMapMarkedAlt
+                    className="text-white text-base mr-3"
+                    style={{ transform: 'scaleX(-1)' }}
+                  />
+                  <h3 className="text-white leading-tight font-medium">
+                    Wola Mielecka <br /> 39-300 Mielec
+                  </h3>
+                </div>
+              </div>
+              <div
+                style={{ height: '1px' }}
+                className=" bg-gray mx-auto w-full my-3 "
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
       <div
         id="navbar"
@@ -289,7 +376,9 @@ function Home() {
                 CENTRUM
               </h1>
               <h1 className="  font-semibold text-6xl  whitespace-no-wrap leading-none pb-3">
-                BLACHARSKO <br className="lg:hidden" /> LAKIERNICZE
+                BLACHARSKO-
+                <br className="lg:hidden" />
+                LAKIERNICZE
               </h1>
 
               <h2 className="  font-white font-regular  py-3 max-w-4xl  ">
@@ -399,7 +488,6 @@ function Home() {
               <div
                 className="absolute top-0 left-0 w-full h-full"
                 style={{
-                  backgroundImage: 'url(/bg_img10.jpeg)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundAttachment: 'fixed',
@@ -421,7 +509,7 @@ function Home() {
               */}
                 <h2
                   ref={twoScrollRef}
-                  className="relative heading text-xl lg:text-2xl text-gray lg:text-black2 lg:bg-orange px-4 lg:px-10 lg:pt-2 lg:py-4  mb-4 lg:mb-8 z-10"
+                  className="relative heading text-xl lg:text-2xl text-gray lg:text-black2 lg:bg-orange px-4 lg:px-10  lg:py-4  mb-4 lg:mb-8 z-10"
                 >
                   PROFESJONALNE USŁUGI LAKIERNICZE
                 </h2>
@@ -961,6 +1049,42 @@ function Home() {
               </div>
             </section>
 
+            <section className="lg:hidden py-10">
+              <div className=" flex flex-col items-center px-10 mx-auto">
+                <h3 className="font-semibold">NAPISZ DO NAS</h3>
+                <p className="text-xs leading-snug font-semibold text-gray">
+                  Masz jakieś pytania? Skontaktuj się z nami!
+                </p>
+                <p className="text-xs leading-tight font-semibold text-gray">
+                  Odpowiemy najszybciej jak to możliwe.
+                </p>
+                <div
+                  style={{ height: '1px' }}
+                  className=" lg:hidden bg-orange mx-auto w-24 my-3 "
+                />
+                <input
+                  className="w-full bg-black2 pl-3 py-2 rounded-lg text-xs font-semibold my-1"
+                  placeholder="Twoje imię"
+                  type="text"
+                />
+                <input
+                  className="bg-black2 pl-3 w-full py-2 rounded-lg text-xs font-semibold my-1"
+                  placeholder="Adres e-mail"
+                  type="text"
+                />
+
+                <textarea
+                  className="bg-black2 pl-3 w-full py-2  rounded-lg text-xs font-semibold my-1"
+                  placeholder="Treść wiadomości"
+                  rows={9}
+                />
+                <div className="self-end border border-orange bg-black2 px-4 py-1 rounded-lg text-xs font-semibold my-2 transform hover:bg-orange duration-300">
+                  <span className="text-sm text-center text-white font-semibold ">
+                    WYŚLIJ
+                  </span>
+                </div>
+              </div>
+            </section>
             <section className="container mx-auto pb-0">
               <div className="flex flex-col lg:flex-row items-start lg:items-center">
                 <h2 className="heading text-xl lg:text-2xl leading-tight lg:leading-normal text-gray lg:text-black2 lg:bg-orange px-4 lg:px-10 pt-2 pb-0 lg:py-4  lg:mb-4 lg:mb-8">
