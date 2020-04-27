@@ -494,8 +494,9 @@ function Home() {
               <div
                 className="absolute top-0 left-0 w-full h-full"
                 style={{
+                  backgroundImage: 'url(/bg_img10.jpeg)',
                   backgroundSize: 'cover',
-                  backgroundPosition: 'center',
+                  backgroundPosition: 'top',
                   backgroundAttachment: 'fixed',
                   /*
                 clipPath:
@@ -503,8 +504,16 @@ function Home() {
                 */
                 }}
               />
+              <div
+                className="absolute hidden lg:block top-0 left-0 w-full h-full"
+                style={{ backgroundColor: 'rgba(17,18,18, 0.5)' }}
+              />
 
-              <motion.div className="container mx-auto pt-10 pb-12 lg:pt-20">
+              <div
+                className="absolute lg:hidden top-0 left-0 w-full h-full"
+                style={{ backgroundColor: 'rgba(17,18,18, 1)' }}
+              />
+              <motion.div className="container mx-auto pt-10 pb-12 lg:pt-16">
                 {/*
               <h1 className="px-2 font-semibold text-5xl transform leading-tight tracking-wide">
                 Projesjonalne
@@ -515,7 +524,7 @@ function Home() {
               */}
                 <h2
                   ref={twoScrollRef}
-                  className="relative heading text-xl lg:text-2xl text-gray lg:text-black2 lg:bg-orange px-4 lg:px-10  lg:py-4  mb-4 lg:mb-8 z-10"
+                  className="relative heading text-xl lg:text-2xl text-gray lg:text-black2 lg:bg-orange px-4 lg:px-10  lg:py-4  mb-4 lg:mb-8 z-40"
                 >
                   PROFESJONALNE USŁUGI LAKIERNICZE
                 </h2>
@@ -811,7 +820,7 @@ function Home() {
               <div className="absolute lg:hidden bg-black top-0 left-0 w-full h-full" />
               <div
                 className="absolute hidden lg:block top-0 left-0 w-full h-full"
-                style={{ backgroundColor: 'rgba(17,18,18, 0.7)' }}
+                style={{ backgroundColor: 'rgba(17,18,18, 0.55)' }}
               />
 
               <div className="relative z-10 container overflow-hidden gap-2 lg:gap-8 grid grid-cols-4 grid-rows-2 mx-auto lg:py-24 px-3 lg:px-0">
@@ -845,7 +854,7 @@ function Home() {
                   <img src="lakiernia_nowa.jpg" className="rounded-lg" />
                 </div>
                 <div className="about-us-item col-span-2 row-span-1 lg:col-span-1 pt-6">
-                  <h1 className="text-left  text-orange font-semibold text-3xl lg:text-5xl leading-snug lg:px-5 my-auto pb-8">
+                  <h1 className="text-center lg:text-left  text-orange font-semibold text-3xl lg:text-5xl leading-snug lg:px-5 my-auto pb-8">
                     POZNAJ NASZ ZESPÓŁ
                   </h1>
                 </div>
