@@ -420,10 +420,15 @@ function Home() {
               <h2 className="hidden lg:block text-gray text- font-regular text-left leading-tight lg:leading-normal lg:text-left">
                 ZAPEWNIAMY NAJWYŻSZĄ JAKOŚĆ USŁUG
               </h2>
-              <h1 className="text-3xl lg:text-4xl font-regular lg:font-medium leading-tight  max-w-3xl px-4 lg:px-0 pb-6 lg:pb-8 lg:pt-4">
+              <h1 className="hidden lg:block text-xl lg:text-4xl font-medium lg:font-medium leading-tight  max-w-3xl px-4 lg:px-0 pb-6 lg:pb-8 lg:pt-4">
                 Naprawy są wykonywane z największą starannością oraz z
                 wykorzystaniem odpowiedniej technologii i sztuki
                 blacharsko-lakierniczej.
+              </h1>
+              <h1 className="lg:hidden text-2xl lg:text-4xl font-medium lg:font-medium leading-tight   px-4  lg:px-0 pb-6 lg:pb-8 lg:pt-4">
+                Naprawy są wykonywane
+                <br /> z największą starannością oraz z wykorzystaniem
+                odpowiedniej technologii.
               </h1>
 
               <div className="container overflow-hidden grid grid-cols-2 lg:grid-cols-4 mx-auto">
@@ -617,9 +622,7 @@ function Home() {
                   </Step>
                   <Step
                     index={3}
-                    title={
-                      'Ustalenie zakresu odpowiedzialności przez towarzystwo ubezpieczeniowe'
-                    }
+                    title={'Ustalenie zakresu odpowiedzialności'}
                     image="l3.png"
                   >
                     Po oględzinach rzeczoznawcy zostaje sporządzony stosowny
@@ -649,13 +652,10 @@ function Home() {
                     image="l5.png"
                     className="mb-0"
                   >
-                    W przypadku gdy szkoda nie jest pokryta przez Towarzystwo
-                    ubezpieczeniowe istnieje możliwość zapłaty za naprawę
-                    gotówką lub przelewem przez użytkownika pojazdu. Oferujemy
-                    także możliwość bezgotówkowego rozliczenia kosztów naprawy,
-                    likwidując szkodę z polisy OC lub AC. Oznacza to, że po
-                    naprawie, zajmujemy się rozliczeniem wszystkich powstałych
-                    kosztów z Towarzystwem Ubezpieczeniowym.
+                    Oferujemy możliwość bezgotówkowego rozliczenia kosztów
+                    naprawy, likwidując szkodę z polisy OC lub AC. Oznacza to,
+                    że po naprawie, zajmujemy się rozliczeniem wszystkich
+                    powstałych kosztów z Towarzystwem Ubezpieczeniowym.
                   </Step>
                 </div>
                 <h1 className="text-xl w-full lg:text-3xl py-4 px-4 lg:px-8 font-semibold text-white bg-black2 shadow transform">
